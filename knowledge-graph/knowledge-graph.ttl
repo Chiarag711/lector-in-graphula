@@ -12,6 +12,7 @@
                                                 owl:imports <https://lectoringraphula.org/ontology> ;
                                                 <http://purl.org/dc/elements/1.1/creator> "Chiara Genovese, Asia Marselli, Adriana Monte" ;
                                                 <http://purl.org/dc/elements/1.1/description> "A knowledge graph instantiating the Lector in Graphula ontology on selected interpretive cases from The Handmaid's Tale."@en ;
+                                                <http://purl.org/dc/elements/1.1/title> "Lector in Graphula Knowledge Graph"@en ;
                                                 rdfs:comment "This knowledge graph applies the Lector in Graphula ontology to selected excerpts from Margaret Atwood's The Handmaid's Tale. It models how specific textual cues activate intrinsic knowledge, presuppositions, inferences, and licensed interpretations according to Eco's theory of the Model Reader. The graph is intended as a case study and does not aim to represent the entire plot of the novel."@en ,
                                                              "This knowledge graph imports the Lector in Graphula ontology, identified by the namespace https://lectoringraphula.org/ontology#, and uses the Handmaid namespace for case-study individuals."@en ;
                                                 rdfs:label "Lector in Graphula Knowledge Graph"@en ;
