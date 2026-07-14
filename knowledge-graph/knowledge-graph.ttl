@@ -1,0 +1,161 @@
+@prefix : <urn:absolute:h/> .
+@prefix hmt: <https://lectoringraphula.org/handmaid#> .
+@prefix lig: <https://lectoringraphula.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <urn:absolute:h/> .
+
+<https://lectoringraphula.org/knowledge-graph> rdf:type owl:Ontology ;
+                                                owl:imports <https://lectoringraphula.org/ontology> ;
+                                                <http://purl.org/dc/elements/1.1/creator> "Chiara Genovese, Asia Marselli, Adriana Monte" ;
+                                                <http://purl.org/dc/elements/1.1/description> "A knowledge graph instantiating the Lector in Graphula ontology on selected interpretive cases from The Handmaid's Tale."@en ;
+                                                rdfs:comment "This knowledge graph applies the Lector in Graphula ontology to selected excerpts from Margaret Atwood's The Handmaid's Tale. It models how specific textual cues activate intrinsic knowledge, presuppositions, inferences, and licensed interpretations according to Eco's theory of the Model Reader. The graph is intended as a case study and does not aim to represent the entire plot of the novel."@en ,
+                                                             "This knowledge graph imports the Lector in Graphula ontology, identified by the namespace https://lectoringraphula.org/ontology#, and uses the Handmaid namespace for case-study individuals."@en ;
+                                                rdfs:label "Lector in Graphula Knowledge Graph"@en ;
+                                                owl:versionInfo "0.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  urn:absolute:h/hasAnnotationNote
+:hasAnnotationNote rdf:type owl:AnnotationProperty .
+
+
+###  urn:absolute:h/hasInterpretiveStatus
+:hasInterpretiveStatus rdf:type owl:AnnotationProperty .
+
+
+###  urn:absolute:h/hasSequenceNumber
+:hasSequenceNumber rdf:type owl:AnnotationProperty .
+
+
+###  urn:absolute:h/hasSourceReference
+:hasSourceReference rdf:type owl:AnnotationProperty .
+
+
+###  urn:absolute:h/hasTextualContent
+:hasTextualContent rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://lectoringraphula.org/handmaid#GileadErasesFemaleIdentity
+hmt:GileadErasesFemaleIdentity rdf:type owl:NamedIndividual ,
+                                        lig:LicensedInterpretation ;
+                               lig:hasAnnotationNote "\"The naming system supports the interpretation that Gilead erases female identity through institutional possession.\"" ;
+                               lig:hasInterpretativeStatus "\"licensed\"" ;
+                               <http://purl.org/dc/elements/1.1/description> "A licensed interpretation of the naming system."@en ;
+                               rdfs:comment "This individual represents a licensed interpretation supported by the selected cue and inference: the naming system contributes to the erasure of female identity by defining women through institutional possession and male authority."@en ;
+                               rdfs:label "Gilead erases female identity"@en ;
+                               :hasAnnotationNote "\"The naming system supports the interpretation that Gilead erases female identity through institutional possession.\""@en ;
+                               :hasInterpretiveStatus "\"licensed\""@en .
+
+
+###  https://lectoringraphula.org/handmaid#HandmaidsTaleModelAuthor
+hmt:HandmaidsTaleModelAuthor rdf:type owl:NamedIndividual ,
+                                      lig:ModelAuthor ;
+                             <http://purl.org/dc/elements/1.1/description> "The textual strategy encoded by The Handmaid's Tale."@en ;
+                             rdfs:comment "This individual represents the Model Author reconstructed from The Handmaid's Tale. It is not Margaret Atwood as an empirical author, but the textual strategy that organizes cues, gaps, constraints, and interpretive possibilities within the narrative."@en ;
+                             rdfs:label "The Handmaid's Tale Model Author"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HandmaidsTaleModelReader
+hmt:HandmaidsTaleModelReader rdf:type owl:NamedIndividual ,
+                                      lig:ModelReader ;
+                             <http://purl.org/dc/elements/1.1/description> "The reader role presupposed by The Handmaid's Tale."@en ;
+                             rdfs:comment "This individual represents the Model Reader presupposed by The Handmaid's Tale: a reader capable of activating the cultural, ideological, narrative, and encyclopedic knowledge required to interpret the selected textual cues and gaps."@en ;
+                             rdfs:label "The Handmaid's Tale Model Reader"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HandmaidsTaleReaderCompetence
+hmt:HandmaidsTaleReaderCompetence rdf:type owl:NamedIndividual ,
+                                           lig:ReaderCompetence ;
+                                  <http://purl.org/dc/elements/1.1/description> "The competence required to cooperate with the text."@en ;
+                                  rdfs:comment "This individual represents the set of competences required by The Handmaid's Tale from its Model Reader, including linguistic, cultural, ideological, intertextual, and inferential competences."@en ;
+                                  rdfs:label "The Handmaid's Tale Reader Competence"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HandmaidsTaleText
+hmt:HandmaidsTaleText rdf:type owl:NamedIndividual ,
+                               lig:NarrativeText ;
+                      :encodesModelAuthor hmt:HandmaidsTaleModelAuthor ;
+                      :hasFragment hmt:OffredFragment ;
+                      :presupposesModelReader hmt:HandmaidsTaleModelReader ;
+                      :requiresCompetence hmt:HandmaidsTaleReaderCompetence ;
+                      lig:hasAnnotationNote "\"Case study narrative text used to instantiate the ontology of Eco's Model Reader.\"" ;
+                      lig:hasSourceReference "\"Margaret Atwood, The Handmaid's Tale\"" ;
+                      <http://purl.org/dc/elements/1.1/description> "The narrative text used as a case study in the knowledge graph."@en ;
+                      rdfs:comment "This individual represents Margaret Atwood's The Handmaid's Tale as the narrative text selected to instantiate and test the Eco-inspired ontology of interpretive cooperation. It is not modeled as a complete plot database, but as the textual source from which selected interpretive fragments are analyzed."@en ;
+                      rdfs:label "The Handmaid's Tale"@en ;
+                      :hasAnnotationNote "\"Case study narrative text used to instantiate the ontology of Eco's Model Reader.\""@en ;
+                      :hasSourceReference "\"Margaret Atwood, The Handmaid's Tale\""@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredFragment
+hmt:OffredFragment rdf:type owl:NamedIndividual ,
+                            lig:TextFragment ;
+                   :containsCue hmt:OffredNameCue ;
+                   lig:hasSourceReference "\"The Handmaid's Tale, selected passage on the name Offred\"" ;
+                   lig:hasTextualContent "\"Selected fragment centered on the institutional name Offred.\"" ;
+                   <http://purl.org/dc/elements/1.1/description> "The textual fragment centered on the name “Offred”."@en ;
+                   rdfs:comment "This individual represents the selected textual fragment in which the name “Offred” functions as a cue for interpretive cooperation. The fragment is used to model how a proper name can activate intrinsic knowledge, presuppositions, and inferences about identity, possession, and social belonging."@en ;
+                   rdfs:label "Offred name fragment"@en ;
+                   :hasSourceReference "\"Selected fragment centered on the institutional name Offred.\""@en ;
+                   :hasTextualContent "\"Selected fragment centered on the institutional name Offred.\""@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredIdentityInference
+hmt:OffredIdentityInference rdf:type owl:NamedIndividual ,
+                                     lig:Inference ;
+                            :licensesInterpretation hmt:GileadErasesFemaleIdentity ;
+                            lig:hasAnnotationNote "\"The Model Reader infers that Offred's identity is defined through Fred.\"" ;
+                            lig:hasSequenceNumber 1 ;
+                            <http://purl.org/dc/elements/1.1/description> "The inference that Offred's identity is defined through Fred."@en ;
+                            rdfs:comment "This individual represents the inference through which the Model Reader interprets the name “Offred” as indicating that the character's identity is institutionally defined through Fred. The inference connects the textual cue with intrinsic knowledge about possession and naming."@en ;
+                            rdfs:label "Offred identity inference"@en ;
+                            :hasAnnotationNote "\"The Model Reader infers that Offred's identity is defined through Fred.\""@en ;
+                            :hasSequenceNumber 1 .
+
+
+###  https://lectoringraphula.org/handmaid#OffredNameCue
+hmt:OffredNameCue rdf:type owl:NamedIndividual ,
+                           lig:TextualCue ;
+                  :requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ;
+                  :supportsInference hmt:OffredIdentityInference ;
+                  :triggersPresupposition hmt:PossessionPresupposition ;
+                  lig:hasAnnotationNote "\"The name functions as a textual cue activating knowledge about possession, identity, and institutional naming.\"" ;
+                  lig:hasTextualContent "\"Offred\"" ;
+                  <http://purl.org/dc/elements/1.1/description> "The name “Offred” as an interpretive cue."@en ;
+                  rdfs:comment "This individual represents the name “Offred” as a textual cue. In the selected analysis, the cue activates knowledge about naming, possession, and identity, allowing the Model Reader to infer that the character's institutional identity is defined through belonging to Fred."@en ;
+                  rdfs:label "Offred name cue"@en ;
+                  :hasAnnotationNote "\"The name functions as a textual cue activating knowledge about possession, identity, and institutional naming.\""@en ;
+                  :hasTextualContent "\"Offred\""@en .
+
+
+###  https://lectoringraphula.org/handmaid#PossessionNamingKnowledge
+hmt:PossessionNamingKnowledge rdf:type owl:NamedIndividual ,
+                                       lig:IntrinsicKnowledge ;
+                              lig:hasAnnotationNote "\"A name can encode possession, belonging, or institutional assignment.\"" ;
+                              <http://purl.org/dc/elements/1.1/description> "Intrinsic knowledge about names encoding possession."@en ;
+                              rdfs:comment "This individual represents the intrinsic knowledge required to interpret the name “Offred”: a name can encode belonging, possession, or institutional assignment. This knowledge is not fully explicit in the textual surface, but is required for coherent interpretation."@en ;
+                              rdfs:label "Possession naming knowledge"@en ;
+                              :hasAnnotationNote "\"A name can encode possession, belonging, or institutional assignment.\""@en .
+
+
+###  https://lectoringraphula.org/handmaid#PossessionPresupposition
+hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
+                                      lig:Presupposition ;
+                             lig:hasAnnotationNote "\"The cue presupposes that naming may imply belonging to another entity.\"" ;
+                             <http://purl.org/dc/elements/1.1/description> "The presupposition that naming can imply belonging."@en ;
+                             rdfs:comment "This individual represents the presupposition triggered by the name “Offred”: that a name may indicate belonging to or possession by another entity. This presupposition supports the interpretation of the name as more than a personal identifier."@en ;
+                             rdfs:label "Possession presupposition"@en ;
+                             :hasAnnotationNote "\"The cue presupposes that naming may imply belonging to another entity.\""@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
