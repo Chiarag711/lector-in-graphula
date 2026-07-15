@@ -60,7 +60,9 @@ hmt:HandmaidsTaleReaderCompetence rdf:type owl:NamedIndividual ,
 hmt:HandmaidsTaleText rdf:type owl:NamedIndividual ,
                                lig:NarrativeText ;
                       lig:encodesModelAuthor hmt:HandmaidsTaleModelAuthor ;
-                      lig:hasFragment hmt:OffredHiddenNameFragment ;
+                      lig:hasFragment hmt:OffredHiddenNameFragment ,
+                                      :HistoricalNotesNameFragment ,
+                                      :NameExchangeFragment ;
                       lig:presupposesModelReader hmt:HandmaidsTaleModelReader ;
                       lig:requiresCompetence hmt:HandmaidsTaleReaderCompetence ;
                       lig:hasAnnotationNote "Case study narrative text used to instantiate the ontology of Eco's Model Reader." ;
@@ -95,9 +97,12 @@ hmt:OffredIdentityInference rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/handmaid#OffredNameCue
 hmt:OffredNameCue rdf:type owl:NamedIndividual ,
                            lig:TextualCue ;
-                  lig:requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ;
-                  lig:supportsInference hmt:OffredIdentityInference ;
-                  lig:triggersPresupposition hmt:PossessionPresupposition ;
+                  lig:requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ,
+                                                 :HiddenRealNameKnowledge ;
+                  lig:supportsInference hmt:OffredIdentityInference ,
+                                        :HiddenNameInference ;
+                  lig:triggersPresupposition hmt:PossessionPresupposition ,
+                                             :HiddenNamePresupposition ;
                   lig:hasAnnotationNote "The name functions as a textual cue activating knowledge about possession, identity, and institutional naming." ;
                   lig:hasTextualContent "Offred" ;
                   dc:description "The cue provided by Offred's statement that Offred is not her real name."@en ;
@@ -134,6 +139,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#HiddenNameInference
 :HiddenNameInference rdf:type owl:NamedIndividual ,
                               lig:Inference ;
+                     lig:licensesInterpretation :OffredNameRemainsUnspecified ;
                      dc:description "The inference that Offred has a real name that the text withholds."@en ;
                      rdfs:comment "From Offred's statement that her name is not Offred, the Model Reader infers that another name exists. However, the text does not fully actualize this information, making the absence of the name interpretively significant."@en ;
                      rdfs:label "Hidden Name Inference"@en .
@@ -158,6 +164,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#HistoricalNotesNameFragment
 :HistoricalNotesNameFragment rdf:type owl:NamedIndividual ,
                                       lig:TextFragment ;
+                             lig:containsCue :PatronymicNameCue ;
                              dc:description "A textual fragment from the Historical Notes explaining the patronymic structure of names such as Offred, Ofglen, and Ofwarren."@en ;
                              rdfs:comment "This fragment retrospectively reframes Offred as an institutional name rather than a personal one. It confirms that the narrator's original name remains unavailable and that the Gileadean naming system encodes possession or household assignment."@en ;
                              rdfs:label "Historical Notes Name Fragment"@en .
@@ -166,6 +173,9 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#NameExchangeCue
 :NameExchangeCue rdf:type owl:NamedIndividual ,
                           lig:TextualCue ;
+                 lig:requiresIntrinsicKnowledge :PersonalNameKnowledge ;
+                 lig:supportsInference :NameExchangeInference ;
+                 lig:triggersPresupposition :PersonalNamePresupposition ;
                  dc:description "The cue provided by the secret exchange of personal names among the Handmaids."@en ;
                  rdfs:comment "This cue activates knowledge about personal names, secrecy, and identity preservation. It suggests that personal identity persists beneath the official naming practices of Gilead."@en ;
                  rdfs:label "Name Exchange Cue"@en .
@@ -174,6 +184,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#NameExchangeFragment
 :NameExchangeFragment rdf:type owl:NamedIndividual ,
                                lig:TextFragment ;
+                      lig:containsCue :NameExchangeCue ;
                       dc:description "A textual fragment in which the Handmaids secretly exchange personal names at the Red Centre."@en ;
                       rdfs:comment "This fragment introduces personal names as hidden traces of identity that survive beneath Gilead's institutional naming system. It prepares the Model Reader to understand that Offred may not be the narrator's original name."@en ;
                       rdfs:label "Name Exchange Fragment"@en .
@@ -182,6 +193,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#NameExchangeInference
 :NameExchangeInference rdf:type owl:NamedIndividual ,
                                 lig:Inference ;
+                       lig:licensesInterpretation :OffredNameRemainsUnspecified ;
                        dc:description "The inference that personal names survive secretly among the Handmaids."@en ;
                        rdfs:comment "From the secret exchange of names, the Model Reader infers that Gilead's institutional naming system has not completely erased personal identity. Personal names persist as hidden and fragile traces."@en ;
                        rdfs:label "Name Exchange Inference"@en .
@@ -198,6 +210,10 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#PatronymicNameCue
 :PatronymicNameCue rdf:type owl:NamedIndividual ,
                             lig:TextualCue ;
+                   lig:requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ,
+                                                  :PatronymicNamingKnowledge ;
+                   lig:supportsInference :PatronymicNameInference ;
+                   lig:triggersPresupposition :PatronymicPossessionPresupposition ;
                    dc:description "The cue provided by the Historical Notes' explanation that Offred is a patronymic institutional name."@en ;
                    rdfs:comment "This cue activates knowledge about patronymic naming, possession, and institutional identity. It allows the Model Reader to reinterpret Offred as a name derived from the Commander rather than as an original personal name."@en ;
                    rdfs:label "Patronymic Name Cue"@en .
@@ -206,6 +222,8 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#PatronymicNameInference
 :PatronymicNameInference rdf:type owl:NamedIndividual ,
                                   lig:Inference ;
+                         lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ,
+                                                    :GileadReplacesPersonalNamesWithPatronymics ;
                          dc:description "The inference that Offred is an institutional possessive name derived from the Commander."@en ;
                          rdfs:comment "From the Historical Notes' explanation of patronymic names, the Model Reader infers that Offred is not a personal name but a name produced by Gilead's system of possession and household assignment."@en ;
                          rdfs:label "Patronymic Name Inference"@en .
