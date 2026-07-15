@@ -76,8 +76,8 @@ hmt:HandmaidsTaleText rdf:type owl:NamedIndividual ,
 hmt:OffredHiddenNameFragment rdf:type owl:NamedIndividual ,
                                       lig:TextFragment ;
                              lig:containsCue hmt:OffredNameCue ;
-                             lig:hasSourceReference "The Handmaid's Tale, selected passage on the name Offred" ;
-                             lig:hasTextualContent "Selected fragment centered on the institutional name Offred." ;
+                             lig:hasSourceReference "The Handmaid's Tale, PDF p. 87" ;
+                             lig:hasTextualContent "Selected passage in which Offred states that her real name is forbidden and hidden." ;
                              dc:description "A textual fragment in which Offred states that her name is not Offred and that she has another forbidden name."@en ;
                              rdfs:comment "This fragment is the central passage of the Offred naming case. It explicitly signals that the narrator has another name, but that the text withholds it. The Model Reader must therefore infer the existence of a hidden personal identity."@en ;
                              rdfs:label "Offred name fragment"@en .
@@ -104,7 +104,7 @@ hmt:OffredNameCue rdf:type owl:NamedIndividual ,
                   lig:triggersPresupposition hmt:PossessionPresupposition ,
                                              :HiddenNamePresupposition ;
                   lig:hasAnnotationNote "The name functions as a textual cue activating knowledge about possession, identity, and institutional naming." ;
-                  lig:hasTextualContent "Offred" ;
+                  lig:hasTextualContent "My name isn't Offred" ;
                   dc:description "The cue provided by Offred's statement that Offred is not her real name."@en ;
                   rdfs:comment "This cue activates the presupposition that the narrator has another personal name that exists within the fictional world but is forbidden, hidden, and never fully supplied by the text."@en ;
                   rdfs:label "Offred name cue"@en .
@@ -131,6 +131,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#GileadReplacesPersonalNamesWithPatronymics
 :GileadReplacesPersonalNamesWithPatronymics rdf:type owl:NamedIndividual ,
                                                      lig:LicensedInterpretation ;
+                                            lig:hasInterpretiveStatus "licensed" ;
                                             dc:description "A licensed interpretation according to which Gilead replaces women's personal names with institutional patronymics."@en ;
                                             rdfs:comment "This interpretation is licensed by the explanation that names such as Offred, Ofglen, and Ofwarren are formed through possessive relations to Commanders. The naming system transforms women into members of a household rather than autonomous subjects."@en ;
                                             rdfs:label "Gilead Replaces Personal Names With Patronymics"@en .
@@ -140,6 +141,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 :HiddenNameInference rdf:type owl:NamedIndividual ,
                               lig:Inference ;
                      lig:licensesInterpretation :OffredNameRemainsUnspecified ;
+                     lig:hasSequenceNumber 2 ;
                      dc:description "The inference that Offred has a real name that the text withholds."@en ;
                      rdfs:comment "From Offred's statement that her name is not Offred, the Model Reader infers that another name exists. However, the text does not fully actualize this information, making the absence of the name interpretively significant."@en ;
                      rdfs:label "Hidden Name Inference"@en .
@@ -165,6 +167,8 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 :HistoricalNotesNameFragment rdf:type owl:NamedIndividual ,
                                       lig:TextFragment ;
                              lig:containsCue :PatronymicNameCue ;
+                             lig:hasSourceReference "The Handmaid's Tale, PDF p. 294" ;
+                             lig:hasTextualContent "Selected passage in which the Historical Notes explain Offred as a patronymic institutional name." ;
                              dc:description "A textual fragment from the Historical Notes explaining the patronymic structure of names such as Offred, Ofglen, and Ofwarren."@en ;
                              rdfs:comment "This fragment retrospectively reframes Offred as an institutional name rather than a personal one. It confirms that the narrator's original name remains unavailable and that the Gileadean naming system encodes possession or household assignment."@en ;
                              rdfs:label "Historical Notes Name Fragment"@en .
@@ -176,6 +180,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                  lig:requiresIntrinsicKnowledge :PersonalNameKnowledge ;
                  lig:supportsInference :NameExchangeInference ;
                  lig:triggersPresupposition :PersonalNamePresupposition ;
+                 lig:hasTextualContent "we exchanged names" ;
                  dc:description "The cue provided by the secret exchange of personal names among the Handmaids."@en ;
                  rdfs:comment "This cue activates knowledge about personal names, secrecy, and identity preservation. It suggests that personal identity persists beneath the official naming practices of Gilead."@en ;
                  rdfs:label "Name Exchange Cue"@en .
@@ -185,6 +190,8 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 :NameExchangeFragment rdf:type owl:NamedIndividual ,
                                lig:TextFragment ;
                       lig:containsCue :NameExchangeCue ;
+                      lig:hasSourceReference "The Handmaid's Tale, PDF p. 14" ;
+                      lig:hasTextualContent "Selected passage in which Handmaids secretly exchange personal names." ;
                       dc:description "A textual fragment in which the Handmaids secretly exchange personal names at the Red Centre."@en ;
                       rdfs:comment "This fragment introduces personal names as hidden traces of identity that survive beneath Gilead's institutional naming system. It prepares the Model Reader to understand that Offred may not be the narrator's original name."@en ;
                       rdfs:label "Name Exchange Fragment"@en .
@@ -194,6 +201,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 :NameExchangeInference rdf:type owl:NamedIndividual ,
                                 lig:Inference ;
                        lig:licensesInterpretation :OffredNameRemainsUnspecified ;
+                       lig:hasSequenceNumber 1 ;
                        dc:description "The inference that personal names survive secretly among the Handmaids."@en ;
                        rdfs:comment "From the secret exchange of names, the Model Reader infers that Gilead's institutional naming system has not completely erased personal identity. Personal names persist as hidden and fragile traces."@en ;
                        rdfs:label "Name Exchange Inference"@en .
@@ -202,6 +210,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
 ###  https://lectoringraphula.org/knowledge-graph#OffredNameRemainsUnspecified
 :OffredNameRemainsUnspecified rdf:type owl:NamedIndividual ,
                                        lig:LicensedInterpretation ;
+                              lig:hasInterpretiveStatus "licensed" ;
                               dc:description "A licensed interpretation according to which the narrator's original name exists but remains withheld by the text."@en ;
                               rdfs:comment "This interpretation is licensed by the combination of the secret name exchange, Offred's statement that she has another name, and the Historical Notes' confirmation that her original name is not supplied."@en ;
                               rdfs:label "Offred Name Remains Unspecified"@en .
@@ -214,6 +223,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                                                   :PatronymicNamingKnowledge ;
                    lig:supportsInference :PatronymicNameInference ;
                    lig:triggersPresupposition :PatronymicPossessionPresupposition ;
+                   lig:hasTextualContent "Offred gives no clue" ;
                    dc:description "The cue provided by the Historical Notes' explanation that Offred is a patronymic institutional name."@en ;
                    rdfs:comment "This cue activates knowledge about patronymic naming, possession, and institutional identity. It allows the Model Reader to reinterpret Offred as a name derived from the Commander rather than as an original personal name."@en ;
                    rdfs:label "Patronymic Name Cue"@en .
@@ -224,6 +234,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                                   lig:Inference ;
                          lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ,
                                                     :GileadReplacesPersonalNamesWithPatronymics ;
+                         lig:hasSequenceNumber 3 ;
                          dc:description "The inference that Offred is an institutional possessive name derived from the Commander."@en ;
                          rdfs:comment "From the Historical Notes' explanation of patronymic names, the Model Reader infers that Offred is not a personal name but a name produced by Gilead's system of possession and household assignment."@en ;
                          rdfs:label "Patronymic Name Inference"@en .
