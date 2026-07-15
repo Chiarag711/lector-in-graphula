@@ -1,4 +1,4 @@
-@prefix : <https://lectoringraphula.org/ontology#> .
+@prefix : <https://lectoringraphula.org/handmaid#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix hmt: <https://lectoringraphula.org/handmaid#> .
 @prefix lig: <https://lectoringraphula.org/ontology#> .
@@ -7,7 +7,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://lectoringraphula.org/ontology#> .
+@base <https://lectoringraphula.org/knowledge-graph> .
 
 <https://lectoringraphula.org/knowledge-graph> rdf:type owl:Ontology ;
                                                 owl:imports <https://lectoringraphula.org/ontology> ;
@@ -128,7 +128,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                              rdfs:label "Possession presupposition"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#GileadReplacesPersonalNamesWithPatronymics
+###  https://lectoringraphula.org/handmaid#GileadReplacesPersonalNamesWithPatronymics
 :GileadReplacesPersonalNamesWithPatronymics rdf:type owl:NamedIndividual ,
                                                      lig:LicensedInterpretation ;
                                             lig:hasInterpretiveStatus "licensed" ;
@@ -137,7 +137,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                                             rdfs:label "Gilead Replaces Personal Names With Patronymics"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#HiddenNameInference
+###  https://lectoringraphula.org/handmaid#HiddenNameInference
 :HiddenNameInference rdf:type owl:NamedIndividual ,
                               lig:Inference ;
                      lig:licensesInterpretation :OffredNameRemainsUnspecified ;
@@ -147,7 +147,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                      rdfs:label "Hidden Name Inference"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#HiddenNamePresupposition
+###  https://lectoringraphula.org/handmaid#HiddenNamePresupposition
 :HiddenNamePresupposition rdf:type owl:NamedIndividual ,
                                    lig:Presupposition ;
                           dc:description "The presupposition that Offred has an original name that exists but is not supplied by the text."@en ;
@@ -155,7 +155,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                           rdfs:label "Hidden Name Presupposition"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#HiddenRealNameKnowledge
+###  https://lectoringraphula.org/handmaid#HiddenRealNameKnowledge
 :HiddenRealNameKnowledge rdf:type owl:NamedIndividual ,
                                   lig:IntrinsicKnowledge ;
                          dc:description "Intrinsic knowledge that a forbidden or hidden name can still belong to a subject's identity."@en ;
@@ -163,7 +163,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                          rdfs:label "Hidden Real Name Knowledge"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#HistoricalNotesNameFragment
+###  https://lectoringraphula.org/handmaid#HistoricalNotesNameFragment
 :HistoricalNotesNameFragment rdf:type owl:NamedIndividual ,
                                       lig:TextFragment ;
                              lig:containsCue :PatronymicNameCue ;
@@ -174,7 +174,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                              rdfs:label "Historical Notes Name Fragment"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#NameExchangeCue
+###  https://lectoringraphula.org/handmaid#NameExchangeCue
 :NameExchangeCue rdf:type owl:NamedIndividual ,
                           lig:TextualCue ;
                  lig:requiresIntrinsicKnowledge :PersonalNameKnowledge ;
@@ -186,7 +186,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                  rdfs:label "Name Exchange Cue"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#NameExchangeFragment
+###  https://lectoringraphula.org/handmaid#NameExchangeFragment
 :NameExchangeFragment rdf:type owl:NamedIndividual ,
                                lig:TextFragment ;
                       lig:containsCue :NameExchangeCue ;
@@ -197,7 +197,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                       rdfs:label "Name Exchange Fragment"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#NameExchangeInference
+###  https://lectoringraphula.org/handmaid#NameExchangeInference
 :NameExchangeInference rdf:type owl:NamedIndividual ,
                                 lig:Inference ;
                        lig:licensesInterpretation :OffredNameRemainsUnspecified ;
@@ -207,7 +207,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                        rdfs:label "Name Exchange Inference"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#OffredNameRemainsUnspecified
+###  https://lectoringraphula.org/handmaid#OffredNameRemainsUnspecified
 :OffredNameRemainsUnspecified rdf:type owl:NamedIndividual ,
                                        lig:LicensedInterpretation ;
                               lig:hasInterpretiveStatus "licensed" ;
@@ -216,7 +216,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                               rdfs:label "Offred Name Remains Unspecified"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#PatronymicNameCue
+###  https://lectoringraphula.org/handmaid#PatronymicNameCue
 :PatronymicNameCue rdf:type owl:NamedIndividual ,
                             lig:TextualCue ;
                    lig:requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ,
@@ -229,7 +229,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                    rdfs:label "Patronymic Name Cue"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#PatronymicNameInference
+###  https://lectoringraphula.org/handmaid#PatronymicNameInference
 :PatronymicNameInference rdf:type owl:NamedIndividual ,
                                   lig:Inference ;
                          lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ,
@@ -240,7 +240,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                          rdfs:label "Patronymic Name Inference"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#PatronymicNamingKnowledge
+###  https://lectoringraphula.org/handmaid#PatronymicNamingKnowledge
 :PatronymicNamingKnowledge rdf:type owl:NamedIndividual ,
                                     lig:IntrinsicKnowledge ;
                            dc:description "Intrinsic knowledge that a name can be formed from another person's name and can indicate dependence, belonging, or affiliation."@en ;
@@ -248,7 +248,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                            rdfs:label "Patronymic Naming Knowledge"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#PatronymicPossessionPresupposition
+###  https://lectoringraphula.org/handmaid#PatronymicPossessionPresupposition
 :PatronymicPossessionPresupposition rdf:type owl:NamedIndividual ,
                                              lig:Presupposition ;
                                     dc:description "The presupposition that an institutional name can encode possession by or belonging to another person."@en ;
@@ -256,7 +256,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                                     rdfs:label "Patronymic Possession Presupposition"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#PersonalNameKnowledge
+###  https://lectoringraphula.org/handmaid#PersonalNameKnowledge
 :PersonalNameKnowledge rdf:type owl:NamedIndividual ,
                                 lig:IntrinsicKnowledge ;
                        dc:description "Intrinsic knowledge that personal names identify individual subjects and can preserve identity."@en ;
@@ -264,7 +264,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                        rdfs:label "Personal Name Knowledge"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#PersonalNamePresupposition
+###  https://lectoringraphula.org/handmaid#PersonalNamePresupposition
 :PersonalNamePresupposition rdf:type owl:NamedIndividual ,
                                      lig:Presupposition ;
                             dc:description "The presupposition that the names exchanged by the Handmaids refer to personal identities."@en ;
@@ -272,7 +272,7 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                             rdfs:label "Personal Name Presupposition"@en .
 
 
-###  https://lectoringraphula.org/knowledge-graph#PossessionPresupposition
+###  https://lectoringraphula.org/handmaid#PossessionPresupposition
 :PossessionPresupposition rdf:type owl:NamedIndividual ,
                                    lig:Presupposition ;
                           dc:description "The presupposition that naming can imply belonging or institutional assignment."@en ;
