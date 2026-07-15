@@ -34,7 +34,7 @@
 #    Object Properties
 #################################################################
 
-###  urn:absolute:h/activatesCode
+###  https://lectoringraphula.org/ontology#activatesCode
 :activatesCode rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :activatesResource ;
                rdfs:domain lig:TextualCue ;
@@ -44,7 +44,7 @@
                rdfs:label "activates code"@en .
 
 
-###  urn:absolute:h/activatesEncyclopedia
+###  https://lectoringraphula.org/ontology#activatesEncyclopedia
 :activatesEncyclopedia rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf :activatesResource ;
                        rdfs:domain lig:TextualCue ;
@@ -54,7 +54,7 @@
                        rdfs:label "activates encyclopedia"@en .
 
 
-###  urn:absolute:h/activatesFrame
+###  https://lectoringraphula.org/ontology#activatesFrame
 :activatesFrame rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :activatesResource ;
                 rdfs:domain lig:TextualCue ;
@@ -64,7 +64,7 @@
                 rdfs:label "activates frame"@en .
 
 
-###  urn:absolute:h/activatesResource
+###  https://lectoringraphula.org/ontology#activatesResource
 :activatesResource rdf:type owl:ObjectProperty ;
                    rdfs:domain lig:TextualCue ;
                    rdfs:range lig:InterpretiveResource ;
@@ -73,7 +73,7 @@
                    rdfs:label "activates resource"@en .
 
 
-###  urn:absolute:h/allowsAlternativeInterpretation
+###  https://lectoringraphula.org/ontology#allowsAlternativeInterpretation
 :allowsAlternativeInterpretation rdf:type owl:ObjectProperty ;
                                  rdfs:domain lig:OpenText ;
                                  rdfs:range lig:AlternativeInterpretation ;
@@ -82,7 +82,7 @@
                                  rdfs:label "allows alternative interpretation"@en .
 
 
-###  urn:absolute:h/constrainsInterpretation
+###  https://lectoringraphula.org/ontology#constrainsInterpretation
 :constrainsInterpretation rdf:type owl:ObjectProperty ;
                           rdfs:domain lig:ModelAuthor ;
                           rdfs:range lig:Interpretation ;
@@ -91,7 +91,7 @@
                           rdfs:label "constrains interpretation"@en .
 
 
-###  urn:absolute:h/constructsPossibleWorld
+###  https://lectoringraphula.org/ontology#constructsPossibleWorld
 :constructsPossibleWorld rdf:type owl:ObjectProperty ;
                          rdfs:domain lig:InferentialWalk ;
                          rdfs:range lig:PossibleWorld ;
@@ -100,7 +100,7 @@
                          rdfs:label "constructs possible world"@en .
 
 
-###  urn:absolute:h/containsCue
+###  https://lectoringraphula.org/ontology#containsCue
 :containsCue rdf:type owl:ObjectProperty ;
              rdfs:domain lig:TextFragment ;
              rdfs:range lig:TextualCue ;
@@ -109,7 +109,7 @@
              rdfs:label "contains cue"@en .
 
 
-###  urn:absolute:h/containsGap
+###  https://lectoringraphula.org/ontology#containsGap
 :containsGap rdf:type owl:ObjectProperty ;
              rdfs:domain lig:TextFragment ;
              rdfs:range lig:Gap ;
@@ -118,7 +118,7 @@
              rdfs:label "contains gap"@en .
 
 
-###  urn:absolute:h/containsIndividual
+###  https://lectoringraphula.org/ontology#containsIndividual
 :containsIndividual rdf:type owl:ObjectProperty ;
                     rdfs:domain lig:WorldState ;
                     rdfs:range lig:WorldIndividual ;
@@ -127,7 +127,7 @@
                     rdfs:label "contains individual"@en .
 
 
-###  urn:absolute:h/encodesModelAuthor
+###  https://lectoringraphula.org/ontology#encodesModelAuthor
 :encodesModelAuthor rdf:type owl:ObjectProperty ;
                     rdfs:domain lig:Text ;
                     rdfs:range lig:ModelAuthor ;
@@ -136,7 +136,7 @@
                     rdfs:label "encodes model author"@en .
 
 
-###  urn:absolute:h/generatesPrediction
+###  https://lectoringraphula.org/ontology#generatesPrediction
 :generatesPrediction rdf:type owl:ObjectProperty ;
                      rdfs:domain lig:Inference ;
                      rdfs:range lig:Prediction ;
@@ -145,7 +145,7 @@
                      rdfs:label "generates prediction"@en .
 
 
-###  urn:absolute:h/hasAccidentalProperty
+###  https://lectoringraphula.org/ontology#hasAccidentalProperty
 :hasAccidentalProperty rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf :hasWorldProperty ;
                        rdfs:domain lig:WorldIndividual ;
@@ -155,7 +155,7 @@
                        rdfs:label "has accidental property"@en .
 
 
-###  urn:absolute:h/hasAlternativePrediction
+###  https://lectoringraphula.org/ontology#hasAlternativePrediction
 :hasAlternativePrediction rdf:type owl:ObjectProperty ;
                           rdfs:domain lig:ProbabilityDisjunction ;
                           rdfs:range lig:Prediction ;
@@ -164,7 +164,7 @@
                           rdfs:label "has alternative prediction"@en .
 
 
-###  urn:absolute:h/hasEssentialProperty
+###  https://lectoringraphula.org/ontology#hasEssentialProperty
 :hasEssentialProperty rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :hasWorldProperty ;
                       rdfs:domain lig:WorldIndividual ;
@@ -174,7 +174,7 @@
                       rdfs:label "has essential property"@en .
 
 
-###  urn:absolute:h/hasFragment
+###  https://lectoringraphula.org/ontology#hasFragment
 :hasFragment rdf:type owl:ObjectProperty ;
              rdfs:domain lig:Text ;
              rdfs:range lig:TextFragment ;
@@ -183,7 +183,7 @@
              rdfs:label "has fragment"@en .
 
 
-###  urn:absolute:h/hasLinearManifestation
+###  https://lectoringraphula.org/ontology#hasLinearManifestation
 :hasLinearManifestation rdf:type owl:ObjectProperty ;
                         rdfs:domain lig:Text ;
                         rdfs:range lig:LinearManifestation ;
@@ -192,7 +192,7 @@
                         rdfs:label "has linear manifestation"@en .
 
 
-###  urn:absolute:h/hasReferenceWorld
+###  https://lectoringraphula.org/ontology#hasReferenceWorld
 :hasReferenceWorld rdf:type owl:ObjectProperty ;
                    rdfs:domain lig:PossibleWorld ;
                    rdfs:range lig:ReferenceWorld ;
@@ -201,7 +201,7 @@
                    rdfs:label "has reference world"@en .
 
 
-###  urn:absolute:h/hasSNecessaryProperty
+###  https://lectoringraphula.org/ontology#hasSNecessaryProperty
 :hasSNecessaryProperty rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf :hasWorldProperty ;
                        rdfs:domain lig:WorldIndividual ;
@@ -211,7 +211,7 @@
                        rdfs:label "has S-necessary property"@en .
 
 
-###  urn:absolute:h/hasWorldProperty
+###  https://lectoringraphula.org/ontology#hasWorldProperty
 :hasWorldProperty rdf:type owl:ObjectProperty ;
                   rdfs:domain lig:WorldIndividual ;
                   rdfs:range lig:WorldProperty ;
@@ -220,7 +220,7 @@
                   rdfs:label "has world property"@en .
 
 
-###  urn:absolute:h/hasWorldState
+###  https://lectoringraphula.org/ontology#hasWorldState
 :hasWorldState rdf:type owl:ObjectProperty ;
                rdfs:domain lig:PossibleWorld ;
                rdfs:range lig:WorldState ;
@@ -229,7 +229,7 @@
                rdfs:label "has world state"@en .
 
 
-###  urn:absolute:h/holdsInWorldState
+###  https://lectoringraphula.org/ontology#holdsInWorldState
 :holdsInWorldState rdf:type owl:ObjectProperty ;
                    rdfs:domain lig:WorldProperty ;
                    rdfs:range lig:WorldState ;
@@ -238,7 +238,7 @@
                    rdfs:label "holds in world state"@en .
 
 
-###  urn:absolute:h/initiatesInferentialWalk
+###  https://lectoringraphula.org/ontology#initiatesInferentialWalk
 :initiatesInferentialWalk rdf:type owl:ObjectProperty ;
                           rdfs:domain lig:TextualCue ;
                           rdfs:range lig:InferentialWalk ;
@@ -247,7 +247,7 @@
                           rdfs:label "initiates inferential walk"@en .
 
 
-###  urn:absolute:h/isLicensedByInference
+###  https://lectoringraphula.org/ontology#isLicensedByInference
 :isLicensedByInference rdf:type owl:ObjectProperty ;
                        rdfs:domain lig:LicensedInterpretation ;
                        rdfs:range lig:Inference ;
@@ -256,9 +256,9 @@
                        rdfs:label "is licensed by inference"@en .
 
 
-###  urn:absolute:h/licensesInterpretation
+###  https://lectoringraphula.org/ontology#licensesInterpretation
 :licensesInterpretation rdf:type owl:ObjectProperty ;
-                        owl:inverseOf :licensesInterpretation ;
+                        owl:inverseOf :isLicensedByInference ;
                         rdfs:domain lig:Inference ;
                         rdfs:range lig:LicensedInterpretation ;
                         <http://purl.org/dc/elements/1.1/description> "Links an inference to the licensed interpretation it produces."@en ;
@@ -266,7 +266,7 @@
                         rdfs:label "licenses interpretation"@en .
 
 
-###  urn:absolute:h/opensProbabilityDisjunction
+###  https://lectoringraphula.org/ontology#opensProbabilityDisjunction
 :opensProbabilityDisjunction rdf:type owl:ObjectProperty ;
                              rdfs:domain lig:Prediction ;
                              rdfs:range lig:ProbabilityDisjunction ;
@@ -275,7 +275,7 @@
                              rdfs:label "opens probability disjunction"@en .
 
 
-###  urn:absolute:h/presupposesModelReader
+###  https://lectoringraphula.org/ontology#presupposesModelReader
 :presupposesModelReader rdf:type owl:ObjectProperty ;
                         rdfs:domain lig:Text ;
                         rdfs:range lig:ModelReader ;
@@ -284,7 +284,7 @@
                         rdfs:label "presupposes model reader"@en .
 
 
-###  urn:absolute:h/producesInterpretation
+###  https://lectoringraphula.org/ontology#producesInterpretation
 :producesInterpretation rdf:type owl:ObjectProperty ;
                         rdfs:domain lig:SemanticActualization ;
                         rdfs:range lig:Interpretation ;
@@ -293,7 +293,7 @@
                         rdfs:label "produces interpretation"@en .
 
 
-###  urn:absolute:h/projectsPossibleWorld
+###  https://lectoringraphula.org/ontology#projectsPossibleWorld
 :projectsPossibleWorld rdf:type owl:ObjectProperty ;
                        rdfs:domain lig:Prediction ;
                        rdfs:range lig:PossibleWorld ;
@@ -302,7 +302,7 @@
                        rdfs:label "projects possible world"@en .
 
 
-###  urn:absolute:h/reconstructsFabula
+###  https://lectoringraphula.org/ontology#reconstructsFabula
 :reconstructsFabula rdf:type owl:ObjectProperty ;
                     rdfs:domain lig:ModelReader ;
                     rdfs:range lig:Fabula ;
@@ -311,7 +311,7 @@
                     rdfs:label "reconstructs fabula"@en .
 
 
-###  urn:absolute:h/requiresCompetence
+###  https://lectoringraphula.org/ontology#requiresCompetence
 :requiresCompetence rdf:type owl:ObjectProperty ;
                     rdfs:domain lig:Text ;
                     rdfs:range lig:ReaderCompetence ;
@@ -320,7 +320,7 @@
                     rdfs:label "requires competence"@en .
 
 
-###  urn:absolute:h/requiresIntrinsicKnowledge
+###  https://lectoringraphula.org/ontology#requiresIntrinsicKnowledge
 :requiresIntrinsicKnowledge rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf :activatesResource ;
                             rdfs:domain lig:TextualCue ;
@@ -330,7 +330,7 @@
                             rdfs:label "requires intrinsic knowledge"@en .
 
 
-###  urn:absolute:h/supportsInference
+###  https://lectoringraphula.org/ontology#supportsInference
 :supportsInference rdf:type owl:ObjectProperty ;
                    rdfs:domain lig:TextualCue ;
                    rdfs:range lig:Inference ;
@@ -339,7 +339,7 @@
                    rdfs:label "support inference"@en .
 
 
-###  urn:absolute:h/triggersPresupposition
+###  https://lectoringraphula.org/ontology#triggersPresupposition
 :triggersPresupposition rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :activatesResource ;
                         rdfs:domain lig:TextualCue ;
@@ -371,8 +371,8 @@ lig:hasConfidenceValue rdf:type owl:DatatypeProperty ;
                        rdfs:label "has confidence value"@en .
 
 
-###  https://lectoringraphula.org/ontology#hasInterpretativeStatus
-lig:hasInterpretativeStatus rdf:type owl:DatatypeProperty ;
+###  https://lectoringraphula.org/ontology#hasInterpretiveStatus
+lig:hasInterpretiveStatus rdf:type owl:DatatypeProperty ;
                             rdfs:domain lig:InterpretiveOutcome ;
                             rdfs:range xsd:string ;
                             <http://purl.org/dc/elements/1.1/description> "Associates an interpretive outcome with a status."@en ;
