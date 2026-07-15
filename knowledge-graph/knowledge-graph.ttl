@@ -1,23 +1,22 @@
 @prefix : <https://lectoringraphula.org/ontology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix hmt: <https://lectoringraphula.org/handmaid#> .
 @prefix lig: <https://lectoringraphula.org/ontology#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://lectoringraphula.org/knowledge-graph> .
+@base <https://lectoringraphula.org/ontology#> .
 
 <https://lectoringraphula.org/knowledge-graph> rdf:type owl:Ontology ;
-    owl:imports <https://lectoringraphula.org/ontology> ;
-    dc:creator "Chiara Genovese, Asia Marselli, Adriana Monte" ;
-    dc:description "A knowledge graph instantiating the Lector in Graphula ontology on selected interpretive cases from The Handmaid's Tale."@en ;
-    rdfs:comment "This knowledge graph applies the Lector in Graphula ontology to selected excerpts from Margaret Atwood's The Handmaid's Tale. It models how specific textual cues activate intrinsic knowledge, presuppositions, inferences, and licensed interpretations according to Eco's theory of the Model Reader. The graph is intended as a case study and does not aim to represent the entire plot of the novel."@en ,
-                 "This knowledge graph imports the Lector in Graphula ontology, identified by the namespace https://lectoringraphula.org/ontology#, and uses the Handmaid namespace for case-study individuals."@en ;
-    rdfs:label "Lector in Graphula Knowledge Graph"@en ;
-    owl:versionInfo "0.1.0" .
-
+                                                owl:imports <https://lectoringraphula.org/ontology> ;
+                                                dc:creator "Chiara Genovese, Asia Marselli, Adriana Monte" ;
+                                                dc:description "A knowledge graph instantiating the Lector in Graphula ontology on selected interpretive cases from The Handmaid's Tale."@en ;
+                                                rdfs:comment "This knowledge graph applies the Lector in Graphula ontology to selected excerpts from Margaret Atwood's The Handmaid's Tale. It models how specific textual cues activate intrinsic knowledge, presuppositions, inferences, and licensed interpretations according to Eco's theory of the Model Reader. The graph is intended as a case study and does not aim to represent the entire plot of the novel."@en ,
+                                                             "This knowledge graph imports the Lector in Graphula ontology, identified by the namespace https://lectoringraphula.org/ontology#, and uses the Handmaid namespace for case-study individuals."@en ;
+                                                rdfs:label "Lector in Graphula Knowledge Graph"@en ;
+                                                owl:versionInfo "0.1.0" .
 
 #################################################################
 #    Individuals
@@ -25,103 +24,231 @@
 
 ###  https://lectoringraphula.org/handmaid#GileadErasesFemaleIdentity
 hmt:GileadErasesFemaleIdentity rdf:type owl:NamedIndividual ,
-        lig:LicensedInterpretation ;
-    lig:hasAnnotationNote "The naming system supports the interpretation that Gilead erases female identity through institutional possession." ;
-    lig:hasInterpretiveStatus "licensed" ;
-    dc:description "A licensed interpretation of the naming system."@en ;
-    rdfs:comment "This individual represents a licensed interpretation supported by the selected cue and inference: the naming system contributes to the erasure of female identity by defining women through institutional possession and male authority."@en ;
-    rdfs:label "Gilead erases female identity"@en .
+                                        lig:LicensedInterpretation ;
+                               lig:hasAnnotationNote "The naming system supports the interpretation that Gilead erases female identity through institutional possession." ;
+                               lig:hasInterpretiveStatus "licensed" ;
+                               dc:description "A licensed interpretation of the naming system."@en ;
+                               rdfs:comment "The naming system supports the interpretation that Gilead erases female identity by replacing personal names with institutional names based on possession, reproductive function, and male authority."@en ;
+                               rdfs:label "Gilead erases female identity"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#HandmaidsTaleModelAuthor
 hmt:HandmaidsTaleModelAuthor rdf:type owl:NamedIndividual ,
-        lig:ModelAuthor ;
-    dc:description "The textual strategy encoded by The Handmaid's Tale."@en ;
-    rdfs:comment "This individual represents the Model Author reconstructed from The Handmaid's Tale. It is not Margaret Atwood as an empirical author, but the textual strategy that organizes cues, gaps, constraints, and interpretive possibilities within the narrative."@en ;
-    rdfs:label "The Handmaid's Tale Model Author"@en .
+                                      lig:ModelAuthor ;
+                             dc:description "The textual strategy encoded by The Handmaid's Tale."@en ;
+                             rdfs:comment "This individual represents the Model Author reconstructed from The Handmaid's Tale. It is not Margaret Atwood as an empirical author, but the textual strategy that organizes cues, gaps, constraints, and interpretive possibilities within the narrative."@en ;
+                             rdfs:label "The Handmaid's Tale Model Author"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#HandmaidsTaleModelReader
 hmt:HandmaidsTaleModelReader rdf:type owl:NamedIndividual ,
-        lig:ModelReader ;
-    dc:description "The reader role presupposed by The Handmaid's Tale."@en ;
-    rdfs:comment "This individual represents the Model Reader presupposed by The Handmaid's Tale: a reader capable of activating the cultural, ideological, narrative, and encyclopedic knowledge required to interpret the selected textual cues and gaps."@en ;
-    rdfs:label "The Handmaid's Tale Model Reader"@en .
+                                      lig:ModelReader ;
+                             dc:description "The reader role presupposed by The Handmaid's Tale."@en ;
+                             rdfs:comment "This individual represents the Model Reader presupposed by The Handmaid's Tale: a reader capable of activating the cultural, ideological, narrative, and encyclopedic knowledge required to interpret the selected textual cues and gaps."@en ;
+                             rdfs:label "The Handmaid's Tale Model Reader"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#HandmaidsTaleReaderCompetence
 hmt:HandmaidsTaleReaderCompetence rdf:type owl:NamedIndividual ,
-        lig:ReaderCompetence ;
-    dc:description "The competence required to cooperate with the text."@en ;
-    rdfs:comment "This individual represents the set of competences required by The Handmaid's Tale from its Model Reader, including linguistic, cultural, ideological, intertextual, and inferential competences."@en ;
-    rdfs:label "The Handmaid's Tale Reader Competence"@en .
+                                           lig:ReaderCompetence ;
+                                  dc:description "The competence required to cooperate with the text."@en ;
+                                  rdfs:comment "This individual represents the set of competences required by The Handmaid's Tale from its Model Reader, including linguistic, cultural, ideological, intertextual, and inferential competences."@en ;
+                                  rdfs:label "The Handmaid's Tale Reader Competence"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#HandmaidsTaleText
 hmt:HandmaidsTaleText rdf:type owl:NamedIndividual ,
-        lig:NarrativeText ;
-    lig:encodesModelAuthor hmt:HandmaidsTaleModelAuthor ;
-    lig:hasFragment hmt:OffredFragment ;
-    lig:presupposesModelReader hmt:HandmaidsTaleModelReader ;
-    lig:requiresCompetence hmt:HandmaidsTaleReaderCompetence ;
-    lig:hasAnnotationNote "Case study narrative text used to instantiate the ontology of Eco's Model Reader." ;
-    lig:hasSourceReference "Margaret Atwood, The Handmaid's Tale" ;
-    dc:description "The narrative text used as a case study in the knowledge graph."@en ;
-    rdfs:comment "This individual represents Margaret Atwood's The Handmaid's Tale as the narrative text selected to instantiate and test the Eco-inspired ontology of interpretive cooperation. It is not modeled as a complete plot database, but as the textual source from which selected interpretive fragments are analyzed."@en ;
-    rdfs:label "The Handmaid's Tale"@en .
+                               lig:NarrativeText ;
+                      lig:encodesModelAuthor hmt:HandmaidsTaleModelAuthor ;
+                      lig:hasFragment hmt:OffredHiddenNameFragment ;
+                      lig:presupposesModelReader hmt:HandmaidsTaleModelReader ;
+                      lig:requiresCompetence hmt:HandmaidsTaleReaderCompetence ;
+                      lig:hasAnnotationNote "Case study narrative text used to instantiate the ontology of Eco's Model Reader." ;
+                      lig:hasSourceReference "Margaret Atwood, The Handmaid's Tale" ;
+                      dc:description "The narrative text used as a case study in the knowledge graph."@en ;
+                      rdfs:comment "This individual represents Margaret Atwood's The Handmaid's Tale as the narrative text selected to instantiate and test the Eco-inspired ontology of interpretive cooperation. It is not modeled as a complete plot database, but as the textual source from which selected interpretive fragments are analyzed."@en ;
+                      rdfs:label "The Handmaid's Tale"@en .
 
 
-###  https://lectoringraphula.org/handmaid#OffredFragment
-hmt:OffredFragment rdf:type owl:NamedIndividual ,
-        lig:TextFragment ;
-    lig:containsCue hmt:OffredNameCue ;
-    lig:hasSourceReference "The Handmaid's Tale, selected passage on the name Offred" ;
-    lig:hasTextualContent "Selected fragment centered on the institutional name Offred." ;
-    dc:description "The textual fragment centered on the name “Offred”."@en ;
-    rdfs:comment "This individual represents the selected textual fragment in which the name “Offred” functions as a cue for interpretive cooperation. The fragment is used to model how a proper name can activate intrinsic knowledge, presuppositions, and inferences about identity, possession, and social belonging."@en ;
-    rdfs:label "Offred name fragment"@en .
+###  https://lectoringraphula.org/handmaid#OffredHiddenNameFragment
+hmt:OffredHiddenNameFragment rdf:type owl:NamedIndividual ,
+                                      lig:TextFragment ;
+                             lig:containsCue hmt:OffredNameCue ;
+                             lig:hasSourceReference "The Handmaid's Tale, selected passage on the name Offred" ;
+                             lig:hasTextualContent "Selected fragment centered on the institutional name Offred." ;
+                             dc:description "A textual fragment in which Offred states that her name is not Offred and that she has another forbidden name."@en ;
+                             rdfs:comment "This fragment is the central passage of the Offred naming case. It explicitly signals that the narrator has another name, but that the text withholds it. The Model Reader must therefore infer the existence of a hidden personal identity."@en ;
+                             rdfs:label "Offred name fragment"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#OffredIdentityInference
 hmt:OffredIdentityInference rdf:type owl:NamedIndividual ,
-        lig:Inference ;
-    lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ;
-    lig:hasAnnotationNote "The Model Reader infers that Offred's identity is defined through Fred." ;
-    lig:hasSequenceNumber 1 ;
-    dc:description "The inference that Offred's identity is defined through Fred."@en ;
-    rdfs:comment "This individual represents the inference through which the Model Reader interprets the name “Offred” as indicating that the character's identity is institutionally defined through Fred. The inference connects the textual cue with intrinsic knowledge about possession and naming."@en ;
-    rdfs:label "Offred identity inference"@en .
+                                     lig:Inference ;
+                            lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ;
+                            lig:hasAnnotationNote "The Model Reader infers that Offred's identity is defined through Fred." ;
+                            lig:hasSequenceNumber 1 ;
+                            dc:description "The inference that Offred's identity is institutionally defined through Fred."@en ;
+                            rdfs:comment "This inference connects the name Offred to the broader interpretation that Gilead defines women's identities through male authority and household assignment."@en ;
+                            rdfs:label "Offred identity inference"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#OffredNameCue
 hmt:OffredNameCue rdf:type owl:NamedIndividual ,
-        lig:TextualCue ;
-    lig:requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ;
-    lig:supportsInference hmt:OffredIdentityInference ;
-    lig:triggersPresupposition hmt:PossessionPresupposition ;
-    lig:hasAnnotationNote "The name functions as a textual cue activating knowledge about possession, identity, and institutional naming." ;
-    lig:hasTextualContent "Offred" ;
-    dc:description "The name “Offred” as an interpretive cue."@en ;
-    rdfs:comment "This individual represents the name “Offred” as a textual cue. In the selected analysis, the cue activates knowledge about naming, possession, and identity, allowing the Model Reader to infer that the character's institutional identity is defined through belonging to Fred."@en ;
-    rdfs:label "Offred name cue"@en .
+                           lig:TextualCue ;
+                  lig:requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ;
+                  lig:supportsInference hmt:OffredIdentityInference ;
+                  lig:triggersPresupposition hmt:PossessionPresupposition ;
+                  lig:hasAnnotationNote "The name functions as a textual cue activating knowledge about possession, identity, and institutional naming." ;
+                  lig:hasTextualContent "Offred" ;
+                  dc:description "The cue provided by Offred's statement that Offred is not her real name."@en ;
+                  rdfs:comment "This cue activates the presupposition that the narrator has another personal name that exists within the fictional world but is forbidden, hidden, and never fully supplied by the text."@en ;
+                  rdfs:label "Offred name cue"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#PossessionNamingKnowledge
 hmt:PossessionNamingKnowledge rdf:type owl:NamedIndividual ,
-        lig:IntrinsicKnowledge ;
-    lig:hasAnnotationNote "A name can encode possession, belonging, or institutional assignment." ;
-    dc:description "Intrinsic knowledge about names encoding possession."@en ;
-    rdfs:comment "This individual represents the intrinsic knowledge required to interpret the name “Offred”: a name can encode belonging, possession, or institutional assignment. This knowledge is not fully explicit in the textual surface, but is required for coherent interpretation."@en ;
-    rdfs:label "Possession naming knowledge"@en .
+                                       lig:IntrinsicKnowledge ;
+                              lig:hasAnnotationNote "A name can encode possession, belonging, or institutional assignment." ;
+                              dc:description "Intrinsic knowledge about names encoding possession."@en ;
+                              rdfs:comment "This individual represents the intrinsic knowledge required to interpret the name “Offred”: a name can encode belonging, possession, or institutional assignment. This knowledge is not fully explicit in the textual surface, but is required for coherent interpretation."@en ;
+                              rdfs:label "Possession naming knowledge"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#PossessionPresupposition
 hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
-        lig:Presupposition ;
-    lig:hasAnnotationNote "The cue presupposes that naming may imply belonging to another entity." ;
-    dc:description "The presupposition that naming can imply belonging."@en ;
-    rdfs:comment "This individual represents the presupposition triggered by the name “Offred”: that a name may indicate belonging to or possession by another entity. This presupposition supports the interpretation of the name as more than a personal identifier."@en ;
-    rdfs:label "Possession presupposition"@en .
+                                      lig:Presupposition ;
+                             lig:hasAnnotationNote "The cue presupposes that naming may imply belonging to another entity." ;
+                             dc:description "The presupposition that naming can imply belonging."@en ;
+                             rdfs:comment "This individual represents the presupposition triggered by the name “Offred”: that a name may indicate belonging to or possession by another entity. This presupposition supports the interpretation of the name as more than a personal identifier."@en ;
+                             rdfs:label "Possession presupposition"@en .
 
 
-###  Generated by the OWL API
+###  https://lectoringraphula.org/knowledge-graph#GileadReplacesPersonalNamesWithPatronymics
+:GileadReplacesPersonalNamesWithPatronymics rdf:type owl:NamedIndividual ,
+                                                     lig:LicensedInterpretation ;
+                                            dc:description "A licensed interpretation according to which Gilead replaces women's personal names with institutional patronymics."@en ;
+                                            rdfs:comment "This interpretation is licensed by the explanation that names such as Offred, Ofglen, and Ofwarren are formed through possessive relations to Commanders. The naming system transforms women into members of a household rather than autonomous subjects."@en ;
+                                            rdfs:label "Gilead Replaces Personal Names With Patronymics"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#HiddenNameInference
+:HiddenNameInference rdf:type owl:NamedIndividual ,
+                              lig:Inference ;
+                     dc:description "The inference that Offred has a real name that the text withholds."@en ;
+                     rdfs:comment "From Offred's statement that her name is not Offred, the Model Reader infers that another name exists. However, the text does not fully actualize this information, making the absence of the name interpretively significant."@en ;
+                     rdfs:label "Hidden Name Inference"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#HiddenNamePresupposition
+:HiddenNamePresupposition rdf:type owl:NamedIndividual ,
+                                   lig:Presupposition ;
+                          dc:description "The presupposition that Offred has an original name that exists but is not supplied by the text."@en ;
+                          rdfs:comment "This presupposition is triggered by Offred's statement that she has another name. The text makes the Model Reader infer the existence of the name while also withholding its explicit identification."@en ;
+                          rdfs:label "Hidden Name Presupposition"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#HiddenRealNameKnowledge
+:HiddenRealNameKnowledge rdf:type owl:NamedIndividual ,
+                                  lig:IntrinsicKnowledge ;
+                         dc:description "Intrinsic knowledge that a forbidden or hidden name can still belong to a subject's identity."@en ;
+                         rdfs:comment "This knowledge allows the Model Reader to understand that Offred's original name continues to matter even though it is not publicly used or explicitly supplied by the text."@en ;
+                         rdfs:label "Hidden Real Name Knowledge"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#HistoricalNotesNameFragment
+:HistoricalNotesNameFragment rdf:type owl:NamedIndividual ,
+                                      lig:TextFragment ;
+                             dc:description "A textual fragment from the Historical Notes explaining the patronymic structure of names such as Offred, Ofglen, and Ofwarren."@en ;
+                             rdfs:comment "This fragment retrospectively reframes Offred as an institutional name rather than a personal one. It confirms that the narrator's original name remains unavailable and that the Gileadean naming system encodes possession or household assignment."@en ;
+                             rdfs:label "Historical Notes Name Fragment"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#NameExchangeCue
+:NameExchangeCue rdf:type owl:NamedIndividual ,
+                          lig:TextualCue ;
+                 dc:description "The cue provided by the secret exchange of personal names among the Handmaids."@en ;
+                 rdfs:comment "This cue activates knowledge about personal names, secrecy, and identity preservation. It suggests that personal identity persists beneath the official naming practices of Gilead."@en ;
+                 rdfs:label "Name Exchange Cue"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#NameExchangeFragment
+:NameExchangeFragment rdf:type owl:NamedIndividual ,
+                               lig:TextFragment ;
+                      dc:description "A textual fragment in which the Handmaids secretly exchange personal names at the Red Centre."@en ;
+                      rdfs:comment "This fragment introduces personal names as hidden traces of identity that survive beneath Gilead's institutional naming system. It prepares the Model Reader to understand that Offred may not be the narrator's original name."@en ;
+                      rdfs:label "Name Exchange Fragment"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#NameExchangeInference
+:NameExchangeInference rdf:type owl:NamedIndividual ,
+                                lig:Inference ;
+                       dc:description "The inference that personal names survive secretly among the Handmaids."@en ;
+                       rdfs:comment "From the secret exchange of names, the Model Reader infers that Gilead's institutional naming system has not completely erased personal identity. Personal names persist as hidden and fragile traces."@en ;
+                       rdfs:label "Name Exchange Inference"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#OffredNameRemainsUnspecified
+:OffredNameRemainsUnspecified rdf:type owl:NamedIndividual ,
+                                       lig:LicensedInterpretation ;
+                              dc:description "A licensed interpretation according to which the narrator's original name exists but remains withheld by the text."@en ;
+                              rdfs:comment "This interpretation is licensed by the combination of the secret name exchange, Offred's statement that she has another name, and the Historical Notes' confirmation that her original name is not supplied."@en ;
+                              rdfs:label "Offred Name Remains Unspecified"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#PatronymicNameCue
+:PatronymicNameCue rdf:type owl:NamedIndividual ,
+                            lig:TextualCue ;
+                   dc:description "The cue provided by the Historical Notes' explanation that Offred is a patronymic institutional name."@en ;
+                   rdfs:comment "This cue activates knowledge about patronymic naming, possession, and institutional identity. It allows the Model Reader to reinterpret Offred as a name derived from the Commander rather than as an original personal name."@en ;
+                   rdfs:label "Patronymic Name Cue"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#PatronymicNameInference
+:PatronymicNameInference rdf:type owl:NamedIndividual ,
+                                  lig:Inference ;
+                         dc:description "The inference that Offred is an institutional possessive name derived from the Commander."@en ;
+                         rdfs:comment "From the Historical Notes' explanation of patronymic names, the Model Reader infers that Offred is not a personal name but a name produced by Gilead's system of possession and household assignment."@en ;
+                         rdfs:label "Patronymic Name Inference"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#PatronymicNamingKnowledge
+:PatronymicNamingKnowledge rdf:type owl:NamedIndividual ,
+                                    lig:IntrinsicKnowledge ;
+                           dc:description "Intrinsic knowledge that a name can be formed from another person's name and can indicate dependence, belonging, or affiliation."@en ;
+                           rdfs:comment "This knowledge supports the interpretation that Offred is not a neutral personal name, but a name that encodes the woman's assignment to and possession by a specific Commander."@en ;
+                           rdfs:label "Patronymic Naming Knowledge"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#PatronymicPossessionPresupposition
+:PatronymicPossessionPresupposition rdf:type owl:NamedIndividual ,
+                                             lig:Presupposition ;
+                                    dc:description "The presupposition that an institutional name can encode possession by or belonging to another person."@en ;
+                                    rdfs:comment "This presupposition is triggered by the Historical Notes' explanation of names such as Offred, Ofglen, and Ofwarren. The Model Reader understands that these names are structured by household assignment and male authority."@en ;
+                                    rdfs:label "Patronymic Possession Presupposition"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#PersonalNameKnowledge
+:PersonalNameKnowledge rdf:type owl:NamedIndividual ,
+                                lig:IntrinsicKnowledge ;
+                       dc:description "Intrinsic knowledge that personal names identify individual subjects and can preserve identity."@en ;
+                       rdfs:comment "This knowledge is required to interpret the secret exchange of names as more than a list of labels. The Model Reader understands that names can preserve personal identity even when an institution attempts to erase it."@en ;
+                       rdfs:label "Personal Name Knowledge"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#PersonalNamePresupposition
+:PersonalNamePresupposition rdf:type owl:NamedIndividual ,
+                                     lig:Presupposition ;
+                            dc:description "The presupposition that the names exchanged by the Handmaids refer to personal identities."@en ;
+                            rdfs:comment "Reader to treat the whispered names as traces of identity rather than as irrelevant details. The passage presupposes that personal names matter because they connect the women to lives outside Gilead's institutional naming system."@en ;
+                            rdfs:label "Personal Name Presupposition"@en .
+
+
+###  https://lectoringraphula.org/knowledge-graph#PossessionPresupposition
+:PossessionPresupposition rdf:type owl:NamedIndividual ,
+                                   lig:Presupposition ;
+                          dc:description "The presupposition that naming can imply belonging or institutional assignment."@en ;
+                          rdfs:comment "This presupposition supports the interpretation that the name Offred encodes a relation of possession rather than an autonomous personal identity."@en ;
+                          rdfs:label "Possession Presupposition"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
