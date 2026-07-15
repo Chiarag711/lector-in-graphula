@@ -8,7 +8,7 @@
 p. 14 of the PDF
 
 ### Passage 2
-"We wait, the clock in the hall ticks, Serena lights another cigarette, I get into the car. It’s a Saturday morning, it’s a September, we still have a car. Other people have had to sell theirs. My name isn’t Offred, I have another name, which nobody uses now because it’s forbidden. I tell myself it doesn’t matter, your name is like your telephone number, useful only to others; but what I tell myself is wrong, it does matter. I keep the knowledge of this name like something hidden, some treasure I’ll come back to dig up, one day. I think of this name as buried. This name has an aura around it, like an amulet, some charm that’s survived from an unimaginably distant past. I lie in my single bed at night, with my eyes closed, and the name floats there behind my eyes, not quite within reach, shining in the dark.
+"My name isn’t Offred, I have another name, which nobody uses now because it’s forbidden. I tell myself it doesn’t matter, your name is like your telephone number, useful only to others; but what I tell myself is wrong, it does matter. I keep the knowledge of this name like something hidden, some treasure I’ll come back to dig up, one day. I think of this name as buried. This name has an aura around it, like an amulet, some charm that’s survived from an unimaginably distant past. I lie in my single bed at night, with my eyes closed, and the name floats there behind my eyes, not quite within reach, shining in the dark.
 
 p. 87 0f the PDF"
 
