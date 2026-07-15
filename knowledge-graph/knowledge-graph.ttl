@@ -1,4 +1,4 @@
-@prefix : <urn:absolute:h/> .
+@prefix : <https://lectoringraphula.org/ontology#> .
 @prefix hmt: <https://lectoringraphula.org/handmaid#> .
 @prefix lig: <https://lectoringraphula.org/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -6,7 +6,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <urn:absolute:h/> .
+@base <https://lectoringraphula.org/knowledge-graph> .
 
 <https://lectoringraphula.org/knowledge-graph> rdf:type owl:Ontology ;
                                                 owl:imports <https://lectoringraphula.org/ontology> ;
@@ -16,29 +16,6 @@
                                                              "This knowledge graph imports the Lector in Graphula ontology, identified by the namespace https://lectoringraphula.org/ontology#, and uses the Handmaid namespace for case-study individuals."@en ;
                                                 rdfs:label "Lector in Graphula Knowledge Graph"@en ;
                                                 owl:versionInfo "0.1.0" .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  urn:absolute:h/hasAnnotationNote
-:hasAnnotationNote rdf:type owl:AnnotationProperty .
-
-
-###  urn:absolute:h/hasInterpretiveStatus
-:hasInterpretiveStatus rdf:type owl:AnnotationProperty .
-
-
-###  urn:absolute:h/hasSequenceNumber
-:hasSequenceNumber rdf:type owl:AnnotationProperty .
-
-
-###  urn:absolute:h/hasSourceReference
-:hasSourceReference rdf:type owl:AnnotationProperty .
-
-
-###  urn:absolute:h/hasTextualContent
-:hasTextualContent rdf:type owl:AnnotationProperty .
 
 
 #################################################################
