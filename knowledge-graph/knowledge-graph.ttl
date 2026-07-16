@@ -7,7 +7,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://lectoringraphula.org/knowledge-graph> .
+@base <https://lectoringraphula.org/handmaid#> .
 
 <https://lectoringraphula.org/knowledge-graph> rdf:type owl:Ontology ;
                                                 owl:imports <https://lectoringraphula.org/ontology> ;
@@ -22,6 +22,86 @@
 #    Individuals
 #################################################################
 
+###  https://lectoringraphula.org/handmaid#CeremonyBiblicalCue
+hmt:CeremonyBiblicalCue rdf:type owl:NamedIndividual ,
+                                 lig:TextualCue ;
+                        lig:hasTextualContent "Give me children, or else I die" ;
+                        dc:description "The cue provided by the biblical quotation used to justify reproduction through a Handmaid."@en ;
+                        rdfs:comment "This cue activates biblical and reproductive knowledge required to understand Gilead's justification of the Ceremony."@en ;
+                        rdfs:label "Ceremony biblical cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyBiblicalFragment
+hmt:CeremonyBiblicalFragment rdf:type owl:NamedIndividual ,
+                                      lig:TextFragment ;
+                             lig:containsCue hmt:CeremonyBiblicalCue ;
+                             lig:hasSourceReference "The Handmaid's Tale, PDF p. 91" ;
+                             lig:hasTextualContent "Selected passage in which the Commander reads biblical passages about reproduction." ;
+                             dc:description "A textual fragment in which the Ceremony is justified through biblical reproductive language."@en ;
+                             rdfs:comment "This fragment introduces the scriptural frame used by Gilead to present the Ceremony as reproductive duty rather than as private sexuality."@en ;
+                             rdfs:label "Ceremony biblical fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyCategoryFailureCue
+hmt:CeremonyCategoryFailureCue rdf:type owl:NamedIndividual ,
+                                        lig:TextualCue ;
+                               lig:hasTextualContent "only one is involved" ;
+                               dc:description "The cue provided by Offred's rejection of ordinary terms such as making love, copulating, and rape."@en ;
+                               rdfs:comment "This cue activates ordinary sexual and ethical categories only to show their inadequacy for interpreting the Ceremony."@en ;
+                               rdfs:label "Ceremony category failure cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyCategoryFailureFragment
+hmt:CeremonyCategoryFailureFragment rdf:type owl:NamedIndividual ,
+                                             lig:TextFragment ;
+                                    lig:containsCue hmt:CeremonyCategoryFailureCue ;
+                                    lig:hasSourceReference "The Handmaid's Tale, PDF pp. 96-97" ;
+                                    lig:hasTextualContent "Selected passage in which Offred rejects ordinary categories for the Ceremony." ;
+                                    dc:description "A textual fragment in which Offred rejects several ordinary labels for the act."@en ;
+                                    rdfs:comment "This fragment stages an interpretive problem: ordinary categories such as making love, copulating, and rape are presented as inadequate or incomplete."@en ;
+                                    rdfs:label "Ceremony category failure fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyPassionNegationCue
+hmt:CeremonyPassionNegationCue rdf:type owl:NamedIndividual ,
+                                        lig:TextualCue ;
+                               lig:hasTextualContent "It has nothing to do with passion" ;
+                               dc:description "The cue provided by Offred's statement that the Ceremony has nothing to do with passion."@en ;
+                               rdfs:comment "This cue activates ordinary romantic and sexual subcodes in order to negate them."@en ;
+                               rdfs:label "Ceremony passion negation cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyPassionNegationFragment
+hmt:CeremonyPassionNegationFragment rdf:type owl:NamedIndividual ,
+                                             lig:TextFragment ;
+                                    lig:containsCue hmt:CeremonyPassionNegationCue ;
+                                    lig:hasSourceReference "The Handmaid's Tale, PDF p. 97" ;
+                                    lig:hasTextualContent "Selected passage in which Offred states that the Ceremony has nothing to do with passion, love, romance, or sexual desire." ;
+                                    dc:description "A textual fragment in which Offred excludes passion, love, romance, desire, and pleasure from the Ceremony."@en ;
+                                    rdfs:comment "This fragment reinforces the conflict between ordinary sexual and romantic codes and Gilead's reproductive-ritual code."@en ;
+                                    rdfs:label "Ceremony passion negation fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyPrayerCue
+hmt:CeremonyPrayerCue rdf:type owl:NamedIndividual ,
+                               lig:TextualCue ;
+                      lig:hasTextualContent "a moment of silent prayer" ;
+                      dc:description "The cue provided by the Commander's call for silent prayer and blessing."@en ;
+                      rdfs:comment "This cue activates the ritual frame of the Ceremony and helps the Model Reader understand it as a formalized institutional procedure."@en ;
+                      rdfs:label "Ceremony prayer cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyPrayerFragment
+hmt:CeremonyPrayerFragment rdf:type owl:NamedIndividual ,
+                                    lig:TextFragment ;
+                           lig:containsCue hmt:CeremonyPrayerCue ;
+                           lig:hasSourceReference "The Handmaid's Tale, PDF p. 93" ;
+                           lig:hasTextualContent "Selected passage in which the Commander asks for a moment of silent prayer and blessing." ;
+                           dc:description "A textual fragment in which the Commander calls for silent prayer before the Ceremony."@en ;
+                           rdfs:comment "This fragment shows that the Ceremony is embedded in ritual gestures such as prayer, blessing, and obedience."@en ;
+                           rdfs:label "Ceremony prayer fragment"@en .
+
+
 ###  https://lectoringraphula.org/handmaid#GileadErasesFemaleIdentity
 hmt:GileadErasesFemaleIdentity rdf:type owl:NamedIndividual ,
                                         lig:LicensedInterpretation ;
@@ -30,6 +110,15 @@ hmt:GileadErasesFemaleIdentity rdf:type owl:NamedIndividual ,
                                dc:description "A licensed interpretation of the naming system."@en ;
                                rdfs:comment "The naming system supports the interpretation that Gilead erases female identity by replacing personal names with institutional names based on possession, reproductive function, and male authority."@en ;
                                rdfs:label "Gilead erases female identity"@en .
+
+
+###  https://lectoringraphula.org/handmaid#GileadReplacesPersonalNamesWithPatronymics
+hmt:GileadReplacesPersonalNamesWithPatronymics rdf:type owl:NamedIndividual ,
+                                                        lig:LicensedInterpretation ;
+                                               lig:hasInterpretiveStatus "licensed" ;
+                                               dc:description "A licensed interpretation according to which Gilead replaces women's personal names with institutional patronymics."@en ;
+                                               rdfs:comment "This interpretation is licensed by the explanation that names such as Offred, Ofglen, and Ofwarren are formed through possessive relations to Commanders. The naming system transforms women into members of a household rather than autonomous subjects."@en ;
+                                               rdfs:label "Gilead Replaces Personal Names With Patronymics"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#HandmaidsTaleModelAuthor
@@ -60,9 +149,13 @@ hmt:HandmaidsTaleReaderCompetence rdf:type owl:NamedIndividual ,
 hmt:HandmaidsTaleText rdf:type owl:NamedIndividual ,
                                lig:NarrativeText ;
                       lig:encodesModelAuthor hmt:HandmaidsTaleModelAuthor ;
-                      lig:hasFragment hmt:OffredHiddenNameFragment ,
-                                      :HistoricalNotesNameFragment ,
-                                      :NameExchangeFragment ;
+                      lig:hasFragment hmt:CeremonyBiblicalFragment ,
+                                      hmt:CeremonyCategoryFailureFragment ,
+                                      hmt:CeremonyPassionNegationFragment ,
+                                      hmt:CeremonyPrayerFragment ,
+                                      hmt:HistoricalNotesNameFragment ,
+                                      hmt:NameExchangeFragment ,
+                                      hmt:OffredHiddenNameFragment ;
                       lig:presupposesModelReader hmt:HandmaidsTaleModelReader ;
                       lig:requiresCompetence hmt:HandmaidsTaleReaderCompetence ;
                       lig:hasAnnotationNote "Case study narrative text used to instantiate the ontology of Eco's Model Reader." ;
@@ -70,6 +163,76 @@ hmt:HandmaidsTaleText rdf:type owl:NamedIndividual ,
                       dc:description "The narrative text used as a case study in the knowledge graph."@en ;
                       rdfs:comment "This individual represents Margaret Atwood's The Handmaid's Tale as the narrative text selected to instantiate and test the Eco-inspired ontology of interpretive cooperation. It is not modeled as a complete plot database, but as the textual source from which selected interpretive fragments are analyzed."@en ;
                       rdfs:label "The Handmaid's Tale"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HiddenNameInference
+hmt:HiddenNameInference rdf:type owl:NamedIndividual ,
+                                 lig:Inference ;
+                        lig:licensesInterpretation hmt:OffredNameRemainsUnspecified ;
+                        lig:hasSequenceNumber 2 ;
+                        dc:description "The inference that Offred has a real name that the text withholds."@en ;
+                        rdfs:comment "From Offred's statement that her name is not Offred, the Model Reader infers that another name exists. However, the text does not fully actualize this information, making the absence of the name interpretively significant."@en ;
+                        rdfs:label "Hidden Name Inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HiddenNamePresupposition
+hmt:HiddenNamePresupposition rdf:type owl:NamedIndividual ,
+                                      lig:Presupposition ;
+                             dc:description "The presupposition that Offred has an original name that exists but is not supplied by the text."@en ;
+                             rdfs:comment "This presupposition is triggered by Offred's statement that she has another name. The text makes the Model Reader infer the existence of the name while also withholding its explicit identification."@en ;
+                             rdfs:label "Hidden Name Presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HiddenRealNameKnowledge
+hmt:HiddenRealNameKnowledge rdf:type owl:NamedIndividual ,
+                                     lig:IntrinsicKnowledge ;
+                            dc:description "Intrinsic knowledge that a forbidden or hidden name can still belong to a subject's identity."@en ;
+                            rdfs:comment "This knowledge allows the Model Reader to understand that Offred's original name continues to matter even though it is not publicly used or explicitly supplied by the text."@en ;
+                            rdfs:label "Hidden Real Name Knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalNotesNameFragment
+hmt:HistoricalNotesNameFragment rdf:type owl:NamedIndividual ,
+                                         lig:TextFragment ;
+                                lig:containsCue hmt:PatronymicNameCue ;
+                                lig:hasSourceReference "The Handmaid's Tale, PDF p. 294" ;
+                                lig:hasTextualContent "Selected passage in which the Historical Notes explain Offred as a patronymic institutional name." ;
+                                dc:description "A textual fragment from the Historical Notes explaining the patronymic structure of names such as Offred, Ofglen, and Ofwarren."@en ;
+                                rdfs:comment "This fragment retrospectively reframes Offred as an institutional name rather than a personal one. It confirms that the narrator's original name remains unavailable and that the Gileadean naming system encodes possession or household assignment."@en ;
+                                rdfs:label "Historical Notes Name Fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NameExchangeCue
+hmt:NameExchangeCue rdf:type owl:NamedIndividual ,
+                             lig:TextualCue ;
+                    lig:requiresIntrinsicKnowledge hmt:PersonalNameKnowledge ;
+                    lig:supportsInference hmt:NameExchangeInference ;
+                    lig:triggersPresupposition hmt:PersonalNamePresupposition ;
+                    lig:hasTextualContent "we exchanged names" ;
+                    dc:description "The cue provided by the secret exchange of personal names among the Handmaids."@en ;
+                    rdfs:comment "This cue activates knowledge about personal names, secrecy, and identity preservation. It suggests that personal identity persists beneath the official naming practices of Gilead."@en ;
+                    rdfs:label "Name Exchange Cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NameExchangeFragment
+hmt:NameExchangeFragment rdf:type owl:NamedIndividual ,
+                                  lig:TextFragment ;
+                         lig:containsCue hmt:NameExchangeCue ;
+                         lig:hasSourceReference "The Handmaid's Tale, PDF p. 14" ;
+                         lig:hasTextualContent "Selected passage in which Handmaids secretly exchange personal names." ;
+                         dc:description "A textual fragment in which the Handmaids secretly exchange personal names at the Red Centre."@en ;
+                         rdfs:comment "This fragment introduces personal names as hidden traces of identity that survive beneath Gilead's institutional naming system. It prepares the Model Reader to understand that Offred may not be the narrator's original name."@en ;
+                         rdfs:label "Name Exchange Fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NameExchangeInference
+hmt:NameExchangeInference rdf:type owl:NamedIndividual ,
+                                   lig:Inference ;
+                          lig:licensesInterpretation hmt:OffredNameRemainsUnspecified ;
+                          lig:hasSequenceNumber 1 ;
+                          dc:description "The inference that personal names survive secretly among the Handmaids."@en ;
+                          rdfs:comment "From the secret exchange of names, the Model Reader infers that Gilead's institutional naming system has not completely erased personal identity. Personal names persist as hidden and fragile traces."@en ;
+                          rdfs:label "Name Exchange Inference"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#OffredHiddenNameFragment
@@ -88,26 +251,91 @@ hmt:OffredIdentityInference rdf:type owl:NamedIndividual ,
                                      lig:Inference ;
                             lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ;
                             lig:hasAnnotationNote "The Model Reader infers that Offred's identity is defined through Fred." ;
-                            lig:hasSequenceNumber 1 ;
+                            lig:hasSequenceNumber 4 ;
                             dc:description "The inference that Offred's identity is institutionally defined through Fred."@en ;
-                            rdfs:comment "This inference connects the name Offred to the broader interpretation that Gilead defines women's identities through male authority and household assignment."@en ;
+                            rdfs:comment "This inference synthesizes the broader interpretive conclusion that Gilead defines women's identities through male authority and household assignment. It follows the more specific inferences about hidden names and patronymic naming."@en ;
                             rdfs:label "Offred identity inference"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#OffredNameCue
 hmt:OffredNameCue rdf:type owl:NamedIndividual ,
                            lig:TextualCue ;
-                  lig:requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ,
-                                                 :HiddenRealNameKnowledge ;
-                  lig:supportsInference hmt:OffredIdentityInference ,
-                                        :HiddenNameInference ;
-                  lig:triggersPresupposition hmt:PossessionPresupposition ,
-                                             :HiddenNamePresupposition ;
+                  lig:requiresIntrinsicKnowledge hmt:HiddenRealNameKnowledge ,
+                                                 hmt:PossessionNamingKnowledge ;
+                  lig:supportsInference hmt:HiddenNameInference ,
+                                        hmt:OffredIdentityInference ;
+                  lig:triggersPresupposition hmt:HiddenNamePresupposition ,
+                                             hmt:PossessionPresupposition ;
                   lig:hasAnnotationNote "The name functions as a textual cue activating knowledge about possession, identity, and institutional naming." ;
                   lig:hasTextualContent "My name isn't Offred" ;
                   dc:description "The cue provided by Offred's statement that Offred is not her real name."@en ;
                   rdfs:comment "This cue activates the presupposition that the narrator has another personal name that exists within the fictional world but is forbidden, hidden, and never fully supplied by the text."@en ;
                   rdfs:label "Offred name cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredNameRemainsUnspecified
+hmt:OffredNameRemainsUnspecified rdf:type owl:NamedIndividual ,
+                                          lig:LicensedInterpretation ;
+                                 lig:hasInterpretiveStatus "licensed" ;
+                                 dc:description "A licensed interpretation according to which the narrator's original name exists but remains withheld by the text."@en ;
+                                 rdfs:comment "This interpretation is licensed by the combination of the secret name exchange, Offred's statement that she has another name, and the Historical Notes' confirmation that her original name is not supplied."@en ;
+                                 rdfs:label "Offred Name Remains Unspecified"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PatronymicNameCue
+hmt:PatronymicNameCue rdf:type owl:NamedIndividual ,
+                               lig:TextualCue ;
+                      lig:requiresIntrinsicKnowledge hmt:PatronymicNamingKnowledge ,
+                                                     hmt:PossessionNamingKnowledge ;
+                      lig:supportsInference hmt:PatronymicNameInference ;
+                      lig:triggersPresupposition hmt:PatronymicPossessionPresupposition ;
+                      lig:hasTextualContent "Offred gives no clue" ;
+                      dc:description "The cue provided by the Historical Notes' explanation that Offred is a patronymic institutional name."@en ;
+                      rdfs:comment "This cue activates knowledge about patronymic naming, possession, and institutional identity. It allows the Model Reader to reinterpret Offred as a name derived from the Commander rather than as an original personal name."@en ;
+                      rdfs:label "Patronymic Name Cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PatronymicNameInference
+hmt:PatronymicNameInference rdf:type owl:NamedIndividual ,
+                                     lig:Inference ;
+                            lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ,
+                                                       hmt:GileadReplacesPersonalNamesWithPatronymics ;
+                            lig:hasSequenceNumber 3 ;
+                            dc:description "The inference that Offred is an institutional possessive name derived from the Commander."@en ;
+                            rdfs:comment "From the Historical Notes' explanation of patronymic names, the Model Reader infers that Offred is not a personal name but a name produced by Gilead's system of possession and household assignment."@en ;
+                            rdfs:label "Patronymic Name Inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PatronymicNamingKnowledge
+hmt:PatronymicNamingKnowledge rdf:type owl:NamedIndividual ,
+                                       lig:IntrinsicKnowledge ;
+                              dc:description "Intrinsic knowledge that a name can be formed from another person's name and can indicate dependence, belonging, or affiliation."@en ;
+                              rdfs:comment "This knowledge supports the interpretation that Offred is not a neutral personal name, but a name that encodes the woman's assignment to and possession by a specific Commander."@en ;
+                              rdfs:label "Patronymic Naming Knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PatronymicPossessionPresupposition
+hmt:PatronymicPossessionPresupposition rdf:type owl:NamedIndividual ,
+                                                lig:Presupposition ;
+                                       dc:description "The presupposition that an institutional name can encode possession by or belonging to another person."@en ;
+                                       rdfs:comment "This presupposition is triggered by the Historical Notes' explanation of names such as Offred, Ofglen, and Ofwarren. The Model Reader understands that these names are structured by household assignment and male authority."@en ;
+                                       rdfs:label "Patronymic Possession Presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PersonalNameKnowledge
+hmt:PersonalNameKnowledge rdf:type owl:NamedIndividual ,
+                                   lig:IntrinsicKnowledge ;
+                          dc:description "Intrinsic knowledge that personal names identify individual subjects and can preserve identity."@en ;
+                          rdfs:comment "This knowledge is required to interpret the secret exchange of names as more than a list of labels. The Model Reader understands that names can preserve personal identity even when an institution attempts to erase it."@en ;
+                          rdfs:label "Personal Name Knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PersonalNamePresupposition
+hmt:PersonalNamePresupposition rdf:type owl:NamedIndividual ,
+                                        lig:Presupposition ;
+                               dc:description "The presupposition that the names exchanged by the Handmaids refer to personal identities."@en ;
+                               rdfs:comment "Reader to treat the whispered names as traces of identity rather than as irrelevant details. The passage presupposes that personal names matter because they connect the women to lives outside Gilead's institutional naming system."@en ;
+                               rdfs:label "Personal Name Presupposition"@en .
 
 
 ###  https://lectoringraphula.org/handmaid#PossessionNamingKnowledge
@@ -128,156 +356,207 @@ hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
                              rdfs:label "Possession presupposition"@en .
 
 
-###  https://lectoringraphula.org/handmaid#GileadReplacesPersonalNamesWithPatronymics
-:GileadReplacesPersonalNamesWithPatronymics rdf:type owl:NamedIndividual ,
-                                                     lig:LicensedInterpretation ;
-                                            lig:hasInterpretiveStatus "licensed" ;
-                                            dc:description "A licensed interpretation according to which Gilead replaces women's personal names with institutional patronymics."@en ;
-                                            rdfs:comment "This interpretation is licensed by the explanation that names such as Offred, Ofglen, and Ofwarren are formed through possessive relations to Commanders. The naming system transforms women into members of a household rather than autonomous subjects."@en ;
-                                            rdfs:label "Gilead Replaces Personal Names With Patronymics"@en .
-
-
-###  https://lectoringraphula.org/handmaid#HiddenNameInference
-:HiddenNameInference rdf:type owl:NamedIndividual ,
-                              lig:Inference ;
-                     lig:licensesInterpretation :OffredNameRemainsUnspecified ;
-                     lig:hasSequenceNumber 2 ;
-                     dc:description "The inference that Offred has a real name that the text withholds."@en ;
-                     rdfs:comment "From Offred's statement that her name is not Offred, the Model Reader infers that another name exists. However, the text does not fully actualize this information, making the absence of the name interpretively significant."@en ;
-                     rdfs:label "Hidden Name Inference"@en .
-
-
-###  https://lectoringraphula.org/handmaid#HiddenNamePresupposition
-:HiddenNamePresupposition rdf:type owl:NamedIndividual ,
-                                   lig:Presupposition ;
-                          dc:description "The presupposition that Offred has an original name that exists but is not supplied by the text."@en ;
-                          rdfs:comment "This presupposition is triggered by Offred's statement that she has another name. The text makes the Model Reader infer the existence of the name while also withholding its explicit identification."@en ;
-                          rdfs:label "Hidden Name Presupposition"@en .
-
-
-###  https://lectoringraphula.org/handmaid#HiddenRealNameKnowledge
-:HiddenRealNameKnowledge rdf:type owl:NamedIndividual ,
-                                  lig:IntrinsicKnowledge ;
-                         dc:description "Intrinsic knowledge that a forbidden or hidden name can still belong to a subject's identity."@en ;
-                         rdfs:comment "This knowledge allows the Model Reader to understand that Offred's original name continues to matter even though it is not publicly used or explicitly supplied by the text."@en ;
-                         rdfs:label "Hidden Real Name Knowledge"@en .
-
-
-###  https://lectoringraphula.org/handmaid#HistoricalNotesNameFragment
-:HistoricalNotesNameFragment rdf:type owl:NamedIndividual ,
-                                      lig:TextFragment ;
-                             lig:containsCue :PatronymicNameCue ;
-                             lig:hasSourceReference "The Handmaid's Tale, PDF p. 294" ;
-                             lig:hasTextualContent "Selected passage in which the Historical Notes explain Offred as a patronymic institutional name." ;
-                             dc:description "A textual fragment from the Historical Notes explaining the patronymic structure of names such as Offred, Ofglen, and Ofwarren."@en ;
-                             rdfs:comment "This fragment retrospectively reframes Offred as an institutional name rather than a personal one. It confirms that the narrator's original name remains unavailable and that the Gileadean naming system encodes possession or household assignment."@en ;
-                             rdfs:label "Historical Notes Name Fragment"@en .
-
-
-###  https://lectoringraphula.org/handmaid#NameExchangeCue
-:NameExchangeCue rdf:type owl:NamedIndividual ,
-                          lig:TextualCue ;
-                 lig:requiresIntrinsicKnowledge :PersonalNameKnowledge ;
-                 lig:supportsInference :NameExchangeInference ;
-                 lig:triggersPresupposition :PersonalNamePresupposition ;
-                 lig:hasTextualContent "we exchanged names" ;
-                 dc:description "The cue provided by the secret exchange of personal names among the Handmaids."@en ;
-                 rdfs:comment "This cue activates knowledge about personal names, secrecy, and identity preservation. It suggests that personal identity persists beneath the official naming practices of Gilead."@en ;
-                 rdfs:label "Name Exchange Cue"@en .
-
-
-###  https://lectoringraphula.org/handmaid#NameExchangeFragment
-:NameExchangeFragment rdf:type owl:NamedIndividual ,
-                               lig:TextFragment ;
-                      lig:containsCue :NameExchangeCue ;
-                      lig:hasSourceReference "The Handmaid's Tale, PDF p. 14" ;
-                      lig:hasTextualContent "Selected passage in which Handmaids secretly exchange personal names." ;
-                      dc:description "A textual fragment in which the Handmaids secretly exchange personal names at the Red Centre."@en ;
-                      rdfs:comment "This fragment introduces personal names as hidden traces of identity that survive beneath Gilead's institutional naming system. It prepares the Model Reader to understand that Offred may not be the narrator's original name."@en ;
-                      rdfs:label "Name Exchange Fragment"@en .
-
-
-###  https://lectoringraphula.org/handmaid#NameExchangeInference
-:NameExchangeInference rdf:type owl:NamedIndividual ,
-                                lig:Inference ;
-                       lig:licensesInterpretation :OffredNameRemainsUnspecified ;
-                       lig:hasSequenceNumber 1 ;
-                       dc:description "The inference that personal names survive secretly among the Handmaids."@en ;
-                       rdfs:comment "From the secret exchange of names, the Model Reader infers that Gilead's institutional naming system has not completely erased personal identity. Personal names persist as hidden and fragile traces."@en ;
-                       rdfs:label "Name Exchange Inference"@en .
-
-
-###  https://lectoringraphula.org/handmaid#OffredNameRemainsUnspecified
-:OffredNameRemainsUnspecified rdf:type owl:NamedIndividual ,
-                                       lig:LicensedInterpretation ;
-                              lig:hasInterpretiveStatus "licensed" ;
-                              dc:description "A licensed interpretation according to which the narrator's original name exists but remains withheld by the text."@en ;
-                              rdfs:comment "This interpretation is licensed by the combination of the secret name exchange, Offred's statement that she has another name, and the Historical Notes' confirmation that her original name is not supplied."@en ;
-                              rdfs:label "Offred Name Remains Unspecified"@en .
-
-
-###  https://lectoringraphula.org/handmaid#PatronymicNameCue
-:PatronymicNameCue rdf:type owl:NamedIndividual ,
-                            lig:TextualCue ;
-                   lig:requiresIntrinsicKnowledge hmt:PossessionNamingKnowledge ,
-                                                  :PatronymicNamingKnowledge ;
-                   lig:supportsInference :PatronymicNameInference ;
-                   lig:triggersPresupposition :PatronymicPossessionPresupposition ;
-                   lig:hasTextualContent "Offred gives no clue" ;
-                   dc:description "The cue provided by the Historical Notes' explanation that Offred is a patronymic institutional name."@en ;
-                   rdfs:comment "This cue activates knowledge about patronymic naming, possession, and institutional identity. It allows the Model Reader to reinterpret Offred as a name derived from the Commander rather than as an original personal name."@en ;
-                   rdfs:label "Patronymic Name Cue"@en .
-
-
-###  https://lectoringraphula.org/handmaid#PatronymicNameInference
-:PatronymicNameInference rdf:type owl:NamedIndividual ,
-                                  lig:Inference ;
-                         lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ,
-                                                    :GileadReplacesPersonalNamesWithPatronymics ;
-                         lig:hasSequenceNumber 3 ;
-                         dc:description "The inference that Offred is an institutional possessive name derived from the Commander."@en ;
-                         rdfs:comment "From the Historical Notes' explanation of patronymic names, the Model Reader infers that Offred is not a personal name but a name produced by Gilead's system of possession and household assignment."@en ;
-                         rdfs:label "Patronymic Name Inference"@en .
-
-
-###  https://lectoringraphula.org/handmaid#PatronymicNamingKnowledge
-:PatronymicNamingKnowledge rdf:type owl:NamedIndividual ,
-                                    lig:IntrinsicKnowledge ;
-                           dc:description "Intrinsic knowledge that a name can be formed from another person's name and can indicate dependence, belonging, or affiliation."@en ;
-                           rdfs:comment "This knowledge supports the interpretation that Offred is not a neutral personal name, but a name that encodes the woman's assignment to and possession by a specific Commander."@en ;
-                           rdfs:label "Patronymic Naming Knowledge"@en .
-
-
-###  https://lectoringraphula.org/handmaid#PatronymicPossessionPresupposition
-:PatronymicPossessionPresupposition rdf:type owl:NamedIndividual ,
-                                             lig:Presupposition ;
-                                    dc:description "The presupposition that an institutional name can encode possession by or belonging to another person."@en ;
-                                    rdfs:comment "This presupposition is triggered by the Historical Notes' explanation of names such as Offred, Ofglen, and Ofwarren. The Model Reader understands that these names are structured by household assignment and male authority."@en ;
-                                    rdfs:label "Patronymic Possession Presupposition"@en .
-
-
-###  https://lectoringraphula.org/handmaid#PersonalNameKnowledge
-:PersonalNameKnowledge rdf:type owl:NamedIndividual ,
-                                lig:IntrinsicKnowledge ;
-                       dc:description "Intrinsic knowledge that personal names identify individual subjects and can preserve identity."@en ;
-                       rdfs:comment "This knowledge is required to interpret the secret exchange of names as more than a list of labels. The Model Reader understands that names can preserve personal identity even when an institution attempts to erase it."@en ;
-                       rdfs:label "Personal Name Knowledge"@en .
-
-
-###  https://lectoringraphula.org/handmaid#PersonalNamePresupposition
-:PersonalNamePresupposition rdf:type owl:NamedIndividual ,
-                                     lig:Presupposition ;
-                            dc:description "The presupposition that the names exchanged by the Handmaids refer to personal identities."@en ;
-                            rdfs:comment "Reader to treat the whispered names as traces of identity rather than as irrelevant details. The passage presupposes that personal names matter because they connect the women to lives outside Gilead's institutional naming system."@en ;
-                            rdfs:label "Personal Name Presupposition"@en .
-
-
-###  https://lectoringraphula.org/handmaid#PossessionPresupposition
-:PossessionPresupposition rdf:type owl:NamedIndividual ,
-                                   lig:Presupposition ;
-                          dc:description "The presupposition that naming can imply belonging or institutional assignment."@en ;
-                          rdfs:comment "This presupposition supports the interpretation that the name Offred encodes a relation of possession rather than an autonomous personal identity."@en ;
-                          rdfs:label "Possession Presupposition"@en .
-
-
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+
+
+#################################################################
+# Ceremony interpretive resources
+#################################################################
+
+hmt:CeremonyReligiousFrame a lig:Frame ;
+    rdfs:label "Ceremony religious frame"@en ;
+    dc:description "The religious frame through which Gilead presents the Ceremony as scripturally justified reproductive duty."@en ;
+    rdfs:comment "This frame is activated by biblical quotation and prayer. It helps the Model Reader understand that Gilead presents the Ceremony as sacred obligation rather than as private sexuality."@en .
+
+hmt:CeremonyRitualFrame a lig:Frame ;
+    rdfs:label "Ceremony ritual frame"@en ;
+    dc:description "The ritual frame through which the Ceremony is performed as a formal institutional procedure."@en ;
+    rdfs:comment "This frame is activated by the sequence of reading, prayer, blessing, and obedience surrounding the Ceremony."@en .
+
+hmt:BiblicalReproductiveSubcode a lig:Subcode ;
+    rdfs:label "Biblical reproductive subcode"@en ;
+    dc:description "A subcode that connects biblical language with reproduction, fertility, and female service."@en ;
+    rdfs:comment "This subcode is activated by the biblical story of Rachel, Leah, and Bilhah, which Gilead uses to justify reproductive service through the Handmaids."@en .
+
+hmt:GileadReproductiveSubcode a lig:Subcode ;
+    rdfs:label "Gilead reproductive subcode"@en ;
+    dc:description "A Gileadean subcode that redefines sexuality as reproductive duty."@en ;
+    rdfs:comment "This subcode treats reproduction as institutional obligation and excludes ordinary ideas of intimacy, pleasure, and reciprocal desire."@en .
+
+hmt:OrdinarySexualSubcode a lig:Subcode ;
+    rdfs:label "Ordinary sexual subcode"@en ;
+    dc:description "A subcode involving ordinary categories of sexuality such as reciprocal sex, desire, and bodily intimacy."@en ;
+    rdfs:comment "This subcode is activated by Offred's description of the act, but the narration shows that it does not adequately classify the Ceremony."@en .
+
+hmt:OrdinaryRomanticSubcode a lig:Subcode ;
+    rdfs:label "Ordinary romantic subcode"@en ;
+    dc:description "A subcode involving love, romance, passion, and emotional intimacy."@en ;
+    rdfs:comment "This subcode is activated only to be negated by Offred's statement that the Ceremony has nothing to do with passion, love, or romance."@en .
+
+
+#################################################################
+# Ceremony intrinsic knowledge
+#################################################################
+
+hmt:BiblicalJustificationKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Biblical justification knowledge"@en ;
+    dc:description "Intrinsic knowledge that religious texts can be used to justify social and institutional practices."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to understand why biblical passages are used by Gilead to legitimate the Ceremony."@en .
+
+hmt:RitualPrayerKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Ritual prayer knowledge"@en ;
+    dc:description "Intrinsic knowledge that prayer and blessing can transform an action into a ritualized procedure."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to interpret the Commander's prayer as part of the Ceremony's ritual structure."@en .
+
+hmt:ConstrainedChoiceKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Constrained choice knowledge"@en ;
+    dc:description "Intrinsic knowledge that a choice made under coercive institutional conditions is not fully free."@en ;
+    rdfs:comment "This knowledge is required to interpret Offred's statement that there was some choice, but not much, without reducing the situation to free consent."@en .
+
+hmt:CategoryFailureKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Category failure knowledge"@en ;
+    dc:description "Intrinsic knowledge that ordinary categories may fail to classify an institutionalized situation."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to understand why terms such as making love, copulating, and rape are presented as inadequate or incomplete."@en .
+
+hmt:PassionNegationKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Passion negation knowledge"@en ;
+    dc:description "Intrinsic knowledge that passion, love, desire, and pleasure belong to ordinary romantic or sexual codes."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to understand the significance of Offred's explicit exclusion of passion, love, romance, desire, arousal, and pleasure from the Ceremony."@en .
+
+
+#################################################################
+# Ceremony presuppositions
+#################################################################
+
+hmt:BiblicalReproductionPresupposition a lig:Presupposition ;
+    rdfs:label "Biblical reproduction presupposition"@en ;
+    dc:description "The presupposition that biblical reproductive narratives can function as authoritative models for Gilead."@en ;
+    rdfs:comment "This presupposition is triggered by the biblical quotation and supports the interpretation that Gilead frames the Ceremony through scriptural authority."@en .
+
+hmt:RitualBlessingPresupposition a lig:Presupposition ;
+    rdfs:label "Ritual blessing presupposition"@en ;
+    dc:description "The presupposition that prayer and blessing belong to a ritualized religious procedure."@en ;
+    rdfs:comment "This presupposition is triggered by the Commander's request for silent prayer and blessing."@en .
+
+hmt:CategoryInadequacyPresupposition a lig:Presupposition ;
+    rdfs:label "Category inadequacy presupposition"@en ;
+    dc:description "The presupposition that ordinary labels are insufficient to describe the Ceremony."@en ;
+    rdfs:comment "This presupposition is triggered by Offred's rejection of terms such as making love, copulating, and rape."@en .
+
+hmt:PassionExclusionPresupposition a lig:Presupposition ;
+    rdfs:label "Passion exclusion presupposition"@en ;
+    dc:description "The presupposition that passion, love, romance, desire, and pleasure are excluded from the Ceremony."@en ;
+    rdfs:comment "This presupposition is triggered by Offred's statement that the Ceremony has nothing to do with passion or love."@en .
+
+
+#################################################################
+# Ceremony inferences
+#################################################################
+
+hmt:BiblicalJustificationInference a lig:Inference ;
+    rdfs:label "Biblical justification inference"@en ;
+    dc:description "The inference that Gilead uses biblical language to justify the Ceremony as reproductive duty."@en ;
+    rdfs:comment "From the biblical quotation, the Model Reader infers that Gilead frames the Ceremony through scriptural authority and reproductive obligation."@en ;
+    lig:hasSequenceNumber 1 .
+
+hmt:RitualPrayerInference a lig:Inference ;
+    rdfs:label "Ritual prayer inference"@en ;
+    dc:description "The inference that the Ceremony is embedded in a ritual sequence of prayer and blessing."@en ;
+    rdfs:comment "From the Commander's call for silent prayer, the Model Reader infers that the act is not presented as ordinary sexuality but as a formalized ritual procedure."@en ;
+    lig:hasSequenceNumber 2 .
+
+hmt:CeremonyCategoryFailureInference a lig:Inference ;
+    rdfs:label "Ceremony category failure inference"@en ;
+    dc:description "The inference that ordinary sexual and ethical labels do not fully classify the Ceremony."@en ;
+    rdfs:comment "From Offred's rejection of available terms, the Model Reader infers that the Ceremony exceeds ordinary categories such as making love, reciprocal sex, or individual rape alone."@en ;
+    lig:hasSequenceNumber 3 .
+
+hmt:PassionNegationInference a lig:Inference ;
+    rdfs:label "Passion negation inference"@en ;
+    dc:description "The inference that the Ceremony excludes passion, love, romance, desire, arousal, and pleasure."@en ;
+    rdfs:comment "From Offred's explicit negation of passion and desire, the Model Reader infers that Gilead redefines sexuality as reproductive function."@en ;
+    lig:hasSequenceNumber 4 .
+
+hmt:CeremonyRitualizationInference a lig:Inference ;
+    rdfs:label "Ceremony ritualization inference"@en ;
+    dc:description "The synthesis inference that the Ceremony is a religiously framed, institutionalized reproductive ritual."@en ;
+    rdfs:comment "This inference synthesizes the biblical, ritual, sexual, and ethical cues into the broader interpretation of the Ceremony as institutionalized reproductive coercion legitimated through religious language."@en ;
+    lig:hasSequenceNumber 5 .
+
+
+#################################################################
+# Ceremony licensed interpretations
+#################################################################
+
+hmt:CeremonyAsInstitutionalizedReproductiveRitual a lig:LicensedInterpretation ;
+    rdfs:label "Ceremony as institutionalized reproductive ritual"@en ;
+    dc:description "A licensed interpretation according to which the Ceremony is an institutionalized reproductive ritual."@en ;
+    rdfs:comment "This interpretation preserves the complexity of the passage: the Ceremony is ritualized, reproductive, institutional, coercive, and religiously framed."@en ;
+    lig:hasInterpretiveStatus "licensed" .
+
+hmt:GileadUsesReligionToLegitimizeReproductiveCoercion a lig:LicensedInterpretation ;
+    rdfs:label "Gilead uses religion to legitimize reproductive coercion"@en ;
+    dc:description "A licensed interpretation according to which Gilead uses religious language to legitimate reproductive coercion."@en ;
+    rdfs:comment "This interpretation is licensed by the biblical quotation and prayer surrounding the Ceremony, together with Offred's narration of coercion and constrained agency."@en ;
+    lig:hasInterpretiveStatus "licensed" .
+
+
+
+#################################################################
+# Ceremony cue-resource links
+#################################################################
+
+hmt:CeremonyBiblicalCue
+    lig:activatesFrame hmt:CeremonyReligiousFrame ;
+    lig:activatesCode hmt:BiblicalReproductiveSubcode ;
+    lig:requiresIntrinsicKnowledge hmt:BiblicalJustificationKnowledge ;
+    lig:triggersPresupposition hmt:BiblicalReproductionPresupposition ;
+    lig:supportsInference hmt:BiblicalJustificationInference ,
+                          hmt:CeremonyRitualizationInference .
+
+hmt:CeremonyPrayerCue
+    lig:activatesFrame hmt:CeremonyRitualFrame ;
+    lig:requiresIntrinsicKnowledge hmt:RitualPrayerKnowledge ;
+    lig:triggersPresupposition hmt:RitualBlessingPresupposition ;
+    lig:supportsInference hmt:RitualPrayerInference ,
+                          hmt:CeremonyRitualizationInference .
+
+hmt:CeremonyCategoryFailureCue
+    lig:activatesCode hmt:OrdinarySexualSubcode ,
+                      hmt:GileadReproductiveSubcode ;
+    lig:requiresIntrinsicKnowledge hmt:ConstrainedChoiceKnowledge ,
+                                   hmt:CategoryFailureKnowledge ;
+    lig:triggersPresupposition hmt:CategoryInadequacyPresupposition ;
+    lig:supportsInference hmt:CeremonyCategoryFailureInference ,
+                          hmt:CeremonyRitualizationInference .
+
+hmt:CeremonyPassionNegationCue
+    lig:activatesCode hmt:OrdinarySexualSubcode ,
+                      hmt:OrdinaryRomanticSubcode ,
+                      hmt:GileadReproductiveSubcode ;
+    lig:requiresIntrinsicKnowledge hmt:PassionNegationKnowledge ;
+    lig:triggersPresupposition hmt:PassionExclusionPresupposition ;
+    lig:supportsInference hmt:PassionNegationInference ,
+                          hmt:CeremonyRitualizationInference .
+
+
+#################################################################
+# Ceremony inference-interpretation links
+#################################################################
+
+hmt:BiblicalJustificationInference
+    lig:licensesInterpretation hmt:GileadUsesReligionToLegitimizeReproductiveCoercion .
+
+hmt:RitualPrayerInference
+    lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
+                               hmt:GileadUsesReligionToLegitimizeReproductiveCoercion .
+
+hmt:CeremonyCategoryFailureInference
+    lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual .
+
+hmt:PassionNegationInference
+    lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual .
+
+hmt:CeremonyRitualizationInference
+    lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
+                               hmt:GileadUsesReligionToLegitimizeReproductiveCoercion .
