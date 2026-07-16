@@ -9,13 +9,12 @@ Decision:
 
 This case focuses on how Gilead's color-coded dress system functions as an enumerated semiotic code that the Model Reader must reconstruct from dispersed cues, and on how the Historical Notes retroactively add a second interpretive level to that code. It shows how the Model Reader reconstructs implicit meaning through textual cues, intrinsic knowledge, presuppositions, and inferences.
 
-The case is based on 5 textual moments:
+The case is based on 4 textual moments:
 
 1. First description of Offred's red clothing and the color-assigned umbrellas (pp. 17–18)
 2. Street scene enumerating women's dress colors by social function (pp. 32–33)
 3. Domestic tableau before the Ceremony, seen through the Commander's gaze (p. 89)
-4. Opening of the Historical Notes: the pseudo-academic reframing of the whole narrative (pp. 286–290)
-5. Pieixoto's extra-textual attribution of the Handmaids' red to WWII P.O.W. uniforms (p. 295)
+4. Historical Notes: within the pseudo-academic reframing of the narrative (pp. 286–290), Pieixoto's extra-textual attribution of the Handmaids' red to WWII P.O.W. uniforms (p. 295)
 
 ---
 
@@ -90,45 +89,24 @@ This passage can be modeled as a textual fragment whose cue (color-only designat
 
 ---
 
-## Passage 4: Historical Notes — the second Model Reader level
+## Passage 4: Historical Notes — the extra-textual origin of the red
 
-**Source:** Margaret Atwood, *The Handmaid's Tale*, PDF pp. 286–290.
-
-**Micro-quote:**  
-> "Twelfth Symposium on Gileadean Studies"
-
-**Working passage:**  
-> "HISTORICAL NOTES ON THE HANDMAID'S TALE. Being a partial transcript of the proceedings of the Twelfth Symposium on Gileadean Studies, held as part of the International Historical Association Convention, which took place at the University of Denay, Nunavit, on June 25, 2195. [...] I say soi-disant because what we have before us is not the item in its original form. Strictly speaking, it was not a manuscript at all when first discovered, and bore no title. The superscription 'The Handmaid's Tale' was appended to it by Professor Wade [...] Within this foot-locker [...] were approximately thirty tape cassettes [...]"
-
-**Contextual paraphrase:**  
-After the end of Offred's narration, the book reframes everything that precedes it: Offred's voice becomes a recovered artifact — some thirty tape cassettes found in a foot-locker, transcribed, arranged, and retitled by future editors — studied at an academic symposium in 2195, complete with conference humor and logistical announcements. Gilead is over; the narrative is now an object of scholarly reconstruction.
-
-**Interpretive function:**  
-Nothing in Offred's narration announced this frame; the Model Reader must retroactively reinterpret the entire preceding text as a mediated document (transcribed, ordered, titled by others). This creates a second level of Model Reader: the reader presupposed by Offred's voice (immersed in Gilead, decoding its internal codes) and the reader presupposed by the whole book, who must also decode the Historical Notes' pseudo-academic frame and its irony. For the clothing case specifically, this second reader is put in a position to re-read Gilead's internal codes from the outside, as historical constructs — which prepares the reinterpretation delivered in Passage 5.
-
-**Function in the ontology:**  
-This passage can be modeled as a textual fragment that activates an intertextual/genre frame (the academic-conference frame) and re-scopes the Model Reader: the whole preceding narrative becomes an embedded text, presupposing a second-level Model Reader who reinterprets first-level codes.
-
----
-
-## Passage 5: Historical Notes — the extra-textual origin of the red
-
-**Source:** Margaret Atwood, *The Handmaid's Tale*, PDF p. 295.
+**Source:** Margaret Atwood, *The Handmaid's Tale*, PDF p. 295 (within the Historical Notes, which open at pp. 286–290).
 
 **Micro-quote:**  
 > "the suggestion that the Handmaids wear red"
 
 **Working passage:**  
-> "Waterford possessed a background in market research, and was, according to Limpkin, responsible for the design of the female costumes and for the suggestion that the Handmaids wear red, which he seems to have borrowed from the uniforms of German prisoners of war in Canadian 'P.O.W.' camps of the Second World War era. [...] As I have said elsewhere, there was little that was truly original with or indigenous to Gilead: its genius was synthesis."
+> "Being a partial transcript of the proceedings of the Twelfth Symposium on Gileadean Studies, held as part of the International Historical Association Convention, which took place at the University of Denay, Nunavit, on June 25, 2195. [...] Waterford possessed a background in market research, and was, according to Limpkin, responsible for the design of the female costumes and for the suggestion that the Handmaids wear red, which he seems to have borrowed from the uniforms of German prisoners of war in Canadian 'P.O.W.' camps of the Second World War era. [...] As I have said elsewhere, there was little that was truly original with or indigenous to Gilead: its genius was synthesis."
 
 **Contextual paraphrase:**  
-The keynote speaker attributes the design of Gilead's female costumes to Frederick R. Waterford, one of two candidate "Commanders", and claims — on the second-hand evidence of a cipher diary — that the Handmaids' red was borrowed from the uniforms of German P.O.W.s held in Canadian camps during World War II. He generalizes: Gilead invented almost nothing; it synthesized existing practices.
+The novel's final section reframes everything that precedes it: Offred's narration becomes a recovered artifact — some thirty tape cassettes found in a foot-locker, transcribed, arranged, and retitled by future editors — studied at an academic symposium in 2195. Within this frame, the keynote speaker attributes the design of Gilead's female costumes to Frederick R. Waterford, one of two candidate "Commanders", and claims — on the second-hand evidence of a cipher diary — that the Handmaids' red was borrowed from the uniforms of German P.O.W.s held in Canadian camps during World War II. He generalizes: Gilead invented almost nothing; it synthesized existing practices.
 
 **Interpretive function:**  
-Within Offred's narration, red is naturalized as Gilead's own theological-reproductive symbol ("the colour of blood, which defines us"). Pieixoto's remark forces the second-level Model Reader to re-read the same signifier as a recycled historical sign with a documented, mundane origin (costume design by a market-research man, borrowed from prison uniforms). This requires extra-textual encyclopedic knowledge (WWII, P.O.W. camps, marketing) that the first-level reader of Offred's voice was never asked for. Crucially, the attribution is hedged ("seems to have"), reported second-hand from a cipher diary, and delivered in the self-consciously ironic register of the symposium (puns, conference humor): the Model Reader must register it as scholarly conjecture inside the fiction, not as narrative fact.
+The pseudo-academic frame is the condition of the inference this passage supports. Nothing in Offred's narration announced it: the Model Reader must retroactively reinterpret the entire preceding text as a mediated document, and this re-scoping creates a second level of Model Reader — the reader presupposed by the whole book rather than by Offred's voice alone. Only within this frame does Pieixoto's remark carry interpretive authority: it forces the second-level Model Reader to re-read a signifier that Offred's narration had naturalized as Gilead's own theological-reproductive symbol ("the colour of blood, which defines us") as a recycled historical sign with a documented, mundane origin (costume design by a market-research man, borrowed from prison uniforms). This requires extra-textual encyclopedic knowledge (WWII, P.O.W. camps, marketing) that the first-level reader was never asked for. Crucially, the attribution is hedged ("seems to have"), reported second-hand from a cipher diary, and delivered in the self-consciously ironic register of the symposium (puns, conference humor): the Model Reader must register it as scholarly conjecture inside the fiction, not as narrative fact.
 
 **Function in the ontology:**  
-This passage can be modeled as a textual fragment whose cue activates encyclopedic (extra-textual, historical) knowledge at the second Model Reader level, licensing the interpretation that Gilead's chromatic code is a deliberately designed, historically derivative artifact — while the hedged attribution itself should be kept distinct from established narrative fact.
+This passage can be modeled as a textual fragment whose cue activates two resources at once: the pseudo-academic frame that re-scopes the Model Reader to a second level, and the encyclopedic (extra-textual, historical) knowledge available at that level. Together they license the interpretation that Gilead's chromatic code is a deliberately designed, historically derivative artifact — while the hedged attribution itself should be kept distinct from established narrative fact.
 
 ---
 
@@ -145,7 +123,7 @@ This case requires the Model Reader to infer that:
 
 ## Important interpretive caution
 
-Two levels of Model Reader must not be collapsed into one. The role→color code (moments 1–3) is reconstructed by the Model Reader internal to Offred's narration and can be treated as a licensed interpretation: the text repeatedly and convergently supports it. The historical origin of the red (moment 5) is different in kind: it is asserted by a character (Pieixoto) at the second narrative level, hedged ("seems to have"), and based on second-hand evidence within the fiction. The knowledge graph should not treat the P.O.W. origin as an explicit fact about Gilead's world; it should be modeled as an interpretation activated at the second Model Reader level, dependent on the pseudo-academic frame. More generally, these passages should not be treated as plot summary, but as cues for interpretive operations, and the ontology should represent textual strategies (the two Model Reader levels), not empirical readers or the empirical author.
+Two levels of Model Reader must not be collapsed into one. The role→color code (moments 1–3) is reconstructed by the Model Reader internal to Offred's narration and can be treated as a licensed interpretation: the text repeatedly and convergently supports it. The historical origin of the red (moment 4) is different in kind: it is asserted by a character (Pieixoto) at the second narrative level, hedged ("seems to have"), and based on second-hand evidence within the fiction. The knowledge graph should not treat the P.O.W. origin as an explicit fact about Gilead's world; it should be modeled as an interpretation activated at the second Model Reader level, dependent on the pseudo-academic frame. More generally, these passages should not be treated as plot summary, but as cues for interpretive operations, and the ontology should represent textual strategies (the two Model Reader levels), not empirical readers or the empirical author.
 
 ---
 
@@ -185,13 +163,13 @@ Through these cues, the Model Reader infers that Gilead encodes female social id
 
 ## Modelling decision for later Protégé work
 
-This case should be treated as one interpretive case based on five connected textual fragments, organized on two Model Reader levels (internal narration vs. whole book including the Historical Notes).
+This case should be treated as one interpretive case based on four connected textual fragments, organized on two Model Reader levels (internal narration vs. whole book including the Historical Notes).
 
 Do not model this passage as a plot database of who wears what, nor model the P.O.W. attribution as an explicit fact of the narrative world; do not introduce empirical readers or empirical authors.
 
 Final decision:
 
-- One interpretive case, five connected fragments, two Model Reader levels
+- One interpretive case, four connected fragments, two Model Reader levels
 - Main textual cue: color-marked clothing (red / blue / green / striped / black)
 - Main knowledge required: intrinsic knowledge that institutional dress encodes social role (uniforms, habits, sumptuary rules)
 - Main presupposition: clothing color is institutionally assigned and legible to all members of the society
