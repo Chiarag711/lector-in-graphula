@@ -929,3 +929,394 @@ hmt:FinalOutcomeUncertaintyPrediction
 hmt:FinalOutcomeProbabilityDisjunction
     lig:hasAlternativePrediction hmt:OffredArrestPrediction ,
                                  hmt:OffredRescuePrediction .
+
+
+#################################################################
+# Color-coded clothing case
+#################################################################
+
+#################################################################
+# Color-coded clothing fragments
+#################################################################
+
+hmt:InitialColorAssignmentFragment a lig:TextFragment ;
+    rdfs:label "Initial color assignment fragment"@en ;
+    dc:description "A textual fragment in which Offred's red clothing, the color-assigned umbrellas, and Rita's green Martha dress introduce the chromatic code."@en ;
+    rdfs:comment "This fragment introduces color as an institutional sign. Red defines the Handmaids, while black, blue, red, and green are associated with household roles and positions."@en ;
+    lig:hasTextualContent "Selected passage in which Offred describes her red clothing, the color-assigned umbrellas, and Rita's green Martha dress." ;
+    lig:hasSourceReference "The Handmaid's Tale, PDF pp. 17-18" .
+
+hmt:StreetColorEnumerationFragment a lig:TextFragment ;
+    rdfs:label "Street color enumeration fragment"@en ;
+    dc:description "A textual fragment in which Offred observes women in red, green, striped dresses, and black, associating clothing colors with social functions."@en ;
+    rdfs:comment "This fragment makes the chromatic code more explicit by enumerating several female roles and their colors or color-patterns."@en ;
+    lig:hasTextualContent "Selected passage in which Offred observes the color-coded clothing of Handmaids, Marthas, Econowives, and widows." ;
+    lig:hasSourceReference "The Handmaid's Tale, PDF pp. 32-33" .
+
+hmt:ColorInventoryFragment a lig:TextFragment ;
+    rdfs:label "Color inventory fragment"@en ;
+    dc:description "A textual fragment in which the household is visually organized through color during the Commander's gaze before the Ceremony."@en ;
+    rdfs:comment "This fragment shows the chromatic code being used rather than explained. The people in the room are identified through color, posture, and function."@en ;
+    lig:hasTextualContent "Selected passage in which the Commander looks over the household as if taking inventory." ;
+    lig:hasSourceReference "The Handmaid's Tale, PDF p. 89" .
+
+hmt:HistoricalNotesColorOriginFragment a lig:TextFragment ;
+    rdfs:label "Historical Notes color origin fragment"@en ;
+    dc:description "A textual fragment from the Historical Notes in which the red clothing of the Handmaids is retrospectively attributed to costume design and historical borrowing."@en ;
+    rdfs:comment "This fragment adds a second interpretive level. The chromatic code is reframed as a designed and historically derivative artifact, though the P.O.W. origin remains hedged within the fiction."@en ;
+    lig:hasTextualContent "Selected passage in which the Historical Notes attribute the Handmaids' red to a historically borrowed design." ;
+    lig:hasSourceReference "The Handmaid's Tale, PDF p. 295" .
+
+
+#################################################################
+# Color-coded clothing cues
+#################################################################
+
+hmt:InitialColorAssignmentCue a lig:TextualCue ;
+    rdfs:label "Initial color assignment cue"@en ;
+    dc:description "The cue provided by Offred's red clothing, the color-assigned umbrellas, and Rita's green Martha dress."@en ;
+    rdfs:comment "This cue activates the idea that colors are not decorative details but institutional signs associated with roles and household positions."@en ;
+    lig:hasTextualContent "the colour of blood, which defines us" .
+
+hmt:StreetColorEnumerationCue a lig:TextualCue ;
+    rdfs:label "Street color enumeration cue"@en ;
+    dc:description "The cue provided by the street scene's enumeration of women in red, green, striped dresses, and black."@en ;
+    rdfs:comment "This cue supports the inference that Gilead's color system is a role/status code, not an isolated description of clothing."@en ;
+    lig:hasTextualContent "These women are not divided into functions" .
+
+hmt:ColorInventoryCue a lig:TextualCue ;
+    rdfs:label "Color inventory cue"@en ;
+    dc:description "The cue provided by the Commander's gaze over the household as a color-coded inventory."@en ;
+    rdfs:comment "This cue presupposes that the Model Reader has already learned the chromatic code and can identify social roles from color alone."@en ;
+    lig:hasTextualContent "as if taking inventory" .
+
+hmt:HistoricalNotesColorOriginCue a lig:TextualCue ;
+    rdfs:label "Historical Notes color origin cue"@en ;
+    dc:description "The cue provided by the Historical Notes' claim about the origin of the Handmaids' red clothing."@en ;
+    rdfs:comment "This cue activates the pseudo-academic frame and extra-textual historical encyclopedia, while preserving the hedged status of the P.O.W. origin."@en ;
+    lig:hasTextualContent "the suggestion that the Handmaids wear red" .
+
+
+#################################################################
+# Color-coded clothing fragment-cue structure
+#################################################################
+
+hmt:HandmaidsTaleText lig:hasFragment hmt:InitialColorAssignmentFragment ,
+                                     hmt:StreetColorEnumerationFragment ,
+                                     hmt:ColorInventoryFragment ,
+                                     hmt:HistoricalNotesColorOriginFragment .
+
+hmt:InitialColorAssignmentFragment lig:containsCue hmt:InitialColorAssignmentCue .
+
+hmt:StreetColorEnumerationFragment lig:containsCue hmt:StreetColorEnumerationCue .
+
+hmt:ColorInventoryFragment lig:containsCue hmt:ColorInventoryCue .
+
+hmt:HistoricalNotesColorOriginFragment lig:containsCue hmt:HistoricalNotesColorOriginCue .
+
+
+
+#################################################################
+# Color-coded clothing Model Reader levels
+#################################################################
+
+hmt:HistoricalNotesModelReader a lig:ModelReader ;
+    rdfs:label "Historical Notes Model Reader"@en ;
+    dc:description "The Model Reader presupposed by the whole book after the Historical Notes reframe Offred's narration as a historical artifact."@en ;
+    rdfs:comment "This Model Reader activates the pseudo-academic frame and extra-textual historical encyclopedia required to reinterpret Gilead's color code as a designed and historically derivative artifact."@en .
+
+hmt:HandmaidsTaleText lig:presupposesModelReader hmt:HistoricalNotesModelReader .
+
+
+#################################################################
+# Color-coded clothing codes, subcodes, frames, and encyclopedia
+#################################################################
+
+hmt:GileadChromaticRoleStatusCode a lig:Code ;
+    rdfs:label "Gilead chromatic role/status code"@en ;
+    dc:description "A semiotic code that maps social roles and institutional positions to recognizable colors or color-patterns."@en ;
+    rdfs:comment "This code is reconstructed by the Model Reader from repeated cues: red, blue, green, striped patterns, and black function as signs of role, status, hierarchy, and institutional position."@en .
+
+hmt:FemaleRoleColorSubcode a lig:Subcode ;
+    rdfs:label "Female role color subcode"@en ;
+    dc:description "A subcode of Gilead's chromatic system focused on female social roles."@en ;
+    rdfs:comment "This subcode includes red for Handmaids, blue for Wives, dull green for Marthas, striped clothing for Econowives, and black for widows."@en .
+
+hmt:InstitutionalAuthorityColorSubcode a lig:Subcode ;
+    rdfs:label "Institutional authority color subcode"@en ;
+    dc:description "A subcode through which color also marks male institutional authority."@en ;
+    rdfs:comment "This subcode is activated by the Commander's black uniform and umbrella, which show that the chromatic system is part of a broader institutional hierarchy."@en .
+
+hmt:RedReproductiveSymbolicSubcode a lig:Subcode ;
+    rdfs:label "Red reproductive symbolic subcode"@en ;
+    dc:description "A symbolic subcode through which red marks blood, fertility, and reproductive function."@en ;
+    rdfs:comment "This subcode is activated by Offred's statement that red is the colour of blood and that it defines the Handmaids."@en .
+
+hmt:InstitutionalDressFrame a lig:Frame ;
+    rdfs:label "Institutional dress frame"@en ;
+    dc:description "The frame through which clothing is interpreted as a visible sign of institutional role."@en ;
+    rdfs:comment "This frame allows the Model Reader to interpret Gilead's clothing colors as a system of uniforms rather than as decorative description."@en .
+
+hmt:HouseholdHierarchyFrame a lig:Frame ;
+    rdfs:label "Household hierarchy frame"@en ;
+    dc:description "The frame through which household positions are read as hierarchically organized and visually marked."@en ;
+    rdfs:comment "This frame is activated by the color-assigned umbrellas and by the domestic tableau before the Ceremony."@en .
+
+hmt:SocialTaxonomyFrame a lig:Frame ;
+    rdfs:label "Social taxonomy frame"@en ;
+    dc:description "The frame through which visible signs classify people into social categories."@en ;
+    rdfs:comment "This frame is activated by the street enumeration of red, green, striped, and black clothing."@en .
+
+hmt:PseudoAcademicHistoricalFrame a lig:Frame ;
+    rdfs:label "Pseudo-academic historical frame"@en ;
+    dc:description "The frame introduced by the Historical Notes, where Offred's narration is treated as a recovered historical artifact."@en ;
+    rdfs:comment "This frame creates a second interpretive level and changes how the color code is understood."@en .
+
+hmt:HistoricalRecyclingFrame a lig:Frame ;
+    rdfs:label "Historical recycling frame"@en ;
+    dc:description "The frame through which Gilead's practices are interpreted as synthesized from earlier institutions of control."@en ;
+    rdfs:comment "This frame is activated by the Historical Notes' claim that Gilead's genius was synthesis rather than originality."@en .
+
+hmt:ExtraTextualHistoricalEncyclopedia a lig:Encyclopedia ;
+    rdfs:label "Extra-textual historical encyclopedia"@en ;
+    dc:description "The historical encyclopedia required to interpret references to World War II, P.O.W. camps, costume design, and institutional borrowing."@en ;
+    rdfs:comment "This encyclopedia is activated at the second Model Reader level by the Historical Notes."@en .
+
+
+#################################################################
+# Color-coded clothing intrinsic knowledge
+#################################################################
+
+hmt:InstitutionalDressKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Institutional dress knowledge"@en ;
+    dc:description "Intrinsic knowledge that uniforms and prescribed clothing can encode social roles."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to interpret clothing colors as signs of institutional position."@en .
+
+hmt:ColorRoleMappingKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Color role mapping knowledge"@en ;
+    dc:description "Intrinsic knowledge that repeated color-role associations can form a systematic code."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to generalize from scattered color cues to a society-wide chromatic code."@en .
+
+hmt:CompositionalColorPatternKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Compositional color pattern knowledge"@en ;
+    dc:description "Intrinsic knowledge that combined colors or patterns can represent combined social functions."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to interpret Econowives' striped clothing as a compositional sign of multiple functions."@en .
+
+hmt:VisualTaxonomyKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Visual taxonomy knowledge"@en ;
+    dc:description "Intrinsic knowledge that visual signs can classify people into social categories."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to understand why the domestic tableau can identify people by color alone."@en .
+
+hmt:RedBloodSymbolismKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Red blood symbolism knowledge"@en ;
+    dc:description "Intrinsic knowledge that red can symbolize blood, fertility, and reproductive function."@en ;
+    rdfs:comment "This knowledge supports the alternative symbolic interpretation of the Handmaids' red clothing."@en .
+
+hmt:HistoricalReframingKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Historical reframing knowledge"@en ;
+    dc:description "Intrinsic knowledge that a later frame can retrospectively change the interpretation of earlier signs."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to reread Gilead's color code after the Historical Notes."@en .
+
+hmt:WWIIPOWUniformKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "World War II P.O.W. uniform knowledge"@en ;
+    dc:description "Intrinsic knowledge about the historical reference to prisoner-of-war uniforms."@en ;
+    rdfs:comment "This knowledge is activated by the Historical Notes' conjectural attribution of the Handmaids' red to German P.O.W. uniforms in Canadian camps."@en .
+
+hmt:HedgedScholarlyAttributionKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Hedged scholarly attribution knowledge"@en ;
+    dc:description "Intrinsic knowledge that scholarly claims may be conjectural, mediated, or based on uncertain evidence."@en ;
+    rdfs:comment "This knowledge prevents the Model Reader from treating the P.O.W. origin as direct narrative fact."@en .
+
+hmt:MarketingCostumeDesignKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Marketing costume design knowledge"@en ;
+    dc:description "Intrinsic knowledge that visual systems can be deliberately designed for institutional and ideological effects."@en ;
+    rdfs:comment "This knowledge supports the interpretation of Gilead's clothing system as designed rather than natural."@en .
+
+
+#################################################################
+# Color-coded clothing presuppositions
+#################################################################
+
+hmt:ColorAssignedRolePresupposition a lig:Presupposition ;
+    rdfs:label "Color assigned role presupposition"@en ;
+    dc:description "The presupposition that clothing color is institutionally assigned and socially legible."@en ;
+    rdfs:comment "This presupposition is triggered by the first description of Offred's red clothing, the umbrellas, and Rita's green dress."@en .
+
+hmt:ColorCodeSystematicityPresupposition a lig:Presupposition ;
+    rdfs:label "Color code systematicity presupposition"@en ;
+    dc:description "The presupposition that scattered color notations belong to one systematic chromatic code."@en ;
+    rdfs:comment "This presupposition is triggered by the street enumeration of women's colors and color-patterns."@en .
+
+hmt:ColorAsIdentitySubstitutePresupposition a lig:Presupposition ;
+    rdfs:label "Color as identity substitute presupposition"@en ;
+    dc:description "The presupposition that color can stand in for personal identity within Gilead's social order."@en ;
+    rdfs:comment "This presupposition is triggered by the domestic tableau, where people are identified by color and position rather than by name."@en .
+
+hmt:RedSymbolismPresupposition a lig:Presupposition ;
+    rdfs:label "Red symbolism presupposition"@en ;
+    dc:description "The presupposition that red carries symbolic meaning beyond ordinary visual classification."@en ;
+    rdfs:comment "This presupposition is triggered by Offred's statement that red is the colour of blood and defines the Handmaids."@en .
+
+hmt:HistoricalNotesReframingPresupposition a lig:Presupposition ;
+    rdfs:label "Historical Notes reframing presupposition"@en ;
+    dc:description "The presupposition that the Historical Notes reframe the preceding narrative as a mediated historical artifact."@en ;
+    rdfs:comment "This presupposition is triggered by the pseudo-academic frame of the final section."@en .
+
+hmt:HedgedOriginPresupposition a lig:Presupposition ;
+    rdfs:label "Hedged origin presupposition"@en ;
+    dc:description "The presupposition that the P.O.W. origin of the Handmaids' red is conjectural within the fiction."@en ;
+    rdfs:comment "This presupposition is triggered by the hedged attribution in the Historical Notes."@en .
+
+
+#################################################################
+# Color-coded clothing inferences
+#################################################################
+
+hmt:InitialColorAssignmentInference a lig:Inference ;
+    rdfs:label "Initial color assignment inference"@en ;
+    dc:description "The inference that Gilead uses assigned colors to mark roles and household positions."@en ;
+    rdfs:comment "From Offred's red clothing, the color-assigned umbrellas, and Rita's green dress, the Model Reader infers that color functions as an institutional sign."@en ;
+    lig:hasSequenceNumber 1 .
+
+hmt:StreetColorEnumerationInference a lig:Inference ;
+    rdfs:label "Street color enumeration inference"@en ;
+    dc:description "The inference that Gilead's color system is an enumerated role/status code."@en ;
+    rdfs:comment "From the street enumeration of red, green, striped clothing, and black, the Model Reader infers that color and color-pattern classify social function, gender hierarchy, and household rank."@en ;
+    lig:hasSequenceNumber 2 .
+
+hmt:ColorInventoryInference a lig:Inference ;
+    rdfs:label "Color inventory inference"@en ;
+    dc:description "The inference that the chromatic code has become presupposed reader competence."@en ;
+    rdfs:comment "From the domestic tableau, the Model Reader infers that people can be identified by color alone because the code has already been learned."@en ;
+    lig:hasSequenceNumber 3 .
+
+hmt:HistoricalColorReframingInference a lig:Inference ;
+    rdfs:label "Historical color reframing inference"@en ;
+    dc:description "The inference that the Historical Notes retrospectively reframe the chromatic code as designed and historically derivative."@en ;
+    rdfs:comment "From the pseudo-academic claim about costume design and historical borrowing, the Model Reader infers that Gilead's color code is a constructed synthesis rather than an organic feature of the world."@en ;
+    lig:hasSequenceNumber 4 .
+
+hmt:ChromaticCodeSynthesisInference a lig:Inference ;
+    rdfs:label "Chromatic code synthesis inference"@en ;
+    dc:description "The synthesis inference that Gilead's clothing system is an enumerated chromatic code of role, status, and hierarchy."@en ;
+    rdfs:comment "This inference synthesizes the scattered color cues into the interpretation that Gilead makes social identity and institutional hierarchy publicly legible through color."@en ;
+    lig:hasSequenceNumber 5 .
+
+hmt:RedSymbolicInference a lig:Inference ;
+    rdfs:label "Red symbolic inference"@en ;
+    dc:description "The inference that the Handmaids' red can also be interpreted symbolically as blood and reproductive function."@en ;
+    rdfs:comment "This inference follows from Offred's own commentary that red is the colour of blood and defines the Handmaids."@en ;
+    lig:hasSequenceNumber 6 .
+
+
+#################################################################
+# Color-coded clothing interpretations
+#################################################################
+
+hmt:GileadChromaticCodeControlsSocialIdentity a lig:LicensedInterpretation ;
+    rdfs:label "Gilead chromatic code controls social identity"@en ;
+    dc:description "A licensed interpretation according to which Gilead uses a chromatic institutional code to make social roles, gender hierarchy, and household positions visually legible."@en ;
+    rdfs:comment "This interpretation is licensed by repeated and convergent cues across Offred's narration: clothing color and color-pattern function as signs of role, status, and identity reduction."@en ;
+    lig:hasInterpretiveStatus "licensed" .
+
+hmt:ColorCodeAsDesignedHistoricalSynthesis a lig:LicensedInterpretation ;
+    rdfs:label "Color code as designed historical synthesis"@en ;
+    dc:description "A licensed interpretation according to which the Historical Notes reframe the chromatic code as a deliberately designed and historically derivative artifact."@en ;
+    rdfs:comment "This interpretation belongs to the second Model Reader level and depends on the pseudo-academic frame of the Historical Notes."@en ;
+    lig:hasInterpretiveStatus "licensed" .
+
+hmt:POWUniformOriginConjecture a lig:AlternativeInterpretation ,
+                                  lig:LicensedInterpretation ;
+    rdfs:label "P.O.W. uniform origin conjecture"@en ;
+    dc:description "A conjectural interpretation according to which the Handmaids' red may have been borrowed from German P.O.W. uniforms in Canadian camps."@en ;
+    rdfs:comment "This interpretation should not be treated as direct narrative fact. It is a hedged, second-hand attribution within the pseudo-academic frame of the Historical Notes."@en ;
+    lig:hasInterpretiveStatus "conjectural" .
+
+hmt:RedAsReproductiveBloodSymbolism a lig:AlternativeInterpretation ,
+                                       lig:LicensedInterpretation ;
+    rdfs:label "Red as reproductive blood symbolism"@en ;
+    dc:description "An alternative interpretation according to which the Handmaids' red symbolically marks blood, fertility, and reproductive function."@en ;
+    rdfs:comment "This interpretation is compatible with the chromatic code interpretation and is activated by Offred's own commentary on red as the colour of blood."@en ;
+    lig:hasInterpretiveStatus "alternative" .
+
+
+
+#################################################################
+# Color-coded clothing cue-resource links
+#################################################################
+
+hmt:InitialColorAssignmentCue
+    lig:activatesCode hmt:GileadChromaticRoleStatusCode ,
+                      hmt:FemaleRoleColorSubcode ,
+                      hmt:InstitutionalAuthorityColorSubcode ,
+                      hmt:RedReproductiveSymbolicSubcode ;
+    lig:activatesFrame hmt:InstitutionalDressFrame ,
+                       hmt:HouseholdHierarchyFrame ;
+    lig:requiresIntrinsicKnowledge hmt:InstitutionalDressKnowledge ,
+                                   hmt:ColorRoleMappingKnowledge ,
+                                   hmt:RedBloodSymbolismKnowledge ;
+    lig:triggersPresupposition hmt:ColorAssignedRolePresupposition ,
+                               hmt:RedSymbolismPresupposition ;
+    lig:supportsInference hmt:InitialColorAssignmentInference ,
+                          hmt:ChromaticCodeSynthesisInference ,
+                          hmt:RedSymbolicInference .
+
+hmt:StreetColorEnumerationCue
+    lig:activatesCode hmt:GileadChromaticRoleStatusCode ,
+                      hmt:FemaleRoleColorSubcode ;
+    lig:activatesFrame hmt:SocialTaxonomyFrame ;
+    lig:requiresIntrinsicKnowledge hmt:ColorRoleMappingKnowledge ,
+                                   hmt:CompositionalColorPatternKnowledge ;
+    lig:triggersPresupposition hmt:ColorCodeSystematicityPresupposition ;
+    lig:supportsInference hmt:StreetColorEnumerationInference ,
+                          hmt:ChromaticCodeSynthesisInference .
+
+hmt:ColorInventoryCue
+    lig:activatesCode hmt:GileadChromaticRoleStatusCode ,
+                      hmt:FemaleRoleColorSubcode ,
+                      hmt:InstitutionalAuthorityColorSubcode ;
+    lig:activatesFrame hmt:HouseholdHierarchyFrame ;
+    lig:requiresIntrinsicKnowledge hmt:ColorRoleMappingKnowledge ,
+                                   hmt:VisualTaxonomyKnowledge ;
+    lig:triggersPresupposition hmt:ColorAsIdentitySubstitutePresupposition ;
+    lig:supportsInference hmt:ColorInventoryInference ,
+                          hmt:ChromaticCodeSynthesisInference .
+
+hmt:HistoricalNotesColorOriginCue
+    lig:activatesFrame hmt:PseudoAcademicHistoricalFrame ,
+                       hmt:HistoricalRecyclingFrame ;
+    lig:activatesEncyclopedia hmt:ExtraTextualHistoricalEncyclopedia ;
+    lig:requiresIntrinsicKnowledge hmt:HistoricalReframingKnowledge ,
+                                   hmt:WWIIPOWUniformKnowledge ,
+                                   hmt:HedgedScholarlyAttributionKnowledge ,
+                                   hmt:MarketingCostumeDesignKnowledge ;
+    lig:triggersPresupposition hmt:HistoricalNotesReframingPresupposition ,
+                               hmt:HedgedOriginPresupposition ;
+    lig:supportsInference hmt:HistoricalColorReframingInference .
+
+
+#################################################################
+# Color-coded clothing inference-interpretation links
+#################################################################
+
+hmt:InitialColorAssignmentInference
+    lig:licensesInterpretation hmt:GileadChromaticCodeControlsSocialIdentity .
+
+hmt:StreetColorEnumerationInference
+    lig:licensesInterpretation hmt:GileadChromaticCodeControlsSocialIdentity .
+
+hmt:ColorInventoryInference
+    lig:licensesInterpretation hmt:GileadChromaticCodeControlsSocialIdentity .
+
+hmt:ChromaticCodeSynthesisInference
+    lig:licensesInterpretation hmt:GileadChromaticCodeControlsSocialIdentity .
+
+hmt:HistoricalColorReframingInference
+    lig:licensesInterpretation hmt:ColorCodeAsDesignedHistoricalSynthesis ,
+                               hmt:POWUniformOriginConjecture .
+
+hmt:RedSymbolicInference
+    lig:licensesInterpretation hmt:RedAsReproductiveBloodSymbolism .
+
+
+
