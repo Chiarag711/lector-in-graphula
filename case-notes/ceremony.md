@@ -141,12 +141,13 @@ The Ceremony case shows how the text constructs a Model Reader capable of recogn
 
 ## Modelling decision for later Protégé work
 
-This case should be modeled as one interpretive case with three main textual fragments and four cues.
+This case should be modeled as one interpretive case with four textual fragments and four cues.
 
 Recommended fragments:
 1. CeremonyBiblicalFragment
 2. CeremonyPrayerFragment
-3. CeremonyActFragment
+3. CeremonyCategoryFailureFragment
+4. CeremonyPassionNegationFragment
 
 Recommended cues:
 1. CeremonyBiblicalCue
