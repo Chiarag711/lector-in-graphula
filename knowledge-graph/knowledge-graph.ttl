@@ -560,3 +560,372 @@ hmt:PassionNegationInference
 hmt:CeremonyRitualizationInference
     lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
                                hmt:GileadUsesReligionToLegitimizeReproductiveCoercion .
+
+
+
+#################################################################
+# Trust me / Eyes ambiguity case
+#################################################################
+
+#################################################################
+# Trust me fragments
+#################################################################
+
+hmt:NickEyeSuspicionFragment a lig:TextFragment ;
+    rdfs:label "Nick Eye suspicion fragment"@en ;
+    dc:description "A textual fragment in which Offred considers the possibility that Nick may be an Eye."@en ;
+    rdfs:comment "This fragment introduces Nick as an ambiguous figure. A small gesture becomes interpretable either as ordinary contact or as a possible surveillance test."@en ;
+    lig:hasTextualContent "Selected passage in which Offred suspects that Nick may be an Eye." ;
+    lig:hasSourceReference "The Handmaid's Tale, PDF pp. 26-27" .
+
+hmt:NickTrustRequestFragment a lig:TextFragment ;
+    rdfs:label "Nick trust request fragment"@en ;
+    dc:description "A textual fragment in which Nick asks Offred to trust him during the final scene."@en ;
+    rdfs:comment "This fragment intensifies the ambiguity around Nick's role. His reference to Mayday and Offred's real name may support rescue, but they do not eliminate suspicion."@en ;
+    lig:hasTextualContent "Selected passage in which Nick says Trust me and claims that the men are connected to Mayday." ;
+    lig:hasSourceReference "The Handmaid's Tale, PDF pp. 283-285" .
+
+hmt:StateSecretsAuthorizationFragment a lig:TextFragment ;
+    rdfs:label "State secrets authorization fragment"@en ;
+    dc:description "A textual fragment in which the men claim authority through the phrase violation of state secrets."@en ;
+    rdfs:comment "This fragment keeps the probability disjunction open because official language may indicate real Gileadean authority or may be performed as part of a rescue operation."@en ;
+    lig:hasTextualContent "Selected passage in which the men claim that Offred is being taken for violation of state secrets." ;
+    lig:hasSourceReference "The Handmaid's Tale, PDF pp. 283-285" .
+
+hmt:DarknessOrLightFragment a lig:TextFragment ;
+    rdfs:label "Darkness or light fragment"@en ;
+    dc:description "A textual fragment in which Offred steps into the van without knowing whether it means destruction or rescue."@en ;
+    rdfs:comment "This fragment explicitly withholds interpretive closure and presents the final movement as suspended between ending and beginning."@en ;
+    lig:hasTextualContent "Selected passage in which Offred steps into the darkness within, or else the light." ;
+    lig:hasSourceReference "The Handmaid's Tale, PDF pp. 283-285" .
+
+
+#################################################################
+# Trust me cues
+#################################################################
+
+hmt:NickEyeSuspicionCue a lig:TextualCue ;
+    rdfs:label "Nick Eye suspicion cue"@en ;
+    dc:description "The cue provided by Offred's suspicion that Nick may be an Eye."@en ;
+    rdfs:comment "This cue activates knowledge about surveillance, informants, and the risk that apparently friendly behavior may be a test."@en ;
+    lig:hasTextualContent "Perhaps he is an Eye" .
+
+hmt:NickTrustMeCue a lig:TextualCue ;
+    rdfs:label "Nick Trust me cue"@en ;
+    dc:description "The cue provided by Nick's request that Offred trust him."@en ;
+    rdfs:comment "This cue activates trust and suspicion at the same time. In Gilead, a request for trust cannot function as proof of safety."@en ;
+    lig:hasTextualContent "Trust me" .
+
+hmt:StateSecretsCue a lig:TextualCue ;
+    rdfs:label "State secrets cue"@en ;
+    dc:description "The cue provided by the official-sounding accusation of state secrets."@en ;
+    rdfs:comment "This cue activates knowledge about state authority, warrants, secrecy, and clandestine deception."@en ;
+    lig:hasTextualContent "Violation of state secrets" .
+
+hmt:DarknessOrLightCue a lig:TextualCue ;
+    rdfs:label "Darkness or light cue"@en ;
+    dc:description "The cue provided by the final contrast between darkness and light."@en ;
+    rdfs:comment "This cue activates knowledge about open endings and alternative possible outcomes."@en ;
+    lig:hasTextualContent "darkness within; or else the light" .
+
+
+#################################################################
+# Trust me fragment-cue structure
+#################################################################
+
+hmt:HandmaidsTaleText lig:hasFragment hmt:NickEyeSuspicionFragment ,
+                                     hmt:NickTrustRequestFragment ,
+                                     hmt:StateSecretsAuthorizationFragment ,
+                                     hmt:DarknessOrLightFragment .
+
+hmt:NickEyeSuspicionFragment lig:containsCue hmt:NickEyeSuspicionCue .
+
+hmt:NickTrustRequestFragment lig:containsCue hmt:NickTrustMeCue .
+
+hmt:StateSecretsAuthorizationFragment lig:containsCue hmt:StateSecretsCue .
+
+hmt:DarknessOrLightFragment lig:containsCue hmt:DarknessOrLightCue .
+
+
+#################################################################
+# Trust me interpretive resources
+#################################################################
+
+hmt:GileadSurveillanceFrame a lig:Frame ;
+    rdfs:label "Gilead surveillance frame"@en ;
+    dc:description "The frame through which apparently ordinary behavior may be interpreted as surveillance or testing."@en ;
+    rdfs:comment "This frame is activated by Offred's suspicion that Nick may be an Eye and by the final scene's uncertainty around authority, betrayal, and trust."@en .
+
+hmt:MaydayResistanceFrame a lig:Frame ;
+    rdfs:label "Mayday resistance frame"@en ;
+    dc:description "The frame through which Nick's reference to Mayday may be interpreted as a sign of possible rescue."@en ;
+    rdfs:comment "This frame is activated by Nick's claim that the men are connected to Mayday and by his use of Offred's real name."@en .
+
+hmt:StateAuthorityFrame a lig:Frame ;
+    rdfs:label "State authority frame"@en ;
+    dc:description "The frame through which the black van and the language of state secrets may be interpreted as official Gileadean authority."@en ;
+    rdfs:comment "This frame is activated by the arrival of the men, the lack of clear authorization, and the official-sounding accusation of state secrets."@en .
+
+hmt:OpenEndingFrame a lig:Frame ;
+    rdfs:label "Open ending frame"@en ;
+    dc:description "The frame through which the final movement into the van remains suspended between possible destruction and possible rescue."@en ;
+    rdfs:comment "This frame is activated by the contrast between darkness and light in the final movement."@en .
+
+
+#################################################################
+# Trust me intrinsic knowledge
+#################################################################
+
+hmt:SurveillanceKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Surveillance knowledge"@en ;
+    dc:description "Intrinsic knowledge that authoritarian regimes use informants, tests, and hidden observation."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to understand why Offred interprets Nick's behavior as potentially dangerous."@en .
+
+hmt:ResistanceNetworkKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Resistance network knowledge"@en ;
+    dc:description "Intrinsic knowledge that clandestine resistance networks operate through secrecy, codes, and risky trust."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to understand why the reference to Mayday may indicate possible rescue."@en .
+
+hmt:TrustUnderSurveillanceKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Trust under surveillance knowledge"@en ;
+    dc:description "Intrinsic knowledge that trust is unstable under conditions of surveillance and coercion."@en ;
+    rdfs:comment "This knowledge is required to understand why Nick's request to trust him cannot function as proof of safety."@en .
+
+hmt:OfficialAuthorityKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Official authority knowledge"@en ;
+    dc:description "Intrinsic knowledge that uniforms, vans, warrants, and accusations may signal state authority."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to understand why the arrival of the men may be interpreted as an arrest."@en .
+
+hmt:ClandestineDeceptionKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Clandestine deception knowledge"@en ;
+    dc:description "Intrinsic knowledge that clandestine actors may imitate official procedures in order to deceive or protect."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to understand why official-looking signs do not completely eliminate the rescue hypothesis."@en .
+
+hmt:OpenEndingKnowledge a lig:IntrinsicKnowledge ;
+    rdfs:label "Open ending knowledge"@en ;
+    dc:description "Intrinsic knowledge that narrative endings may deliberately withhold final resolution."@en ;
+    rdfs:comment "This knowledge allows the Model Reader to interpret the darkness or light contrast as structured ambiguity rather than missing information."@en .
+
+
+#################################################################
+# Trust me presuppositions
+#################################################################
+
+hmt:FriendlyBehaviorMayBeTestPresupposition a lig:Presupposition ;
+    rdfs:label "Friendly behavior may be test presupposition"@en ;
+    dc:description "The presupposition that apparently friendly behavior may conceal a surveillance test."@en ;
+    rdfs:comment "This presupposition is triggered by Offred's early suspicion that Nick may be an Eye."@en .
+
+hmt:TrustMayConcealBetrayalPresupposition a lig:Presupposition ;
+    rdfs:label "Trust may conceal betrayal presupposition"@en ;
+    dc:description "The presupposition that a request for trust may coexist with danger or betrayal."@en ;
+    rdfs:comment "This presupposition is triggered by Nick's request that Offred trust him."@en .
+
+hmt:AuthorityMayBePerformedPresupposition a lig:Presupposition ;
+    rdfs:label "Authority may be performed presupposition"@en ;
+    dc:description "The presupposition that official-looking authority may be genuine or strategically performed."@en ;
+    rdfs:comment "This presupposition is triggered by the men's claim of state authority and the reference to state secrets."@en .
+
+hmt:EndingMayRemainOpenPresupposition a lig:Presupposition ;
+    rdfs:label "Ending may remain open presupposition"@en ;
+    dc:description "The presupposition that the final scene may preserve unresolved possible outcomes."@en ;
+    rdfs:comment "This presupposition is triggered by the contrast between darkness and light."@en .
+
+
+#################################################################
+# Trust me inferences
+#################################################################
+
+hmt:NickEyeSuspicionInference a lig:Inference ;
+    rdfs:label "Nick Eye suspicion inference"@en ;
+    dc:description "The inference that Nick's early behavior may indicate surveillance or testing."@en ;
+    rdfs:comment "From Offred's suspicion, the Model Reader infers that Nick's role is not stable and that ordinary contact may hide institutional danger."@en ;
+    lig:hasSequenceNumber 1 .
+
+hmt:NickTrustAmbiguityInference a lig:Inference ;
+    rdfs:label "Nick trust ambiguity inference"@en ;
+    dc:description "The inference that Nick's request for trust supports possible rescue but does not remove suspicion."@en ;
+    rdfs:comment "From Nick's reference to Mayday and his request for trust, the Model Reader infers that he may be helping Offred, but the cue remains unstable."@en ;
+    lig:hasSequenceNumber 2 .
+
+hmt:StateAuthorityAmbiguityInference a lig:Inference ;
+    rdfs:label "State authority ambiguity inference"@en ;
+    dc:description "The inference that the men may be official agents or may be performing authority as part of a rescue."@en ;
+    rdfs:comment "From the black van, the warrant question, and the phrase state secrets, the Model Reader infers that the scene supports both arrest and rescue hypotheses."@en ;
+    lig:hasSequenceNumber 3 .
+
+hmt:DarknessLightOpenEndingInference a lig:Inference ;
+    rdfs:label "Darkness light open ending inference"@en ;
+    dc:description "The inference that Offred's final movement preserves unresolved possible outcomes."@en ;
+    rdfs:comment "From the final contrast between darkness and light, the Model Reader infers that the narrative withholds closure."@en ;
+    lig:hasSequenceNumber 4 .
+
+hmt:NickAmbiguousRoleSynthesisInference a lig:Inference ;
+    rdfs:label "Nick ambiguous role synthesis inference"@en ;
+    dc:description "The synthesis inference that Nick's role remains structurally ambiguous at the moment of Offred's decision."@en ;
+    rdfs:comment "This inference synthesizes the early suspicion, the request for trust, the ambiguous official language, and the open ending into the interpretation of trust as an uncertain act under surveillance."@en ;
+    lig:hasSequenceNumber 5 .
+
+
+#################################################################
+# Trust me predictions and probability disjunctions
+#################################################################
+
+hmt:NickRoleUncertaintyPrediction a lig:Prediction ;
+    rdfs:label "Nick role uncertainty prediction"@en ;
+    dc:description "A prediction that Nick's role may develop either as threat or as ally."@en ;
+    lig:hasProbabilityDegree "undecided" .
+
+hmt:NickAsEyePrediction a lig:Prediction ;
+    rdfs:label "Nick as Eye prediction"@en ;
+    dc:description "A prediction according to which Nick may be connected to Gilead's surveillance apparatus."@en ;
+    lig:hasProbabilityDegree "possible" .
+
+hmt:NickAsMaydayAllyPrediction a lig:Prediction ;
+    rdfs:label "Nick as Mayday ally prediction"@en ;
+    dc:description "A prediction according to which Nick may be connected to Mayday and may be helping Offred escape."@en ;
+    lig:hasProbabilityDegree "possible" .
+
+hmt:FinalOutcomeUncertaintyPrediction a lig:Prediction ;
+    rdfs:label "Final outcome uncertainty prediction"@en ;
+    dc:description "A prediction that Offred's final departure may lead either to arrest or to rescue."@en ;
+    lig:hasProbabilityDegree "undecided" .
+
+hmt:OffredArrestPrediction a lig:Prediction ;
+    rdfs:label "Offred arrest prediction"@en ;
+    dc:description "A prediction according to which the black van may signal Offred's arrest by Gilead."@en ;
+    lig:hasProbabilityDegree "possible" .
+
+hmt:OffredRescuePrediction a lig:Prediction ;
+    rdfs:label "Offred rescue prediction"@en ;
+    dc:description "A prediction according to which the black van may signal Offred's rescue through Mayday."@en ;
+    lig:hasProbabilityDegree "possible" .
+
+hmt:NickRoleProbabilityDisjunction a lig:ProbabilityDisjunction ;
+    rdfs:label "Nick role probability disjunction"@en ;
+    dc:description "A probability disjunction between Nick as possible Eye and Nick as possible Mayday ally."@en ;
+    rdfs:comment "This disjunction preserves the competing predictions generated by the textual cues around Nick."@en .
+
+hmt:FinalOutcomeProbabilityDisjunction a lig:ProbabilityDisjunction ;
+    rdfs:label "Final outcome probability disjunction"@en ;
+    dc:description "A probability disjunction between Offred's possible arrest and possible rescue."@en ;
+    rdfs:comment "This disjunction preserves the unresolved alternatives of the final scene."@en .
+
+
+#################################################################
+# Trust me interpretations
+#################################################################
+
+hmt:TrustAsUncertainInterpretiveAct a lig:LicensedInterpretation ;
+    rdfs:label "Trust as uncertain interpretive act"@en ;
+    dc:description "A licensed interpretation according to which trust is constructed as an uncertain interpretive act under surveillance."@en ;
+    rdfs:comment "This interpretation does not decide whether Nick is good or bad. It describes how the text makes trust depend on unstable cues and constrained choice."@en ;
+    lig:hasInterpretiveStatus "licensed" .
+
+hmt:FinalDepartureAsLicensedAmbiguity a lig:LicensedInterpretation ;
+    rdfs:label "Final departure as licensed ambiguity"@en ;
+    dc:description "A licensed interpretation according to which Offred's departure remains suspended between possible rescue and possible destruction."@en ;
+    rdfs:comment "This interpretation preserves the open ending produced by the contrast between darkness and light."@en ;
+    lig:hasInterpretiveStatus "licensed" .
+
+hmt:NickMayBeRescuerInterpretation a lig:AlternativeInterpretation ,
+                                      lig:LicensedInterpretation ;
+    rdfs:label "Nick may be rescuer interpretation"@en ;
+    dc:description "An alternative interpretation according to which Nick may be connected to Mayday and may be helping Offred escape."@en ;
+    rdfs:comment "This interpretation is supported by Nick's reference to Mayday and Offred's real name, but it is not confirmed as simple fact inside the scene."@en ;
+    lig:hasInterpretiveStatus "alternative" .
+
+hmt:NickMayBeEyeInterpretation a lig:AlternativeInterpretation ,
+                                  lig:LicensedInterpretation ;
+    rdfs:label "Nick may be Eye interpretation"@en ;
+    dc:description "An alternative interpretation according to which Nick may be connected to Gilead's surveillance apparatus."@en ;
+    rdfs:comment "This interpretation is supported by Offred's early suspicion and by the final scene's official and coercive signs."@en ;
+    lig:hasInterpretiveStatus "alternative" .
+
+
+
+#################################################################
+# Trust me cue-resource links
+#################################################################
+
+hmt:NickEyeSuspicionCue
+    lig:activatesFrame hmt:GileadSurveillanceFrame ;
+    lig:requiresIntrinsicKnowledge hmt:SurveillanceKnowledge ;
+    lig:triggersPresupposition hmt:FriendlyBehaviorMayBeTestPresupposition ;
+    lig:supportsInference hmt:NickEyeSuspicionInference ,
+                          hmt:NickAmbiguousRoleSynthesisInference .
+
+hmt:NickTrustMeCue
+    lig:activatesFrame hmt:MaydayResistanceFrame ,
+                       hmt:GileadSurveillanceFrame ;
+    lig:requiresIntrinsicKnowledge hmt:ResistanceNetworkKnowledge ,
+                                   hmt:TrustUnderSurveillanceKnowledge ;
+    lig:triggersPresupposition hmt:TrustMayConcealBetrayalPresupposition ;
+    lig:supportsInference hmt:NickTrustAmbiguityInference ,
+                          hmt:NickAmbiguousRoleSynthesisInference .
+
+hmt:StateSecretsCue
+    lig:activatesFrame hmt:StateAuthorityFrame ,
+                       hmt:GileadSurveillanceFrame ;
+    lig:requiresIntrinsicKnowledge hmt:OfficialAuthorityKnowledge ,
+                                   hmt:ClandestineDeceptionKnowledge ;
+    lig:triggersPresupposition hmt:AuthorityMayBePerformedPresupposition ;
+    lig:supportsInference hmt:StateAuthorityAmbiguityInference ,
+                          hmt:NickAmbiguousRoleSynthesisInference .
+
+hmt:DarknessOrLightCue
+    lig:activatesFrame hmt:OpenEndingFrame ;
+    lig:requiresIntrinsicKnowledge hmt:OpenEndingKnowledge ;
+    lig:triggersPresupposition hmt:EndingMayRemainOpenPresupposition ;
+    lig:supportsInference hmt:DarknessLightOpenEndingInference ,
+                          hmt:NickAmbiguousRoleSynthesisInference .
+
+
+#################################################################
+# Trust me inference-prediction links
+#################################################################
+
+hmt:NickEyeSuspicionInference
+    lig:generatesPrediction hmt:NickRoleUncertaintyPrediction ,
+                            hmt:NickAsEyePrediction ;
+    lig:licensesInterpretation hmt:NickMayBeEyeInterpretation .
+
+hmt:NickTrustAmbiguityInference
+    lig:generatesPrediction hmt:NickRoleUncertaintyPrediction ,
+                            hmt:NickAsMaydayAllyPrediction ;
+    lig:licensesInterpretation hmt:NickMayBeRescuerInterpretation .
+
+hmt:StateAuthorityAmbiguityInference
+    lig:generatesPrediction hmt:FinalOutcomeUncertaintyPrediction ,
+                            hmt:OffredArrestPrediction ,
+                            hmt:OffredRescuePrediction ;
+    lig:licensesInterpretation hmt:FinalDepartureAsLicensedAmbiguity .
+
+hmt:DarknessLightOpenEndingInference
+    lig:generatesPrediction hmt:FinalOutcomeUncertaintyPrediction ;
+    lig:licensesInterpretation hmt:FinalDepartureAsLicensedAmbiguity .
+
+hmt:NickAmbiguousRoleSynthesisInference
+    lig:generatesPrediction hmt:NickRoleUncertaintyPrediction ,
+                            hmt:FinalOutcomeUncertaintyPrediction ;
+    lig:licensesInterpretation hmt:TrustAsUncertainInterpretiveAct ,
+                               hmt:FinalDepartureAsLicensedAmbiguity .
+
+
+#################################################################
+# Trust me probability disjunction links
+#################################################################
+
+hmt:NickRoleUncertaintyPrediction
+    lig:opensProbabilityDisjunction hmt:NickRoleProbabilityDisjunction .
+
+hmt:NickRoleProbabilityDisjunction
+    lig:hasAlternativePrediction hmt:NickAsEyePrediction ,
+                                 hmt:NickAsMaydayAllyPrediction .
+
+hmt:FinalOutcomeUncertaintyPrediction
+    lig:opensProbabilityDisjunction hmt:FinalOutcomeProbabilityDisjunction .
+
+hmt:FinalOutcomeProbabilityDisjunction
+    lig:hasAlternativePrediction hmt:OffredArrestPrediction ,
+                                 hmt:OffredRescuePrediction .
