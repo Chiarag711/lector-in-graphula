@@ -20,9 +20,9 @@ The case is based on 4 textual moments:
 
 ## Overview
 
-In *The Handmaid's Tale*, women's social roles are visually encoded by the color of their prescribed clothing: red for Handmaids, blue for Wives, dull green for Marthas, stripes for Econowives, black for widows (and for the Commander's uniform and umbrella). The text never states this system as an explicit rule-list; it distributes the cues across scenes, and the narrator comments on them only partially and subjectively. In the final Historical Notes, a scholar in 2195 retrospectively attributes the design of the female costumes to a Gileadean founder and traces the Handmaids' red to an extra-textual historical source.
+In *The Handmaid's Tale*, social roles and institutional positions are visually encoded by a limited system of colors and color-patterns. The code is especially developed for female roles — red for Handmaids, blue for Wives, dull green for Marthas, stripes for Econowives, black for widows — but the Commander's black uniform and umbrella also show that male authority is part of the broader chromatic hierarchy. The text never states this system as an explicit rule-list; it distributes the cues across scenes, and the narrator comments on them only partially and subjectively. In the final Historical Notes, a scholar in 2195 retrospectively attributes the design of the female costumes to a Gileadean founder and traces the Handmaids' red to an extra-textual historical source.
 
-This case is useful for our ontology because it is the clearest example of an enumerated role→color code that the Model Reader must assemble through interpretive cooperation, and because the Historical Notes create a second level of Model Reader: the reader presupposed by Offred's narration (who reads the colors as Gilead's internal code) and the reader presupposed by the book as a whole (who, after the Historical Notes, must also activate extra-textual historical encyclopedia and reinterpret the code as a constructed, historically derivative artifact).
+This case is useful for our ontology because it is the clearest example of an enumerated chromatic role/status code that the Model Reader must assemble through interpretive cooperation, and because the Historical Notes create a second level of Model Reader: the reader presupposed by Offred's narration (who reads the colors as Gilead's internal code) and the reader presupposed by the book as a whole (who, after the Historical Notes, must also activate extra-textual historical encyclopedia and reinterpret the code as a constructed, historically derivative artifact).
 
 ---
 
@@ -40,10 +40,10 @@ This case is useful for our ontology because it is the clearest example of an en
 Offred describes putting on her prescribed red garments and white wings, noting that the color is not a personal choice ("it's not my colour") but something that "defines" the group she belongs to. The umbrella stand makes the color-role assignment explicit for three household roles at once: black/Commander, blue/Wife, red/Handmaid. Rita's dull green dress is identified as the standard Martha garment, and Rita's disapproval is directed at what the red dress *stands for*, not at Offred personally.
 
 **Interpretive function:**  
-The text explicitly states that red is assigned ("prescribed issue") and that it "defines us", and explicitly maps three umbrella colors to three roles. What remains implicit is the systematicity: the Model Reader must infer that these local assignments are instances of a general, society-wide code in which each social function has exactly one color, and that clothing therefore works as a legible sign of rank and function. The reader needs intrinsic knowledge about uniforms, sumptuary rules, and institutional dress (nuns' habits, prison uniforms) to read the colors as a code rather than as incidental description. Rita's reaction adds a further implicit layer: within Gilead, the red dress itself carries a social meaning ("what it stands for") that the text presupposes rather than explains.
+The text explicitly states that red is assigned ("prescribed issue") and that it "defines us", and explicitly maps three umbrella colors to three roles. What remains implicit is the systematicity: the Model Reader must infer that these local assignments are instances of a general, society-wide code in which social roles and institutional positions are associated with recognizable colors or color-patterns, and that clothing therefore works as a legible sign of rank and function. The reader needs intrinsic knowledge about uniforms, sumptuary rules, and institutional dress (nuns' habits, prison uniforms) to read the colors as a code rather than as incidental description. Rita's reaction adds a further implicit layer: within Gilead, the red dress itself carries a social meaning ("what it stands for") that the text presupposes rather than explains.
 
 **Function in the ontology:**  
-This passage can be modeled as a textual fragment containing the first cues of the chromatic code: cues (red dress, color-assigned umbrellas, green Martha dress) that activate intrinsic knowledge about institutional dress codes and trigger the presupposition that clothing color is role-assigned, supporting the first inference toward the role→color code.
+This passage can be modeled as a textual fragment containing the first cues of the chromatic code: cues (red dress, color-assigned umbrellas, green Martha dress) that activate intrinsic knowledge about institutional dress codes and trigger the presupposition that clothing color is role-assigned, supporting the first inference toward the chromatic role/status code.
 
 ---
 
@@ -64,7 +64,7 @@ Walking through town, Offred observes and classifies the women she sees by dress
 This is the most explicit enumeration of the code in the novel: the narrator herself performs the classification. Yet the Model Reader must still infer the underlying principle: that the striped dress *combines* the colors of the specialized female functions (red, blue, green) precisely because the Econowife cumulates those functions, so the code is compositional, not just a flat list. The reader must also infer the class dimension: color-coding maps not only function but the rank of the household ("the poorer men"). The absence of Wives from sidewalks implicitly signals that visibility itself is stratified. None of this is stated as a rule; it is presented through one narrator's ordinary perception, which the Model Reader must generalize into a social taxonomy.
 
 **Function in the ontology:**  
-This passage can be modeled as the central textual fragment of the case: a cue (the enumeration of dress colors) that activates the chromatic code as an enumerated role→color system and licenses the interpretation that Gilead organizes female social identity as a closed set of visually marked functions.
+This passage can be modeled as the central textual fragment of the case: a cue (the enumeration of dress colors) that activates the chromatic code as an enumerated role/status-to-color system and licenses the interpretation that Gilead organizes social identity and gender hierarchy as a closed set of visually marked functions and positions.
 
 ---
 
@@ -82,7 +82,7 @@ This passage can be modeled as the central textual fragment of the case: a cue (
 As the household assembles for the Ceremony, Offred describes the Commander's gaze over the sitting room. The occupants are identified not by name but by color and posture: a kneeling woman in red (Offred), a seated woman in blue (Serena Joy), two standing women in green (the Marthas), a man in the background (Nick). The Commander appears to survey them like possessions of uncertain value.
 
 **Interpretive function:**  
-Here the text uses the code instead of stating it: people are denoted purely by color. The passage is only intelligible if the Model Reader has already internalized the role→color mapping built up in the earlier fragments — the reader must supply "Handmaid", "Wife", "Marthas" from "red", "blue", "green". This is a strong case of the text as "lazy machine": the sentence presupposes the code as already-acquired reader competence. The "inventory" simile additionally invites the inference that the code turns persons into enumerable, ownable items, aligning the chromatic code with the possession logic seen elsewhere in the novel (e.g., the naming system).
+Here the text uses the code instead of stating it: people are denoted purely by color. The passage is only intelligible if the Model Reader has already internalized the role/status-to-color mapping built up in the earlier fragments — the reader must supply "Handmaid", "Wife", "Marthas" from "red", "blue", "green". This is a strong case of the text as "lazy machine": the sentence presupposes the code as already-acquired reader competence. The "inventory" simile additionally invites the inference that the code turns persons into enumerable, ownable items, aligning the chromatic code with the possession logic seen elsewhere in the novel (e.g., the naming system).
 
 **Function in the ontology:**  
 This passage can be modeled as a textual fragment whose cue (color-only designation of persons) presupposes the previously activated chromatic code and supports the inference that color functions as a substitute for personal identity within Gilead's social organization.
@@ -114,7 +114,7 @@ This passage can be modeled as a textual fragment whose cue activates two resour
 
 This case requires the Model Reader to infer that:
 
-1. The scattered color notations (red, blue, green, stripes, black) form a single, society-wide enumerated code mapping social role to clothing color, even though the text never states the code as a rule.
+1. The scattered color notations (red, blue, green, stripes, black) form a single, society-wide enumerated code mapping roles and institutional positions to colors or color-patterns, even though the text never states the code as a rule.
 2. The code is compositional and stratified: the Econowives' stripes combine the specialized colors because they cumulate functions, and color marks household rank as well as role.
 3. By p. 89 the code has become presupposed reader competence: persons can be denoted by color alone, which implies that the code reduces individual identity to social function.
 4. After the Historical Notes, the whole system must be re-read at a second level: the code is not a natural feature of Gilead's world but a designed, historically recycled artifact — an inference that requires extra-textual encyclopedic knowledge and must remain marked as hedged scholarly conjecture within the fiction.
@@ -123,7 +123,7 @@ This case requires the Model Reader to infer that:
 
 ## Important interpretive caution
 
-Two levels of Model Reader must not be collapsed into one. The role→color code (moments 1–3) is reconstructed by the Model Reader internal to Offred's narration and can be treated as a licensed interpretation: the text repeatedly and convergently supports it. The historical origin of the red (moment 4) is different in kind: it is asserted by a character (Pieixoto) at the second narrative level, hedged ("seems to have"), and based on second-hand evidence within the fiction. The knowledge graph should not treat the P.O.W. origin as an explicit fact about Gilead's world; it should be modeled as an interpretation activated at the second Model Reader level, dependent on the pseudo-academic frame. More generally, these passages should not be treated as plot summary, but as cues for interpretive operations, and the ontology should represent textual strategies (the two Model Reader levels), not empirical readers or the empirical author.
+Two levels of Model Reader must not be collapsed into one. The chromatic role/status code (moments 1–3) is reconstructed by the Model Reader internal to Offred's narration and can be treated as a licensed interpretation: the text repeatedly and convergently supports it. The historical origin of the red (moment 4) is different in kind: it is asserted by a character (Pieixoto) at the second narrative level, hedged ("seems to have"), and based on second-hand evidence within the fiction. The knowledge graph should not treat the P.O.W. origin as an explicit fact about Gilead's world; it should be modeled as an interpretation activated at the second Model Reader level, dependent on the pseudo-academic frame. More generally, these passages should not be treated as plot summary, but as cues for interpretive operations, and the ontology should represent textual strategies (the two Model Reader levels), not empirical readers or the empirical author.
 
 ---
 
@@ -132,7 +132,7 @@ Two levels of Model Reader must not be collapsed into one. The role→color code
 Core concepts:
 
 - TextualCue
-- Code / Subcode (the chromatic role→color code is the center of this case)
+- Code / Subcode (the chromatic role/status code is the center of this case)
 - IntrinsicKnowledge
 - Presupposition
 - Inference
@@ -155,9 +155,9 @@ Not central for this case:
 
 ## Summary
 
-Gilead never publishes its dress code, yet by the end of *The Handmaid's Tale* the code is part of the competence the text has built into its Model Reader: red for Handmaids, blue for Wives, green for Marthas, stripes for Econowives, black for widows and Commanders. This case tracks how the Model Reader assembles that enumerated role→color code from dispersed cues — a dressing scene, an umbrella stand, a street enumeration, a room where people are named only by their colors — until the code becomes presupposed competence. The Historical Notes then add a second interpretive level: a future scholar attributes the costume design to a Gileadean founder and traces the Handmaids' red to WWII prisoner uniforms, forcing the reader of the whole book to re-read Gilead's most naturalized symbol as a recycled, man-made sign.
+Gilead never publishes its dress code, yet by the end of *The Handmaid's Tale* the code is part of the competence the text has built into its Model Reader: red for Handmaids, blue for Wives, green for Marthas, stripes for Econowives, and black for widows, while the Commander's black uniform and umbrella show that the chromatic system also extends to male institutional authority. This case tracks how the Model Reader assembles that enumerated role/status-to-color code from dispersed cues — a dressing scene, an umbrella stand, a street enumeration, a room where people are named only by their colors — until the code becomes presupposed competence. The Historical Notes then add a second interpretive level: a future scholar attributes the costume design to a Gileadean founder and traces the Handmaids' red to WWII prisoner uniforms, forcing the reader of the whole book to re-read Gilead's most naturalized symbol as a recycled, man-made sign.
 
-Through these cues, the Model Reader infers that Gilead encodes female social identity as a closed, visually enumerable system of color-marked functions — and, at a second level, that this code is a deliberately designed historical synthesis rather than an organic feature of the world.
+Through these cues, the Model Reader infers that Gilead encodes social identity, gender hierarchy, and household position as a closed, visually enumerable system of color-marked functions — and, at a second level, that this code is a deliberately designed historical synthesis rather than an organic feature of the world.
 
 ---
 
@@ -173,12 +173,12 @@ Final decision:
 - Main textual cue: color-marked clothing (red / blue / green / striped / black)
 - Main knowledge required: intrinsic knowledge that institutional dress encodes social role (uniforms, habits, sumptuary rules)
 - Main presupposition: clothing color is institutionally assigned and legible to all members of the society
-- Main inference: the scattered color notations instantiate a single enumerated role→color code that substitutes function for personal identity
-- Main interpretation: Gilead organizes and controls female social identity through an enumerated chromatic code
+- Main inference: the scattered color notations instantiate a single enumerated role/status→color code that substitutes function and hierarchy for personal identity
+- Main interpretation: Gilead uses a chromatic institutional code to make social roles, gender hierarchy, and household positions visually legible. Within this broader code, female social identities are especially reduced to color-marked functions.
 
 Main interpretation:
 
-Gilead's clothing system is an enumerated semiotic code mapping each social role to a color, through which the regime renders social function — and the erasure of individual identity — publicly legible; the text licenses this interpretation through convergent, repeated cues.
+Gilead's clothing system is an enumerated semiotic code mapping social roles and institutional positions to colors or color-patterns, through which the regime renders social function, hierarchy, and the erasure of individual identity publicly legible. The text licenses this interpretation through convergent, repeated cues, including the Commander's black uniform and umbrella as signs of male institutional authority.
 
 Secondary interpretation:
 
