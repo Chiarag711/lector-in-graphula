@@ -15,7 +15,7 @@ The aim is not to reproduce the complete plot of the novel, establish one defini
 
 - [Protégé](https://protege.stanford.edu/)
 
-### Opening the ontology and Knowledge Graph
+### Opening the ontology and knowledge graph
 
 1. Clone the repository:
 
