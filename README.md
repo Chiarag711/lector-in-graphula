@@ -40,7 +40,7 @@ Project developed by:
 
 ## Academic disclaimer
 
-This project was developed for the university course **Knowledge Representation and Extraction**, taught by Professor **Aldo Gangemi**, within the **Digital Humanities and Digital Knowledge** programme at the **Alma Mater Studiorum – Università di Bologna**.
+This project was developed for the university course **[Knowledge Representation and Extraction](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2025/533916)**, taught by Professor **[Aldo Gangemi](https://www.unibo.it/sitoweb/aldo.gangemi/en)**, within the **[Digital Humanities and Digital Knowledge](https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge)** programme at the **[Alma Mater Studiorum – Università di Bologna](https://www.unibo.it/it)**.
 
 **Lector in Graphula** is an academic prototype created for educational and research purposes. It is not an official project associated with Umberto Eco, Margaret Atwood, their estates, publishers, or other rights holders.
 
