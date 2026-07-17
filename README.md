@@ -44,7 +44,7 @@ This project was developed for the university course **Knowledge Representation 
 
 **Lector in Graphula** is an academic prototype created for educational and research purposes. It is not an official project associated with Umberto Eco, Margaret Atwood, their estates, publishers, or other rights holders.
 
-The ontology and Knowledge Graph contain scholarly modeling and interpretive choices made by the project authors. They should not be treated as definitive representations of either *Lector in fabula* or *The Handmaid’s Tale*.
+The ontology and knowledge graph contain scholarly modeling and interpretive choices made by the project authors. They should not be treated as definitive representations of either *Lector in fabula* or *The Handmaid’s Tale*.
 
 ## Textual materials and copyright
 
