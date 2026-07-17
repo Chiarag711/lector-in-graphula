@@ -7,7 +7,7 @@
 The project separates two semantic layers:
 
 - an **ontology/TBox**, which models Eco-inspired concepts and relations;
-- a **Knowledge Graph/ABox**, which instantiates selected interpretive cases from Margaret Atwood’s *The Handmaid’s Tale*.
+- a **knowledge graph/ABox**, which instantiates selected interpretive cases from Margaret Atwood’s *The Handmaid’s Tale*.
 
 The aim is not to reproduce the complete plot of the novel, establish one definitive literary interpretation, or fully automate interpretation. Instead, the project makes selected interpretive chains **explicit, inspectable, and queryable**, connecting textual cues to intrinsic knowledge, presuppositions, inferences, predictions, and licensed or alternative interpretations.
 
