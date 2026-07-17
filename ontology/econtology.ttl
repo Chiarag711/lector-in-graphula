@@ -2,9 +2,11 @@
 @prefix lig: <https://lectoringraphula.org/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix var: <urn:swrl:var#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
 @base <https://lectoringraphula.org/ontology#> .
 
 <https://lectoringraphula.org/ontology> rdf:type owl:Ontology ;
@@ -30,323 +32,588 @@
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
 
 
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#argument1
+swrl:argument1 rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#argument2
+swrl:argument2 rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#body
+swrl:body rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#head
+swrl:head rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/11/swrl#propertyPredicate
+swrl:propertyPredicate rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
 
 ###  https://lectoringraphula.org/ontology#activatesCode
-:activatesCode rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :activatesResource ;
-               rdfs:domain lig:TextualCue ;
-               rdfs:range lig:Code ;
-               <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the semiotic code it activates."@en ;
-               rdfs:comment "This property connects a TextualCue to the Code or Subcode needed to decode it. Codes are shared interpretive conventions that make textual communication possible. For example, a color, formula, genre marker, or recurring expression may activate a specific cultural, rhetorical, ideological, or narrative code."@en ;
-               rdfs:label "activates code"@en .
+lig:activatesCode rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf lig:activatesResource ;
+                  rdfs:domain lig:TextualCue ,
+                              lig:TextualEntity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty lig:activatesResource ;
+                                owl:someValuesFrom lig:InterpretiveResource
+                              ] ;
+                  rdfs:range lig:Code ,
+                             lig:InterpretiveResource ;
+                  <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the semiotic code it activates."@en ;
+                  rdfs:comment "This property connects a TextualCue to the Code or Subcode needed to decode it. Codes are shared interpretive conventions that make textual communication possible. For example, a color, formula, genre marker, or recurring expression may activate a specific cultural, rhetorical, ideological, or narrative code."@en ;
+                  rdfs:label "activates code"@en .
 
 
 ###  https://lectoringraphula.org/ontology#activatesEncyclopedia
-:activatesEncyclopedia rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :activatesResource ;
-                       rdfs:domain lig:TextualCue ;
-                       rdfs:range lig:Encyclopedia ;
-                       <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the encyclopedic knowledge it activates."@en ;
-                       rdfs:comment "This property connects a TextualCue to the Encyclopedia it activates. The encyclopedia is the network of cultural and world knowledge that a reader can draw on. A textual cue activates the relevant portion of this knowledge needed for interpretation."@en ;
-                       rdfs:label "activates encyclopedia"@en .
+lig:activatesEncyclopedia rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf lig:activatesResource ;
+                          rdfs:domain lig:TextualCue ,
+                                      lig:TextualEntity ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty lig:activatesResource ;
+                                        owl:someValuesFrom lig:InterpretiveResource
+                                      ] ;
+                          rdfs:range lig:Encyclopedia ,
+                                     lig:InterpretiveResource ;
+                          <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the encyclopedic knowledge it activates."@en ;
+                          rdfs:comment "This property connects a TextualCue to the Encyclopedia it activates. The encyclopedia is the network of cultural and world knowledge that a reader can draw on. A textual cue activates the relevant portion of this knowledge needed for interpretation."@en ;
+                          rdfs:label "activates encyclopedia"@en .
 
 
 ###  https://lectoringraphula.org/ontology#activatesFrame
-:activatesFrame rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :activatesResource ;
-                rdfs:domain lig:TextualCue ;
-                rdfs:range lig:Frame ;
-                <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the cognitive frame it activates."@en ;
-                rdfs:comment "This property connects a TextualCue to the Frame it activates in the reader. A frame is a structure of background knowledge that helps the reader organize and interpret a signal in the text. For example, a ritual formula, an institutional title, or a symbolic expression may activate a religious, political, social, or narrative frame."@en ;
-                rdfs:label "activates frame"@en .
+lig:activatesFrame rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf lig:activatesResource ;
+                   rdfs:domain lig:TextualCue ,
+                               lig:TextualEntity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:activatesResource ;
+                                 owl:someValuesFrom lig:InterpretiveResource
+                               ] ;
+                   rdfs:range lig:Frame ,
+                              lig:InterpretiveResource ;
+                   <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the cognitive frame it activates."@en ;
+                   rdfs:comment "This property connects a TextualCue to the Frame it activates in the reader. A frame is a structure of background knowledge that helps the reader organize and interpret a signal in the text. For example, a ritual formula, an institutional title, or a symbolic expression may activate a religious, political, social, or narrative frame."@en ;
+                   rdfs:label "activates frame"@en .
 
 
 ###  https://lectoringraphula.org/ontology#activatesResource
-:activatesResource rdf:type owl:ObjectProperty ;
-                   rdfs:domain lig:TextualCue ;
-                   rdfs:range lig:InterpretiveResource ;
-                   <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the interpretive resource it activates."@en ;
-                   rdfs:comment "This property connects a TextualCue to an InterpretiveResource. When a reader encounters a cue, they draw on resources such as codes, frames and encyclopedic knowledge to interpret it. This is the most general activation property."@en ;
-                   rdfs:label "activates resource"@en .
+lig:activatesResource rdf:type owl:ObjectProperty ;
+                      rdfs:domain lig:TextualCue ,
+                                  lig:TextualEntity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:activatesResource ;
+                                    owl:someValuesFrom lig:InterpretiveResource
+                                  ] ;
+                      rdfs:range lig:InterpretiveResource ;
+                      <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the interpretive resource it activates."@en ;
+                      rdfs:comment "This property connects a TextualCue to an InterpretiveResource. When a reader encounters a cue, they draw on resources such as codes, frames and encyclopedic knowledge to interpret it. This is the most general activation property."@en ;
+                      rdfs:label "activates resource"@en .
 
 
 ###  https://lectoringraphula.org/ontology#allowsAlternativeInterpretation
-:allowsAlternativeInterpretation rdf:type owl:ObjectProperty ;
-                                 rdfs:domain lig:OpenText ;
-                                 rdfs:range lig:AlternativeInterpretation ;
-                                 <http://purl.org/dc/elements/1.1/description> "Links an open text to the alternative interpretations it allows."@en ;
-                                 rdfs:comment "This property connects an OpenText to the AlternativeInterpretation it allows. Open texts are designed to support multiple valid readings at the same time. This property captures the deliberate openness that Eco identifies in literary texts."@en ;
-                                 rdfs:label "allows alternative interpretation"@en .
+lig:allowsAlternativeInterpretation rdf:type owl:ObjectProperty ;
+                                    rdfs:domain lig:OpenText ,
+                                                lig:Text ,
+                                                lig:TextualEntity ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty lig:encodesModelAuthor ;
+                                                  owl:someValuesFrom lig:ModelAuthor
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty lig:presupposesModelReader ;
+                                                  owl:someValuesFrom lig:ModelReader
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty lig:requiresCompetence ;
+                                                  owl:someValuesFrom lig:ReaderCompetence
+                                                ] ;
+                                    rdfs:range lig:AlternativeInterpretation ,
+                                               lig:Interpretation ,
+                                               lig:InterpretiveOutcome ;
+                                    <http://purl.org/dc/elements/1.1/description> "Links an open text to the alternative interpretations it allows."@en ;
+                                    rdfs:comment "This property connects an OpenText to the AlternativeInterpretation it allows. Open texts are designed to support multiple valid readings at the same time. This property captures the deliberate openness that Eco identifies in literary texts."@en ;
+                                    rdfs:label "allows alternative interpretation"@en .
 
 
 ###  https://lectoringraphula.org/ontology#constrainsInterpretation
-:constrainsInterpretation rdf:type owl:ObjectProperty ;
-                          rdfs:domain lig:ModelAuthor ;
-                          rdfs:range lig:Interpretation ;
-                          <http://purl.org/dc/elements/1.1/description> "Links the model author to the interpretation it constrains."@en ;
-                          rdfs:comment "This property connects a ModelAuthor to the Interpretation it constrains. The Model Author sets the limits of what the text can legitimately mean. Not all readings are valid and this property models the boundary between a correct interpretation and an arbitrary use of the text."@en ;
-                          rdfs:label "constrains interpretation"@en .
+lig:constrainsInterpretation rdf:type owl:ObjectProperty ;
+                             rdfs:domain lig:ModelAuthor ,
+                                         lig:TextualStrategy ;
+                             rdfs:range lig:Interpretation ,
+                                        lig:InterpretiveOutcome ;
+                             <http://purl.org/dc/elements/1.1/description> "Links the model author to the interpretation it constrains."@en ;
+                             rdfs:comment "This property connects a ModelAuthor to the Interpretation it constrains. The Model Author sets the limits of what the text can legitimately mean. Not all readings are valid and this property models the boundary between a correct interpretation and an arbitrary use of the text."@en ;
+                             rdfs:label "constrains interpretation"@en .
 
 
 ###  https://lectoringraphula.org/ontology#constructsPossibleWorld
-:constructsPossibleWorld rdf:type owl:ObjectProperty ;
-                         rdfs:domain lig:InferentialWalk ;
-                         rdfs:range lig:PossibleWorld ;
-                         <http://purl.org/dc/elements/1.1/description> "Links an inferential walk to the possible world it constructs."@en ;
-                         rdfs:comment "This property connects an InferentialWalk to the PossibleWorld it constructs. As the reader follows an inferential path through the text, they build up a hypothetical world, a mental model of the narrative situation at a given point in the story."@en ;
-                         rdfs:label "constructs possible world"@en .
+lig:constructsPossibleWorld rdf:type owl:ObjectProperty ;
+                            rdfs:domain lig:InferentialWalk ,
+                                        lig:InterpretiveOperation ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:constructsPossibleWorld ;
+                                          owl:someValuesFrom lig:PossibleWorld
+                                        ] ;
+                            rdfs:range lig:NarrativeConstruction ,
+                                       lig:PossibleWorld ;
+                            <http://purl.org/dc/elements/1.1/description> "Links an inferential walk to the possible world it constructs."@en ;
+                            rdfs:comment "This property connects an InferentialWalk to the PossibleWorld it constructs. As the reader follows an inferential path through the text, they build up a hypothetical world, a mental model of the narrative situation at a given point in the story."@en ;
+                            rdfs:label "constructs possible world"@en .
 
 
 ###  https://lectoringraphula.org/ontology#containsCue
-:containsCue rdf:type owl:ObjectProperty ;
-             rdfs:domain lig:TextFragment ;
-             rdfs:range lig:TextualCue ;
-             <http://purl.org/dc/elements/1.1/description> "Links a text fragment to a textual cue it contains."@en ;
-             rdfs:comment "This property connects a TextFragment to a TextualCue. A textual cue is a word, phrase, stylistic feature, omission, or structural signal in the text that activates the reader's interpretive resources. For example, a proper name, a repeated formula, or a symbolic detail may function as a cue that activates knowledge beyond the explicit textual surface."@en ;
-             rdfs:label "contains cue"@en .
+lig:containsCue rdf:type owl:ObjectProperty ;
+                rdfs:domain lig:TextFragment ,
+                            lig:TextualEntity ;
+                rdfs:range lig:TextualCue ,
+                           lig:TextualEntity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty lig:activatesResource ;
+                             owl:someValuesFrom lig:InterpretiveResource
+                           ] ;
+                <http://purl.org/dc/elements/1.1/description> "Links a text fragment to a textual cue it contains."@en ;
+                rdfs:comment "This property connects a TextFragment to a TextualCue. A textual cue is a word, phrase, stylistic feature, omission, or structural signal in the text that activates the reader's interpretive resources. For example, a proper name, a repeated formula, or a symbolic detail may function as a cue that activates knowledge beyond the explicit textual surface."@en ;
+                rdfs:label "contains cue"@en .
 
 
 ###  https://lectoringraphula.org/ontology#containsGap
-:containsGap rdf:type owl:ObjectProperty ;
-             rdfs:domain lig:TextFragment ;
-             rdfs:range lig:Gap ;
-             <http://purl.org/dc/elements/1.1/description> "Links a text fragment to one of its gaps."@en ;
-             rdfs:comment "This property connects a TextFragment to a Gap. A gap is something the text leaves unsaid that the reader must fill in through inference and background knowledge. This is what Eco means when he calls the text a lazy machine."@en ;
-             rdfs:label "contains gap"@en .
+lig:containsGap rdf:type owl:ObjectProperty ;
+                rdfs:domain lig:TextFragment ,
+                            lig:TextualEntity ;
+                rdfs:range lig:Gap ,
+                           lig:TextualEntity ;
+                <http://purl.org/dc/elements/1.1/description> "Links a text fragment to one of its gaps."@en ;
+                rdfs:comment "This property connects a TextFragment to a Gap. A gap is something the text leaves unsaid that the reader must fill in through inference and background knowledge. This is what Eco means when he calls the text a lazy machine."@en ;
+                rdfs:label "contains gap"@en .
 
 
 ###  https://lectoringraphula.org/ontology#containsIndividual
-:containsIndividual rdf:type owl:ObjectProperty ;
-                    rdfs:domain lig:WorldState ;
-                    rdfs:range lig:WorldIndividual ;
-                    <http://purl.org/dc/elements/1.1/description> "Links a world state to one of its individuals."@en ;
-                    rdfs:comment "This property connects a WorldState to a WorldIndividual. A world individual is a character, object or entity that exists in the narrative world at that state. The same individual may have different properties across different world states."@en ;
-                    rdfs:label "contains individual"@en .
+lig:containsIndividual rdf:type owl:ObjectProperty ;
+                       rdfs:domain lig:NarrativeConstruction ,
+                                   lig:WorldState ;
+                       rdfs:range lig:NarrativeConstruction ,
+                                  lig:WorldIndividual ;
+                       <http://purl.org/dc/elements/1.1/description> "Links a world state to one of its individuals."@en ;
+                       rdfs:comment "This property connects a WorldState to a WorldIndividual. A world individual is a character, object or entity that exists in the narrative world at that state. The same individual may have different properties across different world states."@en ;
+                       rdfs:label "contains individual"@en .
+
+
+###  https://lectoringraphula.org/ontology#contributesToInterpretation
+lig:contributesToInterpretation rdf:type owl:ObjectProperty ;
+                                rdfs:domain lig:TextualCue ,
+                                            lig:TextualEntity ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty lig:activatesResource ;
+                                              owl:someValuesFrom lig:InterpretiveResource
+                                            ] ;
+                                rdfs:range lig:Interpretation ,
+                                           lig:InterpretiveOutcome ;
+                                <http://purl.org/dc/elements/1.1/description> "Relates a textual cue to an interpretation that is licensed through an inference supported by that cue."@en ;
+                                rdfs:comment "This property makes explicit the contribution of a textual cue to an interpretation through the intermediate inference it supports."@en ;
+                                rdfs:label "contributes to interpretation"@en .
 
 
 ###  https://lectoringraphula.org/ontology#encodesModelAuthor
-:encodesModelAuthor rdf:type owl:ObjectProperty ;
-                    rdfs:domain lig:Text ;
-                    rdfs:range lig:ModelAuthor ;
-                    <http://purl.org/dc/elements/1.1/description> "Links a text to the model author encoded within it."@en ;
-                    rdfs:comment "This property connects a Text to the ModelAuthor encoded in it. The Model Author is not the real person who wrote the text but the set of rules and instructions that guide the reader toward a correct interpretation."@en ;
-                    rdfs:label "encodes model author"@en .
+lig:encodesModelAuthor rdf:type owl:ObjectProperty ;
+                       rdfs:domain lig:Text ,
+                                   lig:TextualEntity ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:encodesModelAuthor ;
+                                     owl:someValuesFrom lig:ModelAuthor
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:presupposesModelReader ;
+                                     owl:someValuesFrom lig:ModelReader
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:requiresCompetence ;
+                                     owl:someValuesFrom lig:ReaderCompetence
+                                   ] ;
+                       rdfs:range lig:ModelAuthor ,
+                                  lig:TextualStrategy ;
+                       <http://purl.org/dc/elements/1.1/description> "Links a text to the model author encoded within it."@en ;
+                       rdfs:comment "This property connects a Text to the ModelAuthor encoded in it. The Model Author is not the real person who wrote the text but the set of rules and instructions that guide the reader toward a correct interpretation."@en ;
+                       rdfs:label "encodes model author"@en .
 
 
 ###  https://lectoringraphula.org/ontology#generatesPrediction
-:generatesPrediction rdf:type owl:ObjectProperty ;
-                     rdfs:domain lig:Inference ;
-                     rdfs:range lig:Prediction ;
-                     <http://purl.org/dc/elements/1.1/description> "Links an inference to the prediction it generates"@en ;
-                     rdfs:comment "This property connects an Inference to the Prediction it generates. As the reader draws inferences, they form predictions about what will happen next in the narrative. These predictions are held provisionally and tested against the rest of the text."@en ;
-                     rdfs:label "generates prediction"@en .
+lig:generatesPrediction rdf:type owl:ObjectProperty ;
+                        rdfs:domain lig:Inference ,
+                                    lig:InterpretiveOperation ;
+                        rdfs:range lig:InterpretiveOperation ,
+                                   lig:Prediction ;
+                        <http://purl.org/dc/elements/1.1/description> "Links an inference to the prediction it generates"@en ;
+                        rdfs:comment "This property connects an Inference to the Prediction it generates. As the reader draws inferences, they form predictions about what will happen next in the narrative. These predictions are held provisionally and tested against the rest of the text."@en ;
+                        rdfs:label "generates prediction"@en .
+
+
+###  https://lectoringraphula.org/ontology#groundsInference
+lig:groundsInference rdf:type owl:ObjectProperty ;
+                     rdfs:domain lig:TextFragment ,
+                                 lig:TextualEntity ;
+                     rdfs:range lig:Inference ,
+                                lig:InterpretiveOperation ;
+                     <http://purl.org/dc/elements/1.1/description> "Relates a textual fragment to an inference grounded in a textual cue contained in that fragment."@en ;
+                     rdfs:comment "This property is intended to be inferred by a SWRL rule from the chain TextFragment containsCue TextualCue and TextualCue supportsInference Inference."@en ;
+                     rdfs:label "grounds inference"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasAccidentalProperty
-:hasAccidentalProperty rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasWorldProperty ;
-                       rdfs:domain lig:WorldIndividual ;
-                       rdfs:range lig:AccidentalProperty ;
-                       <http://purl.org/dc/elements/1.1/description> "Links a world individual to one of its accidental properties."@en ;
-                       rdfs:comment "This property connects a WorldIndividual to an AccidentalProperty that may vary across possible worlds without changing the identity of the individual. It specializes hasWorldProperty by indicating that the property is not essential for cross-world identity."@en ;
-                       rdfs:label "has accidental property"@en .
+lig:hasAccidentalProperty rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf lig:hasWorldProperty ;
+                          rdfs:domain lig:NarrativeConstruction ,
+                                      lig:WorldIndividual ;
+                          rdfs:range lig:AccidentalProperty ,
+                                     lig:NarrativeConstruction ,
+                                     lig:WorldProperty ;
+                          <http://purl.org/dc/elements/1.1/description> "Links a world individual to one of its accidental properties."@en ;
+                          rdfs:comment "This property connects a WorldIndividual to an AccidentalProperty that may vary across possible worlds without changing the identity of the individual. It specializes hasWorldProperty by indicating that the property is not essential for cross-world identity."@en ;
+                          rdfs:label "has accidental property"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasAlternativePrediction
-:hasAlternativePrediction rdf:type owl:ObjectProperty ;
-                          rdfs:domain lig:ProbabilityDisjunction ;
-                          rdfs:range lig:Prediction ;
-                          <http://purl.org/dc/elements/1.1/description> "Links a probability disjunction to one of its alternative predictions."@en ;
-                          rdfs:comment "This property connects a ProbabilityDisjunction to the alternative predictions considered by the Model Reader. Each prediction represents a possible interpretive development with a certain degree of probability."@en ;
-                          rdfs:label "has alternative prediction"@en .
+lig:hasAlternativePrediction rdf:type owl:ObjectProperty ;
+                             rdfs:domain lig:InterpretiveOperation ,
+                                         lig:ProbabilityDisjunction ;
+                             rdfs:range lig:InterpretiveOperation ,
+                                        lig:Prediction ;
+                             <http://purl.org/dc/elements/1.1/description> "Links a probability disjunction to one of its alternative predictions."@en ;
+                             rdfs:comment "This property connects a ProbabilityDisjunction to the alternative predictions considered by the Model Reader. Each prediction represents a possible interpretive development with a certain degree of probability."@en ;
+                             rdfs:label "has alternative prediction"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasEssentialProperty
-:hasEssentialProperty rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :hasWorldProperty ;
-                      rdfs:domain lig:WorldIndividual ;
-                      rdfs:range lig:EssentialProperty ;
-                      <http://purl.org/dc/elements/1.1/description> "Links a world individual to one of its essential properties."@en ;
-                      rdfs:comment "This property connects a WorldIndividual to an EssentialProperty that contributes to its identity across possible worlds. It specializes hasWorldProperty by indicating that the property is necessary for recognizing the individual as the same variant across worlds."@en ;
-                      rdfs:label "has essential property"@en .
+lig:hasEssentialProperty rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf lig:hasWorldProperty ;
+                         rdfs:domain lig:NarrativeConstruction ,
+                                     lig:WorldIndividual ;
+                         rdfs:range lig:EssentialProperty ,
+                                    lig:NarrativeConstruction ,
+                                    lig:WorldProperty ;
+                         <http://purl.org/dc/elements/1.1/description> "Links a world individual to one of its essential properties."@en ;
+                         rdfs:comment "This property connects a WorldIndividual to an EssentialProperty that contributes to its identity across possible worlds. It specializes hasWorldProperty by indicating that the property is necessary for recognizing the individual as the same variant across worlds."@en ;
+                         rdfs:label "has essential property"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasFragment
-:hasFragment rdf:type owl:ObjectProperty ;
-             rdfs:domain lig:Text ;
-             rdfs:range lig:TextFragment ;
-             <http://purl.org/dc/elements/1.1/description> "Links a text to one of its fragments."@en ;
-             rdfs:comment "This property connects a Text to a TextFragment. A fragment is a specific portion of the text selected for interpretive analysis, such as a chapter or a passage."@en ;
-             rdfs:label "has fragment"@en .
+lig:hasFragment rdf:type owl:ObjectProperty ;
+                rdfs:domain lig:Text ,
+                            lig:TextualEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty lig:encodesModelAuthor ;
+                              owl:someValuesFrom lig:ModelAuthor
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty lig:presupposesModelReader ;
+                              owl:someValuesFrom lig:ModelReader
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty lig:requiresCompetence ;
+                              owl:someValuesFrom lig:ReaderCompetence
+                            ] ;
+                rdfs:range lig:TextFragment ,
+                           lig:TextualEntity ;
+                <http://purl.org/dc/elements/1.1/description> "Links a text to one of its fragments."@en ;
+                rdfs:comment "This property connects a Text to a TextFragment. A fragment is a specific portion of the text selected for interpretive analysis, such as a chapter or a passage."@en ;
+                rdfs:label "has fragment"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasLinearManifestation
-:hasLinearManifestation rdf:type owl:ObjectProperty ;
-                        rdfs:domain lig:Text ;
-                        rdfs:range lig:LinearManifestation ;
-                        <http://purl.org/dc/elements/1.1/description> "Links a text to its linear manifestation."@en ;
-                        rdfs:comment "This property connects a Text to its LinearManifestation. The linear manifestation is the concrete sequence of words on the page, before any interpretation takes place."@en ;
-                        rdfs:label "has linear manifestation"@en .
+lig:hasLinearManifestation rdf:type owl:ObjectProperty ;
+                           rdfs:domain lig:Text ,
+                                       lig:TextualEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:encodesModelAuthor ;
+                                         owl:someValuesFrom lig:ModelAuthor
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:presupposesModelReader ;
+                                         owl:someValuesFrom lig:ModelReader
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:requiresCompetence ;
+                                         owl:someValuesFrom lig:ReaderCompetence
+                                       ] ;
+                           rdfs:range lig:LinearManifestation ,
+                                      lig:TextualEntity ;
+                           <http://purl.org/dc/elements/1.1/description> "Links a text to its linear manifestation."@en ;
+                           rdfs:comment "This property connects a Text to its LinearManifestation. The linear manifestation is the concrete sequence of words on the page, before any interpretation takes place."@en ;
+                           rdfs:label "has linear manifestation"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasReferenceWorld
-:hasReferenceWorld rdf:type owl:ObjectProperty ;
-                   rdfs:domain lig:PossibleWorld ;
-                   rdfs:range lig:ReferenceWorld ;
-                   <http://purl.org/dc/elements/1.1/description> "Links a possible world to the reference world it is evaluated against."@en ;
-                   rdfs:comment "This property connects a PossibleWorld to its ReferenceWorld. The reference world is the baseline world that the reader uses to evaluate alternative possible worlds for consistency and truth. It is usually the established narrative world or the actual world."@en ;
-                   rdfs:label "has reference world"@en .
+lig:hasReferenceWorld rdf:type owl:ObjectProperty ;
+                      rdfs:domain lig:NarrativeConstruction ,
+                                  lig:PossibleWorld ;
+                      rdfs:range lig:NarrativeConstruction ,
+                                 lig:PossibleWorld ,
+                                 lig:ReferenceWorld ;
+                      <http://purl.org/dc/elements/1.1/description> "Links a possible world to the reference world it is evaluated against."@en ;
+                      rdfs:comment "This property connects a PossibleWorld to its ReferenceWorld. The reference world is the baseline world that the reader uses to evaluate alternative possible worlds for consistency and truth. It is usually the established narrative world or the actual world."@en ;
+                      rdfs:label "has reference world"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasSNecessaryProperty
-:hasSNecessaryProperty rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasWorldProperty ;
-                       rdfs:domain lig:WorldIndividual ;
-                       rdfs:range lig:SNecessaryProperty ;
-                       <http://purl.org/dc/elements/1.1/description> "Links a world individual to one of its S-necessary properties."@en ;
-                       rdfs:comment "This property connects a WorldIndividual to an SNecessaryProperty that is necessary within a specific world state. It specializes hasWorldProperty by indicating that the property depends on a particular configuration or situation inside a possible world."@en ;
-                       rdfs:label "has S-necessary property"@en .
+lig:hasSNecessaryProperty rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf lig:hasWorldProperty ;
+                          rdfs:domain lig:NarrativeConstruction ,
+                                      lig:WorldIndividual ;
+                          rdfs:range lig:NarrativeConstruction ,
+                                     lig:SNecessaryProperty ,
+                                     lig:WorldProperty ;
+                          <http://purl.org/dc/elements/1.1/description> "Links a world individual to one of its S-necessary properties."@en ;
+                          rdfs:comment "This property connects a WorldIndividual to an SNecessaryProperty that is necessary within a specific world state. It specializes hasWorldProperty by indicating that the property depends on a particular configuration or situation inside a possible world."@en ;
+                          rdfs:label "has S-necessary property"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasWorldProperty
-:hasWorldProperty rdf:type owl:ObjectProperty ;
-                  rdfs:domain lig:WorldIndividual ;
-                  rdfs:range lig:WorldProperty ;
-                  <http://purl.org/dc/elements/1.1/description> "Links a world individual to one of its properties."@en ;
-                  rdfs:comment "This property connects a WorldIndividual to a WorldProperty attributed to it within a possible world or world state."@en ;
-                  rdfs:label "has world property"@en .
+lig:hasWorldProperty rdf:type owl:ObjectProperty ;
+                     rdfs:domain lig:NarrativeConstruction ,
+                                 lig:WorldIndividual ;
+                     rdfs:range lig:NarrativeConstruction ,
+                                lig:WorldProperty ;
+                     <http://purl.org/dc/elements/1.1/description> "Links a world individual to one of its properties."@en ;
+                     rdfs:comment "This property connects a WorldIndividual to a WorldProperty attributed to it within a possible world or world state."@en ;
+                     rdfs:label "has world property"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasWorldState
-:hasWorldState rdf:type owl:ObjectProperty ;
-               rdfs:domain lig:PossibleWorld ;
-               rdfs:range lig:WorldState ;
-               <http://purl.org/dc/elements/1.1/description> "Links a possible world to one of its states."@en ;
-               rdfs:comment "This property connects a PossibleWorld to a WorldState. A world state is a specific configuration of individuals and properties at a particular moment in the narrative. World states allow the reader to track changes and evaluate the consistency of the story over time."@en ;
-               rdfs:label "has world state"@en .
+lig:hasWorldState rdf:type owl:ObjectProperty ;
+                  rdfs:domain lig:NarrativeConstruction ,
+                              lig:PossibleWorld ;
+                  rdfs:range lig:NarrativeConstruction ,
+                             lig:WorldState ;
+                  <http://purl.org/dc/elements/1.1/description> "Links a possible world to one of its states."@en ;
+                  rdfs:comment "This property connects a PossibleWorld to a WorldState. A world state is a specific configuration of individuals and properties at a particular moment in the narrative. World states allow the reader to track changes and evaluate the consistency of the story over time."@en ;
+                  rdfs:label "has world state"@en .
 
 
 ###  https://lectoringraphula.org/ontology#holdsInWorldState
-:holdsInWorldState rdf:type owl:ObjectProperty ;
-                   rdfs:domain lig:WorldProperty ;
-                   rdfs:range lig:WorldState ;
-                   <http://purl.org/dc/elements/1.1/description> "Links a world property to the world state in which it holds."@en ;
-                   rdfs:comment "This property connects a WorldProperty to the WorldState in which it is valid. It is especially useful for modeling S-necessary properties, since their necessity depends on a specific state or configuration of a possible world."@en ;
-                   rdfs:label "holds in world state"@en .
+lig:holdsInWorldState rdf:type owl:ObjectProperty ;
+                      rdfs:domain lig:NarrativeConstruction ,
+                                  lig:WorldProperty ;
+                      rdfs:range lig:NarrativeConstruction ,
+                                 lig:WorldState ;
+                      <http://purl.org/dc/elements/1.1/description> "Links a world property to the world state in which it holds."@en ;
+                      rdfs:comment "This property connects a WorldProperty to the WorldState in which it is valid. It is especially useful for modeling S-necessary properties, since their necessity depends on a specific state or configuration of a possible world."@en ;
+                      rdfs:label "holds in world state"@en .
 
 
 ###  https://lectoringraphula.org/ontology#initiatesInferentialWalk
-:initiatesInferentialWalk rdf:type owl:ObjectProperty ;
-                          rdfs:domain lig:TextualCue ;
-                          rdfs:range lig:InferentialWalk ;
-                          <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the inferential walk it initiates."@en ;
-                          rdfs:comment "This property connects a TextualCue to the InferentialWalk it initiates. An inferential walk is a provisional path of interpretation that the reader begins to follow after encountering a cue, forming hypotheses about how the story might develop."@en ;
-                          rdfs:label "initiates inferential walk"@en .
+lig:initiatesInferentialWalk rdf:type owl:ObjectProperty ;
+                             rdfs:domain lig:TextualCue ,
+                                         lig:TextualEntity ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty lig:activatesResource ;
+                                           owl:someValuesFrom lig:InterpretiveResource
+                                         ] ;
+                             rdfs:range lig:InferentialWalk ,
+                                        lig:InterpretiveOperation ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:constructsPossibleWorld ;
+                                          owl:someValuesFrom lig:PossibleWorld
+                                        ] ;
+                             <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the inferential walk it initiates."@en ;
+                             rdfs:comment "This property connects a TextualCue to the InferentialWalk it initiates. An inferential walk is a provisional path of interpretation that the reader begins to follow after encountering a cue, forming hypotheses about how the story might develop."@en ;
+                             rdfs:label "initiates inferential walk"@en .
 
 
 ###  https://lectoringraphula.org/ontology#isLicensedByInference
-:isLicensedByInference rdf:type owl:ObjectProperty ;
-                       rdfs:domain lig:LicensedInterpretation ;
-                       rdfs:range lig:Inference ;
-                       <http://purl.org/dc/elements/1.1/description> "Links a licensed interpretation to the inference that licenses it."@en ;
-                       rdfs:comment "This property connects a LicensedInterpretation to the Inference that supports or licenses it. It is the inverse relation of licensesInterpretation and is useful for expressing restrictions from the perspective of the interpretive outcome."@en ;
-                       rdfs:label "is licensed by inference"@en .
+lig:isLicensedByInference rdf:type owl:ObjectProperty ;
+                          owl:inverseOf lig:licensesInterpretation ;
+                          rdfs:domain lig:Interpretation ,
+                                      lig:InterpretiveOutcome ,
+                                      lig:LicensedInterpretation ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty lig:isLicensedByInference ;
+                                        owl:someValuesFrom lig:Inference
+                                      ] ;
+                          rdfs:range lig:Inference ,
+                                     lig:InterpretiveOperation ;
+                          <http://purl.org/dc/elements/1.1/description> "Links a licensed interpretation to the inference that licenses it."@en ;
+                          rdfs:comment "This property connects a LicensedInterpretation to the Inference that supports or licenses it. It is the inverse relation of licensesInterpretation and is useful for expressing restrictions from the perspective of the interpretive outcome."@en ;
+                          rdfs:label "is licensed by inference"@en .
+
+
+###  https://lectoringraphula.org/ontology#knowledgeSupportsInference
+lig:knowledgeSupportsInference rdf:type owl:ObjectProperty ;
+                               rdfs:domain lig:InterpretiveResource ,
+                                           lig:IntrinsicKnowledge ;
+                               rdfs:range lig:Inference ,
+                                          lig:InterpretiveOperation ;
+                               <http://purl.org/dc/elements/1.1/description> "Relates intrinsic knowledge to an inference that depends on a cue requiring that knowledge."@en ;
+                               rdfs:comment "This property is intended to be inferred when a textual cue both requires intrinsic knowledge and supports an inference."@en ;
+                               rdfs:label "knowledge supports inference"@en .
 
 
 ###  https://lectoringraphula.org/ontology#licensesInterpretation
-:licensesInterpretation rdf:type owl:ObjectProperty ;
-                        owl:inverseOf :isLicensedByInference ;
-                        rdfs:domain lig:Inference ;
-                        rdfs:range lig:LicensedInterpretation ;
-                        <http://purl.org/dc/elements/1.1/description> "Links an inference to the licensed interpretation it produces."@en ;
-                        rdfs:comment "This property connects an Inference to a LicensedInterpretation. A licensed interpretation is one that stays within the boundaries set by the Model Author. It is an interpretation that the text legitimately authorizes, as opposed to an arbitrary use of the text."@en ;
-                        rdfs:label "licenses interpretation"@en .
+lig:licensesInterpretation rdf:type owl:ObjectProperty ;
+                           rdfs:domain lig:Inference ,
+                                       lig:InterpretiveOperation ;
+                           rdfs:range lig:Interpretation ,
+                                      lig:InterpretiveOutcome ,
+                                      lig:LicensedInterpretation ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty lig:isLicensedByInference ;
+                                        owl:someValuesFrom lig:Inference
+                                      ] ;
+                           <http://purl.org/dc/elements/1.1/description> "Links an inference to the licensed interpretation it produces."@en ;
+                           rdfs:comment "This property connects an Inference to a LicensedInterpretation. A licensed interpretation is one that stays within the boundaries set by the Model Author. It is an interpretation that the text legitimately authorizes, as opposed to an arbitrary use of the text."@en ;
+                           rdfs:label "licenses interpretation"@en .
 
 
 ###  https://lectoringraphula.org/ontology#opensProbabilityDisjunction
-:opensProbabilityDisjunction rdf:type owl:ObjectProperty ;
-                             rdfs:domain lig:Prediction ;
-                             rdfs:range lig:ProbabilityDisjunction ;
-                             <http://purl.org/dc/elements/1.1/description> "Links a prediction to the set of alternative possibilities it opens."@en ;
-                             rdfs:comment "This property connects a Prediction to a ProbabilityDisjunction. When the reader makes a prediction, they consider a set of alternative narrative developments with different degrees of probability. Eco uses this concept to describe how the reader navigates uncertainty during interpretation."@en ;
-                             rdfs:label "opens probability disjunction"@en .
+lig:opensProbabilityDisjunction rdf:type owl:ObjectProperty ;
+                                rdfs:domain lig:InterpretiveOperation ,
+                                            lig:Prediction ;
+                                rdfs:range lig:InterpretiveOperation ,
+                                           lig:ProbabilityDisjunction ;
+                                <http://purl.org/dc/elements/1.1/description> "Links a prediction to the set of alternative possibilities it opens."@en ;
+                                rdfs:comment "This property connects a Prediction to a ProbabilityDisjunction. When the reader makes a prediction, they consider a set of alternative narrative developments with different degrees of probability. Eco uses this concept to describe how the reader navigates uncertainty during interpretation."@en ;
+                                rdfs:label "opens probability disjunction"@en .
 
 
 ###  https://lectoringraphula.org/ontology#presupposesModelReader
-:presupposesModelReader rdf:type owl:ObjectProperty ;
-                        rdfs:domain lig:Text ;
-                        rdfs:range lig:ModelReader ;
-                        <http://purl.org/dc/elements/1.1/description> "Links a text to the model reader it presupposes."@en ;
-                        rdfs:comment "This property connects a Text to the ModelReader it presupposes. Every text assumes an ideal reader who has the right knowledge and competences to understand it. This reader is not a real person but a strategy built into the text itself."@en ;
-                        rdfs:label "presupposes model reader"@en .
+lig:presupposesModelReader rdf:type owl:ObjectProperty ;
+                           rdfs:domain lig:Text ,
+                                       lig:TextualEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:encodesModelAuthor ;
+                                         owl:someValuesFrom lig:ModelAuthor
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:presupposesModelReader ;
+                                         owl:someValuesFrom lig:ModelReader
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:requiresCompetence ;
+                                         owl:someValuesFrom lig:ReaderCompetence
+                                       ] ;
+                           rdfs:range lig:ModelReader ,
+                                      lig:TextualStrategy ;
+                           <http://purl.org/dc/elements/1.1/description> "Links a text to the model reader it presupposes."@en ;
+                           rdfs:comment "This property connects a Text to the ModelReader it presupposes. Every text assumes an ideal reader who has the right knowledge and competences to understand it. This reader is not a real person but a strategy built into the text itself."@en ;
+                           rdfs:label "presupposes model reader"@en .
 
 
 ###  https://lectoringraphula.org/ontology#producesInterpretation
-:producesInterpretation rdf:type owl:ObjectProperty ;
-                        rdfs:domain lig:SemanticActualization ;
-                        rdfs:range lig:Interpretation ;
-                        <http://purl.org/dc/elements/1.1/description> "Links a semantic actualization to the interpretation it produces."@en ;
-                        rdfs:comment "This property connects a SemanticActualization to the Interpretation it produces. Semantic actualization is the process through which the Model Reader transforms textual potential meaning into an actual interpretation."@en ;
-                        rdfs:label "produces interpretation"@en .
+lig:producesInterpretation rdf:type owl:ObjectProperty ;
+                           rdfs:domain lig:InterpretiveOperation ,
+                                       lig:SemanticActualization ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:producesInterpretation ;
+                                         owl:someValuesFrom lig:Interpretation
+                                       ] ;
+                           rdfs:range lig:Interpretation ,
+                                      lig:InterpretiveOutcome ;
+                           <http://purl.org/dc/elements/1.1/description> "Links a semantic actualization to the interpretation it produces."@en ;
+                           rdfs:comment "This property connects a SemanticActualization to the Interpretation it produces. Semantic actualization is the process through which the Model Reader transforms textual potential meaning into an actual interpretation."@en ;
+                           rdfs:label "produces interpretation"@en .
 
 
 ###  https://lectoringraphula.org/ontology#projectsPossibleWorld
-:projectsPossibleWorld rdf:type owl:ObjectProperty ;
-                       rdfs:domain lig:Prediction ;
-                       rdfs:range lig:PossibleWorld ;
-                       <http://purl.org/dc/elements/1.1/description> "Links a prediction to the possible world it projects."@en ;
-                       rdfs:comment "This property connects a Prediction to a PossibleWorld. When the reader makes a prediction, they mentally construct a possible version of the narrative world. These possible worlds are evaluated for consistency as the reading progresses."@en ;
-                       rdfs:label "projects possible world"@en .
+lig:projectsPossibleWorld rdf:type owl:ObjectProperty ;
+                          rdfs:domain lig:InterpretiveOperation ,
+                                      lig:Prediction ;
+                          rdfs:range lig:NarrativeConstruction ,
+                                     lig:PossibleWorld ;
+                          <http://purl.org/dc/elements/1.1/description> "Links a prediction to the possible world it projects."@en ;
+                          rdfs:comment "This property connects a Prediction to a PossibleWorld. When the reader makes a prediction, they mentally construct a possible version of the narrative world. These possible worlds are evaluated for consistency as the reading progresses."@en ;
+                          rdfs:label "projects possible world"@en .
 
 
 ###  https://lectoringraphula.org/ontology#reconstructsFabula
-:reconstructsFabula rdf:type owl:ObjectProperty ;
-                    rdfs:domain lig:ModelReader ;
-                    rdfs:range lig:Fabula ;
-                    <http://purl.org/dc/elements/1.1/description> "Links the model reader to the fabula it reconstructs."@en ;
-                    rdfs:comment "This property connects a ModelReader to the Fabula it reconstructs. The fabula is the chronological sequence of events in the story. It is not given directly by the text but reconstructed by the reader by reordering and connecting narrative events."@en ;
-                    rdfs:label "reconstructs fabula"@en .
+lig:reconstructsFabula rdf:type owl:ObjectProperty ;
+                       rdfs:domain lig:ModelReader ,
+                                   lig:TextualStrategy ;
+                       rdfs:range lig:Fabula ,
+                                  lig:NarrativeConstruction ;
+                       <http://purl.org/dc/elements/1.1/description> "Links the model reader to the fabula it reconstructs."@en ;
+                       rdfs:comment "This property connects a ModelReader to the Fabula it reconstructs. The fabula is the chronological sequence of events in the story. It is not given directly by the text but reconstructed by the reader by reordering and connecting narrative events."@en ;
+                       rdfs:label "reconstructs fabula"@en .
 
 
 ###  https://lectoringraphula.org/ontology#requiresCompetence
-:requiresCompetence rdf:type owl:ObjectProperty ;
-                    rdfs:domain lig:Text ;
-                    rdfs:range lig:ReaderCompetence ;
-                    <http://purl.org/dc/elements/1.1/description> "Links a text to the reader competence it requires."@en ;
-                    rdfs:comment "This property connects a Text to the ReaderCompetence it requires. To interpret a text correctly, the reader needs specific linguistic, cultural and encyclopedic knowledge. This property models what the text expects its reader to already know."@en ;
-                    rdfs:label "requires competence"@en .
+lig:requiresCompetence rdf:type owl:ObjectProperty ;
+                       rdfs:domain lig:Text ,
+                                   lig:TextualEntity ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:encodesModelAuthor ;
+                                     owl:someValuesFrom lig:ModelAuthor
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:presupposesModelReader ;
+                                     owl:someValuesFrom lig:ModelReader
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:requiresCompetence ;
+                                     owl:someValuesFrom lig:ReaderCompetence
+                                   ] ;
+                       rdfs:range lig:InterpretiveResource ,
+                                  lig:ReaderCompetence ;
+                       <http://purl.org/dc/elements/1.1/description> "Links a text to the reader competence it requires."@en ;
+                       rdfs:comment "This property connects a Text to the ReaderCompetence it requires. To interpret a text correctly, the reader needs specific linguistic, cultural and encyclopedic knowledge. This property models what the text expects its reader to already know."@en ;
+                       rdfs:label "requires competence"@en .
 
 
 ###  https://lectoringraphula.org/ontology#requiresIntrinsicKnowledge
-:requiresIntrinsicKnowledge rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf :activatesResource ;
-                            rdfs:domain lig:TextualCue ;
-                            rdfs:range lig:IntrinsicKnowledge ;
-                            <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the intrinsic knowledge it requires."@en ;
-                            rdfs:comment "This property connects a TextualCue to the IntrinsicKnowledge the reader must have to interpret it correctly. Intrinsic knowledge is not stated explicitly in the text but is assumed to be already known by the reader. It is called intrinsic because it is built into the cooperative structure of the text."@en ;
-                            rdfs:label "requires intrinsic knowledge"@en .
+lig:requiresIntrinsicKnowledge rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf lig:activatesResource ;
+                               rdfs:domain lig:TextualCue ,
+                                           lig:TextualEntity ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty lig:activatesResource ;
+                                             owl:someValuesFrom lig:InterpretiveResource
+                                           ] ;
+                               rdfs:range lig:InterpretiveResource ,
+                                          lig:IntrinsicKnowledge ;
+                               <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the intrinsic knowledge it requires."@en ;
+                               rdfs:comment "This property connects a TextualCue to the IntrinsicKnowledge the reader must have to interpret it correctly. Intrinsic knowledge is not stated explicitly in the text but is assumed to be already known by the reader. It is called intrinsic because it is built into the cooperative structure of the text."@en ;
+                               rdfs:label "requires intrinsic knowledge"@en .
 
 
 ###  https://lectoringraphula.org/ontology#supportsInference
-:supportsInference rdf:type owl:ObjectProperty ;
-                   rdfs:domain lig:TextualCue ;
-                   rdfs:range lig:Inference ;
-                   <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the inference it supports."@en ;
-                   rdfs:comment "This property connects a TextualCue to the Inference it supports. When the reader activates interpretive resources, they draw inferences that move from what the text says to what it means. This inferential step is at the heart of Eco's cooperative process."@en ;
-                   rdfs:label "supports inference"@en .
+lig:supportsInference rdf:type owl:ObjectProperty ;
+                      rdfs:domain lig:TextualCue ,
+                                  lig:TextualEntity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:activatesResource ;
+                                    owl:someValuesFrom lig:InterpretiveResource
+                                  ] ;
+                      rdfs:range lig:Inference ,
+                                 lig:InterpretiveOperation ;
+                      <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the inference it supports."@en ;
+                      rdfs:comment "This property connects a TextualCue to the Inference it supports. When the reader activates interpretive resources, they draw inferences that move from what the text says to what it means. This inferential step is at the heart of Eco's cooperative process."@en ;
+                      rdfs:label "supports inference"@en .
 
 
 ###  https://lectoringraphula.org/ontology#triggersPresupposition
-:triggersPresupposition rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :activatesResource ;
-                        rdfs:domain lig:TextualCue ;
-                        rdfs:range lig:Presupposition ;
-                        <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the presupposition it triggers."@en ;
-                        rdfs:comment "This property connects a TextualCue to a Presupposition it triggers in the reader. A presupposition is something the text takes for granted without stating it explicitly. For example, a proper name, title, pronoun, or definite expression may presuppose identity, social role, possession, belonging, or previous knowledge."@en ;
-                        rdfs:label "triggers presupposition"@en .
+lig:triggersPresupposition rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf lig:activatesResource ;
+                           rdfs:domain lig:TextualCue ,
+                                       lig:TextualEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:activatesResource ;
+                                         owl:someValuesFrom lig:InterpretiveResource
+                                       ] ;
+                           rdfs:range lig:InterpretiveResource ,
+                                      lig:IntrinsicKnowledge ,
+                                      lig:Presupposition ;
+                           <http://purl.org/dc/elements/1.1/description> "Links a textual cue to the presupposition it triggers."@en ;
+                           rdfs:comment "This property connects a TextualCue to a Presupposition it triggers in the reader. A presupposition is something the text takes for granted without stating it explicitly. For example, a proper name, title, pronoun, or definite expression may presuppose identity, social role, possession, belonging, or previous knowledge."@en ;
+                           rdfs:label "triggers presupposition"@en .
 
 
 #################################################################
@@ -373,16 +640,17 @@ lig:hasConfidenceValue rdf:type owl:DatatypeProperty ;
 
 ###  https://lectoringraphula.org/ontology#hasInterpretiveStatus
 lig:hasInterpretiveStatus rdf:type owl:DatatypeProperty ;
-                            rdfs:domain lig:InterpretiveOutcome ;
-                            rdfs:range xsd:string ;
-                            <http://purl.org/dc/elements/1.1/description> "Associates an interpretive outcome with a status."@en ;
-                            rdfs:comment "This data property connects an InterpretiveOutcome to a qualitative status describing how it relates to the textual strategy. It can be used to indicate whether an outcome is licensed, alternative, rejected, arbitrary, or still uncertain."@en ;
-                            rdfs:label "has interpretive status"@en .
+                          rdfs:domain lig:InterpretiveOutcome ;
+                          rdfs:range xsd:string ;
+                          <http://purl.org/dc/elements/1.1/description> "Associates an interpretive outcome with a status."@en ;
+                          rdfs:comment "This data property connects an InterpretiveOutcome to a qualitative status describing how it relates to the textual strategy. It can be used to indicate whether an outcome is licensed, alternative, rejected, arbitrary, or still uncertain."@en ;
+                          rdfs:label "has interpretive status"@en .
 
 
 ###  https://lectoringraphula.org/ontology#hasProbabilityDegree
 lig:hasProbabilityDegree rdf:type owl:DatatypeProperty ;
-                         rdfs:domain lig:Prediction ;
+                         rdfs:domain lig:InterpretiveOperation ,
+                                     lig:Prediction ;
                          rdfs:range xsd:string ;
                          <http://purl.org/dc/elements/1.1/description> "Associates a prediction with a qualitative probability degree."@en ;
                          rdfs:comment "This data property connects a Prediction to a qualitative degree of probability, such as high, medium, low, or undetermined. It is used to model the different strengths of alternative predictions within a probability disjunction, without introducing formal probabilistic reasoning."@en ;
@@ -422,7 +690,8 @@ lig:hasTextualContent rdf:type owl:DatatypeProperty ;
 
 ###  https://lectoringraphula.org/ontology#AccidentalProperty
 lig:AccidentalProperty rdf:type owl:Class ;
-                       rdfs:subClassOf lig:WorldProperty ;
+                       rdfs:subClassOf lig:NarrativeConstruction ,
+                                       lig:WorldProperty ;
                        owl:disjointWith lig:EssentialProperty ;
                        <http://purl.org/dc/elements/1.1/description> "A property that may vary without affecting identity."@en ;
                        rdfs:comment "This class represents a contingent property that can change across possible worlds while preserving the identity of the world individual. Accidental properties account for narrative variations that do not alter the fundamental nature of an entity."@en ;
@@ -431,7 +700,8 @@ lig:AccidentalProperty rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#AlternativeInterpretation
 lig:AlternativeInterpretation rdf:type owl:Class ;
-                              rdfs:subClassOf lig:Interpretation ;
+                              rdfs:subClassOf lig:Interpretation ,
+                                              lig:InterpretiveOutcome ;
                               <http://purl.org/dc/elements/1.1/description> "A different but textually compatible interpretation."@en ;
                               rdfs:comment "This class represents an interpretation that differs from another interpretation but remains compatible with the textual strategy. Alternative interpretations are especially relevant for open texts, where the text may organize a plurality of coherent interpretive paths without allowing unlimited or arbitrary meanings."@en ;
                               rdfs:label "Alternative Interpretation"@en .
@@ -439,7 +709,20 @@ lig:AlternativeInterpretation rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#ClosedText
 lig:ClosedText rdf:type owl:Class ;
-               rdfs:subClassOf lig:Text ;
+               rdfs:subClassOf lig:Text ,
+                               lig:TextualEntity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:encodesModelAuthor ;
+                                 owl:someValuesFrom lig:ModelAuthor
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:presupposesModelReader ;
+                                 owl:someValuesFrom lig:ModelReader
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:requiresCompetence ;
+                                 owl:someValuesFrom lig:ReaderCompetence
+                               ] ;
                <http://purl.org/dc/elements/1.1/description> "A text that strongly restricts the reader's interpretive path."@en ;
                rdfs:comment "This class represents texts that attempt to guide the reader toward a more controlled or predetermined interpretation. A closed text reduces interpretive freedom by limiting ambiguity and by strongly directing the Model Reader's cooperation."@en ;
                rdfs:label "Closed Text"@en .
@@ -456,7 +739,8 @@ lig:Code rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#CommonFrame
 lig:CommonFrame rdf:type owl:Class ;
-                rdfs:subClassOf lig:Frame ;
+                rdfs:subClassOf lig:Frame ,
+                                lig:InterpretiveResource ;
                 <http://purl.org/dc/elements/1.1/description> "A frame based on ordinary or shared background knowledge."@en ;
                 rdfs:comment "This class represents a frame grounded in common, everyday, or widely shared knowledge. A common frame allows the Model Reader to interpret textual cues through ordinary expectations about situations, actions, roles, and events."@en ;
                 rdfs:label "Common Frame"@en .
@@ -497,7 +781,8 @@ lig:Encyclopedia rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#EncyclopedicPresupposition
 lig:EncyclopedicPresupposition rdf:type owl:Class ;
-                               rdfs:subClassOf lig:IntrinsicKnowledge ;
+                               rdfs:subClassOf lig:InterpretiveResource ,
+                                               lig:IntrinsicKnowledge ;
                                <http://purl.org/dc/elements/1.1/description> "A presupposition based on encyclopedic or cultural knowledge"@en ;
                                rdfs:comment "This class represents a presupposition that depends on encyclopedic, cultural, contextual, intertextual, or world knowledge activated by the Model Reader. It connects the implicit assumptions of the text with the broader encyclopedia required for interpretation."@en ;
                                rdfs:label "Encyclopedic Presupposition"@en .
@@ -505,7 +790,8 @@ lig:EncyclopedicPresupposition rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#EssentialProperty
 lig:EssentialProperty rdf:type owl:Class ;
-                      rdfs:subClassOf lig:WorldProperty ;
+                      rdfs:subClassOf lig:NarrativeConstruction ,
+                                      lig:WorldProperty ;
                       <http://purl.org/dc/elements/1.1/description> "A property that defines the identity of a world individual."@en ;
                       rdfs:comment "This class represents a property that is constitutive of a world individual's identity across possible worlds. Altering or removing an essential property results in a different individual rather than a different version of the same one."@en ;
                       rdfs:label "Essential Property"@en .
@@ -547,7 +833,7 @@ lig:Inference rdf:type owl:Class ;
 lig:InferentialWalk rdf:type owl:Class ;
                     rdfs:subClassOf lig:InterpretiveOperation ,
                                     [ rdf:type owl:Restriction ;
-                                      owl:onProperty :constructsPossibleWorld ;
+                                      owl:onProperty lig:constructsPossibleWorld ;
                                       owl:someValuesFrom lig:PossibleWorld
                                     ] ;
                     <http://purl.org/dc/elements/1.1/description> "A sequence of interpretive movements beyond the linear text."@en ;
@@ -588,7 +874,8 @@ lig:InterpretiveResource rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#IntertextualFrame
 lig:IntertextualFrame rdf:type owl:Class ;
-                      rdfs:subClassOf lig:Frame ;
+                      rdfs:subClassOf lig:Frame ,
+                                      lig:InterpretiveResource ;
                       <http://purl.org/dc/elements/1.1/description> "A frame activated through relations with other texts or genres."@en ;
                       rdfs:comment "This class represents a frame activated by the Model Reader through knowledge of other texts, genres, traditions, narrative conventions, or cultural references. An intertextual frame supports interpretation when a text relies on echoes, allusions, quotations, or genre-based expectations."@en ;
                       rdfs:label "Intertextual Frame"@en .
@@ -605,8 +892,9 @@ lig:IntrinsicKnowledge rdf:type owl:Class ;
 ###  https://lectoringraphula.org/ontology#LicensedInterpretation
 lig:LicensedInterpretation rdf:type owl:Class ;
                            rdfs:subClassOf lig:Interpretation ,
+                                           lig:InterpretiveOutcome ,
                                            [ rdf:type owl:Restriction ;
-                                             owl:onProperty :isLicensedByInference ;
+                                             owl:onProperty lig:isLicensedByInference ;
                                              owl:someValuesFrom lig:Inference
                                            ] ;
                            <http://purl.org/dc/elements/1.1/description> "An interpretation supported by the textual strategy."@en ;
@@ -647,7 +935,20 @@ lig:NarrativeConstruction rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#NarrativeText
 lig:NarrativeText rdf:type owl:Class ;
-                  rdfs:subClassOf lig:Text ;
+                  rdfs:subClassOf lig:Text ,
+                                  lig:TextualEntity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:encodesModelAuthor ;
+                                    owl:someValuesFrom lig:ModelAuthor
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:presupposesModelReader ;
+                                    owl:someValuesFrom lig:ModelReader
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:requiresCompetence ;
+                                    owl:someValuesFrom lig:ReaderCompetence
+                                  ] ;
                   <http://purl.org/dc/elements/1.1/description> "A text that organizes events, characters, and worlds through narration."@en ;
                   rdfs:comment "This class represents texts that require the reader to reconstruct a narrative sequence, or fabula, through interpretive cooperation. A narrative text guides the Model Reader in connecting textual cues, filling gaps, making inferences, and constructing possible worlds."@en ;
                   rdfs:label "Narrative Text"@en .
@@ -655,7 +956,20 @@ lig:NarrativeText rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#OpenText
 lig:OpenText rdf:type owl:Class ;
-             rdfs:subClassOf lig:Text ;
+             rdfs:subClassOf lig:Text ,
+                             lig:TextualEntity ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lig:encodesModelAuthor ;
+                               owl:someValuesFrom lig:ModelAuthor
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lig:presupposesModelReader ;
+                               owl:someValuesFrom lig:ModelReader
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lig:requiresCompetence ;
+                               owl:someValuesFrom lig:ReaderCompetence
+                             ] ;
              <http://purl.org/dc/elements/1.1/description> "A text that allows multiple coherent interpretive paths."@en ;
              rdfs:comment "This class represents texts that strategically leave room for a plurality of interpretations. In Eco's theory, an open text does not allow unlimited interpretation, but organizes several possible interpretive paths that remain constrained by the textual strategy."@en ;
              rdfs:label "Open Text"@en .
@@ -679,7 +993,8 @@ lig:Prediction rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#Presupposition
 lig:Presupposition rdf:type owl:Class ;
-                   rdfs:subClassOf lig:IntrinsicKnowledge ;
+                   rdfs:subClassOf lig:InterpretiveResource ,
+                                   lig:IntrinsicKnowledge ;
                    <http://purl.org/dc/elements/1.1/description> "Implicit knowledge assumed by the text."@en ;
                    rdfs:comment "This class represents a form of intrinsic knowledge that the text assumes as already available to the Model Reader. A presupposition is not necessarily stated directly, but it is required in order for a textual fragment, cue, or inference to be interpreted coherently."@en ;
                    rdfs:label "Presupposition"@en .
@@ -703,7 +1018,8 @@ lig:ReaderCompetence rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#ReferenceWorld
 lig:ReferenceWorld rdf:type owl:Class ;
-                   rdfs:subClassOf lig:PossibleWorld ;
+                   rdfs:subClassOf lig:NarrativeConstruction ,
+                                   lig:PossibleWorld ;
                    <http://purl.org/dc/elements/1.1/description> "The world taken as the interpretive point of reference."@en ;
                    rdfs:comment "This class represents the world against which the Model Reader evaluates the truth conditions of narrative statements. The reference world provides the baseline for comparing alternative possible worlds and assessing the coherence of interpretations generated during textual cooperation."@en ;
                    rdfs:label "Reference World"@en .
@@ -711,7 +1027,8 @@ lig:ReferenceWorld rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#SNecessaryProperty
 lig:SNecessaryProperty rdf:type owl:Class ;
-                       rdfs:subClassOf lig:WorldProperty ;
+                       rdfs:subClassOf lig:NarrativeConstruction ,
+                                       lig:WorldProperty ;
                        <http://purl.org/dc/elements/1.1/description> "A property that is necessary within a specific world state."@en ;
                        rdfs:comment "This class represents a property that is necessarily true only within a particular world state or narrative situation. Unlike essential properties, S-necessary properties derive their necessity from the conditions holding in a given possible world rather than from the identity of the individual itself."@en ;
                        rdfs:label "S-Necessary Property"@en .
@@ -721,7 +1038,7 @@ lig:SNecessaryProperty rdf:type owl:Class ;
 lig:SemanticActualization rdf:type owl:Class ;
                           rdfs:subClassOf lig:InterpretiveOperation ,
                                           [ rdf:type owl:Restriction ;
-                                            owl:onProperty :producesInterpretation ;
+                                            owl:onProperty lig:producesInterpretation ;
                                             owl:someValuesFrom lig:Interpretation
                                           ] ;
                           <http://purl.org/dc/elements/1.1/description> "The process of actualizing meaning through interpretation."@en ;
@@ -731,7 +1048,8 @@ lig:SemanticActualization rdf:type owl:Class ;
 
 ###  https://lectoringraphula.org/ontology#Subcode
 lig:Subcode rdf:type owl:Class ;
-            rdfs:subClassOf lig:Code ;
+            rdfs:subClassOf lig:Code ,
+                            lig:InterpretiveResource ;
             <http://purl.org/dc/elements/1.1/description> "A specific interpretive convention within a broader code."@en ;
             rdfs:comment "This class represents a more specific interpretive convention activated in a particular textual, cultural, rhetorical, ideological, stylistic, or intertextual context. A subcode refines a broader code and helps constrain the interpretation of specific textual cues."@en ;
             rdfs:label "Subcode"@en .
@@ -741,15 +1059,15 @@ lig:Subcode rdf:type owl:Class ;
 lig:Text rdf:type owl:Class ;
          rdfs:subClassOf lig:TextualEntity ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :encodesModelAuthor ;
+                           owl:onProperty lig:encodesModelAuthor ;
                            owl:someValuesFrom lig:ModelAuthor
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :presupposesModelReader ;
+                           owl:onProperty lig:presupposesModelReader ;
                            owl:someValuesFrom lig:ModelReader
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :requiresCompetence ;
+                           owl:onProperty lig:requiresCompetence ;
                            owl:someValuesFrom lig:ReaderCompetence
                          ] ;
          <http://purl.org/dc/elements/1.1/description> "A semiotic object that guides interpretive cooperation."@en ;
@@ -769,7 +1087,7 @@ lig:TextFragment rdf:type owl:Class ;
 lig:TextualCue rdf:type owl:Class ;
                rdfs:subClassOf lig:TextualEntity ,
                                [ rdf:type owl:Restriction ;
-                                 owl:onProperty :activatesResource ;
+                                 owl:onProperty lig:activatesResource ;
                                  owl:someValuesFrom lig:InterpretiveResource
                                ] ;
                <http://purl.org/dc/elements/1.1/description> "A textual element that activates interpretation."@en ;
@@ -822,5 +1140,167 @@ lig:WorldState rdf:type owl:Class ;
                rdfs:comment "This class represents a particular state of affairs within a possible world. A world state consists of the individuals, events, and properties that hold at a specific point in the narrative, allowing the Model Reader to evaluate changes, predictions, and hypothetical developments."@en ;
                rdfs:label "World State"@en .
 
+
+[ swrl:argument1 var:cue ;
+  swrl:argument2 var:inference ;
+  swrl:propertyPredicate lig:supportsInference
+] .
+
+[ swrl:argument1 var:inference ;
+   swrl:argument2 var:interpretation ;
+   swrl:propertyPredicate lig:licensesInterpretation
+ ] .
+
+[ swrl:argument1 var:cue ;
+   swrl:argument2 var:interpretation ;
+   swrl:propertyPredicate lig:contributesToInterpretation
+ ] .
+
+[ swrl:argument1 var:fragment ;
+   swrl:argument2 var:inference ;
+   swrl:propertyPredicate lig:groundsInference
+ ] .
+
+[ swrl:argument1 var:cue ;
+   swrl:argument2 var:inference ;
+   swrl:propertyPredicate lig:supportsInference
+ ] .
+
+[ swrl:argument1 var:fragment ;
+   swrl:argument2 var:cue ;
+   swrl:propertyPredicate lig:containsCue
+ ] .
+
+[ swrl:argument1 var:cue ;
+   swrl:argument2 var:knowledge ;
+   swrl:propertyPredicate lig:requiresIntrinsicKnowledge
+ ] .
+
+[ swrl:argument1 var:cue ;
+   swrl:argument2 var:inference ;
+   swrl:propertyPredicate lig:supportsInference
+ ] .
+
+[ swrl:argument1 var:knowledge ;
+   swrl:argument2 var:inference ;
+   swrl:propertyPredicate lig:knowledgeSupportsInference
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+lig:R1_fragment_grounds_inference swrl:body [ ] ;
+swrl:head [ ] .
+
+
+lig:R2_cue_contributes_to_interpretation swrl:body [ ] ;
+swrl:head [ ] .
+
+
+lig:R3_knowledge_supports_inference swrl:body [ ] ;
+swrl:head [ ] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+lig:fragment rdf:type swrl:Variable .
+
+lig:cue rdf:type swrl:Variable .
+
+lig:inference rdf:type swrl:Variable .
+
+lig:interpretation rdf:type swrl:Variable .
+
+lig:knowledge rdf:type swrl:Variable .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "If a textual fragment contains a cue and that cue supports an inference, then the fragment grounds that inference." ;
+   rdfs:label "R1FragmentGroundsInference" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate lig:containsCue ;
+                           swrl:argument1 lig:fragment ;
+                           swrl:argument2 lig:cue
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate lig:supportsInference ;
+                                      swrl:argument1 lig:cue ;
+                                      swrl:argument2 lig:inference
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate lig:groundsInference ;
+                           swrl:argument1 lig:fragment ;
+                           swrl:argument2 lig:inference
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "If a textual cue supports an inference and that inference licenses an interpretation, then the cue contributes to that interpretation." ;
+   rdfs:label "R2CueContributesToInterpretation" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate lig:supportsInference ;
+                           swrl:argument1 lig:cue ;
+                           swrl:argument2 lig:inference
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate lig:licensesInterpretation ;
+                                      swrl:argument1 lig:inference ;
+                                      swrl:argument2 lig:interpretation
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate lig:contributesToInterpretation ;
+                           swrl:argument1 lig:cue ;
+                           swrl:argument2 lig:interpretation
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "If a textual cue requires intrinsic knowledge and supports an inference, then that intrinsic knowledge supports the inference." ;
+   rdfs:label "R3KnowledgeSupportsInference" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate lig:requiresIntrinsicKnowledge ;
+                           swrl:argument1 lig:cue ;
+                           swrl:argument2 lig:knowledge
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate lig:supportsInference ;
+                                      swrl:argument1 lig:cue ;
+                                      swrl:argument2 lig:inference
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate lig:knowledgeSupportsInference ;
+                           swrl:argument1 lig:knowledge ;
+                           swrl:argument2 lig:inference
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
