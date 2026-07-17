@@ -56,8 +56,3 @@ The repository must not be used to redistribute complete copyrighted texts.
 
 - Atwood, Margaret. *The Handmaid’s Tale*. 1985.
 - Eco, Umberto. *Lector in fabula: La cooperazione interpretativa nei testi narrativi*. 1979.
-- W3C. *RDF 1.1 Concepts and Abstract Syntax*.
-- W3C. *RDF Schema 1.1*.
-- W3C. *OWL 2 Web Ontology Language*.
-- W3C. *SPARQL 1.1 Query Language*.
-- W3C. *SWRL: A Semantic Web Rule Language Combining OWL and RuleML*.
