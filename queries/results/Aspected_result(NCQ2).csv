@@ -1,0 +1,7 @@
+"NCQ2: Is the P.O.W. origin of the Handmaids' red clothing modeled as direct narrative fact?
+Query file: queries/10_pow_not_direct_fact.rq
+Tested in: Snap SPARQL / Protégé
+Returned rows: 1",
+,
+?interpretationLabel ,?status
+P.O.W. uniform origin conjecture@en,conjectural^^xsd:string

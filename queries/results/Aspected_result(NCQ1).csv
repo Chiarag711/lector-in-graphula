@@ -1,0 +1,7 @@
+"NCQ1: Are empirical readers or empirical authors treated as Model Reader or Model Author?
+Query file: queries/09_no_empirical_confusion.rq
+Tested in: Snap SPARQL / Protégé
+Returned rows: 0"
+
+
+?entityLabel

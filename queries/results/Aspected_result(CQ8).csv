@@ -1,0 +1,8 @@
+"CQ8: Which Model Reader strategies or levels are presupposed by the narrative text?
+Query file: queries/08_model_reader_levels.rq
+Tested in: Snap SPARQL / Protégé
+Returned rows: 2",
+,
+?textLabel ,?modelReaderLabel
+The Handmaid's Tale@en,Historical Notes Model Reader@en
+The Handmaid's Tale@en,The Handmaid's Tale Model Reader@en

@@ -1,0 +1,36 @@
+"CQ4: Which interpretive resources, such as codes, frames, and encyclopedias, are activated by textual cues?
+Query file: queries/04_interpretive_resources.rq
+Tested in: Snap SPARQL / Protégé
+Returned rows: 30",,,
+,,,
+?fragmentLabel,?cueLabel ,?cueText ,?resourceLabel
+Ceremony biblical fragment@en,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Biblical reproductive subcode@en
+Ceremony biblical fragment@en,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Ceremony religious frame@en
+Ceremony category failure fragment@en,Ceremony category failure cue@en,only one is involved^^xsd:string,Gilead reproductive subcode@en
+Ceremony category failure fragment@en,Ceremony category failure cue@en,only one is involved^^xsd:string,Ordinary sexual subcode@en
+Ceremony passion negation fragment@en,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Gilead reproductive subcode@en
+Ceremony passion negation fragment@en,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Ordinary romantic subcode@en
+Ceremony passion negation fragment@en,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Ordinary sexual subcode@en
+Ceremony prayer fragment@en,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ceremony ritual frame@en
+Color inventory fragment@en,Color inventory cue@en,as if taking inventory^^xsd:string,Female role color subcode@en
+Color inventory fragment@en,Color inventory cue@en,as if taking inventory^^xsd:string,Gilead chromatic role/status code@en
+Color inventory fragment@en,Color inventory cue@en,as if taking inventory^^xsd:string,Household hierarchy frame@en
+Color inventory fragment@en,Color inventory cue@en,as if taking inventory^^xsd:string,Institutional authority color subcode@en
+Darkness or light fragment@en,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Open ending frame@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Extra-textual historical encyclopedia@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Historical recycling frame@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Pseudo-academic historical frame@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Female role color subcode@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Gilead chromatic role/status code@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Household hierarchy frame@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Institutional authority color subcode@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Institutional dress frame@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Red reproductive symbolic subcode@en
+Nick Eye suspicion fragment@en,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Gilead surveillance frame@en
+Nick trust request fragment@en,Nick Trust me cue@en,Trust me^^xsd:string,Gilead surveillance frame@en
+Nick trust request fragment@en,Nick Trust me cue@en,Trust me^^xsd:string,Mayday resistance frame@en
+State secrets authorization fragment@en,State secrets cue@en,Violation of state secrets^^xsd:string,Gilead surveillance frame@en
+State secrets authorization fragment@en,State secrets cue@en,Violation of state secrets^^xsd:string,State authority frame@en
+Street color enumeration fragment@en,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Female role color subcode@en
+Street color enumeration fragment@en,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Gilead chromatic role/status code@en
+Street color enumeration fragment@en,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Social taxonomy frame@en

@@ -1,0 +1,10 @@
+"NCQ3: Are alternative predictions in ambiguous cases collapsed into one certain outcome?
+Query file: queries/11_no_collapsed_predictions.rq
+Tested in: Snap SPARQL / Protégé
+Returned rows: 4",
+,
+?alternativePredictionLabel,?alternativePredictionLabel
+Final outcome probability disjunction@en,Offred arrest prediction@en
+Final outcome probability disjunction@en,Offred rescue prediction@en
+Nick role probability disjunction@en,Nick as Eye prediction@en
+Nick role probability disjunction@en,Nick as Mayday ally prediction@en

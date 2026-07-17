@@ -1,0 +1,33 @@
+"CQ2: Which textual cues require intrinsic knowledge?
+Query file: queries/02_intrinsic_knowledge.rq
+Tested in: Snap SPARQL / Protégé
+Returned rows: 27",,,
+,,,
+?fragmentLabel,?cueLabel,?cueText,?knowledgeLabel
+Ceremony biblical fragment@en,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Biblical justification knowledge@en
+Ceremony category failure fragment@en,Ceremony category failure cue@en,only one is involved^^xsd:string,Category failure knowledge@en
+Ceremony category failure fragment@en,Ceremony category failure cue@en,only one is involved^^xsd:string,Constrained choice knowledge@en
+Ceremony passion negation fragment@en,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Passion negation knowledge@en
+Ceremony prayer fragment@en,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ritual prayer knowledge@en
+Color inventory fragment@en,Color inventory cue@en,as if taking inventory^^xsd:string,Color role mapping knowledge@en
+Color inventory fragment@en,Color inventory cue@en,as if taking inventory^^xsd:string,Visual taxonomy knowledge@en
+Darkness or light fragment@en,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Open ending knowledge@en
+Historical Notes Name Fragment@en,Patronymic Name Cue@en,Offred gives no clue^^xsd:string,Patronymic Naming Knowledge@en
+Historical Notes Name Fragment@en,Patronymic Name Cue@en,Offred gives no clue^^xsd:string,Possession naming knowledge@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Hedged scholarly attribution knowledge@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Historical reframing knowledge@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Marketing costume design knowledge@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,World War II P.O.W. uniform knowledge@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Color role mapping knowledge@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Institutional dress knowledge@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Red blood symbolism knowledge@en
+Name Exchange Fragment@en,Name Exchange Cue@en,we exchanged names^^xsd:string,Personal Name Knowledge@en
+Nick Eye suspicion fragment@en,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Surveillance knowledge@en
+Nick trust request fragment@en,Nick Trust me cue@en,Trust me^^xsd:string,Resistance network knowledge@en
+Nick trust request fragment@en,Nick Trust me cue@en,Trust me^^xsd:string,Trust under surveillance knowledge@en
+Offred name fragment@en,Offred name cue@en,My name isn't Offred^^xsd:string,Hidden Real Name Knowledge@en
+Offred name fragment@en,Offred name cue@en,My name isn't Offred^^xsd:string,Possession naming knowledge@en
+State secrets authorization fragment@en,State secrets cue@en,Violation of state secrets^^xsd:string,Clandestine deception knowledge@en
+State secrets authorization fragment@en,State secrets cue@en,Violation of state secrets^^xsd:string,Official authority knowledge@en
+Street color enumeration fragment@en,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Color role mapping knowledge@en
+Street color enumeration fragment@en,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Compositional color pattern knowledge@en

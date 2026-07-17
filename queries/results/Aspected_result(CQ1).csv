@@ -1,0 +1,34 @@
+"CQ1: Which textual fragments and cues ground the interpretive inferences modeled in the Knowledge Graph?
+Query file: queries/01_grounding_inferences.rq
+Returned rows: 28
+Tested in: Snap SPARQL / Protégé",,,,
+,,,,
+?fragmentLabel,?cueLabel,?cueText,?inferenceLabel,
+Ceremony biblical fragment@en,"The Handmaid's Tale, PDF p. 91^^xsd:string",Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Biblical justification inference@en
+Ceremony biblical fragment@en,"The Handmaid's Tale, PDF p. 91^^xsd:string",Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Ceremony ritualization inference@en
+Ceremony category failure fragment@en,"The Handmaid's Tale, PDF pp. 96-97^^xsd:string",Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony category failure inference@en
+Ceremony category failure fragment@en,"The Handmaid's Tale, PDF pp. 96-97^^xsd:string",Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony ritualization inference@en
+Ceremony passion negation fragment@en,"The Handmaid's Tale, PDF p. 97^^xsd:string",Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Ceremony ritualization inference@en
+Ceremony passion negation fragment@en,"The Handmaid's Tale, PDF p. 97^^xsd:string",Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Passion negation inference@en
+Ceremony prayer fragment@en,"The Handmaid's Tale, PDF p. 93^^xsd:string",Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ceremony ritualization inference@en
+Ceremony prayer fragment@en,"The Handmaid's Tale, PDF p. 93^^xsd:string",Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ritual prayer inference@en
+Color inventory fragment@en,"The Handmaid's Tale, PDF p. 89^^xsd:string",Color inventory cue@en,as if taking inventory^^xsd:string,Chromatic code synthesis inference@en
+Color inventory fragment@en,"The Handmaid's Tale, PDF p. 89^^xsd:string",Color inventory cue@en,as if taking inventory^^xsd:string,Color inventory inference@en
+Darkness or light fragment@en,"The Handmaid's Tale, PDF pp. 283-285^^xsd:string",Darkness or light cue@en,darkness within; or else the light^^xsd:string,Darkness light open ending inference@en
+Darkness or light fragment@en,"The Handmaid's Tale, PDF pp. 283-285^^xsd:string",Darkness or light cue@en,darkness within; or else the light^^xsd:string,Nick ambiguous role synthesis inference@en
+Historical Notes Name Fragment@en,"The Handmaid's Tale, PDF p. 294^^xsd:string",Patronymic Name Cue@en,Offred gives no clue^^xsd:string,Patronymic Name Inference@en
+Historical Notes color origin fragment@en,"The Handmaid's Tale, PDF p. 295^^xsd:string",Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Historical color reframing inference@en
+Initial color assignment fragment@en,"The Handmaid's Tale, PDF pp. 17-18^^xsd:string",Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Chromatic code synthesis inference@en
+Initial color assignment fragment@en,"The Handmaid's Tale, PDF pp. 17-18^^xsd:string",Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Initial color assignment inference@en
+Initial color assignment fragment@en,"The Handmaid's Tale, PDF pp. 17-18^^xsd:string",Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Red symbolic inference@en
+Name Exchange Fragment@en,"The Handmaid's Tale, PDF p. 14^^xsd:string",Name Exchange Cue@en,we exchanged names^^xsd:string,Name Exchange Inference@en
+Nick Eye suspicion fragment@en,"The Handmaid's Tale, PDF pp. 26-27^^xsd:string",Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Nick Eye suspicion inference@en
+Nick Eye suspicion fragment@en,"The Handmaid's Tale, PDF pp. 26-27^^xsd:string",Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Nick ambiguous role synthesis inference@en
+Nick trust request fragment@en,"The Handmaid's Tale, PDF pp. 283-285^^xsd:string",Nick Trust me cue@en,Trust me^^xsd:string,Nick ambiguous role synthesis inference@en
+Nick trust request fragment@en,"The Handmaid's Tale, PDF pp. 283-285^^xsd:string",Nick Trust me cue@en,Trust me^^xsd:string,Nick trust ambiguity inference@en
+Offred name fragment@en,"The Handmaid's Tale, PDF p. 87^^xsd:string",Offred name cue@en,My name isn't Offred^^xsd:string,Hidden Name Inference@en
+Offred name fragment@en,"The Handmaid's Tale, PDF p. 87^^xsd:string",Offred name cue@en,My name isn't Offred^^xsd:string,Offred identity inference@en
+State secrets authorization fragment@en,"The Handmaid's Tale, PDF pp. 283-285^^xsd:string",State secrets cue@en,Violation of state secrets^^xsd:string,Nick ambiguous role synthesis inference@en
+State secrets authorization fragment@en,"The Handmaid's Tale, PDF pp. 283-285^^xsd:string",State secrets cue@en,Violation of state secrets^^xsd:string,State authority ambiguity inference@en
+Street color enumeration fragment@en,"The Handmaid's Tale, PDF pp. 32-33^^xsd:string",Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Chromatic code synthesis inference@en
+Street color enumeration fragment@en,"The Handmaid's Tale, PDF pp. 32-33^^xsd:string",Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Street color enumeration inference@en

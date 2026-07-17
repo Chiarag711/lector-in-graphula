@@ -1,0 +1,24 @@
+"CQ3: Which presuppositions are triggered by textual cues?
+Query file: queries/03_presuppositions.rq
+Tested in: Snap SPARQL / Protégé
+Returned rows: 18",,,
+,,,
+?fragmentLabel,?cueLabel,?cueText,?presuppositionLabel
+Ceremony biblical fragment@en,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Biblical reproduction presupposition@en
+Ceremony category failure fragment@en,Ceremony category failure cue@en,only one is involved^^xsd:string,Category inadequacy presupposition@en
+Ceremony passion negation fragment@en,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Passion exclusion presupposition@en
+Ceremony prayer fragment@en,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ritual blessing presupposition@en
+Color inventory fragment@en,Color inventory cue@en,as if taking inventory^^xsd:string,Color as identity substitute presupposition@en
+Darkness or light fragment@en,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Ending may remain open presupposition@en
+Historical Notes Name Fragment@en,Patronymic Name Cue@en,Offred gives no clue^^xsd:string,Patronymic Possession Presupposition@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Hedged origin presupposition@en
+Historical Notes color origin fragment@en,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Historical Notes reframing presupposition@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Color assigned role presupposition@en
+Initial color assignment fragment@en,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Red symbolism presupposition@en
+Name Exchange Fragment@en,Name Exchange Cue@en,we exchanged names^^xsd:string,Personal Name Presupposition@en
+Nick Eye suspicion fragment@en,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Friendly behavior may be test presupposition@en
+Nick trust request fragment@en,Nick Trust me cue@en,Trust me^^xsd:string,Trust may conceal betrayal presupposition@en
+Offred name fragment@en,Offred name cue@en,My name isn't Offred^^xsd:string,Hidden Name Presupposition@en
+Offred name fragment@en,Offred name cue@en,My name isn't Offred^^xsd:string,Possession presupposition@en
+State secrets authorization fragment@en,State secrets cue@en,Violation of state secrets^^xsd:string,Authority may be performed presupposition@en
+Street color enumeration fragment@en,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Color code systematicity presupposition@en
