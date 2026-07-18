@@ -818,7 +818,7 @@ details.query[open]{border-left-color:var(--red)}
   <div class="wrap reveal">
     <div class="sec-label"><span class="sec-num">§ 09</span></div>
     <h2>SPARQL <em>queries</em></h2>
-    <p class="muted" style="max-width:820px;margin-bottom:34px">Eleven SPARQL queries validate the Competency Questions (01–08) and the Negative Competency Questions (09–11) against the Knowledge Graph. <strong>Click on a question to open it and see the SPARQL code.</strong> All queries are available for <a class="inline" href="assets/queries.zip" download>download</a>.</p>
+    <p class="muted" style="max-width:820px;margin-bottom:34px">Eleven SPARQL queries validate the Competency Questions (01–08) and the Negative Competency Questions (09–11) against the Knowledge Graph. <strong>Click on a question to open it and see the SPARQL code.</strong> All queries are available <a class="inline" href="https://github.com/Chiarag711/lector-in-graphula/tree/main/queries" target="_blank" rel="noopener">on GitHub</a>.</p>
 
     <details class="query"><summary><span class="qnum">CQ1</span><span class="qtitle">Grounding inferences</span><span class="qfile">01_grounding_inferences.rq</span></summary><div class="query-body"><p>Pattern: <code>TextFragment → containsCue → TextualCue → supportsInference → Inference</code>. Lists the fragments, cues and inferences across the four cases.</p><pre><span class="k">SELECT</span> ?fragmentLabel ?source ?cueLabel ?cueText ?inferenceLabel
 <span class="k">WHERE</span> {
@@ -915,9 +915,9 @@ details.query[open]{border-left-color:var(--red)}
     <div class="sec-label"><span class="sec-num">§ 12</span></div>
     <h2>Downloads</h2>
     <div class="dl-grid">
-      <a class="dl" href="assets/econtology.ttl" download><b>econtology.ttl</b><span>ONTOLOGY · OWL 2 / TURTLE · TBox</span></a>
-      <a class="dl" href="assets/knowledge-graph.ttl" download><b>knowledge-graph.ttl</b><span>KNOWLEDGE GRAPH · 138 INDIVIDUALS · ABox</span></a>
-      <a class="dl" href="assets/queries.zip" download><b>queries.zip</b><span>11 SPARQL QUERIES · CQ + NCQ UNIT TESTS</span></a>
+      <a class="dl" href="ontology/econtology.ttl" download><b>econtology.ttl</b><span>ONTOLOGY · OWL 2 / TURTLE · TBox</span></a>
+      <a class="dl" href="knowledge-graph/knowledge-graph.ttl" download><b>knowledge-graph.ttl</b><span>KNOWLEDGE GRAPH · 138 INDIVIDUALS · ABox</span></a>
+      <a class="dl" href="https://github.com/Chiarag711/lector-in-graphula/tree/main/queries" target="_blank" rel="noopener"><b>queries</b><span>11 SPARQL QUERIES · VIEW ON GITHUB</span></a>
     </div>
   </div>
 </section>
@@ -943,7 +943,7 @@ details.query[open]{border-left-color:var(--red)}
       <div style="margin-top:6px">Knowledge Representation and Extraction · DHDK · University of Bologna · a.y. 2025/2026</div>
     </div>
     <div style="font-family:var(--mono);font-size:.72rem;letter-spacing:.05em">
-      <a href="assets/econtology.ttl" download>ONTOLOGY</a> · <a href="assets/knowledge-graph.ttl" download>GRAPH</a> · <a href="assets/queries.zip" download>SPARQL</a>
+      <a href="ontology/econtology.ttl" download>ONTOLOGY</a> · <a href="knowledge-graph/knowledge-graph.ttl" download>GRAPH</a> · <a href="https://github.com/Chiarag711/lector-in-graphula/tree/main/queries" target="_blank" rel="noopener">SPARQL</a> · <a href="https://github.com/Chiarag711/lector-in-graphula" target="_blank" rel="noopener">GITHUB</a>
     </div>
   </div>
 </footer>
