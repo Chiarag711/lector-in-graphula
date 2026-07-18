@@ -1,0 +1,2335 @@
+@prefix : <https://lectoringraphula.org/handmaid#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix hmt: <https://lectoringraphula.org/handmaid#> .
+@prefix lig: <https://lectoringraphula.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://lectoringraphula.org/handmaid#> .
+
+<https://lectoringraphula.org/knowledge-graph> rdf:type owl:Ontology ;
+                                                owl:imports <https://lectoringraphula.org/ontology> ;
+                                                dc:creator "Chiara Genovese, Asia Marselli, Adriana Monte" ;
+                                                dc:description "A knowledge graph instantiating the Lector in Graphula ontology on selected interpretive cases from The Handmaid's Tale."@en ;
+                                                rdfs:comment "This knowledge graph applies the Lector in Graphula ontology to selected excerpts from Margaret Atwood's The Handmaid's Tale. It models how specific textual cues activate intrinsic knowledge, presuppositions, inferences, and licensed interpretations according to Eco's theory of the Model Reader. The graph is intended as a case study and does not aim to represent the entire plot of the novel."@en ,
+                                                             "This knowledge graph imports the Lector in Graphula ontology, identified by the namespace https://lectoringraphula.org/ontology#, and uses the Handmaid namespace for case-study individuals."@en ;
+                                                rdfs:label "Lector in Graphula Knowledge Graph"@en ;
+                                                owl:versionInfo "0.1.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://lectoringraphula.org/ontology#activatesCode
+lig:activatesCode rdfs:domain lig:TextualEntity ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty lig:activatesResource ;
+                                owl:someValuesFrom lig:InterpretiveResource
+                              ] ;
+                  rdfs:range lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#activatesEncyclopedia
+lig:activatesEncyclopedia rdfs:domain lig:TextualEntity ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty lig:activatesResource ;
+                                        owl:someValuesFrom lig:InterpretiveResource
+                                      ] ;
+                          rdfs:range lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#activatesFrame
+lig:activatesFrame rdfs:domain lig:TextualEntity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:activatesResource ;
+                                 owl:someValuesFrom lig:InterpretiveResource
+                               ] ;
+                   rdfs:range lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#activatesResource
+lig:activatesResource rdfs:domain lig:TextualEntity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:activatesResource ;
+                                    owl:someValuesFrom lig:InterpretiveResource
+                                  ] .
+
+
+###  https://lectoringraphula.org/ontology#allowsAlternativeInterpretation
+lig:allowsAlternativeInterpretation rdfs:domain lig:Text ,
+                                                lig:TextualEntity ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty lig:encodesModelAuthor ;
+                                                  owl:someValuesFrom lig:ModelAuthor
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty lig:presupposesModelReader ;
+                                                  owl:someValuesFrom lig:ModelReader
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty lig:requiresCompetence ;
+                                                  owl:someValuesFrom lig:ReaderCompetence
+                                                ] ;
+                                    rdfs:range lig:Interpretation ,
+                                               lig:InterpretiveOutcome .
+
+
+###  https://lectoringraphula.org/ontology#constrainsInterpretation
+lig:constrainsInterpretation rdfs:domain lig:TextualStrategy ;
+                             rdfs:range lig:InterpretiveOutcome .
+
+
+###  https://lectoringraphula.org/ontology#constructsPossibleWorld
+lig:constructsPossibleWorld rdfs:domain lig:InterpretiveOperation ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:constructsPossibleWorld ;
+                                          owl:someValuesFrom lig:PossibleWorld
+                                        ] ;
+                            rdfs:range lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#containsCue
+lig:containsCue rdfs:domain lig:TextualEntity ;
+                rdfs:range lig:TextualEntity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty lig:activatesResource ;
+                             owl:someValuesFrom lig:InterpretiveResource
+                           ] .
+
+
+###  https://lectoringraphula.org/ontology#containsGap
+lig:containsGap rdfs:domain lig:TextualEntity ;
+                rdfs:range lig:TextualEntity .
+
+
+###  https://lectoringraphula.org/ontology#containsIndividual
+lig:containsIndividual rdfs:domain lig:NarrativeConstruction ;
+                       rdfs:range lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#contributesToInterpretation
+lig:contributesToInterpretation rdfs:domain lig:TextualEntity ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty lig:activatesResource ;
+                                              owl:someValuesFrom lig:InterpretiveResource
+                                            ] ;
+                                rdfs:range lig:InterpretiveOutcome .
+
+
+###  https://lectoringraphula.org/ontology#encodesModelAuthor
+lig:encodesModelAuthor rdfs:domain lig:TextualEntity ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:encodesModelAuthor ;
+                                     owl:someValuesFrom lig:ModelAuthor
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:presupposesModelReader ;
+                                     owl:someValuesFrom lig:ModelReader
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:requiresCompetence ;
+                                     owl:someValuesFrom lig:ReaderCompetence
+                                   ] ;
+                       rdfs:range lig:TextualStrategy .
+
+
+###  https://lectoringraphula.org/ontology#generatesPrediction
+lig:generatesPrediction rdfs:domain lig:InterpretiveOperation ;
+                        rdfs:range lig:InterpretiveOperation .
+
+
+###  https://lectoringraphula.org/ontology#groundsInference
+lig:groundsInference rdfs:domain lig:TextualEntity ;
+                     rdfs:range lig:InterpretiveOperation .
+
+
+###  https://lectoringraphula.org/ontology#hasAccidentalProperty
+lig:hasAccidentalProperty rdfs:domain lig:NarrativeConstruction ;
+                          rdfs:range lig:NarrativeConstruction ,
+                                     lig:WorldProperty .
+
+
+###  https://lectoringraphula.org/ontology#hasAlternativePrediction
+lig:hasAlternativePrediction rdfs:domain lig:InterpretiveOperation ;
+                             rdfs:range lig:InterpretiveOperation .
+
+
+###  https://lectoringraphula.org/ontology#hasEssentialProperty
+lig:hasEssentialProperty rdfs:domain lig:NarrativeConstruction ;
+                         rdfs:range lig:NarrativeConstruction ,
+                                    lig:WorldProperty .
+
+
+###  https://lectoringraphula.org/ontology#hasFragment
+lig:hasFragment rdfs:domain lig:TextualEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty lig:encodesModelAuthor ;
+                              owl:someValuesFrom lig:ModelAuthor
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty lig:presupposesModelReader ;
+                              owl:someValuesFrom lig:ModelReader
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty lig:requiresCompetence ;
+                              owl:someValuesFrom lig:ReaderCompetence
+                            ] ;
+                rdfs:range lig:TextualEntity .
+
+
+###  https://lectoringraphula.org/ontology#hasLinearManifestation
+lig:hasLinearManifestation rdfs:domain lig:TextualEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:encodesModelAuthor ;
+                                         owl:someValuesFrom lig:ModelAuthor
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:presupposesModelReader ;
+                                         owl:someValuesFrom lig:ModelReader
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:requiresCompetence ;
+                                         owl:someValuesFrom lig:ReaderCompetence
+                                       ] ;
+                           rdfs:range lig:TextualEntity .
+
+
+###  https://lectoringraphula.org/ontology#hasReferenceWorld
+lig:hasReferenceWorld rdfs:domain lig:NarrativeConstruction ;
+                      rdfs:range lig:NarrativeConstruction ,
+                                 lig:PossibleWorld .
+
+
+###  https://lectoringraphula.org/ontology#hasSNecessaryProperty
+lig:hasSNecessaryProperty rdfs:domain lig:NarrativeConstruction ;
+                          rdfs:range lig:NarrativeConstruction ,
+                                     lig:WorldProperty .
+
+
+###  https://lectoringraphula.org/ontology#hasWorldProperty
+lig:hasWorldProperty rdfs:domain lig:NarrativeConstruction ;
+                     rdfs:range lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#hasWorldState
+lig:hasWorldState rdfs:domain lig:NarrativeConstruction ;
+                  rdfs:range lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#holdsInWorldState
+lig:holdsInWorldState rdfs:domain lig:NarrativeConstruction ;
+                      rdfs:range lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#initiatesInferentialWalk
+lig:initiatesInferentialWalk rdfs:domain lig:TextualEntity ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty lig:activatesResource ;
+                                           owl:someValuesFrom lig:InterpretiveResource
+                                         ] ;
+                             rdfs:range lig:InterpretiveOperation ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:constructsPossibleWorld ;
+                                          owl:someValuesFrom lig:PossibleWorld
+                                        ] .
+
+
+###  https://lectoringraphula.org/ontology#isLicensedByInference
+lig:isLicensedByInference rdfs:domain lig:Interpretation ,
+                                      lig:InterpretiveOutcome ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty lig:isLicensedByInference ;
+                                        owl:someValuesFrom lig:Inference
+                                      ] ;
+                          rdfs:range lig:InterpretiveOperation .
+
+
+###  https://lectoringraphula.org/ontology#knowledgeSupportsInference
+lig:knowledgeSupportsInference rdfs:domain lig:InterpretiveResource ;
+                               rdfs:range lig:InterpretiveOperation .
+
+
+###  https://lectoringraphula.org/ontology#licensesInterpretation
+lig:licensesInterpretation rdfs:domain lig:InterpretiveOperation ;
+                           rdfs:range lig:Interpretation ,
+                                      lig:InterpretiveOutcome ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty lig:isLicensedByInference ;
+                                        owl:someValuesFrom lig:Inference
+                                      ] .
+
+
+###  https://lectoringraphula.org/ontology#opensProbabilityDisjunction
+lig:opensProbabilityDisjunction rdfs:domain lig:InterpretiveOperation ;
+                                rdfs:range lig:InterpretiveOperation .
+
+
+###  https://lectoringraphula.org/ontology#presupposesModelReader
+lig:presupposesModelReader rdfs:domain lig:TextualEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:encodesModelAuthor ;
+                                         owl:someValuesFrom lig:ModelAuthor
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:presupposesModelReader ;
+                                         owl:someValuesFrom lig:ModelReader
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:requiresCompetence ;
+                                         owl:someValuesFrom lig:ReaderCompetence
+                                       ] ;
+                           rdfs:range lig:TextualStrategy .
+
+
+###  https://lectoringraphula.org/ontology#producesInterpretation
+lig:producesInterpretation rdfs:domain lig:InterpretiveOperation ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:producesInterpretation ;
+                                         owl:someValuesFrom lig:Interpretation
+                                       ] ;
+                           rdfs:range lig:InterpretiveOutcome .
+
+
+###  https://lectoringraphula.org/ontology#projectsPossibleWorld
+lig:projectsPossibleWorld rdfs:domain lig:InterpretiveOperation ;
+                          rdfs:range lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#reconstructsFabula
+lig:reconstructsFabula rdfs:domain lig:TextualStrategy ;
+                       rdfs:range lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#requiresCompetence
+lig:requiresCompetence rdfs:domain lig:TextualEntity ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:encodesModelAuthor ;
+                                     owl:someValuesFrom lig:ModelAuthor
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:presupposesModelReader ;
+                                     owl:someValuesFrom lig:ModelReader
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty lig:requiresCompetence ;
+                                     owl:someValuesFrom lig:ReaderCompetence
+                                   ] ;
+                       rdfs:range lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#requiresIntrinsicKnowledge
+lig:requiresIntrinsicKnowledge rdfs:domain lig:TextualEntity ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty lig:activatesResource ;
+                                             owl:someValuesFrom lig:InterpretiveResource
+                                           ] ;
+                               rdfs:range lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#supportsInference
+lig:supportsInference rdfs:domain lig:TextualEntity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:activatesResource ;
+                                    owl:someValuesFrom lig:InterpretiveResource
+                                  ] ;
+                      rdfs:range lig:InterpretiveOperation .
+
+
+###  https://lectoringraphula.org/ontology#triggersPresupposition
+lig:triggersPresupposition rdfs:domain lig:TextualEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:activatesResource ;
+                                         owl:someValuesFrom lig:InterpretiveResource
+                                       ] ;
+                           rdfs:range lig:InterpretiveResource ,
+                                      lig:IntrinsicKnowledge .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://lectoringraphula.org/ontology#hasProbabilityDegree
+lig:hasProbabilityDegree rdfs:domain lig:InterpretiveOperation .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://lectoringraphula.org/ontology#AccidentalProperty
+lig:AccidentalProperty rdfs:subClassOf lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#AlternativeInterpretation
+lig:AlternativeInterpretation rdfs:subClassOf lig:InterpretiveOutcome .
+
+
+###  https://lectoringraphula.org/ontology#ClosedText
+lig:ClosedText rdfs:subClassOf lig:TextualEntity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:encodesModelAuthor ;
+                                 owl:someValuesFrom lig:ModelAuthor
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:presupposesModelReader ;
+                                 owl:someValuesFrom lig:ModelReader
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:requiresCompetence ;
+                                 owl:someValuesFrom lig:ReaderCompetence
+                               ] .
+
+
+###  https://lectoringraphula.org/ontology#CommonFrame
+lig:CommonFrame rdfs:subClassOf lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#EncyclopedicPresupposition
+lig:EncyclopedicPresupposition rdfs:subClassOf lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#EssentialProperty
+lig:EssentialProperty rdfs:subClassOf lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#IntertextualFrame
+lig:IntertextualFrame rdfs:subClassOf lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#LicensedInterpretation
+lig:LicensedInterpretation rdfs:subClassOf lig:InterpretiveOutcome .
+
+
+###  https://lectoringraphula.org/ontology#NarrativeText
+lig:NarrativeText rdfs:subClassOf lig:TextualEntity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:encodesModelAuthor ;
+                                    owl:someValuesFrom lig:ModelAuthor
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:presupposesModelReader ;
+                                    owl:someValuesFrom lig:ModelReader
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty lig:requiresCompetence ;
+                                    owl:someValuesFrom lig:ReaderCompetence
+                                  ] .
+
+
+###  https://lectoringraphula.org/ontology#OpenText
+lig:OpenText rdfs:subClassOf lig:TextualEntity ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lig:encodesModelAuthor ;
+                               owl:someValuesFrom lig:ModelAuthor
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lig:presupposesModelReader ;
+                               owl:someValuesFrom lig:ModelReader
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lig:requiresCompetence ;
+                               owl:someValuesFrom lig:ReaderCompetence
+                             ] .
+
+
+###  https://lectoringraphula.org/ontology#Presupposition
+lig:Presupposition rdfs:subClassOf lig:InterpretiveResource .
+
+
+###  https://lectoringraphula.org/ontology#ReferenceWorld
+lig:ReferenceWorld rdfs:subClassOf lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#SNecessaryProperty
+lig:SNecessaryProperty rdfs:subClassOf lig:NarrativeConstruction .
+
+
+###  https://lectoringraphula.org/ontology#Subcode
+lig:Subcode rdfs:subClassOf lig:InterpretiveResource .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://lectoringraphula.org/handmaid#AuthorityMayBePerformedPresupposition
+hmt:AuthorityMayBePerformedPresupposition rdf:type owl:NamedIndividual ,
+                                                   lig:InterpretiveResource ,
+                                                   lig:IntrinsicKnowledge ,
+                                                   lig:Presupposition ;
+                                          dc:description "The presupposition that official-looking authority may be genuine or strategically performed."@en ;
+                                          rdfs:comment "This presupposition is triggered by the men's claim of state authority and the reference to state secrets."@en ;
+                                          rdfs:label "Authority may be performed presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#BiblicalJustificationInference
+hmt:BiblicalJustificationInference rdf:type owl:NamedIndividual ,
+                                            lig:Inference ,
+                                            lig:InterpretiveOperation ;
+                                   lig:licensesInterpretation hmt:GileadUsesReligionToLegitimizeReproductiveCoercion ;
+                                   lig:hasSequenceNumber 1 ;
+                                   dc:description "The inference that Gilead uses biblical language to justify the Ceremony as reproductive duty."@en ;
+                                   rdfs:comment "From the biblical quotation, the Model Reader infers that Gilead frames the Ceremony through scriptural authority and reproductive obligation."@en ;
+                                   rdfs:label "Biblical justification inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#BiblicalJustificationKnowledge
+hmt:BiblicalJustificationKnowledge rdf:type owl:NamedIndividual ,
+                                            lig:InterpretiveResource ,
+                                            lig:IntrinsicKnowledge ;
+                                   lig:knowledgeSupportsInference hmt:BiblicalJustificationInference ,
+                                                                  hmt:CeremonyRitualizationInference ;
+                                   dc:description "Intrinsic knowledge that religious texts can be used to justify social and institutional practices."@en ;
+                                   rdfs:comment "This knowledge allows the Model Reader to understand why biblical passages are used by Gilead to legitimate the Ceremony."@en ;
+                                   rdfs:label "Biblical justification knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#BiblicalReproductionPresupposition
+hmt:BiblicalReproductionPresupposition rdf:type owl:NamedIndividual ,
+                                                lig:InterpretiveResource ,
+                                                lig:IntrinsicKnowledge ,
+                                                lig:Presupposition ;
+                                       dc:description "The presupposition that biblical reproductive narratives can function as authoritative models for Gilead."@en ;
+                                       rdfs:comment "This presupposition is triggered by the biblical quotation and supports the interpretation that Gilead frames the Ceremony through scriptural authority."@en ;
+                                       rdfs:label "Biblical reproduction presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#BiblicalReproductiveSubcode
+hmt:BiblicalReproductiveSubcode rdf:type owl:NamedIndividual ,
+                                         lig:Code ,
+                                         lig:InterpretiveResource ,
+                                         lig:Subcode ;
+                                dc:description "A subcode that connects biblical language with reproduction, fertility, and female service."@en ;
+                                rdfs:comment "This subcode is activated by the biblical story of Rachel, Leah, and Bilhah, which Gilead uses to justify reproductive service through the Handmaids."@en ;
+                                rdfs:label "Biblical reproductive subcode"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CategoryFailureKnowledge
+hmt:CategoryFailureKnowledge rdf:type owl:NamedIndividual ,
+                                      lig:InterpretiveResource ,
+                                      lig:IntrinsicKnowledge ;
+                             lig:knowledgeSupportsInference hmt:CeremonyCategoryFailureInference ,
+                                                            hmt:CeremonyRitualizationInference ;
+                             dc:description "Intrinsic knowledge that ordinary categories may fail to classify an institutionalized situation."@en ;
+                             rdfs:comment "This knowledge allows the Model Reader to understand why terms such as making love, copulating, and rape are presented as inadequate or incomplete."@en ;
+                             rdfs:label "Category failure knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CategoryInadequacyPresupposition
+hmt:CategoryInadequacyPresupposition rdf:type owl:NamedIndividual ,
+                                              lig:InterpretiveResource ,
+                                              lig:IntrinsicKnowledge ,
+                                              lig:Presupposition ;
+                                     dc:description "The presupposition that ordinary labels are insufficient to describe the Ceremony."@en ;
+                                     rdfs:comment "This presupposition is triggered by Offred's rejection of terms such as making love, copulating, and rape."@en ;
+                                     rdfs:label "Category inadequacy presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyAsInstitutionalizedReproductiveRitual
+hmt:CeremonyAsInstitutionalizedReproductiveRitual rdf:type owl:NamedIndividual ,
+                                                           lig:Interpretation ,
+                                                           lig:InterpretiveOutcome ,
+                                                           lig:LicensedInterpretation ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty lig:isLicensedByInference ;
+                                                             owl:someValuesFrom lig:Inference
+                                                           ] ;
+                                                  lig:isLicensedByInference hmt:CeremonyCategoryFailureInference ,
+                                                                            hmt:CeremonyRitualizationInference ,
+                                                                            hmt:PassionNegationInference ,
+                                                                            hmt:RitualPrayerInference ;
+                                                  lig:hasInterpretiveStatus "licensed" ;
+                                                  dc:description "A licensed interpretation according to which the Ceremony is an institutionalized reproductive ritual."@en ;
+                                                  rdfs:comment "This interpretation preserves the complexity of the passage: the Ceremony is ritualized, reproductive, institutional, coercive, and religiously framed."@en ;
+                                                  rdfs:label "Ceremony as institutionalized reproductive ritual"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyBiblicalCue
+hmt:CeremonyBiblicalCue rdf:type owl:NamedIndividual ,
+                                 lig:TextualCue ,
+                                 lig:TextualEntity ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty lig:activatesResource ;
+                                   owl:someValuesFrom lig:InterpretiveResource
+                                 ] ;
+                        lig:activatesCode hmt:BiblicalReproductiveSubcode ;
+                        lig:activatesFrame hmt:CeremonyReligiousFrame ;
+                        lig:activatesResource hmt:BiblicalJustificationKnowledge ,
+                                              hmt:BiblicalReproductionPresupposition ,
+                                              hmt:BiblicalReproductiveSubcode ,
+                                              hmt:CeremonyReligiousFrame ;
+                        lig:contributesToInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
+                                                        hmt:GileadUsesReligionToLegitimizeReproductiveCoercion ;
+                        lig:requiresIntrinsicKnowledge hmt:BiblicalJustificationKnowledge ;
+                        lig:supportsInference hmt:BiblicalJustificationInference ,
+                                              hmt:CeremonyRitualizationInference ;
+                        lig:triggersPresupposition hmt:BiblicalReproductionPresupposition ;
+                        lig:hasTextualContent "Give me children, or else I die" ;
+                        dc:description "The cue provided by the biblical quotation used to justify reproduction through a Handmaid."@en ;
+                        rdfs:comment "This cue activates biblical and reproductive knowledge required to understand Gilead's justification of the Ceremony."@en ;
+                        rdfs:label "Ceremony biblical cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyBiblicalFragment
+hmt:CeremonyBiblicalFragment rdf:type owl:NamedIndividual ,
+                                      lig:TextFragment ,
+                                      lig:TextualEntity ;
+                             lig:containsCue hmt:CeremonyBiblicalCue ;
+                             lig:groundsInference hmt:BiblicalJustificationInference ,
+                                                  hmt:CeremonyRitualizationInference ;
+                             lig:hasSourceReference "The Handmaid's Tale, PDF p. 91" ;
+                             lig:hasTextualContent "Selected passage in which the Commander reads biblical passages about reproduction." ;
+                             dc:description "A textual fragment in which the Ceremony is justified through biblical reproductive language."@en ;
+                             rdfs:comment "This fragment introduces the scriptural frame used by Gilead to present the Ceremony as reproductive duty rather than as private sexuality."@en ;
+                             rdfs:label "Ceremony biblical fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyCategoryFailureCue
+hmt:CeremonyCategoryFailureCue rdf:type owl:NamedIndividual ,
+                                        lig:TextualCue ,
+                                        lig:TextualEntity ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:activatesResource ;
+                                          owl:someValuesFrom lig:InterpretiveResource
+                                        ] ;
+                               lig:activatesCode hmt:GileadReproductiveSubcode ,
+                                                 hmt:OrdinarySexualSubcode ;
+                               lig:activatesResource hmt:CategoryFailureKnowledge ,
+                                                     hmt:CategoryInadequacyPresupposition ,
+                                                     hmt:ConstrainedChoiceKnowledge ,
+                                                     hmt:GileadReproductiveSubcode ,
+                                                     hmt:OrdinarySexualSubcode ;
+                               lig:contributesToInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
+                                                               hmt:GileadUsesReligionToLegitimizeReproductiveCoercion ;
+                               lig:requiresIntrinsicKnowledge hmt:CategoryFailureKnowledge ,
+                                                              hmt:ConstrainedChoiceKnowledge ;
+                               lig:supportsInference hmt:CeremonyCategoryFailureInference ,
+                                                     hmt:CeremonyRitualizationInference ;
+                               lig:triggersPresupposition hmt:CategoryInadequacyPresupposition ;
+                               lig:hasTextualContent "only one is involved" ;
+                               dc:description "The cue provided by Offred's rejection of ordinary terms such as making love, copulating, and rape."@en ;
+                               rdfs:comment "This cue activates ordinary sexual and ethical categories only to show their inadequacy for interpreting the Ceremony."@en ;
+                               rdfs:label "Ceremony category failure cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyCategoryFailureFragment
+hmt:CeremonyCategoryFailureFragment rdf:type owl:NamedIndividual ,
+                                             lig:TextFragment ,
+                                             lig:TextualEntity ;
+                                    lig:containsCue hmt:CeremonyCategoryFailureCue ;
+                                    lig:groundsInference hmt:CeremonyCategoryFailureInference ,
+                                                         hmt:CeremonyRitualizationInference ;
+                                    lig:hasSourceReference "The Handmaid's Tale, PDF pp. 96-97" ;
+                                    lig:hasTextualContent "Selected passage in which Offred rejects ordinary categories for the Ceremony." ;
+                                    dc:description "A textual fragment in which Offred rejects several ordinary labels for the act."@en ;
+                                    rdfs:comment "This fragment stages an interpretive problem: ordinary categories such as making love, copulating, and rape are presented as inadequate or incomplete."@en ;
+                                    rdfs:label "Ceremony category failure fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyCategoryFailureInference
+hmt:CeremonyCategoryFailureInference rdf:type owl:NamedIndividual ,
+                                              lig:Inference ,
+                                              lig:InterpretiveOperation ;
+                                     lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ;
+                                     lig:hasSequenceNumber 3 ;
+                                     dc:description "The inference that ordinary sexual and ethical labels do not fully classify the Ceremony."@en ;
+                                     rdfs:comment "From Offred's rejection of available terms, the Model Reader infers that the Ceremony exceeds ordinary categories such as making love, reciprocal sex, or individual rape alone."@en ;
+                                     rdfs:label "Ceremony category failure inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyPassionNegationCue
+hmt:CeremonyPassionNegationCue rdf:type owl:NamedIndividual ,
+                                        lig:TextualCue ,
+                                        lig:TextualEntity ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:activatesResource ;
+                                          owl:someValuesFrom lig:InterpretiveResource
+                                        ] ;
+                               lig:activatesCode hmt:GileadReproductiveSubcode ,
+                                                 hmt:OrdinaryRomanticSubcode ,
+                                                 hmt:OrdinarySexualSubcode ;
+                               lig:activatesResource hmt:GileadReproductiveSubcode ,
+                                                     hmt:OrdinaryRomanticSubcode ,
+                                                     hmt:OrdinarySexualSubcode ,
+                                                     hmt:PassionExclusionPresupposition ,
+                                                     hmt:PassionNegationKnowledge ;
+                               lig:contributesToInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
+                                                               hmt:GileadUsesReligionToLegitimizeReproductiveCoercion ;
+                               lig:requiresIntrinsicKnowledge hmt:PassionNegationKnowledge ;
+                               lig:supportsInference hmt:CeremonyRitualizationInference ,
+                                                     hmt:PassionNegationInference ;
+                               lig:triggersPresupposition hmt:PassionExclusionPresupposition ;
+                               lig:hasTextualContent "It has nothing to do with passion" ;
+                               dc:description "The cue provided by Offred's statement that the Ceremony has nothing to do with passion."@en ;
+                               rdfs:comment "This cue activates ordinary romantic and sexual subcodes in order to negate them."@en ;
+                               rdfs:label "Ceremony passion negation cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyPassionNegationFragment
+hmt:CeremonyPassionNegationFragment rdf:type owl:NamedIndividual ,
+                                             lig:TextFragment ,
+                                             lig:TextualEntity ;
+                                    lig:containsCue hmt:CeremonyPassionNegationCue ;
+                                    lig:groundsInference hmt:CeremonyRitualizationInference ,
+                                                         hmt:PassionNegationInference ;
+                                    lig:hasSourceReference "The Handmaid's Tale, PDF p. 97" ;
+                                    lig:hasTextualContent "Selected passage in which Offred states that the Ceremony has nothing to do with passion, love, romance, or sexual desire." ;
+                                    dc:description "A textual fragment in which Offred excludes passion, love, romance, desire, and pleasure from the Ceremony."@en ;
+                                    rdfs:comment "This fragment reinforces the conflict between ordinary sexual and romantic codes and Gilead's reproductive-ritual code."@en ;
+                                    rdfs:label "Ceremony passion negation fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyPrayerCue
+hmt:CeremonyPrayerCue rdf:type owl:NamedIndividual ,
+                               lig:TextualCue ,
+                               lig:TextualEntity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:activatesResource ;
+                                 owl:someValuesFrom lig:InterpretiveResource
+                               ] ;
+                      lig:activatesFrame hmt:CeremonyRitualFrame ;
+                      lig:activatesResource hmt:CeremonyRitualFrame ,
+                                            hmt:RitualBlessingPresupposition ,
+                                            hmt:RitualPrayerKnowledge ;
+                      lig:contributesToInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
+                                                      hmt:GileadUsesReligionToLegitimizeReproductiveCoercion ;
+                      lig:requiresIntrinsicKnowledge hmt:RitualPrayerKnowledge ;
+                      lig:supportsInference hmt:CeremonyRitualizationInference ,
+                                            hmt:RitualPrayerInference ;
+                      lig:triggersPresupposition hmt:RitualBlessingPresupposition ;
+                      lig:hasTextualContent "a moment of silent prayer" ;
+                      dc:description "The cue provided by the Commander's call for silent prayer and blessing."@en ;
+                      rdfs:comment "This cue activates the ritual frame of the Ceremony and helps the Model Reader understand it as a formalized institutional procedure."@en ;
+                      rdfs:label "Ceremony prayer cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyPrayerFragment
+hmt:CeremonyPrayerFragment rdf:type owl:NamedIndividual ,
+                                    lig:TextFragment ,
+                                    lig:TextualEntity ;
+                           lig:containsCue hmt:CeremonyPrayerCue ;
+                           lig:groundsInference hmt:CeremonyRitualizationInference ,
+                                                hmt:RitualPrayerInference ;
+                           lig:hasSourceReference "The Handmaid's Tale, PDF p. 93" ;
+                           lig:hasTextualContent "Selected passage in which the Commander asks for a moment of silent prayer and blessing." ;
+                           dc:description "A textual fragment in which the Commander calls for silent prayer before the Ceremony."@en ;
+                           rdfs:comment "This fragment shows that the Ceremony is embedded in ritual gestures such as prayer, blessing, and obedience."@en ;
+                           rdfs:label "Ceremony prayer fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyReligiousFrame
+hmt:CeremonyReligiousFrame rdf:type owl:NamedIndividual ,
+                                    lig:Frame ,
+                                    lig:InterpretiveResource ;
+                           dc:description "The religious frame through which Gilead presents the Ceremony as scripturally justified reproductive duty."@en ;
+                           rdfs:comment "This frame is activated by biblical quotation and prayer. It helps the Model Reader understand that Gilead presents the Ceremony as sacred obligation rather than as private sexuality."@en ;
+                           rdfs:label "Ceremony religious frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyRitualFrame
+hmt:CeremonyRitualFrame rdf:type owl:NamedIndividual ,
+                                 lig:Frame ,
+                                 lig:InterpretiveResource ;
+                        dc:description "The ritual frame through which the Ceremony is performed as a formal institutional procedure."@en ;
+                        rdfs:comment "This frame is activated by the sequence of reading, prayer, blessing, and obedience surrounding the Ceremony."@en ;
+                        rdfs:label "Ceremony ritual frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CeremonyRitualizationInference
+hmt:CeremonyRitualizationInference rdf:type owl:NamedIndividual ,
+                                            lig:Inference ,
+                                            lig:InterpretiveOperation ;
+                                   lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
+                                                              hmt:GileadUsesReligionToLegitimizeReproductiveCoercion ;
+                                   lig:hasSequenceNumber 5 ;
+                                   dc:description "The synthesis inference that the Ceremony is a religiously framed, institutionalized reproductive ritual."@en ;
+                                   rdfs:comment "This inference synthesizes the biblical, ritual, sexual, and ethical cues into the broader interpretation of the Ceremony as institutionalized reproductive coercion legitimated through religious language."@en ;
+                                   rdfs:label "Ceremony ritualization inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ChromaticCodeSynthesisInference
+hmt:ChromaticCodeSynthesisInference rdf:type owl:NamedIndividual ,
+                                             lig:Inference ,
+                                             lig:InterpretiveOperation ;
+                                    lig:licensesInterpretation hmt:GileadChromaticCodeControlsSocialIdentity ;
+                                    lig:hasSequenceNumber 5 ;
+                                    dc:description "The synthesis inference that Gilead's clothing system is an enumerated chromatic code of role, status, and hierarchy."@en ;
+                                    rdfs:comment "This inference synthesizes the scattered color cues into the interpretation that Gilead makes social identity and institutional hierarchy publicly legible through color."@en ;
+                                    rdfs:label "Chromatic code synthesis inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ClandestineDeceptionKnowledge
+hmt:ClandestineDeceptionKnowledge rdf:type owl:NamedIndividual ,
+                                           lig:InterpretiveResource ,
+                                           lig:IntrinsicKnowledge ;
+                                  lig:knowledgeSupportsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                                                 hmt:StateAuthorityAmbiguityInference ;
+                                  dc:description "Intrinsic knowledge that clandestine actors may imitate official procedures in order to deceive or protect."@en ;
+                                  rdfs:comment "This knowledge allows the Model Reader to understand why official-looking signs do not completely eliminate the rescue hypothesis."@en ;
+                                  rdfs:label "Clandestine deception knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ColorAsIdentitySubstitutePresupposition
+hmt:ColorAsIdentitySubstitutePresupposition rdf:type owl:NamedIndividual ,
+                                                     lig:InterpretiveResource ,
+                                                     lig:IntrinsicKnowledge ,
+                                                     lig:Presupposition ;
+                                            dc:description "The presupposition that color can stand in for personal identity within Gilead's social order."@en ;
+                                            rdfs:comment "This presupposition is triggered by the domestic tableau, where people are identified by color and position rather than by name."@en ;
+                                            rdfs:label "Color as identity substitute presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ColorAssignedRolePresupposition
+hmt:ColorAssignedRolePresupposition rdf:type owl:NamedIndividual ,
+                                             lig:InterpretiveResource ,
+                                             lig:IntrinsicKnowledge ,
+                                             lig:Presupposition ;
+                                    dc:description "The presupposition that clothing color is institutionally assigned and socially legible."@en ;
+                                    rdfs:comment "This presupposition is triggered by the first description of Offred's red clothing, the umbrellas, and Rita's green dress."@en ;
+                                    rdfs:label "Color assigned role presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ColorCodeAsDesignedHistoricalSynthesis
+hmt:ColorCodeAsDesignedHistoricalSynthesis rdf:type owl:NamedIndividual ,
+                                                    lig:Interpretation ,
+                                                    lig:InterpretiveOutcome ,
+                                                    lig:LicensedInterpretation ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty lig:isLicensedByInference ;
+                                                      owl:someValuesFrom lig:Inference
+                                                    ] ;
+                                           lig:isLicensedByInference hmt:HistoricalColorReframingInference ;
+                                           lig:hasInterpretiveStatus "licensed" ;
+                                           dc:description "A licensed interpretation according to which the Historical Notes reframe the chromatic code as a deliberately designed and historically derivative artifact."@en ;
+                                           rdfs:comment "This interpretation belongs to the second Model Reader level and depends on the pseudo-academic frame of the Historical Notes."@en ;
+                                           rdfs:label "Color code as designed historical synthesis"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ColorCodeSystematicityPresupposition
+hmt:ColorCodeSystematicityPresupposition rdf:type owl:NamedIndividual ,
+                                                  lig:InterpretiveResource ,
+                                                  lig:IntrinsicKnowledge ,
+                                                  lig:Presupposition ;
+                                         dc:description "The presupposition that scattered color notations belong to one systematic chromatic code."@en ;
+                                         rdfs:comment "This presupposition is triggered by the street enumeration of women's colors and color-patterns."@en ;
+                                         rdfs:label "Color code systematicity presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ColorInventoryCue
+hmt:ColorInventoryCue rdf:type owl:NamedIndividual ,
+                               lig:TextualCue ,
+                               lig:TextualEntity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:activatesResource ;
+                                 owl:someValuesFrom lig:InterpretiveResource
+                               ] ;
+                      lig:activatesCode hmt:FemaleRoleColorSubcode ,
+                                        hmt:GileadChromaticRoleStatusCode ,
+                                        hmt:InstitutionalAuthorityColorSubcode ;
+                      lig:activatesFrame hmt:HouseholdHierarchyFrame ;
+                      lig:activatesResource hmt:ColorAsIdentitySubstitutePresupposition ,
+                                            hmt:ColorRoleMappingKnowledge ,
+                                            hmt:FemaleRoleColorSubcode ,
+                                            hmt:GileadChromaticRoleStatusCode ,
+                                            hmt:HouseholdHierarchyFrame ,
+                                            hmt:InstitutionalAuthorityColorSubcode ,
+                                            hmt:VisualTaxonomyKnowledge ;
+                      lig:contributesToInterpretation hmt:GileadChromaticCodeControlsSocialIdentity ;
+                      lig:requiresIntrinsicKnowledge hmt:ColorRoleMappingKnowledge ,
+                                                     hmt:VisualTaxonomyKnowledge ;
+                      lig:supportsInference hmt:ChromaticCodeSynthesisInference ,
+                                            hmt:ColorInventoryInference ;
+                      lig:triggersPresupposition hmt:ColorAsIdentitySubstitutePresupposition ;
+                      lig:hasTextualContent "as if taking inventory" ;
+                      dc:description "The cue provided by the Commander's gaze over the household as a color-coded inventory."@en ;
+                      rdfs:comment "This cue presupposes that the Model Reader has already learned the chromatic code and can identify social roles from color alone."@en ;
+                      rdfs:label "Color inventory cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ColorInventoryFragment
+hmt:ColorInventoryFragment rdf:type owl:NamedIndividual ,
+                                    lig:TextFragment ,
+                                    lig:TextualEntity ;
+                           lig:containsCue hmt:ColorInventoryCue ;
+                           lig:groundsInference hmt:ChromaticCodeSynthesisInference ,
+                                                hmt:ColorInventoryInference ;
+                           lig:hasSourceReference "The Handmaid's Tale, PDF p. 89" ;
+                           lig:hasTextualContent "Selected passage in which the Commander looks over the household as if taking inventory." ;
+                           dc:description "A textual fragment in which the household is visually organized through color during the Commander's gaze before the Ceremony."@en ;
+                           rdfs:comment "This fragment shows the chromatic code being used rather than explained. The people in the room are identified through color, posture, and function."@en ;
+                           rdfs:label "Color inventory fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ColorInventoryInference
+hmt:ColorInventoryInference rdf:type owl:NamedIndividual ,
+                                     lig:Inference ,
+                                     lig:InterpretiveOperation ;
+                            lig:licensesInterpretation hmt:GileadChromaticCodeControlsSocialIdentity ;
+                            lig:hasSequenceNumber 3 ;
+                            dc:description "The inference that the chromatic code has become presupposed reader competence."@en ;
+                            rdfs:comment "From the domestic tableau, the Model Reader infers that people can be identified by color alone because the code has already been learned."@en ;
+                            rdfs:label "Color inventory inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ColorRoleMappingKnowledge
+hmt:ColorRoleMappingKnowledge rdf:type owl:NamedIndividual ,
+                                       lig:InterpretiveResource ,
+                                       lig:IntrinsicKnowledge ;
+                              lig:knowledgeSupportsInference hmt:ChromaticCodeSynthesisInference ,
+                                                             hmt:ColorInventoryInference ,
+                                                             hmt:InitialColorAssignmentInference ,
+                                                             hmt:RedSymbolicInference ,
+                                                             hmt:StreetColorEnumerationInference ;
+                              dc:description "Intrinsic knowledge that repeated color-role associations can form a systematic code."@en ;
+                              rdfs:comment "This knowledge allows the Model Reader to generalize from scattered color cues to a society-wide chromatic code."@en ;
+                              rdfs:label "Color role mapping knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#CompositionalColorPatternKnowledge
+hmt:CompositionalColorPatternKnowledge rdf:type owl:NamedIndividual ,
+                                                lig:InterpretiveResource ,
+                                                lig:IntrinsicKnowledge ;
+                                       lig:knowledgeSupportsInference hmt:ChromaticCodeSynthesisInference ,
+                                                                      hmt:StreetColorEnumerationInference ;
+                                       dc:description "Intrinsic knowledge that combined colors or patterns can represent combined social functions."@en ;
+                                       rdfs:comment "This knowledge allows the Model Reader to interpret Econowives' striped clothing as a compositional sign of multiple functions."@en ;
+                                       rdfs:label "Compositional color pattern knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ConstrainedChoiceKnowledge
+hmt:ConstrainedChoiceKnowledge rdf:type owl:NamedIndividual ,
+                                        lig:InterpretiveResource ,
+                                        lig:IntrinsicKnowledge ;
+                               lig:knowledgeSupportsInference hmt:CeremonyCategoryFailureInference ,
+                                                              hmt:CeremonyRitualizationInference ;
+                               dc:description "Intrinsic knowledge that a choice made under coercive institutional conditions is not fully free."@en ;
+                               rdfs:comment "This knowledge is required to interpret Offred's statement that there was some choice, but not much, without reducing the situation to free consent."@en ;
+                               rdfs:label "Constrained choice knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#DarknessLightOpenEndingInference
+hmt:DarknessLightOpenEndingInference rdf:type owl:NamedIndividual ,
+                                              lig:Inference ,
+                                              lig:InterpretiveOperation ;
+                                     lig:generatesPrediction hmt:FinalOutcomeUncertaintyPrediction ;
+                                     lig:licensesInterpretation hmt:FinalDepartureAsLicensedAmbiguity ;
+                                     lig:hasSequenceNumber 4 ;
+                                     dc:description "The inference that Offred's final movement preserves unresolved possible outcomes."@en ;
+                                     rdfs:comment "From the final contrast between darkness and light, the Model Reader infers that the narrative withholds closure."@en ;
+                                     rdfs:label "Darkness light open ending inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#DarknessOrLightCue
+hmt:DarknessOrLightCue rdf:type owl:NamedIndividual ,
+                                lig:TextualCue ,
+                                lig:TextualEntity ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty lig:activatesResource ;
+                                  owl:someValuesFrom lig:InterpretiveResource
+                                ] ;
+                       lig:activatesFrame hmt:OpenEndingFrame ;
+                       lig:activatesResource hmt:EndingMayRemainOpenPresupposition ,
+                                             hmt:OpenEndingFrame ,
+                                             hmt:OpenEndingKnowledge ;
+                       lig:contributesToInterpretation hmt:FinalDepartureAsLicensedAmbiguity ,
+                                                       hmt:TrustAsUncertainInterpretiveAct ;
+                       lig:requiresIntrinsicKnowledge hmt:OpenEndingKnowledge ;
+                       lig:supportsInference hmt:DarknessLightOpenEndingInference ,
+                                             hmt:NickAmbiguousRoleSynthesisInference ;
+                       lig:triggersPresupposition hmt:EndingMayRemainOpenPresupposition ;
+                       lig:hasTextualContent "darkness within; or else the light" ;
+                       dc:description "The cue provided by the final contrast between darkness and light."@en ;
+                       rdfs:comment "This cue activates knowledge about open endings and alternative possible outcomes."@en ;
+                       rdfs:label "Darkness or light cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#DarknessOrLightFragment
+hmt:DarknessOrLightFragment rdf:type owl:NamedIndividual ,
+                                     lig:TextFragment ,
+                                     lig:TextualEntity ;
+                            lig:containsCue hmt:DarknessOrLightCue ;
+                            lig:groundsInference hmt:DarknessLightOpenEndingInference ,
+                                                 hmt:NickAmbiguousRoleSynthesisInference ;
+                            lig:hasSourceReference "The Handmaid's Tale, PDF pp. 283-285" ;
+                            lig:hasTextualContent "Selected passage in which Offred steps into the darkness within, or else the light." ;
+                            dc:description "A textual fragment in which Offred steps into the van without knowing whether it means destruction or rescue."@en ;
+                            rdfs:comment "This fragment explicitly withholds interpretive closure and presents the final movement as suspended between ending and beginning."@en ;
+                            rdfs:label "Darkness or light fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#EndingMayRemainOpenPresupposition
+hmt:EndingMayRemainOpenPresupposition rdf:type owl:NamedIndividual ,
+                                               lig:InterpretiveResource ,
+                                               lig:IntrinsicKnowledge ,
+                                               lig:Presupposition ;
+                                      dc:description "The presupposition that the final scene may preserve unresolved possible outcomes."@en ;
+                                      rdfs:comment "This presupposition is triggered by the contrast between darkness and light."@en ;
+                                      rdfs:label "Ending may remain open presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ExtraTextualHistoricalEncyclopedia
+hmt:ExtraTextualHistoricalEncyclopedia rdf:type owl:NamedIndividual ,
+                                                lig:Encyclopedia ,
+                                                lig:InterpretiveResource ;
+                                       dc:description "The historical encyclopedia required to interpret references to World War II, P.O.W. camps, costume design, and institutional borrowing."@en ;
+                                       rdfs:comment "This encyclopedia is activated at the second Model Reader level by the Historical Notes."@en ;
+                                       rdfs:label "Extra-textual historical encyclopedia"@en .
+
+
+###  https://lectoringraphula.org/handmaid#FemaleRoleColorSubcode
+hmt:FemaleRoleColorSubcode rdf:type owl:NamedIndividual ,
+                                    lig:Code ,
+                                    lig:InterpretiveResource ,
+                                    lig:Subcode ;
+                           dc:description "A subcode of Gilead's chromatic system focused on female social roles."@en ;
+                           rdfs:comment "This subcode includes red for Handmaids, blue for Wives, dull green for Marthas, striped clothing for Econowives, and black for widows."@en ;
+                           rdfs:label "Female role color subcode"@en .
+
+
+###  https://lectoringraphula.org/handmaid#FinalDepartureAsLicensedAmbiguity
+hmt:FinalDepartureAsLicensedAmbiguity rdf:type owl:NamedIndividual ,
+                                               lig:Interpretation ,
+                                               lig:InterpretiveOutcome ,
+                                               lig:LicensedInterpretation ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty lig:isLicensedByInference ;
+                                                 owl:someValuesFrom lig:Inference
+                                               ] ;
+                                      lig:isLicensedByInference hmt:DarknessLightOpenEndingInference ,
+                                                                hmt:NickAmbiguousRoleSynthesisInference ,
+                                                                hmt:StateAuthorityAmbiguityInference ;
+                                      lig:hasInterpretiveStatus "licensed" ;
+                                      dc:description "A licensed interpretation according to which Offred's departure remains suspended between possible rescue and possible destruction."@en ;
+                                      rdfs:comment "This interpretation preserves the open ending produced by the contrast between darkness and light."@en ;
+                                      rdfs:label "Final departure as licensed ambiguity"@en .
+
+
+###  https://lectoringraphula.org/handmaid#FinalOutcomeProbabilityDisjunction
+hmt:FinalOutcomeProbabilityDisjunction rdf:type owl:NamedIndividual ,
+                                                lig:InterpretiveOperation ,
+                                                lig:ProbabilityDisjunction ;
+                                       lig:hasAlternativePrediction hmt:OffredArrestPrediction ,
+                                                                    hmt:OffredRescuePrediction ;
+                                       dc:description "A probability disjunction between Offred's possible arrest and possible rescue."@en ;
+                                       rdfs:comment "This disjunction preserves the unresolved alternatives of the final scene."@en ;
+                                       rdfs:label "Final outcome probability disjunction"@en .
+
+
+###  https://lectoringraphula.org/handmaid#FinalOutcomeUncertaintyPrediction
+hmt:FinalOutcomeUncertaintyPrediction rdf:type owl:NamedIndividual ,
+                                               lig:InterpretiveOperation ,
+                                               lig:Prediction ;
+                                      lig:opensProbabilityDisjunction hmt:FinalOutcomeProbabilityDisjunction ;
+                                      lig:hasProbabilityDegree "undecided" ;
+                                      dc:description "A prediction that Offred's final departure may lead either to arrest or to rescue."@en ;
+                                      rdfs:label "Final outcome uncertainty prediction"@en .
+
+
+###  https://lectoringraphula.org/handmaid#FriendlyBehaviorMayBeTestPresupposition
+hmt:FriendlyBehaviorMayBeTestPresupposition rdf:type owl:NamedIndividual ,
+                                                     lig:InterpretiveResource ,
+                                                     lig:IntrinsicKnowledge ,
+                                                     lig:Presupposition ;
+                                            dc:description "The presupposition that apparently friendly behavior may conceal a surveillance test."@en ;
+                                            rdfs:comment "This presupposition is triggered by Offred's early suspicion that Nick may be an Eye."@en ;
+                                            rdfs:label "Friendly behavior may be test presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#GileadChromaticCodeControlsSocialIdentity
+hmt:GileadChromaticCodeControlsSocialIdentity rdf:type owl:NamedIndividual ,
+                                                       lig:Interpretation ,
+                                                       lig:InterpretiveOutcome ,
+                                                       lig:LicensedInterpretation ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty lig:isLicensedByInference ;
+                                                         owl:someValuesFrom lig:Inference
+                                                       ] ;
+                                              lig:isLicensedByInference hmt:ChromaticCodeSynthesisInference ,
+                                                                        hmt:ColorInventoryInference ,
+                                                                        hmt:InitialColorAssignmentInference ,
+                                                                        hmt:StreetColorEnumerationInference ;
+                                              lig:hasInterpretiveStatus "licensed" ;
+                                              dc:description "A licensed interpretation according to which Gilead uses a chromatic institutional code to make social roles, gender hierarchy, and household positions visually legible."@en ;
+                                              rdfs:comment "This interpretation is licensed by repeated and convergent cues across Offred's narration: clothing color and color-pattern function as signs of role, status, and identity reduction."@en ;
+                                              rdfs:label "Gilead chromatic code controls social identity"@en .
+
+
+###  https://lectoringraphula.org/handmaid#GileadChromaticRoleStatusCode
+hmt:GileadChromaticRoleStatusCode rdf:type owl:NamedIndividual ,
+                                           lig:Code ,
+                                           lig:InterpretiveResource ;
+                                  dc:description "A semiotic code that maps social roles and institutional positions to recognizable colors or color-patterns."@en ;
+                                  rdfs:comment "This code is reconstructed by the Model Reader from repeated cues: red, blue, green, striped patterns, and black function as signs of role, status, hierarchy, and institutional position."@en ;
+                                  rdfs:label "Gilead chromatic role/status code"@en .
+
+
+###  https://lectoringraphula.org/handmaid#GileadErasesFemaleIdentity
+hmt:GileadErasesFemaleIdentity rdf:type owl:NamedIndividual ,
+                                        lig:Interpretation ,
+                                        lig:InterpretiveOutcome ,
+                                        lig:LicensedInterpretation ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:isLicensedByInference ;
+                                          owl:someValuesFrom lig:Inference
+                                        ] ;
+                               lig:isLicensedByInference hmt:OffredIdentityInference ,
+                                                         hmt:PatronymicNameInference ;
+                               lig:hasAnnotationNote "The naming system supports the interpretation that Gilead erases female identity through institutional possession." ;
+                               lig:hasInterpretiveStatus "licensed" ;
+                               dc:description "A licensed interpretation of the naming system."@en ;
+                               rdfs:comment "The naming system supports the interpretation that Gilead erases female identity by replacing personal names with institutional names based on possession, reproductive function, and male authority."@en ;
+                               rdfs:label "Gilead erases female identity"@en .
+
+
+###  https://lectoringraphula.org/handmaid#GileadReplacesPersonalNamesWithPatronymics
+hmt:GileadReplacesPersonalNamesWithPatronymics rdf:type owl:NamedIndividual ,
+                                                        lig:Interpretation ,
+                                                        lig:InterpretiveOutcome ,
+                                                        lig:LicensedInterpretation ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty lig:isLicensedByInference ;
+                                                          owl:someValuesFrom lig:Inference
+                                                        ] ;
+                                               lig:isLicensedByInference hmt:PatronymicNameInference ;
+                                               lig:hasInterpretiveStatus "licensed" ;
+                                               dc:description "A licensed interpretation according to which Gilead replaces women's personal names with institutional patronymics."@en ;
+                                               rdfs:comment "This interpretation is licensed by the explanation that names such as Offred, Ofglen, and Ofwarren are formed through possessive relations to Commanders. The naming system transforms women into members of a household rather than autonomous subjects."@en ;
+                                               rdfs:label "Gilead Replaces Personal Names With Patronymics"@en .
+
+
+###  https://lectoringraphula.org/handmaid#GileadReproductiveSubcode
+hmt:GileadReproductiveSubcode rdf:type owl:NamedIndividual ,
+                                       lig:Code ,
+                                       lig:InterpretiveResource ,
+                                       lig:Subcode ;
+                              dc:description "A Gileadean subcode that redefines sexuality as reproductive duty."@en ;
+                              rdfs:comment "This subcode treats reproduction as institutional obligation and excludes ordinary ideas of intimacy, pleasure, and reciprocal desire."@en ;
+                              rdfs:label "Gilead reproductive subcode"@en .
+
+
+###  https://lectoringraphula.org/handmaid#GileadSurveillanceFrame
+hmt:GileadSurveillanceFrame rdf:type owl:NamedIndividual ,
+                                     lig:Frame ,
+                                     lig:InterpretiveResource ;
+                            dc:description "The frame through which apparently ordinary behavior may be interpreted as surveillance or testing."@en ;
+                            rdfs:comment "This frame is activated by Offred's suspicion that Nick may be an Eye and by the final scene's uncertainty around authority, betrayal, and trust."@en ;
+                            rdfs:label "Gilead surveillance frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#GileadUsesReligionToLegitimizeReproductiveCoercion
+hmt:GileadUsesReligionToLegitimizeReproductiveCoercion rdf:type owl:NamedIndividual ,
+                                                                lig:Interpretation ,
+                                                                lig:InterpretiveOutcome ,
+                                                                lig:LicensedInterpretation ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty lig:isLicensedByInference ;
+                                                                  owl:someValuesFrom lig:Inference
+                                                                ] ;
+                                                       lig:isLicensedByInference hmt:BiblicalJustificationInference ,
+                                                                                 hmt:CeremonyRitualizationInference ,
+                                                                                 hmt:RitualPrayerInference ;
+                                                       lig:hasInterpretiveStatus "licensed" ;
+                                                       dc:description "A licensed interpretation according to which Gilead uses religious language to legitimate reproductive coercion."@en ;
+                                                       rdfs:comment "This interpretation is licensed by the biblical quotation and prayer surrounding the Ceremony, together with Offred's narration of coercion and constrained agency."@en ;
+                                                       rdfs:label "Gilead uses religion to legitimize reproductive coercion"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HandmaidsTaleModelAuthor
+hmt:HandmaidsTaleModelAuthor rdf:type owl:NamedIndividual ,
+                                      lig:ModelAuthor ,
+                                      lig:TextualStrategy ;
+                             dc:description "The textual strategy encoded by The Handmaid's Tale."@en ;
+                             rdfs:comment "This individual represents the Model Author reconstructed from The Handmaid's Tale. It is not Margaret Atwood as an empirical author, but the textual strategy that organizes cues, gaps, constraints, and interpretive possibilities within the narrative."@en ;
+                             rdfs:label "The Handmaid's Tale Model Author"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HandmaidsTaleModelReader
+hmt:HandmaidsTaleModelReader rdf:type owl:NamedIndividual ,
+                                      lig:ModelReader ,
+                                      lig:TextualStrategy ;
+                             dc:description "The reader role presupposed by The Handmaid's Tale."@en ;
+                             rdfs:comment "This individual represents the Model Reader presupposed by The Handmaid's Tale: a reader capable of activating the cultural, ideological, narrative, and encyclopedic knowledge required to interpret the selected textual cues and gaps."@en ;
+                             rdfs:label "The Handmaid's Tale Model Reader"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HandmaidsTaleReaderCompetence
+hmt:HandmaidsTaleReaderCompetence rdf:type owl:NamedIndividual ,
+                                           lig:InterpretiveResource ,
+                                           lig:ReaderCompetence ;
+                                  dc:description "The competence required to cooperate with the text."@en ;
+                                  rdfs:comment "This individual represents the set of competences required by The Handmaid's Tale from its Model Reader, including linguistic, cultural, ideological, intertextual, and inferential competences."@en ;
+                                  rdfs:label "The Handmaid's Tale Reader Competence"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HandmaidsTaleText
+hmt:HandmaidsTaleText rdf:type owl:NamedIndividual ,
+                               lig:NarrativeText ,
+                               lig:Text ,
+                               lig:TextualEntity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:encodesModelAuthor ;
+                                 owl:someValuesFrom lig:ModelAuthor
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:presupposesModelReader ;
+                                 owl:someValuesFrom lig:ModelReader
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:requiresCompetence ;
+                                 owl:someValuesFrom lig:ReaderCompetence
+                               ] ;
+                      lig:encodesModelAuthor hmt:HandmaidsTaleModelAuthor ;
+                      lig:hasFragment hmt:CeremonyBiblicalFragment ,
+                                      hmt:CeremonyCategoryFailureFragment ,
+                                      hmt:CeremonyPassionNegationFragment ,
+                                      hmt:CeremonyPrayerFragment ,
+                                      hmt:ColorInventoryFragment ,
+                                      hmt:DarknessOrLightFragment ,
+                                      hmt:HistoricalNotesColorOriginFragment ,
+                                      hmt:HistoricalNotesNameFragment ,
+                                      hmt:InitialColorAssignmentFragment ,
+                                      hmt:NameExchangeFragment ,
+                                      hmt:NickEyeSuspicionFragment ,
+                                      hmt:NickTrustRequestFragment ,
+                                      hmt:OffredHiddenNameFragment ,
+                                      hmt:StateSecretsAuthorizationFragment ,
+                                      hmt:StreetColorEnumerationFragment ;
+                      lig:presupposesModelReader hmt:HandmaidsTaleModelReader ,
+                                                 hmt:HistoricalNotesModelReader ;
+                      lig:requiresCompetence hmt:HandmaidsTaleReaderCompetence ;
+                      lig:hasAnnotationNote "Case study narrative text used to instantiate the ontology of Eco's Model Reader." ;
+                      lig:hasSourceReference "Margaret Atwood, The Handmaid's Tale" ;
+                      dc:description "The narrative text used as a case study in the knowledge graph."@en ;
+                      rdfs:comment "This individual represents Margaret Atwood's The Handmaid's Tale as the narrative text selected to instantiate and test the Eco-inspired ontology of interpretive cooperation. It is not modeled as a complete plot database, but as the textual source from which selected interpretive fragments are analyzed."@en ;
+                      rdfs:label "The Handmaid's Tale"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HedgedOriginPresupposition
+hmt:HedgedOriginPresupposition rdf:type owl:NamedIndividual ,
+                                        lig:InterpretiveResource ,
+                                        lig:IntrinsicKnowledge ,
+                                        lig:Presupposition ;
+                               dc:description "The presupposition that the P.O.W. origin of the Handmaids' red is conjectural within the fiction."@en ;
+                               rdfs:comment "This presupposition is triggered by the hedged attribution in the Historical Notes."@en ;
+                               rdfs:label "Hedged origin presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HedgedScholarlyAttributionKnowledge
+hmt:HedgedScholarlyAttributionKnowledge rdf:type owl:NamedIndividual ,
+                                                 lig:InterpretiveResource ,
+                                                 lig:IntrinsicKnowledge ;
+                                        lig:knowledgeSupportsInference hmt:HistoricalColorReframingInference ;
+                                        dc:description "Intrinsic knowledge that scholarly claims may be conjectural, mediated, or based on uncertain evidence."@en ;
+                                        rdfs:comment "This knowledge prevents the Model Reader from treating the P.O.W. origin as direct narrative fact."@en ;
+                                        rdfs:label "Hedged scholarly attribution knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HiddenNameInference
+hmt:HiddenNameInference rdf:type owl:NamedIndividual ,
+                                 lig:Inference ,
+                                 lig:InterpretiveOperation ;
+                        lig:licensesInterpretation hmt:OffredNameRemainsUnspecified ;
+                        lig:hasSequenceNumber 2 ;
+                        dc:description "The inference that Offred has a real name that the text withholds."@en ;
+                        rdfs:comment "From Offred's statement that her name is not Offred, the Model Reader infers that another name exists. However, the text does not fully actualize this information, making the absence of the name interpretively significant."@en ;
+                        rdfs:label "Hidden Name Inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HiddenNamePresupposition
+hmt:HiddenNamePresupposition rdf:type owl:NamedIndividual ,
+                                      lig:InterpretiveResource ,
+                                      lig:IntrinsicKnowledge ,
+                                      lig:Presupposition ;
+                             dc:description "The presupposition that Offred has an original name that exists but is not supplied by the text."@en ;
+                             rdfs:comment "This presupposition is triggered by Offred's statement that she has another name. The text makes the Model Reader infer the existence of the name while also withholding its explicit identification."@en ;
+                             rdfs:label "Hidden Name Presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HiddenRealNameKnowledge
+hmt:HiddenRealNameKnowledge rdf:type owl:NamedIndividual ,
+                                     lig:InterpretiveResource ,
+                                     lig:IntrinsicKnowledge ;
+                            lig:knowledgeSupportsInference hmt:HiddenNameInference ,
+                                                           hmt:OffredIdentityInference ;
+                            dc:description "Intrinsic knowledge that a forbidden or hidden name can still belong to a subject's identity."@en ;
+                            rdfs:comment "This knowledge allows the Model Reader to understand that Offred's original name continues to matter even though it is not publicly used or explicitly supplied by the text."@en ;
+                            rdfs:label "Hidden Real Name Knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalColorReframingInference
+hmt:HistoricalColorReframingInference rdf:type owl:NamedIndividual ,
+                                               lig:Inference ,
+                                               lig:InterpretiveOperation ;
+                                      lig:licensesInterpretation hmt:ColorCodeAsDesignedHistoricalSynthesis ,
+                                                                 hmt:POWUniformOriginConjecture ;
+                                      lig:hasSequenceNumber 4 ;
+                                      dc:description "The inference that the Historical Notes retrospectively reframe the chromatic code as designed and historically derivative."@en ;
+                                      rdfs:comment "From the pseudo-academic claim about costume design and historical borrowing, the Model Reader infers that Gilead's color code is a constructed synthesis rather than an organic feature of the world."@en ;
+                                      rdfs:label "Historical color reframing inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalNotesColorOriginCue
+hmt:HistoricalNotesColorOriginCue rdf:type owl:NamedIndividual ,
+                                           lig:TextualCue ,
+                                           lig:TextualEntity ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty lig:activatesResource ;
+                                             owl:someValuesFrom lig:InterpretiveResource
+                                           ] ;
+                                  lig:activatesEncyclopedia hmt:ExtraTextualHistoricalEncyclopedia ;
+                                  lig:activatesFrame hmt:HistoricalRecyclingFrame ,
+                                                     hmt:PseudoAcademicHistoricalFrame ;
+                                  lig:activatesResource hmt:ExtraTextualHistoricalEncyclopedia ,
+                                                        hmt:HedgedOriginPresupposition ,
+                                                        hmt:HedgedScholarlyAttributionKnowledge ,
+                                                        hmt:HistoricalNotesReframingPresupposition ,
+                                                        hmt:HistoricalRecyclingFrame ,
+                                                        hmt:HistoricalReframingKnowledge ,
+                                                        hmt:MarketingCostumeDesignKnowledge ,
+                                                        hmt:PseudoAcademicHistoricalFrame ,
+                                                        hmt:WWIIPOWUniformKnowledge ;
+                                  lig:contributesToInterpretation hmt:ColorCodeAsDesignedHistoricalSynthesis ,
+                                                                  hmt:POWUniformOriginConjecture ;
+                                  lig:requiresIntrinsicKnowledge hmt:HedgedScholarlyAttributionKnowledge ,
+                                                                 hmt:HistoricalReframingKnowledge ,
+                                                                 hmt:MarketingCostumeDesignKnowledge ,
+                                                                 hmt:WWIIPOWUniformKnowledge ;
+                                  lig:supportsInference hmt:HistoricalColorReframingInference ;
+                                  lig:triggersPresupposition hmt:HedgedOriginPresupposition ,
+                                                             hmt:HistoricalNotesReframingPresupposition ;
+                                  lig:hasTextualContent "the suggestion that the Handmaids wear red" ;
+                                  dc:description "The cue provided by the Historical Notes' claim about the origin of the Handmaids' red clothing."@en ;
+                                  rdfs:comment "This cue activates the pseudo-academic frame and extra-textual historical encyclopedia, while preserving the hedged status of the P.O.W. origin."@en ;
+                                  rdfs:label "Historical Notes color origin cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalNotesColorOriginFragment
+hmt:HistoricalNotesColorOriginFragment rdf:type owl:NamedIndividual ,
+                                                lig:TextFragment ,
+                                                lig:TextualEntity ;
+                                       lig:containsCue hmt:HistoricalNotesColorOriginCue ;
+                                       lig:groundsInference hmt:HistoricalColorReframingInference ;
+                                       lig:hasSourceReference "The Handmaid's Tale, PDF p. 295" ;
+                                       lig:hasTextualContent "Selected passage in which the Historical Notes attribute the Handmaids' red to a historically borrowed design." ;
+                                       dc:description "A textual fragment from the Historical Notes in which the red clothing of the Handmaids is retrospectively attributed to costume design and historical borrowing."@en ;
+                                       rdfs:comment "This fragment adds a second interpretive level. The chromatic code is reframed as a designed and historically derivative artifact, though the P.O.W. origin remains hedged within the fiction."@en ;
+                                       rdfs:label "Historical Notes color origin fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalNotesModelReader
+hmt:HistoricalNotesModelReader rdf:type owl:NamedIndividual ,
+                                        lig:ModelReader ,
+                                        lig:TextualStrategy ;
+                               dc:description "The Model Reader presupposed by the whole book after the Historical Notes reframe Offred's narration as a historical artifact."@en ;
+                               rdfs:comment "This Model Reader activates the pseudo-academic frame and extra-textual historical encyclopedia required to reinterpret Gilead's color code as a designed and historically derivative artifact."@en ;
+                               rdfs:label "Historical Notes Model Reader"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalNotesNameFragment
+hmt:HistoricalNotesNameFragment rdf:type owl:NamedIndividual ,
+                                         lig:TextFragment ,
+                                         lig:TextualEntity ;
+                                lig:containsCue hmt:PatronymicNameCue ;
+                                lig:groundsInference hmt:PatronymicNameInference ;
+                                lig:hasSourceReference "The Handmaid's Tale, PDF p. 294" ;
+                                lig:hasTextualContent "Selected passage in which the Historical Notes explain Offred as a patronymic institutional name." ;
+                                dc:description "A textual fragment from the Historical Notes explaining the patronymic structure of names such as Offred, Ofglen, and Ofwarren."@en ;
+                                rdfs:comment "This fragment retrospectively reframes Offred as an institutional name rather than a personal one. It confirms that the narrator's original name remains unavailable and that the Gileadean naming system encodes possession or household assignment."@en ;
+                                rdfs:label "Historical Notes Name Fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalNotesReframingPresupposition
+hmt:HistoricalNotesReframingPresupposition rdf:type owl:NamedIndividual ,
+                                                    lig:InterpretiveResource ,
+                                                    lig:IntrinsicKnowledge ,
+                                                    lig:Presupposition ;
+                                           dc:description "The presupposition that the Historical Notes reframe the preceding narrative as a mediated historical artifact."@en ;
+                                           rdfs:comment "This presupposition is triggered by the pseudo-academic frame of the final section."@en ;
+                                           rdfs:label "Historical Notes reframing presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalRecyclingFrame
+hmt:HistoricalRecyclingFrame rdf:type owl:NamedIndividual ,
+                                      lig:Frame ,
+                                      lig:InterpretiveResource ;
+                             dc:description "The frame through which Gilead's practices are interpreted as synthesized from earlier institutions of control."@en ;
+                             rdfs:comment "This frame is activated by the Historical Notes' claim that Gilead's genius was synthesis rather than originality."@en ;
+                             rdfs:label "Historical recycling frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HistoricalReframingKnowledge
+hmt:HistoricalReframingKnowledge rdf:type owl:NamedIndividual ,
+                                          lig:InterpretiveResource ,
+                                          lig:IntrinsicKnowledge ;
+                                 lig:knowledgeSupportsInference hmt:HistoricalColorReframingInference ;
+                                 dc:description "Intrinsic knowledge that a later frame can retrospectively change the interpretation of earlier signs."@en ;
+                                 rdfs:comment "This knowledge allows the Model Reader to reread Gilead's color code after the Historical Notes."@en ;
+                                 rdfs:label "Historical reframing knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#HouseholdHierarchyFrame
+hmt:HouseholdHierarchyFrame rdf:type owl:NamedIndividual ,
+                                     lig:Frame ,
+                                     lig:InterpretiveResource ;
+                            dc:description "The frame through which household positions are read as hierarchically organized and visually marked."@en ;
+                            rdfs:comment "This frame is activated by the color-assigned umbrellas and by the domestic tableau before the Ceremony."@en ;
+                            rdfs:label "Household hierarchy frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#InitialColorAssignmentCue
+hmt:InitialColorAssignmentCue rdf:type owl:NamedIndividual ,
+                                       lig:TextualCue ,
+                                       lig:TextualEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:activatesResource ;
+                                         owl:someValuesFrom lig:InterpretiveResource
+                                       ] ;
+                              lig:activatesCode hmt:FemaleRoleColorSubcode ,
+                                                hmt:GileadChromaticRoleStatusCode ,
+                                                hmt:InstitutionalAuthorityColorSubcode ,
+                                                hmt:RedReproductiveSymbolicSubcode ;
+                              lig:activatesFrame hmt:HouseholdHierarchyFrame ,
+                                                 hmt:InstitutionalDressFrame ;
+                              lig:activatesResource hmt:ColorAssignedRolePresupposition ,
+                                                    hmt:ColorRoleMappingKnowledge ,
+                                                    hmt:FemaleRoleColorSubcode ,
+                                                    hmt:GileadChromaticRoleStatusCode ,
+                                                    hmt:HouseholdHierarchyFrame ,
+                                                    hmt:InstitutionalAuthorityColorSubcode ,
+                                                    hmt:InstitutionalDressFrame ,
+                                                    hmt:InstitutionalDressKnowledge ,
+                                                    hmt:RedBloodSymbolismKnowledge ,
+                                                    hmt:RedReproductiveSymbolicSubcode ,
+                                                    hmt:RedSymbolismPresupposition ;
+                              lig:contributesToInterpretation hmt:GileadChromaticCodeControlsSocialIdentity ,
+                                                              hmt:RedAsReproductiveBloodSymbolism ;
+                              lig:requiresIntrinsicKnowledge hmt:ColorRoleMappingKnowledge ,
+                                                             hmt:InstitutionalDressKnowledge ,
+                                                             hmt:RedBloodSymbolismKnowledge ;
+                              lig:supportsInference hmt:ChromaticCodeSynthesisInference ,
+                                                    hmt:InitialColorAssignmentInference ,
+                                                    hmt:RedSymbolicInference ;
+                              lig:triggersPresupposition hmt:ColorAssignedRolePresupposition ,
+                                                         hmt:RedSymbolismPresupposition ;
+                              lig:hasTextualContent "the colour of blood, which defines us" ;
+                              dc:description "The cue provided by Offred's red clothing, the color-assigned umbrellas, and Rita's green Martha dress."@en ;
+                              rdfs:comment "This cue activates the idea that colors are not decorative details but institutional signs associated with roles and household positions."@en ;
+                              rdfs:label "Initial color assignment cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#InitialColorAssignmentFragment
+hmt:InitialColorAssignmentFragment rdf:type owl:NamedIndividual ,
+                                            lig:TextFragment ,
+                                            lig:TextualEntity ;
+                                   lig:containsCue hmt:InitialColorAssignmentCue ;
+                                   lig:groundsInference hmt:ChromaticCodeSynthesisInference ,
+                                                        hmt:InitialColorAssignmentInference ,
+                                                        hmt:RedSymbolicInference ;
+                                   lig:hasSourceReference "The Handmaid's Tale, PDF pp. 17-18" ;
+                                   lig:hasTextualContent "Selected passage in which Offred describes her red clothing, the color-assigned umbrellas, and Rita's green Martha dress." ;
+                                   dc:description "A textual fragment in which Offred's red clothing, the color-assigned umbrellas, and Rita's green Martha dress introduce the chromatic code."@en ;
+                                   rdfs:comment "This fragment introduces color as an institutional sign. Red defines the Handmaids, while black, blue, red, and green are associated with household roles and positions."@en ;
+                                   rdfs:label "Initial color assignment fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#InitialColorAssignmentInference
+hmt:InitialColorAssignmentInference rdf:type owl:NamedIndividual ,
+                                             lig:Inference ,
+                                             lig:InterpretiveOperation ;
+                                    lig:licensesInterpretation hmt:GileadChromaticCodeControlsSocialIdentity ;
+                                    lig:hasSequenceNumber 1 ;
+                                    dc:description "The inference that Gilead uses assigned colors to mark roles and household positions."@en ;
+                                    rdfs:comment "From Offred's red clothing, the color-assigned umbrellas, and Rita's green dress, the Model Reader infers that color functions as an institutional sign."@en ;
+                                    rdfs:label "Initial color assignment inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#InstitutionalAuthorityColorSubcode
+hmt:InstitutionalAuthorityColorSubcode rdf:type owl:NamedIndividual ,
+                                                lig:Code ,
+                                                lig:InterpretiveResource ,
+                                                lig:Subcode ;
+                                       dc:description "A subcode through which color also marks male institutional authority."@en ;
+                                       rdfs:comment "This subcode is activated by the Commander's black uniform and umbrella, which show that the chromatic system is part of a broader institutional hierarchy."@en ;
+                                       rdfs:label "Institutional authority color subcode"@en .
+
+
+###  https://lectoringraphula.org/handmaid#InstitutionalDressFrame
+hmt:InstitutionalDressFrame rdf:type owl:NamedIndividual ,
+                                     lig:Frame ,
+                                     lig:InterpretiveResource ;
+                            dc:description "The frame through which clothing is interpreted as a visible sign of institutional role."@en ;
+                            rdfs:comment "This frame allows the Model Reader to interpret Gilead's clothing colors as a system of uniforms rather than as decorative description."@en ;
+                            rdfs:label "Institutional dress frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#InstitutionalDressKnowledge
+hmt:InstitutionalDressKnowledge rdf:type owl:NamedIndividual ,
+                                         lig:InterpretiveResource ,
+                                         lig:IntrinsicKnowledge ;
+                                lig:knowledgeSupportsInference hmt:ChromaticCodeSynthesisInference ,
+                                                               hmt:InitialColorAssignmentInference ,
+                                                               hmt:RedSymbolicInference ;
+                                dc:description "Intrinsic knowledge that uniforms and prescribed clothing can encode social roles."@en ;
+                                rdfs:comment "This knowledge allows the Model Reader to interpret clothing colors as signs of institutional position."@en ;
+                                rdfs:label "Institutional dress knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#MarketingCostumeDesignKnowledge
+hmt:MarketingCostumeDesignKnowledge rdf:type owl:NamedIndividual ,
+                                             lig:InterpretiveResource ,
+                                             lig:IntrinsicKnowledge ;
+                                    lig:knowledgeSupportsInference hmt:HistoricalColorReframingInference ;
+                                    dc:description "Intrinsic knowledge that visual systems can be deliberately designed for institutional and ideological effects."@en ;
+                                    rdfs:comment "This knowledge supports the interpretation of Gilead's clothing system as designed rather than natural."@en ;
+                                    rdfs:label "Marketing costume design knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#MaydayResistanceFrame
+hmt:MaydayResistanceFrame rdf:type owl:NamedIndividual ,
+                                   lig:Frame ,
+                                   lig:InterpretiveResource ;
+                          dc:description "The frame through which Nick's reference to Mayday may be interpreted as a sign of possible rescue."@en ;
+                          rdfs:comment "This frame is activated by Nick's claim that the men are connected to Mayday and by his use of Offred's real name."@en ;
+                          rdfs:label "Mayday resistance frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NameExchangeCue
+hmt:NameExchangeCue rdf:type owl:NamedIndividual ,
+                             lig:TextualCue ,
+                             lig:TextualEntity ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lig:activatesResource ;
+                               owl:someValuesFrom lig:InterpretiveResource
+                             ] ;
+                    lig:activatesResource hmt:PersonalNameKnowledge ,
+                                          hmt:PersonalNamePresupposition ;
+                    lig:contributesToInterpretation hmt:OffredNameRemainsUnspecified ;
+                    lig:requiresIntrinsicKnowledge hmt:PersonalNameKnowledge ;
+                    lig:supportsInference hmt:NameExchangeInference ;
+                    lig:triggersPresupposition hmt:PersonalNamePresupposition ;
+                    lig:hasTextualContent "we exchanged names" ;
+                    dc:description "The cue provided by the secret exchange of personal names among the Handmaids."@en ;
+                    rdfs:comment "This cue activates knowledge about personal names, secrecy, and identity preservation. It suggests that personal identity persists beneath the official naming practices of Gilead."@en ;
+                    rdfs:label "Name Exchange Cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NameExchangeFragment
+hmt:NameExchangeFragment rdf:type owl:NamedIndividual ,
+                                  lig:TextFragment ,
+                                  lig:TextualEntity ;
+                         lig:containsCue hmt:NameExchangeCue ;
+                         lig:groundsInference hmt:NameExchangeInference ;
+                         lig:hasSourceReference "The Handmaid's Tale, PDF p. 14" ;
+                         lig:hasTextualContent "Selected passage in which Handmaids secretly exchange personal names." ;
+                         dc:description "A textual fragment in which the Handmaids secretly exchange personal names at the Red Centre."@en ;
+                         rdfs:comment "This fragment introduces personal names as hidden traces of identity that survive beneath Gilead's institutional naming system. It prepares the Model Reader to understand that Offred may not be the narrator's original name."@en ;
+                         rdfs:label "Name Exchange Fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NameExchangeInference
+hmt:NameExchangeInference rdf:type owl:NamedIndividual ,
+                                   lig:Inference ,
+                                   lig:InterpretiveOperation ;
+                          lig:licensesInterpretation hmt:OffredNameRemainsUnspecified ;
+                          lig:hasSequenceNumber 1 ;
+                          dc:description "The inference that personal names survive secretly among the Handmaids."@en ;
+                          rdfs:comment "From the secret exchange of names, the Model Reader infers that Gilead's institutional naming system has not completely erased personal identity. Personal names persist as hidden and fragile traces."@en ;
+                          rdfs:label "Name Exchange Inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickAmbiguousRoleSynthesisInference
+hmt:NickAmbiguousRoleSynthesisInference rdf:type owl:NamedIndividual ,
+                                                 lig:Inference ,
+                                                 lig:InterpretiveOperation ;
+                                        lig:generatesPrediction hmt:FinalOutcomeUncertaintyPrediction ,
+                                                                hmt:NickRoleUncertaintyPrediction ;
+                                        lig:licensesInterpretation hmt:FinalDepartureAsLicensedAmbiguity ,
+                                                                   hmt:TrustAsUncertainInterpretiveAct ;
+                                        lig:hasSequenceNumber 5 ;
+                                        dc:description "The synthesis inference that Nick's role remains structurally ambiguous at the moment of Offred's decision."@en ;
+                                        rdfs:comment "This inference synthesizes the early suspicion, the request for trust, the ambiguous official language, and the open ending into the interpretation of trust as an uncertain act under surveillance."@en ;
+                                        rdfs:label "Nick ambiguous role synthesis inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickAsEyePrediction
+hmt:NickAsEyePrediction rdf:type owl:NamedIndividual ,
+                                 lig:InterpretiveOperation ,
+                                 lig:Prediction ;
+                        lig:hasProbabilityDegree "possible" ;
+                        dc:description "A prediction according to which Nick may be connected to Gilead's surveillance apparatus."@en ;
+                        rdfs:label "Nick as Eye prediction"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickAsMaydayAllyPrediction
+hmt:NickAsMaydayAllyPrediction rdf:type owl:NamedIndividual ,
+                                        lig:InterpretiveOperation ,
+                                        lig:Prediction ;
+                               lig:hasProbabilityDegree "possible" ;
+                               dc:description "A prediction according to which Nick may be connected to Mayday and may be helping Offred escape."@en ;
+                               rdfs:label "Nick as Mayday ally prediction"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickEyeSuspicionCue
+hmt:NickEyeSuspicionCue rdf:type owl:NamedIndividual ,
+                                 lig:TextualCue ,
+                                 lig:TextualEntity ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty lig:activatesResource ;
+                                   owl:someValuesFrom lig:InterpretiveResource
+                                 ] ;
+                        lig:activatesFrame hmt:GileadSurveillanceFrame ;
+                        lig:activatesResource hmt:FriendlyBehaviorMayBeTestPresupposition ,
+                                              hmt:GileadSurveillanceFrame ,
+                                              hmt:SurveillanceKnowledge ;
+                        lig:contributesToInterpretation hmt:FinalDepartureAsLicensedAmbiguity ,
+                                                        hmt:NickMayBeEyeInterpretation ,
+                                                        hmt:TrustAsUncertainInterpretiveAct ;
+                        lig:requiresIntrinsicKnowledge hmt:SurveillanceKnowledge ;
+                        lig:supportsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                              hmt:NickEyeSuspicionInference ;
+                        lig:triggersPresupposition hmt:FriendlyBehaviorMayBeTestPresupposition ;
+                        lig:hasTextualContent "Perhaps he is an Eye" ;
+                        dc:description "The cue provided by Offred's suspicion that Nick may be an Eye."@en ;
+                        rdfs:comment "This cue activates knowledge about surveillance, informants, and the risk that apparently friendly behavior may be a test."@en ;
+                        rdfs:label "Nick Eye suspicion cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickEyeSuspicionFragment
+hmt:NickEyeSuspicionFragment rdf:type owl:NamedIndividual ,
+                                      lig:TextFragment ,
+                                      lig:TextualEntity ;
+                             lig:containsCue hmt:NickEyeSuspicionCue ;
+                             lig:groundsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                                  hmt:NickEyeSuspicionInference ;
+                             lig:hasSourceReference "The Handmaid's Tale, PDF pp. 26-27" ;
+                             lig:hasTextualContent "Selected passage in which Offred suspects that Nick may be an Eye." ;
+                             dc:description "A textual fragment in which Offred considers the possibility that Nick may be an Eye."@en ;
+                             rdfs:comment "This fragment introduces Nick as an ambiguous figure. A small gesture becomes interpretable either as ordinary contact or as a possible surveillance test."@en ;
+                             rdfs:label "Nick Eye suspicion fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickEyeSuspicionInference
+hmt:NickEyeSuspicionInference rdf:type owl:NamedIndividual ,
+                                       lig:Inference ,
+                                       lig:InterpretiveOperation ;
+                              lig:generatesPrediction hmt:NickAsEyePrediction ,
+                                                      hmt:NickRoleUncertaintyPrediction ;
+                              lig:licensesInterpretation hmt:NickMayBeEyeInterpretation ;
+                              lig:hasSequenceNumber 1 ;
+                              dc:description "The inference that Nick's early behavior may indicate surveillance or testing."@en ;
+                              rdfs:comment "From Offred's suspicion, the Model Reader infers that Nick's role is not stable and that ordinary contact may hide institutional danger."@en ;
+                              rdfs:label "Nick Eye suspicion inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickMayBeEyeInterpretation
+hmt:NickMayBeEyeInterpretation rdf:type owl:NamedIndividual ,
+                                        lig:AlternativeInterpretation ,
+                                        lig:Interpretation ,
+                                        lig:InterpretiveOutcome ,
+                                        lig:LicensedInterpretation ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:isLicensedByInference ;
+                                          owl:someValuesFrom lig:Inference
+                                        ] ;
+                               lig:isLicensedByInference hmt:NickEyeSuspicionInference ;
+                               lig:hasInterpretiveStatus "alternative" ;
+                               dc:description "An alternative interpretation according to which Nick may be connected to Gilead's surveillance apparatus."@en ;
+                               rdfs:comment "This interpretation is supported by Offred's early suspicion and by the final scene's official and coercive signs."@en ;
+                               rdfs:label "Nick may be Eye interpretation"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickMayBeRescuerInterpretation
+hmt:NickMayBeRescuerInterpretation rdf:type owl:NamedIndividual ,
+                                            lig:AlternativeInterpretation ,
+                                            lig:Interpretation ,
+                                            lig:InterpretiveOutcome ,
+                                            lig:LicensedInterpretation ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty lig:isLicensedByInference ;
+                                              owl:someValuesFrom lig:Inference
+                                            ] ;
+                                   lig:isLicensedByInference hmt:NickTrustAmbiguityInference ;
+                                   lig:hasInterpretiveStatus "alternative" ;
+                                   dc:description "An alternative interpretation according to which Nick may be connected to Mayday and may be helping Offred escape."@en ;
+                                   rdfs:comment "This interpretation is supported by Nick's reference to Mayday and Offred's real name, but it is not confirmed as simple fact inside the scene."@en ;
+                                   rdfs:label "Nick may be rescuer interpretation"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickRoleProbabilityDisjunction
+hmt:NickRoleProbabilityDisjunction rdf:type owl:NamedIndividual ,
+                                            lig:InterpretiveOperation ,
+                                            lig:ProbabilityDisjunction ;
+                                   lig:hasAlternativePrediction hmt:NickAsEyePrediction ,
+                                                                hmt:NickAsMaydayAllyPrediction ;
+                                   dc:description "A probability disjunction between Nick as possible Eye and Nick as possible Mayday ally."@en ;
+                                   rdfs:comment "This disjunction preserves the competing predictions generated by the textual cues around Nick."@en ;
+                                   rdfs:label "Nick role probability disjunction"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickRoleUncertaintyPrediction
+hmt:NickRoleUncertaintyPrediction rdf:type owl:NamedIndividual ,
+                                           lig:InterpretiveOperation ,
+                                           lig:Prediction ;
+                                  lig:opensProbabilityDisjunction hmt:NickRoleProbabilityDisjunction ;
+                                  lig:hasProbabilityDegree "undecided" ;
+                                  dc:description "A prediction that Nick's role may develop either as threat or as ally."@en ;
+                                  rdfs:label "Nick role uncertainty prediction"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickTrustAmbiguityInference
+hmt:NickTrustAmbiguityInference rdf:type owl:NamedIndividual ,
+                                         lig:Inference ,
+                                         lig:InterpretiveOperation ;
+                                lig:generatesPrediction hmt:NickAsMaydayAllyPrediction ,
+                                                        hmt:NickRoleUncertaintyPrediction ;
+                                lig:licensesInterpretation hmt:NickMayBeRescuerInterpretation ;
+                                lig:hasSequenceNumber 2 ;
+                                dc:description "The inference that Nick's request for trust supports possible rescue but does not remove suspicion."@en ;
+                                rdfs:comment "From Nick's reference to Mayday and his request for trust, the Model Reader infers that he may be helping Offred, but the cue remains unstable."@en ;
+                                rdfs:label "Nick trust ambiguity inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickTrustMeCue
+hmt:NickTrustMeCue rdf:type owl:NamedIndividual ,
+                            lig:TextualCue ,
+                            lig:TextualEntity ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty lig:activatesResource ;
+                              owl:someValuesFrom lig:InterpretiveResource
+                            ] ;
+                   lig:activatesFrame hmt:GileadSurveillanceFrame ,
+                                      hmt:MaydayResistanceFrame ;
+                   lig:activatesResource hmt:GileadSurveillanceFrame ,
+                                         hmt:MaydayResistanceFrame ,
+                                         hmt:ResistanceNetworkKnowledge ,
+                                         hmt:TrustMayConcealBetrayalPresupposition ,
+                                         hmt:TrustUnderSurveillanceKnowledge ;
+                   lig:contributesToInterpretation hmt:FinalDepartureAsLicensedAmbiguity ,
+                                                   hmt:NickMayBeRescuerInterpretation ,
+                                                   hmt:TrustAsUncertainInterpretiveAct ;
+                   lig:requiresIntrinsicKnowledge hmt:ResistanceNetworkKnowledge ,
+                                                  hmt:TrustUnderSurveillanceKnowledge ;
+                   lig:supportsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                         hmt:NickTrustAmbiguityInference ;
+                   lig:triggersPresupposition hmt:TrustMayConcealBetrayalPresupposition ;
+                   lig:hasTextualContent "Trust me" ;
+                   dc:description "The cue provided by Nick's request that Offred trust him."@en ;
+                   rdfs:comment "This cue activates trust and suspicion at the same time. In Gilead, a request for trust cannot function as proof of safety."@en ;
+                   rdfs:label "Nick Trust me cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#NickTrustRequestFragment
+hmt:NickTrustRequestFragment rdf:type owl:NamedIndividual ,
+                                      lig:TextFragment ,
+                                      lig:TextualEntity ;
+                             lig:containsCue hmt:NickTrustMeCue ;
+                             lig:groundsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                                  hmt:NickTrustAmbiguityInference ;
+                             lig:hasSourceReference "The Handmaid's Tale, PDF pp. 283-285" ;
+                             lig:hasTextualContent "Selected passage in which Nick says Trust me and claims that the men are connected to Mayday." ;
+                             dc:description "A textual fragment in which Nick asks Offred to trust him during the final scene."@en ;
+                             rdfs:comment "This fragment intensifies the ambiguity around Nick's role. His reference to Mayday and Offred's real name may support rescue, but they do not eliminate suspicion."@en ;
+                             rdfs:label "Nick trust request fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OfficialAuthorityKnowledge
+hmt:OfficialAuthorityKnowledge rdf:type owl:NamedIndividual ,
+                                        lig:InterpretiveResource ,
+                                        lig:IntrinsicKnowledge ;
+                               lig:knowledgeSupportsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                                              hmt:StateAuthorityAmbiguityInference ;
+                               dc:description "Intrinsic knowledge that uniforms, vans, warrants, and accusations may signal state authority."@en ;
+                               rdfs:comment "This knowledge allows the Model Reader to understand why the arrival of the men may be interpreted as an arrest."@en ;
+                               rdfs:label "Official authority knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredArrestPrediction
+hmt:OffredArrestPrediction rdf:type owl:NamedIndividual ,
+                                    lig:InterpretiveOperation ,
+                                    lig:Prediction ;
+                           lig:hasProbabilityDegree "possible" ;
+                           dc:description "A prediction according to which the black van may signal Offred's arrest by Gilead."@en ;
+                           rdfs:label "Offred arrest prediction"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredHiddenNameFragment
+hmt:OffredHiddenNameFragment rdf:type owl:NamedIndividual ,
+                                      lig:TextFragment ,
+                                      lig:TextualEntity ;
+                             lig:containsCue hmt:OffredNameCue ;
+                             lig:groundsInference hmt:HiddenNameInference ,
+                                                  hmt:OffredIdentityInference ;
+                             lig:hasSourceReference "The Handmaid's Tale, PDF p. 87" ;
+                             lig:hasTextualContent "Selected passage in which Offred states that her real name is forbidden and hidden." ;
+                             dc:description "A textual fragment in which Offred states that her name is not Offred and that she has another forbidden name."@en ;
+                             rdfs:comment "This fragment is the central passage of the Offred naming case. It explicitly signals that the narrator has another name, but that the text withholds it. The Model Reader must therefore infer the existence of a hidden personal identity."@en ;
+                             rdfs:label "Offred name fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredIdentityInference
+hmt:OffredIdentityInference rdf:type owl:NamedIndividual ,
+                                     lig:Inference ,
+                                     lig:InterpretiveOperation ;
+                            lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ;
+                            lig:hasAnnotationNote "The Model Reader infers that Offred's identity is defined through Fred." ;
+                            lig:hasSequenceNumber 4 ;
+                            dc:description "The inference that Offred's identity is institutionally defined through Fred."@en ;
+                            rdfs:comment "This inference synthesizes the broader interpretive conclusion that Gilead defines women's identities through male authority and household assignment. It follows the more specific inferences about hidden names and patronymic naming."@en ;
+                            rdfs:label "Offred identity inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredNameCue
+hmt:OffredNameCue rdf:type owl:NamedIndividual ,
+                           lig:TextualCue ,
+                           lig:TextualEntity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty lig:activatesResource ;
+                             owl:someValuesFrom lig:InterpretiveResource
+                           ] ;
+                  lig:activatesResource hmt:HiddenNamePresupposition ,
+                                        hmt:HiddenRealNameKnowledge ,
+                                        hmt:PossessionNamingKnowledge ,
+                                        hmt:PossessionPresupposition ;
+                  lig:contributesToInterpretation hmt:GileadErasesFemaleIdentity ,
+                                                  hmt:OffredNameRemainsUnspecified ;
+                  lig:requiresIntrinsicKnowledge hmt:HiddenRealNameKnowledge ,
+                                                 hmt:PossessionNamingKnowledge ;
+                  lig:supportsInference hmt:HiddenNameInference ,
+                                        hmt:OffredIdentityInference ;
+                  lig:triggersPresupposition hmt:HiddenNamePresupposition ,
+                                             hmt:PossessionPresupposition ;
+                  lig:hasAnnotationNote "The name functions as a textual cue activating knowledge about possession, identity, and institutional naming." ;
+                  lig:hasTextualContent "My name isn't Offred" ;
+                  dc:description "The cue provided by Offred's statement that Offred is not her real name."@en ;
+                  rdfs:comment "This cue activates the presupposition that the narrator has another personal name that exists within the fictional world but is forbidden, hidden, and never fully supplied by the text."@en ;
+                  rdfs:label "Offred name cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredNameRemainsUnspecified
+hmt:OffredNameRemainsUnspecified rdf:type owl:NamedIndividual ,
+                                          lig:Interpretation ,
+                                          lig:InterpretiveOutcome ,
+                                          lig:LicensedInterpretation ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty lig:isLicensedByInference ;
+                                            owl:someValuesFrom lig:Inference
+                                          ] ;
+                                 lig:isLicensedByInference hmt:HiddenNameInference ,
+                                                           hmt:NameExchangeInference ;
+                                 lig:hasInterpretiveStatus "licensed" ;
+                                 dc:description "A licensed interpretation according to which the narrator's original name exists but remains withheld by the text."@en ;
+                                 rdfs:comment "This interpretation is licensed by the combination of the secret name exchange, Offred's statement that she has another name, and the Historical Notes' confirmation that her original name is not supplied."@en ;
+                                 rdfs:label "Offred Name Remains Unspecified"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OffredRescuePrediction
+hmt:OffredRescuePrediction rdf:type owl:NamedIndividual ,
+                                    lig:InterpretiveOperation ,
+                                    lig:Prediction ;
+                           lig:hasProbabilityDegree "possible" ;
+                           dc:description "A prediction according to which the black van may signal Offred's rescue through Mayday."@en ;
+                           rdfs:label "Offred rescue prediction"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OpenEndingFrame
+hmt:OpenEndingFrame rdf:type owl:NamedIndividual ,
+                             lig:Frame ,
+                             lig:InterpretiveResource ;
+                    dc:description "The frame through which the final movement into the van remains suspended between possible destruction and possible rescue."@en ;
+                    rdfs:comment "This frame is activated by the contrast between darkness and light in the final movement."@en ;
+                    rdfs:label "Open ending frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OpenEndingKnowledge
+hmt:OpenEndingKnowledge rdf:type owl:NamedIndividual ,
+                                 lig:InterpretiveResource ,
+                                 lig:IntrinsicKnowledge ;
+                        lig:knowledgeSupportsInference hmt:DarknessLightOpenEndingInference ,
+                                                       hmt:NickAmbiguousRoleSynthesisInference ;
+                        dc:description "Intrinsic knowledge that narrative endings may deliberately withhold final resolution."@en ;
+                        rdfs:comment "This knowledge allows the Model Reader to interpret the darkness or light contrast as structured ambiguity rather than missing information."@en ;
+                        rdfs:label "Open ending knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OrdinaryRomanticSubcode
+hmt:OrdinaryRomanticSubcode rdf:type owl:NamedIndividual ,
+                                     lig:Code ,
+                                     lig:InterpretiveResource ,
+                                     lig:Subcode ;
+                            dc:description "A subcode involving love, romance, passion, and emotional intimacy."@en ;
+                            rdfs:comment "This subcode is activated only to be negated by Offred's statement that the Ceremony has nothing to do with passion, love, or romance."@en ;
+                            rdfs:label "Ordinary romantic subcode"@en .
+
+
+###  https://lectoringraphula.org/handmaid#OrdinarySexualSubcode
+hmt:OrdinarySexualSubcode rdf:type owl:NamedIndividual ,
+                                   lig:Code ,
+                                   lig:InterpretiveResource ,
+                                   lig:Subcode ;
+                          dc:description "A subcode involving ordinary categories of sexuality such as reciprocal sex, desire, and bodily intimacy."@en ;
+                          rdfs:comment "This subcode is activated by Offred's description of the act, but the narration shows that it does not adequately classify the Ceremony."@en ;
+                          rdfs:label "Ordinary sexual subcode"@en .
+
+
+###  https://lectoringraphula.org/handmaid#POWUniformOriginConjecture
+hmt:POWUniformOriginConjecture rdf:type owl:NamedIndividual ,
+                                        lig:AlternativeInterpretation ,
+                                        lig:Interpretation ,
+                                        lig:InterpretiveOutcome ,
+                                        lig:LicensedInterpretation ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty lig:isLicensedByInference ;
+                                          owl:someValuesFrom lig:Inference
+                                        ] ;
+                               lig:isLicensedByInference hmt:HistoricalColorReframingInference ;
+                               lig:hasInterpretiveStatus "conjectural" ;
+                               dc:description "A conjectural interpretation according to which the Handmaids' red may have been borrowed from German P.O.W. uniforms in Canadian camps."@en ;
+                               rdfs:comment "This interpretation should not be treated as direct narrative fact. It is a hedged, second-hand attribution within the pseudo-academic frame of the Historical Notes."@en ;
+                               rdfs:label "P.O.W. uniform origin conjecture"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PassionExclusionPresupposition
+hmt:PassionExclusionPresupposition rdf:type owl:NamedIndividual ,
+                                            lig:InterpretiveResource ,
+                                            lig:IntrinsicKnowledge ,
+                                            lig:Presupposition ;
+                                   dc:description "The presupposition that passion, love, romance, desire, and pleasure are excluded from the Ceremony."@en ;
+                                   rdfs:comment "This presupposition is triggered by Offred's statement that the Ceremony has nothing to do with passion or love."@en ;
+                                   rdfs:label "Passion exclusion presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PassionNegationInference
+hmt:PassionNegationInference rdf:type owl:NamedIndividual ,
+                                      lig:Inference ,
+                                      lig:InterpretiveOperation ;
+                             lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ;
+                             lig:hasSequenceNumber 4 ;
+                             dc:description "The inference that the Ceremony excludes passion, love, romance, desire, arousal, and pleasure."@en ;
+                             rdfs:comment "From Offred's explicit negation of passion and desire, the Model Reader infers that Gilead redefines sexuality as reproductive function."@en ;
+                             rdfs:label "Passion negation inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PassionNegationKnowledge
+hmt:PassionNegationKnowledge rdf:type owl:NamedIndividual ,
+                                      lig:InterpretiveResource ,
+                                      lig:IntrinsicKnowledge ;
+                             lig:knowledgeSupportsInference hmt:CeremonyRitualizationInference ,
+                                                            hmt:PassionNegationInference ;
+                             dc:description "Intrinsic knowledge that passion, love, desire, and pleasure belong to ordinary romantic or sexual codes."@en ;
+                             rdfs:comment "This knowledge allows the Model Reader to understand the significance of Offred's explicit exclusion of passion, love, romance, desire, arousal, and pleasure from the Ceremony."@en ;
+                             rdfs:label "Passion negation knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PatronymicNameCue
+hmt:PatronymicNameCue rdf:type owl:NamedIndividual ,
+                               lig:TextualCue ,
+                               lig:TextualEntity ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty lig:activatesResource ;
+                                 owl:someValuesFrom lig:InterpretiveResource
+                               ] ;
+                      lig:activatesResource hmt:PatronymicNamingKnowledge ,
+                                            hmt:PatronymicPossessionPresupposition ,
+                                            hmt:PossessionNamingKnowledge ;
+                      lig:contributesToInterpretation hmt:GileadErasesFemaleIdentity ,
+                                                      hmt:GileadReplacesPersonalNamesWithPatronymics ;
+                      lig:requiresIntrinsicKnowledge hmt:PatronymicNamingKnowledge ,
+                                                     hmt:PossessionNamingKnowledge ;
+                      lig:supportsInference hmt:PatronymicNameInference ;
+                      lig:triggersPresupposition hmt:PatronymicPossessionPresupposition ;
+                      lig:hasTextualContent "Offred gives no clue" ;
+                      dc:description "The cue provided by the Historical Notes' explanation that Offred is a patronymic institutional name."@en ;
+                      rdfs:comment "This cue activates knowledge about patronymic naming, possession, and institutional identity. It allows the Model Reader to reinterpret Offred as a name derived from the Commander rather than as an original personal name."@en ;
+                      rdfs:label "Patronymic Name Cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PatronymicNameInference
+hmt:PatronymicNameInference rdf:type owl:NamedIndividual ,
+                                     lig:Inference ,
+                                     lig:InterpretiveOperation ;
+                            lig:licensesInterpretation hmt:GileadErasesFemaleIdentity ,
+                                                       hmt:GileadReplacesPersonalNamesWithPatronymics ;
+                            lig:hasSequenceNumber 3 ;
+                            dc:description "The inference that Offred is an institutional possessive name derived from the Commander."@en ;
+                            rdfs:comment "From the Historical Notes' explanation of patronymic names, the Model Reader infers that Offred is not a personal name but a name produced by Gilead's system of possession and household assignment."@en ;
+                            rdfs:label "Patronymic Name Inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PatronymicNamingKnowledge
+hmt:PatronymicNamingKnowledge rdf:type owl:NamedIndividual ,
+                                       lig:InterpretiveResource ,
+                                       lig:IntrinsicKnowledge ;
+                              lig:knowledgeSupportsInference hmt:PatronymicNameInference ;
+                              dc:description "Intrinsic knowledge that a name can be formed from another person's name and can indicate dependence, belonging, or affiliation."@en ;
+                              rdfs:comment "This knowledge supports the interpretation that Offred is not a neutral personal name, but a name that encodes the woman's assignment to and possession by a specific Commander."@en ;
+                              rdfs:label "Patronymic Naming Knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PatronymicPossessionPresupposition
+hmt:PatronymicPossessionPresupposition rdf:type owl:NamedIndividual ,
+                                                lig:InterpretiveResource ,
+                                                lig:IntrinsicKnowledge ,
+                                                lig:Presupposition ;
+                                       dc:description "The presupposition that an institutional name can encode possession by or belonging to another person."@en ;
+                                       rdfs:comment "This presupposition is triggered by the Historical Notes' explanation of names such as Offred, Ofglen, and Ofwarren. The Model Reader understands that these names are structured by household assignment and male authority."@en ;
+                                       rdfs:label "Patronymic Possession Presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PersonalNameKnowledge
+hmt:PersonalNameKnowledge rdf:type owl:NamedIndividual ,
+                                   lig:InterpretiveResource ,
+                                   lig:IntrinsicKnowledge ;
+                          lig:knowledgeSupportsInference hmt:NameExchangeInference ;
+                          dc:description "Intrinsic knowledge that personal names identify individual subjects and can preserve identity."@en ;
+                          rdfs:comment "This knowledge is required to interpret the secret exchange of names as more than a list of labels. The Model Reader understands that names can preserve personal identity even when an institution attempts to erase it."@en ;
+                          rdfs:label "Personal Name Knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PersonalNamePresupposition
+hmt:PersonalNamePresupposition rdf:type owl:NamedIndividual ,
+                                        lig:InterpretiveResource ,
+                                        lig:IntrinsicKnowledge ,
+                                        lig:Presupposition ;
+                               dc:description "The presupposition that the names exchanged by the Handmaids refer to personal identities."@en ;
+                               rdfs:comment "Reader to treat the whispered names as traces of identity rather than as irrelevant details. The passage presupposes that personal names matter because they connect the women to lives outside Gilead's institutional naming system."@en ;
+                               rdfs:label "Personal Name Presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PossessionNamingKnowledge
+hmt:PossessionNamingKnowledge rdf:type owl:NamedIndividual ,
+                                       lig:InterpretiveResource ,
+                                       lig:IntrinsicKnowledge ;
+                              lig:knowledgeSupportsInference hmt:HiddenNameInference ,
+                                                             hmt:OffredIdentityInference ,
+                                                             hmt:PatronymicNameInference ;
+                              lig:hasAnnotationNote "A name can encode possession, belonging, or institutional assignment." ;
+                              dc:description "Intrinsic knowledge about names encoding possession."@en ;
+                              rdfs:comment "This individual represents the intrinsic knowledge required to interpret the name “Offred”: a name can encode belonging, possession, or institutional assignment. This knowledge is not fully explicit in the textual surface, but is required for coherent interpretation."@en ;
+                              rdfs:label "Possession naming knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PossessionPresupposition
+hmt:PossessionPresupposition rdf:type owl:NamedIndividual ,
+                                      lig:InterpretiveResource ,
+                                      lig:IntrinsicKnowledge ,
+                                      lig:Presupposition ;
+                             lig:hasAnnotationNote "The cue presupposes that naming may imply belonging to another entity." ;
+                             dc:description "The presupposition that naming can imply belonging."@en ;
+                             rdfs:comment "This individual represents the presupposition triggered by the name “Offred”: that a name may indicate belonging to or possession by another entity. This presupposition supports the interpretation of the name as more than a personal identifier."@en ;
+                             rdfs:label "Possession presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#PseudoAcademicHistoricalFrame
+hmt:PseudoAcademicHistoricalFrame rdf:type owl:NamedIndividual ,
+                                           lig:Frame ,
+                                           lig:InterpretiveResource ;
+                                  dc:description "The frame introduced by the Historical Notes, where Offred's narration is treated as a recovered historical artifact."@en ;
+                                  rdfs:comment "This frame creates a second interpretive level and changes how the color code is understood."@en ;
+                                  rdfs:label "Pseudo-academic historical frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#RedAsReproductiveBloodSymbolism
+hmt:RedAsReproductiveBloodSymbolism rdf:type owl:NamedIndividual ,
+                                             lig:AlternativeInterpretation ,
+                                             lig:Interpretation ,
+                                             lig:InterpretiveOutcome ,
+                                             lig:LicensedInterpretation ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty lig:isLicensedByInference ;
+                                               owl:someValuesFrom lig:Inference
+                                             ] ;
+                                    lig:isLicensedByInference hmt:RedSymbolicInference ;
+                                    lig:hasInterpretiveStatus "alternative" ;
+                                    dc:description "An alternative interpretation according to which the Handmaids' red symbolically marks blood, fertility, and reproductive function."@en ;
+                                    rdfs:comment "This interpretation is compatible with the chromatic code interpretation and is activated by Offred's own commentary on red as the colour of blood."@en ;
+                                    rdfs:label "Red as reproductive blood symbolism"@en .
+
+
+###  https://lectoringraphula.org/handmaid#RedBloodSymbolismKnowledge
+hmt:RedBloodSymbolismKnowledge rdf:type owl:NamedIndividual ,
+                                        lig:InterpretiveResource ,
+                                        lig:IntrinsicKnowledge ;
+                               lig:knowledgeSupportsInference hmt:ChromaticCodeSynthesisInference ,
+                                                              hmt:InitialColorAssignmentInference ,
+                                                              hmt:RedSymbolicInference ;
+                               dc:description "Intrinsic knowledge that red can symbolize blood, fertility, and reproductive function."@en ;
+                               rdfs:comment "This knowledge supports the alternative symbolic interpretation of the Handmaids' red clothing."@en ;
+                               rdfs:label "Red blood symbolism knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#RedReproductiveSymbolicSubcode
+hmt:RedReproductiveSymbolicSubcode rdf:type owl:NamedIndividual ,
+                                            lig:Code ,
+                                            lig:InterpretiveResource ,
+                                            lig:Subcode ;
+                                   dc:description "A symbolic subcode through which red marks blood, fertility, and reproductive function."@en ;
+                                   rdfs:comment "This subcode is activated by Offred's statement that red is the colour of blood and that it defines the Handmaids."@en ;
+                                   rdfs:label "Red reproductive symbolic subcode"@en .
+
+
+###  https://lectoringraphula.org/handmaid#RedSymbolicInference
+hmt:RedSymbolicInference rdf:type owl:NamedIndividual ,
+                                  lig:Inference ,
+                                  lig:InterpretiveOperation ;
+                         lig:licensesInterpretation hmt:RedAsReproductiveBloodSymbolism ;
+                         lig:hasSequenceNumber 6 ;
+                         dc:description "The inference that the Handmaids' red can also be interpreted symbolically as blood and reproductive function."@en ;
+                         rdfs:comment "This inference follows from Offred's own commentary that red is the colour of blood and defines the Handmaids."@en ;
+                         rdfs:label "Red symbolic inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#RedSymbolismPresupposition
+hmt:RedSymbolismPresupposition rdf:type owl:NamedIndividual ,
+                                        lig:InterpretiveResource ,
+                                        lig:IntrinsicKnowledge ,
+                                        lig:Presupposition ;
+                               dc:description "The presupposition that red carries symbolic meaning beyond ordinary visual classification."@en ;
+                               rdfs:comment "This presupposition is triggered by Offred's statement that red is the colour of blood and defines the Handmaids."@en ;
+                               rdfs:label "Red symbolism presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#ResistanceNetworkKnowledge
+hmt:ResistanceNetworkKnowledge rdf:type owl:NamedIndividual ,
+                                        lig:InterpretiveResource ,
+                                        lig:IntrinsicKnowledge ;
+                               lig:knowledgeSupportsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                                              hmt:NickTrustAmbiguityInference ;
+                               dc:description "Intrinsic knowledge that clandestine resistance networks operate through secrecy, codes, and risky trust."@en ;
+                               rdfs:comment "This knowledge allows the Model Reader to understand why the reference to Mayday may indicate possible rescue."@en ;
+                               rdfs:label "Resistance network knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#RitualBlessingPresupposition
+hmt:RitualBlessingPresupposition rdf:type owl:NamedIndividual ,
+                                          lig:InterpretiveResource ,
+                                          lig:IntrinsicKnowledge ,
+                                          lig:Presupposition ;
+                                 dc:description "The presupposition that prayer and blessing belong to a ritualized religious procedure."@en ;
+                                 rdfs:comment "This presupposition is triggered by the Commander's request for silent prayer and blessing."@en ;
+                                 rdfs:label "Ritual blessing presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#RitualPrayerInference
+hmt:RitualPrayerInference rdf:type owl:NamedIndividual ,
+                                   lig:Inference ,
+                                   lig:InterpretiveOperation ;
+                          lig:licensesInterpretation hmt:CeremonyAsInstitutionalizedReproductiveRitual ,
+                                                     hmt:GileadUsesReligionToLegitimizeReproductiveCoercion ;
+                          lig:hasSequenceNumber 2 ;
+                          dc:description "The inference that the Ceremony is embedded in a ritual sequence of prayer and blessing."@en ;
+                          rdfs:comment "From the Commander's call for silent prayer, the Model Reader infers that the act is not presented as ordinary sexuality but as a formalized ritual procedure."@en ;
+                          rdfs:label "Ritual prayer inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#RitualPrayerKnowledge
+hmt:RitualPrayerKnowledge rdf:type owl:NamedIndividual ,
+                                   lig:InterpretiveResource ,
+                                   lig:IntrinsicKnowledge ;
+                          lig:knowledgeSupportsInference hmt:CeremonyRitualizationInference ,
+                                                         hmt:RitualPrayerInference ;
+                          dc:description "Intrinsic knowledge that prayer and blessing can transform an action into a ritualized procedure."@en ;
+                          rdfs:comment "This knowledge allows the Model Reader to interpret the Commander's prayer as part of the Ceremony's ritual structure."@en ;
+                          rdfs:label "Ritual prayer knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#SocialTaxonomyFrame
+hmt:SocialTaxonomyFrame rdf:type owl:NamedIndividual ,
+                                 lig:Frame ,
+                                 lig:InterpretiveResource ;
+                        dc:description "The frame through which visible signs classify people into social categories."@en ;
+                        rdfs:comment "This frame is activated by the street enumeration of red, green, striped, and black clothing."@en ;
+                        rdfs:label "Social taxonomy frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#StateAuthorityAmbiguityInference
+hmt:StateAuthorityAmbiguityInference rdf:type owl:NamedIndividual ,
+                                              lig:Inference ,
+                                              lig:InterpretiveOperation ;
+                                     lig:generatesPrediction hmt:FinalOutcomeUncertaintyPrediction ,
+                                                             hmt:OffredArrestPrediction ,
+                                                             hmt:OffredRescuePrediction ;
+                                     lig:licensesInterpretation hmt:FinalDepartureAsLicensedAmbiguity ;
+                                     lig:hasSequenceNumber 3 ;
+                                     dc:description "The inference that the men may be official agents or may be performing authority as part of a rescue."@en ;
+                                     rdfs:comment "From the black van, the warrant question, and the phrase state secrets, the Model Reader infers that the scene supports both arrest and rescue hypotheses."@en ;
+                                     rdfs:label "State authority ambiguity inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#StateAuthorityFrame
+hmt:StateAuthorityFrame rdf:type owl:NamedIndividual ,
+                                 lig:Frame ,
+                                 lig:InterpretiveResource ;
+                        dc:description "The frame through which the black van and the language of state secrets may be interpreted as official Gileadean authority."@en ;
+                        rdfs:comment "This frame is activated by the arrival of the men, the lack of clear authorization, and the official-sounding accusation of state secrets."@en ;
+                        rdfs:label "State authority frame"@en .
+
+
+###  https://lectoringraphula.org/handmaid#StateSecretsAuthorizationFragment
+hmt:StateSecretsAuthorizationFragment rdf:type owl:NamedIndividual ,
+                                               lig:TextFragment ,
+                                               lig:TextualEntity ;
+                                      lig:containsCue hmt:StateSecretsCue ;
+                                      lig:groundsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                                           hmt:StateAuthorityAmbiguityInference ;
+                                      lig:hasSourceReference "The Handmaid's Tale, PDF pp. 283-285" ;
+                                      lig:hasTextualContent "Selected passage in which the men claim that Offred is being taken for violation of state secrets." ;
+                                      dc:description "A textual fragment in which the men claim authority through the phrase violation of state secrets."@en ;
+                                      rdfs:comment "This fragment keeps the probability disjunction open because official language may indicate real Gileadean authority or may be performed as part of a rescue operation."@en ;
+                                      rdfs:label "State secrets authorization fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#StateSecretsCue
+hmt:StateSecretsCue rdf:type owl:NamedIndividual ,
+                             lig:TextualCue ,
+                             lig:TextualEntity ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lig:activatesResource ;
+                               owl:someValuesFrom lig:InterpretiveResource
+                             ] ;
+                    lig:activatesFrame hmt:GileadSurveillanceFrame ,
+                                       hmt:StateAuthorityFrame ;
+                    lig:activatesResource hmt:AuthorityMayBePerformedPresupposition ,
+                                          hmt:ClandestineDeceptionKnowledge ,
+                                          hmt:GileadSurveillanceFrame ,
+                                          hmt:OfficialAuthorityKnowledge ,
+                                          hmt:StateAuthorityFrame ;
+                    lig:contributesToInterpretation hmt:FinalDepartureAsLicensedAmbiguity ,
+                                                    hmt:TrustAsUncertainInterpretiveAct ;
+                    lig:requiresIntrinsicKnowledge hmt:ClandestineDeceptionKnowledge ,
+                                                   hmt:OfficialAuthorityKnowledge ;
+                    lig:supportsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                          hmt:StateAuthorityAmbiguityInference ;
+                    lig:triggersPresupposition hmt:AuthorityMayBePerformedPresupposition ;
+                    lig:hasTextualContent "Violation of state secrets" ;
+                    dc:description "The cue provided by the official-sounding accusation of state secrets."@en ;
+                    rdfs:comment "This cue activates knowledge about state authority, warrants, secrecy, and clandestine deception."@en ;
+                    rdfs:label "State secrets cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#StreetColorEnumerationCue
+hmt:StreetColorEnumerationCue rdf:type owl:NamedIndividual ,
+                                       lig:TextualCue ,
+                                       lig:TextualEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty lig:activatesResource ;
+                                         owl:someValuesFrom lig:InterpretiveResource
+                                       ] ;
+                              lig:activatesCode hmt:FemaleRoleColorSubcode ,
+                                                hmt:GileadChromaticRoleStatusCode ;
+                              lig:activatesFrame hmt:SocialTaxonomyFrame ;
+                              lig:activatesResource hmt:ColorCodeSystematicityPresupposition ,
+                                                    hmt:ColorRoleMappingKnowledge ,
+                                                    hmt:CompositionalColorPatternKnowledge ,
+                                                    hmt:FemaleRoleColorSubcode ,
+                                                    hmt:GileadChromaticRoleStatusCode ,
+                                                    hmt:SocialTaxonomyFrame ;
+                              lig:contributesToInterpretation hmt:GileadChromaticCodeControlsSocialIdentity ;
+                              lig:requiresIntrinsicKnowledge hmt:ColorRoleMappingKnowledge ,
+                                                             hmt:CompositionalColorPatternKnowledge ;
+                              lig:supportsInference hmt:ChromaticCodeSynthesisInference ,
+                                                    hmt:StreetColorEnumerationInference ;
+                              lig:triggersPresupposition hmt:ColorCodeSystematicityPresupposition ;
+                              lig:hasTextualContent "These women are not divided into functions" ;
+                              dc:description "The cue provided by the street scene's enumeration of women in red, green, striped dresses, and black."@en ;
+                              rdfs:comment "This cue supports the inference that Gilead's color system is a role/status code, not an isolated description of clothing."@en ;
+                              rdfs:label "Street color enumeration cue"@en .
+
+
+###  https://lectoringraphula.org/handmaid#StreetColorEnumerationFragment
+hmt:StreetColorEnumerationFragment rdf:type owl:NamedIndividual ,
+                                            lig:TextFragment ,
+                                            lig:TextualEntity ;
+                                   lig:containsCue hmt:StreetColorEnumerationCue ;
+                                   lig:groundsInference hmt:ChromaticCodeSynthesisInference ,
+                                                        hmt:StreetColorEnumerationInference ;
+                                   lig:hasSourceReference "The Handmaid's Tale, PDF pp. 32-33" ;
+                                   lig:hasTextualContent "Selected passage in which Offred observes the color-coded clothing of Handmaids, Marthas, Econowives, and widows." ;
+                                   dc:description "A textual fragment in which Offred observes women in red, green, striped dresses, and black, associating clothing colors with social functions."@en ;
+                                   rdfs:comment "This fragment makes the chromatic code more explicit by enumerating several female roles and their colors or color-patterns."@en ;
+                                   rdfs:label "Street color enumeration fragment"@en .
+
+
+###  https://lectoringraphula.org/handmaid#StreetColorEnumerationInference
+hmt:StreetColorEnumerationInference rdf:type owl:NamedIndividual ,
+                                             lig:Inference ,
+                                             lig:InterpretiveOperation ;
+                                    lig:licensesInterpretation hmt:GileadChromaticCodeControlsSocialIdentity ;
+                                    lig:hasSequenceNumber 2 ;
+                                    dc:description "The inference that Gilead's color system is an enumerated role/status code."@en ;
+                                    rdfs:comment "From the street enumeration of red, green, striped clothing, and black, the Model Reader infers that color and color-pattern classify social function, gender hierarchy, and household rank."@en ;
+                                    rdfs:label "Street color enumeration inference"@en .
+
+
+###  https://lectoringraphula.org/handmaid#SurveillanceKnowledge
+hmt:SurveillanceKnowledge rdf:type owl:NamedIndividual ,
+                                   lig:InterpretiveResource ,
+                                   lig:IntrinsicKnowledge ;
+                          lig:knowledgeSupportsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                                         hmt:NickEyeSuspicionInference ;
+                          dc:description "Intrinsic knowledge that authoritarian regimes use informants, tests, and hidden observation."@en ;
+                          rdfs:comment "This knowledge allows the Model Reader to understand why Offred interprets Nick's behavior as potentially dangerous."@en ;
+                          rdfs:label "Surveillance knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#TrustAsUncertainInterpretiveAct
+hmt:TrustAsUncertainInterpretiveAct rdf:type owl:NamedIndividual ,
+                                             lig:Interpretation ,
+                                             lig:InterpretiveOutcome ,
+                                             lig:LicensedInterpretation ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty lig:isLicensedByInference ;
+                                               owl:someValuesFrom lig:Inference
+                                             ] ;
+                                    lig:isLicensedByInference hmt:NickAmbiguousRoleSynthesisInference ;
+                                    lig:hasInterpretiveStatus "licensed" ;
+                                    dc:description "A licensed interpretation according to which trust is constructed as an uncertain interpretive act under surveillance."@en ;
+                                    rdfs:comment "This interpretation does not decide whether Nick is good or bad. It describes how the text makes trust depend on unstable cues and constrained choice."@en ;
+                                    rdfs:label "Trust as uncertain interpretive act"@en .
+
+
+###  https://lectoringraphula.org/handmaid#TrustMayConcealBetrayalPresupposition
+hmt:TrustMayConcealBetrayalPresupposition rdf:type owl:NamedIndividual ,
+                                                   lig:InterpretiveResource ,
+                                                   lig:IntrinsicKnowledge ,
+                                                   lig:Presupposition ;
+                                          dc:description "The presupposition that a request for trust may coexist with danger or betrayal."@en ;
+                                          rdfs:comment "This presupposition is triggered by Nick's request that Offred trust him."@en ;
+                                          rdfs:label "Trust may conceal betrayal presupposition"@en .
+
+
+###  https://lectoringraphula.org/handmaid#TrustUnderSurveillanceKnowledge
+hmt:TrustUnderSurveillanceKnowledge rdf:type owl:NamedIndividual ,
+                                             lig:InterpretiveResource ,
+                                             lig:IntrinsicKnowledge ;
+                                    lig:knowledgeSupportsInference hmt:NickAmbiguousRoleSynthesisInference ,
+                                                                   hmt:NickTrustAmbiguityInference ;
+                                    dc:description "Intrinsic knowledge that trust is unstable under conditions of surveillance and coercion."@en ;
+                                    rdfs:comment "This knowledge is required to understand why Nick's request to trust him cannot function as proof of safety."@en ;
+                                    rdfs:label "Trust under surveillance knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#VisualTaxonomyKnowledge
+hmt:VisualTaxonomyKnowledge rdf:type owl:NamedIndividual ,
+                                     lig:InterpretiveResource ,
+                                     lig:IntrinsicKnowledge ;
+                            lig:knowledgeSupportsInference hmt:ChromaticCodeSynthesisInference ,
+                                                           hmt:ColorInventoryInference ;
+                            dc:description "Intrinsic knowledge that visual signs can classify people into social categories."@en ;
+                            rdfs:comment "This knowledge allows the Model Reader to understand why the domestic tableau can identify people by color alone."@en ;
+                            rdfs:label "Visual taxonomy knowledge"@en .
+
+
+###  https://lectoringraphula.org/handmaid#WWIIPOWUniformKnowledge
+hmt:WWIIPOWUniformKnowledge rdf:type owl:NamedIndividual ,
+                                     lig:InterpretiveResource ,
+                                     lig:IntrinsicKnowledge ;
+                            lig:knowledgeSupportsInference hmt:HistoricalColorReframingInference ;
+                            dc:description "Intrinsic knowledge about the historical reference to prisoner-of-war uniforms."@en ;
+                            rdfs:comment "This knowledge is activated by the Historical Notes' conjectural attribution of the Handmaids' red to German P.O.W. uniforms in Canadian camps."@en ;
+                            rdfs:label "World War II P.O.W. uniform knowledge"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
