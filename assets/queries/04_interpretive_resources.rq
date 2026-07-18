@@ -1,0 +1,31 @@
+# CQ4: Which interpretive resources, such as codes, frames, and encyclopedias, are activated by textual cues?
+# Purpose: Check which semiotic and interpretive resources are activated by textual cues, beyond intrinsic knowledge.
+# KG pattern: TextualCue -> activatesCode / activatesFrame / activatesEncyclopedia -> InterpretiveResource
+# Expected result: A table listing textual cues and the codes, frames, or encyclopedias they activate.
+
+PREFIX lig: <https://lectoringraphula.org/ontology#>
+PREFIX hmt: <https://lectoringraphula.org/handmaid#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?fragmentLabel ?cueLabel ?cueText ?resourceLabel
+WHERE {
+  ?fragment lig:containsCue ?cue .
+
+  {
+    ?cue lig:activatesCode ?resource .
+  }
+  UNION
+  {
+    ?cue lig:activatesFrame ?resource .
+  }
+  UNION
+  {
+    ?cue lig:activatesEncyclopedia ?resource .
+  }
+
+  OPTIONAL { ?fragment rdfs:label ?fragmentLabel . }
+  OPTIONAL { ?cue rdfs:label ?cueLabel . }
+  OPTIONAL { ?cue lig:hasTextualContent ?cueText . }
+  OPTIONAL { ?resource rdfs:label ?resourceLabel . }
+}
+ORDER BY ?fragmentLabel ?cueLabel ?resourceLabel

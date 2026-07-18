@@ -1,0 +1,17 @@
+# NCQ2: Is the P.O.W. origin of the Handmaids' red clothing modeled as direct narrative fact?
+# Expected answer: No.
+# Purpose: Check that the P.O.W. origin is modeled as a conjectural interpretation, not as a direct narrative fact.
+# KG pattern: POWUniformOriginConjecture -> hasInterpretiveStatus -> "conjectural"
+# Expected result: 1 row showing status "conjectural".
+
+PREFIX lig: <https://lectoringraphula.org/ontology#>
+PREFIX hmt: <https://lectoringraphula.org/handmaid#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?interpretationLabel ?status
+WHERE {
+  hmt:POWUniformOriginConjecture lig:hasInterpretiveStatus ?status .
+
+  OPTIONAL { hmt:POWUniformOriginConjecture rdfs:label ?interpretationLabel . }
+}
+ORDER BY ?interpretationLabel
