@@ -11,6 +11,14 @@ The project separates two semantic layers:
 
 The aim is not to reproduce the complete plot of the novel, establish one definitive literary interpretation, or fully automate interpretation. Instead, the project makes selected interpretive chains **explicit, inspectable, and queryable**, connecting textual cues to intrinsic knowledge, presuppositions, inferences, predictions, and licensed or alternative interpretations.
 
+## Project resources
+
+- [Project website](https://chiarag711.github.io/lector-in-graphula/)
+- [Ontology / TBox](ontology/econtology.ttl)
+- [Knowledge Graph / ABox](knowledge-graph/knowledge-graph.ttl)
+- [SPARQL queries and stored results](queries/)
+- [Interpretive case notes](case-notes/)
+
 ### Requirements
 
 - [Protégé](https://protege.stanford.edu/)
