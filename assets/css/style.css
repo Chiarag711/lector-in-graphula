@@ -873,6 +873,42 @@ main {
   overflow-wrap: anywhere;
 }
 
+
+/* ECONTOLOGY CLASS HIERARCHY */
+
+.ontology-hierarchy-figure {
+  max-width: 1000px;
+}
+
+.ontology-hierarchy-figure figure {
+  margin: 28px 0 0;
+}
+
+.graph-scroll {
+  overflow-x: auto;
+  padding: 20px;
+  border: 1px solid var(--line-strong);
+  background: #ffffff;
+  scrollbar-width: thin;
+}
+
+.graph-scroll img {
+  display: block;
+  width: 100%;
+  min-width: 900px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ontology-hierarchy-figure figcaption {
+  max-width: 850px;
+  margin-top: 12px;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+
 .constraint-list {
   columns: 2;
   column-gap: 48px;
