@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Extended theoretical framework for Lector in Graphula: Eco's interpretive cooperation, Model Reader, Encyclopedia, inferential walks, possible worlds and their ontology mapping."
+  >
+
+  <meta name="theme-color" content="#7c2230">
+
+  <title>Theoretical Framework · Lector in Graphula</title>
+
+  <link rel="icon" type="image/png" href="assets/img/lector-in-graphula-icon.png">
+  <link rel="apple-touch-icon" href="assets/img/lector-in-graphula-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body id="top" class="theory-page">
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Theoretical framework navigation">
+      <div class="nav-container">
+
+        <a class="site-brand" href="index.html" aria-label="Lector in Graphula — Home">
+          <img
+            class="site-brand-icon"
+            src="assets/img/lector-in-graphula-icon.png"
+            alt=""
+            width="48"
+            height="48"
+          >
+          <span class="site-brand-text">Lector <em>in Graphula</em></span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          data-nav-toggle
+        >
+          <span class="sr-only">Open navigation</span>
+          <span aria-hidden="true">Menu</span>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu" data-nav-menu>
+          <li><a href="index.html">Project</a></li>
+          <li><a href="#cooperation">Cooperation</a></li>
+          <li><a href="#strategies">Strategies</a></li>
+          <li><a href="#encyclopedia">Encyclopedia</a></li>
+          <li><a href="#selection">Selection</a></li>
+          <li><a href="#inference">Inference</a></li>
+          <li><a href="#worlds">Worlds</a></li>
+          <li><a href="#mapping">Ontology mapping</a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+
+  <section class="subpage-hero" aria-labelledby="theory-title">
+    <div class="container subpage-hero-layout">
+
+      <div>
+        <p class="breadcrumb">
+          <a href="index.html">Lector in Graphula</a>
+          <span aria-hidden="true">/</span>
+          Theoretical framework
+        </p>
+
+        <p class="eyebrow">
+          Umberto Eco · Interpretive cooperation · Ontology design
+        </p>
+
+        <h1 id="theory-title">From the “lazy machine” to the Knowledge Graph</h1>
+
+        <p class="subpage-introduction">
+          This page presents the theoretical concepts that informed the
+          project and distinguishes the elements directly formalized in the
+          ontology from the broader semiotic background.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#cooperation">
+            Start reading
+          </a>
+          <a class="button button-secondary" href="index.html#architecture">
+            Return to the ontology
+          </a>
+        </div>
+      </div>
+
+      <img
+        class="subpage-hero-icon"
+        src="assets/img/lector-in-graphula-icon.png"
+        alt="An open book transforming into a Knowledge Graph"
+        width="210"
+        height="210"
+      >
+
+    </div>
+  </section>
+
+
+  <main id="main-content">
+
+    <section class="section theory-opening">
+      <div class="container">
+
+        <div class="theory-opening-grid">
+
+          <article class="prose">
+            <p class="section-label">Scope</p>
+            <h2>A selective formalization</h2>
+
+            <p>
+              <strong>Lector in Graphula</strong> translates selected aspects
+              of Umberto Eco’s theory of interpretive cooperation into a
+              formal and computational model using Semantic Web technologies.
+              It was developed for the course
+              <em>Knowledge Representation and Extraction</em>, taught by
+              Professor Aldo Gangemi during the 2025/2026 academic year of the
+              Master’s Degree in Digital Humanities and Digital Knowledge at
+              the University of Bologna.
+            </p>
+
+            <p>
+              The project does not claim to reproduce the whole of
+              <em>Lector in fabula</em>. It focuses on concepts that can
+              clarify how textual cues, presupposed competencies, intrinsic
+              knowledge, inferences, predictions and interpretations interact
+              in selected narrative passages.
+            </p>
+
+            <p>
+              These relationships are represented through an OWL ontology and
+              instantiated in a Knowledge Graph based on selected extracts
+              from Margaret Atwood’s <em>The Handmaid’s Tale</em>.
+            </p>
+          </article>
+
+
+          <nav class="theory-toc" aria-label="Contents of the theoretical framework">
+            <p class="small-label">On this page</p>
+            <ol>
+              <li><a href="#cooperation">Interpretive cooperation</a></li>
+              <li><a href="#strategies">Lazy machine and textual strategies</a></li>
+              <li><a href="#encyclopedia">Encyclopedia and the Q Model</a></li>
+              <li><a href="#selection">Magnification and narcotization</a></li>
+              <li><a href="#operational">Operational precept and habit</a></li>
+              <li><a href="#inference">Inferential walks and predictions</a></li>
+              <li><a href="#worlds">Possible worlds and S-necessity</a></li>
+              <li><a href="#mapping">From theory to ontology</a></li>
+            </ol>
+          </nav>
+
+        </div>
+
+        <aside class="notice">
+          The accessible examples on this page are explanatory analogies
+          created for the project. They are not quotations from Eco and do
+          not replace the theoretical source.
+        </aside>
+
+      </div>
+    </section>
+
+
+    <section class="section section-alt" id="cooperation">
+      <div class="container theory-reading-container">
+
+        <header class="section-heading">
+          <p class="section-number">01</p>
+          <p class="section-label">Interpretive cooperation</p>
+          <h2>Interpretation as a constrained activity</h2>
+        </header>
+
+        <div class="prose prose-wide">
+          <p>
+            In this framework, interpretation is neither the passive recovery
+            of a meaning already written in full nor an unrestricted
+            projection by an individual reader. The text provides a sequence
+            of expressions, cues, gaps and constraints that call for the
+            cooperation of a reader equipped with particular competencies.
+          </p>
+
+          <p>
+            The reader moves from the <em>linear manifestation</em> of the
+            text towards its <em>semantic actualization</em>. This transition
+            requires the activation of codes, frames, encyclopedic knowledge,
+            presuppositions and inferential operations.
+          </p>
+
+          <p>
+            The ontology represents this cooperation as a chain of explicit
+            relations. A textual fragment may contain a cue; the cue may
+            require intrinsic knowledge, trigger a presupposition and support
+            an inference; the inference may then license an interpretation or
+            generate a prediction.
+          </p>
+        </div>
+
+        <div class="theory-principle-grid">
+          <article>
+            <p class="small-label">Not unrestricted</p>
+            <h3>Textual constraints matter</h3>
+            <p>
+              Interpretations differ in status because they are not equally
+              supported by the text. The model therefore distinguishes
+              licensed, alternative and conjectural outcomes.
+            </p>
+          </article>
+
+          <article>
+            <p class="small-label">Not automatic</p>
+            <h3>The graph represents, it does not replace reading</h3>
+            <p>
+              The Knowledge Graph makes selected interpretive paths
+              inspectable and queryable. It does not calculate the one correct
+              meaning of a literary text.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section" id="strategies">
+      <div class="container theory-reading-container">
+
+        <header class="section-heading">
+          <p class="section-number">02</p>
+          <p class="section-label">Textual strategies</p>
+          <h2>The text as a “lazy machine”</h2>
+        </header>
+
+        <div class="prose prose-wide">
+          <p>
+            A narrative text cannot state every premise, consequence and
+            background relation needed for its interpretation. It is “lazy”
+            because it leaves part of its semantic work to the reader. Its
+            incompleteness is productive: gaps and unsaid elements activate
+            cooperation.
+          </p>
+
+          <p>
+            This cooperation is organized through two complementary textual
+            strategies.
+          </p>
+        </div>
+
+        <div class="strategy-grid">
+
+          <article class="strategy-card">
+            <code>lig:ModelAuthor</code>
+            <h3>Model Author</h3>
+            <p>
+              The organizing strategy of the text: the way cues,
+              instructions, omissions and interpretive constraints are
+              arranged.
+            </p>
+          </article>
+
+          <article class="strategy-card">
+            <code>lig:ModelReader</code>
+            <h3>Model Reader</h3>
+            <p>
+              The set of competencies and interpretive operations that the
+              text presupposes and progressively constructs in order to be
+              actualized.
+            </p>
+          </article>
+
+        </div>
+
+        <aside class="theory-example">
+          <p class="small-label">Accessible example</p>
+          <h3>A game designer and an expected player</h3>
+          <p>
+            A game designer constructs levels, rules and clues. The expected
+            player is not one empirical person, but the competence required
+            to recognize those rules and use the available controls. In a
+            comparable way, a narrative organizes textual cues and
+            presupposes a reader capable of activating them.
+          </p>
+        </aside>
+
+        <aside class="critical-distinction">
+          <p class="small-label">Critical distinction</p>
+          <p><strong>Model Reader ≠ Empirical Reader</strong></p>
+          <p><strong>Model Author ≠ Empirical Author</strong></p>
+          <p>
+            Model Reader and Model Author are textual strategies. The
+            empirical reader is an actual person reading the text; the
+            empirical author is the historical person who produced it.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <section class="section section-alt" id="encyclopedia">
+      <div class="container theory-reading-container">
+
+        <header class="section-heading">
+          <p class="section-number">03</p>
+          <p class="section-label">Interpretive resources</p>
+          <h2>The Encyclopedia and the Q Model</h2>
+        </header>
+
+        <div class="prose prose-wide">
+          <p>
+            Understanding a text requires more than dictionary definitions.
+            The reader activates an <em>Encyclopedia</em>: a culturally
+            structured network of knowledge, codes, frames, associations and
+            possible contexts.
+          </p>
+
+          <p>
+            This Encyclopedia should not be reduced to a private list of facts
+            stored in an individual mind. In the project, it is treated as the
+            network of competencies that the text presupposes its Model Reader
+            can activate.
+          </p>
+
+          <p>
+            Eco’s discussion of a Q Model helps explain why semantic
+            competence is better understood as a network than as a rigid
+            dictionary. The Knowledge Graph adopts a graph-based
+            representation, but it does not claim to implement the entire
+            theoretical Q Model.
+          </p>
+        </div>
+
+        <aside class="theory-example">
+          <p class="small-label">Accessible example</p>
+          <h3>From “apple” to a network of contexts</h3>
+          <p>
+            A dictionary may identify an apple as a fruit. Encyclopedic
+            competence can also connect it to Newton, the biblical story of
+            Adam and Eve, William Tell, food practices or a technology
+            company. A text activates only the relations relevant to its
+            current context.
+          </p>
+        </aside>
+
+        <div class="theory-concept-links">
+          <article>
+            <code>lig:Encyclopedia</code>
+            <p>The general network of interpretable knowledge.</p>
+          </article>
+          <article>
+            <code>lig:Code</code>
+            <p>A system of correlations used to interpret signs.</p>
+          </article>
+          <article>
+            <code>lig:Frame</code>
+            <p>A structured scenario that organizes expectations.</p>
+          </article>
+          <article>
+            <code>lig:IntrinsicKnowledge</code>
+            <p>Knowledge required by a cue but not fully stated in the text.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section" id="selection">
+      <div class="container theory-reading-container">
+
+        <header class="section-heading">
+          <p class="section-number">04</p>
+          <p class="section-label">Selective actualization</p>
+          <h2>Magnification and narcotization</h2>
+        </header>
+
+        <div class="prose prose-wide">
+          <p>
+            Encyclopedic competence contains more information than any
+            particular passage needs. Interpretation therefore requires a
+            selective operation. Some semantic properties are foregrounded
+            because they are relevant to the current topic, while others
+            remain temporarily unactualized.
+          </p>
+
+          <p>
+            <strong>Magnification</strong> foregrounds properties that are
+            useful for the current interpretation.
+            <strong>Narcotization</strong> keeps other available properties
+            in the background. A narcotized property is not false or erased:
+            it may become relevant later when the textual context changes.
+          </p>
+        </div>
+
+        <aside class="theory-example">
+          <p class="small-label">Accessible example</p>
+          <h3>A raised fist in a confrontation</h3>
+          <p>
+            When a character raises a fist during an argument, the reader may
+            foreground aggression, threat and bodily movement. The biological
+            fact that the character is breathing remains compatible with the
+            scene, but it is not needed to interpret that moment.
+          </p>
+        </aside>
+
+        <aside class="modeling-status modeling-status-context">
+          <p class="small-label">Modeling status</p>
+          <p>
+            Magnification and narcotization belong to the theoretical
+            background of the project, but the current TBox does not contain
+            dedicated classes named <code>Magnification</code> or
+            <code>Narcotization</code>.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <section class="section section-alt" id="operational">
+      <div class="container theory-reading-container">
+
+        <header class="section-heading">
+          <p class="section-number">05</p>
+          <p class="section-label">Pragmatic meaning</p>
+          <h2>The operational precept and the habit</h2>
+        </header>
+
+        <div class="prose prose-wide">
+          <p>
+            Eco’s broader semiotic framework draws on the pragmatic tradition
+            associated with C. S. Peirce. Meaning is not exhausted by a static
+            definition: it can also be understood through the operations,
+            expectations and practical consequences associated with a sign.
+          </p>
+
+          <p>
+            An <em>operational precept</em> explains how a concept guides
+            action or interpretation. A <em>habit</em> is a stabilized
+            disposition to interpret or respond in a certain way. These ideas
+            help explain why competence is procedural as well as declarative.
+          </p>
+        </div>
+
+        <aside class="theory-example">
+          <p class="small-label">Accessible example</p>
+          <h3>A practical description of a material</h3>
+          <p>
+            Knowing only a material’s numerical properties may not be enough
+            to recognize or use it. An operational description also explains
+            what to do, which tests to perform and what consequences to
+            expect. Meaning therefore includes rules for possible action.
+          </p>
+        </aside>
+
+        <aside class="modeling-status modeling-status-context">
+          <p class="small-label">Modeling status</p>
+          <p>
+            The current ontology does not introduce dedicated
+            <code>OperationalPrecept</code> or <code>Habit</code> classes.
+            These notions provide theoretical context for the project’s
+            treatment of interpretive competence and inference.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <section class="section" id="inference">
+      <div class="container theory-reading-container">
+
+        <header class="section-heading">
+          <p class="section-number">06</p>
+          <p class="section-label">Interpretive operations</p>
+          <h2>Inferential walks, predictions and open alternatives</h2>
+        </header>
+
+        <div class="prose prose-wide">
+          <p>
+            When the linear text does not immediately provide a complete
+            solution, the reader may perform an <em>inferential walk</em>.
+            This operation temporarily leaves the explicit sequence of the
+            text in order to activate encyclopedic knowledge and construct a
+            hypothesis.
+          </p>
+
+          <p>
+            A hypothesis about what may happen next is represented as a
+            prediction. Several predictions may remain simultaneously
+            available, forming a probability disjunction rather than one
+            certain outcome.
+          </p>
+
+          <p>
+            Continued reading may confirm one hypothesis, reject it or leave
+            the alternatives unresolved. The Nick and the Eyes case uses this
+            structure to preserve the opposition between arrest and rescue.
+          </p>
+        </div>
+
+        <aside class="theory-example">
+          <p class="small-label">Accessible example</p>
+          <h3>Gunshots at the end of a chapter</h3>
+          <p>
+            A reader may activate knowledge about danger and construct
+            several possible continuations: the protagonist may have been
+            injured, another character may have fired, or the sound may have
+            a different cause. The next passage changes the status of these
+            predictions.
+          </p>
+        </aside>
+
+        <div class="semantic-mini-flow" role="img"
+          aria-label="A textual cue supports an inference. The inference initiates an inferential walk, generates predictions and may open a probability disjunction with alternative predictions.">
+          <div>
+            <span>Textual cue</span>
+            <strong>TextualCue</strong>
+          </div>
+          <b aria-hidden="true">→</b>
+          <div>
+            <span>Inference</span>
+            <strong>Inference</strong>
+          </div>
+          <b aria-hidden="true">→</b>
+          <div>
+            <span>Hypothesis</span>
+            <strong>InferentialWalk</strong>
+          </div>
+          <b aria-hidden="true">→</b>
+          <div>
+            <span>Open alternatives</span>
+            <strong>ProbabilityDisjunction</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section section-alt" id="worlds">
+      <div class="container theory-reading-container">
+
+        <header class="section-heading">
+          <p class="section-number">07</p>
+          <p class="section-label">Narrative constructions</p>
+          <h2>Possible worlds and S-necessary properties</h2>
+        </header>
+
+        <div class="prose prose-wide">
+          <p>
+            Predictions and interpretations may construct possible worlds:
+            organized states of affairs in which individuals possess
+            properties and stand in relations. Narrative worlds need not
+            reproduce every rule of the empirical world, but they must remain
+            intelligible according to their own constraints.
+          </p>
+
+          <p>
+            <strong>Essential properties</strong> support the identification
+            of an individual across possible worlds.
+            <strong>Accidental properties</strong> may vary without changing
+            that identification.
+            <strong>S-necessary properties</strong> are structurally
+            necessary within a specific world or world state.
+          </p>
+        </div>
+
+        <aside class="theory-example">
+          <p class="small-label">Accessible example</p>
+          <h3>A local rule in a fantasy world</h3>
+          <p>
+            A story may establish that its vampires are harmed by sunlight.
+            This is not a rule about the empirical world. Once introduced as
+            a structural constraint of that narrative world, however, later
+            events must be interpreted in relation to it.
+          </p>
+        </aside>
+
+        <div class="world-property-grid">
+          <article>
+            <code>lig:EssentialProperty</code>
+            <h3>Essential</h3>
+            <p>Supports cross-world identification of an individual.</p>
+          </article>
+          <article>
+            <code>lig:AccidentalProperty</code>
+            <h3>Accidental</h3>
+            <p>May vary while the individual remains identifiable.</p>
+          </article>
+          <article>
+            <code>lig:SNecessaryProperty</code>
+            <h3>S-necessary</h3>
+            <p>Structurally required within a particular world state.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section" id="mapping">
+      <div class="container">
+
+        <header class="section-heading">
+          <p class="section-number">08</p>
+          <p class="section-label">Knowledge engineering</p>
+          <h2>From theory to ontology</h2>
+          <p class="section-introduction">
+            The table separates directly modeled concepts from theoretical
+            notions that remain contextual background.
+          </p>
+        </header>
+
+        <div class="theory-table-wrapper">
+          <table class="theory-mapping-table">
+            <thead>
+              <tr>
+                <th scope="col">Theoretical area</th>
+                <th scope="col">Ontology representation</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Model Author</td>
+                <td>
+                  <code>lig:ModelAuthor</code>,
+                  <code>lig:encodesModelAuthor</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Model Reader and competence</td>
+                <td>
+                  <code>lig:ModelReader</code>,
+                  <code>lig:ReaderCompetence</code>,
+                  <code>lig:presupposesModelReader</code>,
+                  <code>lig:requiresCompetence</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Linear manifestation and semantic actualization</td>
+                <td>
+                  <code>lig:LinearManifestation</code>,
+                  <code>lig:SemanticActualization</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Textual cues and gaps</td>
+                <td>
+                  <code>lig:TextualCue</code>,
+                  <code>lig:Gap</code>,
+                  <code>lig:containsCue</code>,
+                  <code>lig:containsGap</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Encyclopedia, codes and frames</td>
+                <td>
+                  <code>lig:Encyclopedia</code>,
+                  <code>lig:Code</code>,
+                  <code>lig:Frame</code>,
+                  <code>lig:activatesEncyclopedia</code>,
+                  <code>lig:activatesCode</code>,
+                  <code>lig:activatesFrame</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Intrinsic knowledge and presuppositions</td>
+                <td>
+                  <code>lig:IntrinsicKnowledge</code>,
+                  <code>lig:Presupposition</code>,
+                  <code>lig:requiresIntrinsicKnowledge</code>,
+                  <code>lig:triggersPresupposition</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Inference and interpretation</td>
+                <td>
+                  <code>lig:Inference</code>,
+                  <code>lig:Interpretation</code>,
+                  <code>lig:supportsInference</code>,
+                  <code>lig:licensesInterpretation</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Inferential walks, predictions and alternatives</td>
+                <td>
+                  <code>lig:InferentialWalk</code>,
+                  <code>lig:Prediction</code>,
+                  <code>lig:ProbabilityDisjunction</code>,
+                  <code>lig:hasAlternativePrediction</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Possible worlds and world states</td>
+                <td>
+                  <code>lig:PossibleWorld</code>,
+                  <code>lig:WorldState</code>,
+                  <code>lig:projectsPossibleWorld</code>,
+                  <code>lig:hasWorldState</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Essential, accidental and S-necessary properties</td>
+                <td>
+                  <code>lig:EssentialProperty</code>,
+                  <code>lig:AccidentalProperty</code>,
+                  <code>lig:SNecessaryProperty</code>
+                </td>
+                <td><span class="status-badge status-direct">Directly modeled</span></td>
+              </tr>
+              <tr>
+                <td>Magnification and narcotization</td>
+                <td>No dedicated classes in the current TBox</td>
+                <td><span class="status-badge status-context">Theoretical context</span></td>
+              </tr>
+              <tr>
+                <td>Operational precept and habit</td>
+                <td>No dedicated classes in the current TBox</td>
+                <td><span class="status-badge status-context">Theoretical context</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="methodology-principle">
+          <p class="small-label">Interpretive scope</p>
+          <p>
+            The mapping is deliberately selective. The ontology captures the
+            concepts required by the project’s Competency Questions and case
+            studies rather than attempting an exhaustive formalization of
+            Eco’s semiotic theory.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+
+    <section class="section section-alt theory-references" id="references">
+      <div class="container">
+
+        <header class="section-heading">
+          <p class="section-number">09</p>
+          <p class="section-label">References</p>
+          <h2>Primary theoretical source</h2>
+        </header>
+
+        <div class="reference-card">
+          <p>
+            Eco, Umberto.
+            <em>Lector in fabula. La cooperazione interpretativa nei testi narrativi</em>.
+            Milan: Bompiani, 1979.
+          </p>
+          <p>
+            The terminology used on this page is presented as a concise
+            project-oriented synthesis. For a complete account, consult the
+            primary theoretical source.
+          </p>
+        </div>
+
+        <div class="theory-end-actions">
+          <a class="button button-primary" href="index.html#architecture">
+            Explore the ontology
+          </a>
+          <a class="button button-secondary" href="index.html#cases">
+            Explore the cases
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+
+      <a class="footer-logo" href="#top" aria-label="Return to the top">
+        <img
+          src="assets/img/lector-in-graphula-icon.png"
+          alt=""
+          width="42"
+          height="42"
+        >
+        <span>Lector <em>in Graphula</em></span>
+      </a>
+
+      <nav class="footer-navigation" aria-label="Footer navigation">
+        <a href="index.html">Project</a>
+        <a href="index.html#architecture">Ontology</a>
+        <a href="index.html#cases">Cases</a>
+        <a href="index.html#evaluation">SPARQL</a>
+        <a
+          href="https://github.com/Chiarag711/lector-in-graphula"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </nav>
+
+      <div class="footer-meta">
+        <p>
+          © 2026 Lector in Graphula · DHDK · University of Bologna ·
+          Chiara Genovese, Asia Marselli and Adriana Monte
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -60,7 +60,7 @@
 
         <ul class="nav-menu" id="nav-menu" data-nav-menu>
           <li><a href="#project">Project</a></li>
-          <li><a href="#theory">Theory</a></li>
+          <li><a href="theory.html">Theory</a></li>
           <li><a href="#methodology">Methodology</a></li>
           <li><a href="#architecture">Model</a></li>
           <li><a href="#cases">Cases</a></li>
@@ -215,6 +215,7 @@
     </section>
 
 
+
     <!-- 02 — THEORY -->
     <section class="section section-alt" id="theory">
       <div class="container">
@@ -223,45 +224,38 @@
           <p class="section-number">02</p>
           <p class="section-label">Theoretical framework</p>
           <h2>The Model Reader and the “lazy machine”</h2>
+          <p class="section-introduction">
+            The homepage introduces the concepts needed to understand the
+            ontology. A separate page presents the extended theoretical
+            framework and explains which concepts are directly formalized.
+          </p>
         </header>
 
         <div class="prose prose-wide">
-          
+          <h3>The text as a lazy machine</h3>
+
           <p>
-            <strong>Lector in Graphula</strong> takes Umberto Eco’s <strong>theories on reading</strong> and transforms them into 
-            <strong>logical rules</strong> to create a <strong>semantic ontology</strong> (a <strong>data model in OWL/RDF</strong>). 
-            Specifically, it uses <strong>Knowledge Engineering</strong> to map the <strong>invisible mental processes</strong> that take place when reading a story, 
-            calculating how the text guides the reader to fill in the <strong>‘gaps’ in the narrative</strong>.
+            In Eco’s theory, a text does not state everything required for
+            its own interpretation. It contains gaps and unsaid elements
+            that presuppose the cooperation of a competent reader.
           </p>
 
           <p>
-            This textual “laziness” is not a defect. It is the condition
-            that makes interpretation possible. The reader activates
-            knowledge, codes, frames and inferential operations to actualize
-            what the text leaves implicit.
+            This textual “laziness” is not a defect. It is the condition that
+            makes interpretation possible: the reader activates knowledge,
+            codes, frames and inferential operations to actualize what the
+            text leaves implicit.
           </p>
 
           <h3>Interpretive cooperation</h3>
-          
-          <p>
-          In our model, the <strong>interpretation of a text</strong> is understood as a <strong>process guided by precise constraints</strong>, 
-            rather than as <strong>unrestricted subjectivity</strong>. The reader moves through the <strong>linear unfolding of the text</strong> 
-            to arrive at its actual <strong>semantic activation</strong>. To do so, they draw on their own <strong>interpretative resources</strong>, 
-            make <strong>inferences</strong> and project <strong>possible developments in the story</strong>.
-          </p>
 
           <p>
-            On the page dedicated to the Theoretical Framework, the page explores in detail how the reader’s cooperative activity has been formalised in a Knowledge Graph through six key points:
+            Interpretation is understood as a constrained process rather
+            than as unrestricted subjectivity. The Model Reader moves from
+            the linear manifestation of the text to its semantic
+            actualization by activating interpretive resources, producing
+            inferences and projecting possible developments.
           </p>
-          
-          <ul>
-          <li><strong style="color: #7c2230">1. The Text as a "Lazy Machine" and Reading Strategies</strong></li>
-          <li><strong style="color: #7c2230">2. The Encyclopedia and the Q-Model</strong></li>
-          <li><strong style="color: #7c2230">3. Optimization: Magnification and Narcosis</strong></li>
-          <li><strong style="color: #7c2230">4. The Operative Precept and the Habit</strong></li>
-          <li><strong style="color: #7c2230">5. Inferential Walks and Possible Worlds</strong></li>
-          <li><strong style="color: #7c2230">6. Structures of Worlds and S-Necessity</strong></li>
-          </ul>
         </div>
 
         <div class="concept-grid">
@@ -288,8 +282,8 @@
             <code>lig:Encyclopedia</code>
             <h3>Encyclopedia</h3>
             <p>
-              The network of background knowledge from which relevant
-              interpretive resources are activated.
+              The culturally structured network of knowledge from which
+              relevant interpretive resources are activated.
             </p>
           </article>
 
@@ -331,6 +325,17 @@
             Umberto Eco, Margaret Atwood or individual real readers.
           </p>
         </aside>
+
+        <div class="theory-preview-action">
+          <a class="button button-primary" href="theory.html">
+            Explore the full theoretical framework
+          </a>
+          <p>
+            Read about the Encyclopedia and the Q Model, selective
+            actualization, inferential walks, possible worlds,
+            S-necessary properties and their relationship to the ontology.
+          </p>
+        </div>
 
       </div>
     </section>
@@ -505,22 +510,22 @@
 
         <div class="semantic-layers">
           <article class="semantic-layer">
-            <p class="small-label">Conceptual ontology IRI</p>
-            <code>https://lectoringraphula.org/ontology</code>
+            <p class="small-label">Ontology document IRI</p>
+            <code>https://chiarag711.github.io/lector-in-graphula/ontology/econtology.ttl</code>
           </article>
 
           <article class="semantic-layer">
-            <p class="small-label">Ontology namespace</p>
+            <p class="small-label">Ontology entity namespace</p>
             <code>https://lectoringraphula.org/ontology#</code>
           </article>
 
           <article class="semantic-layer">
-            <p class="small-label">Knowledge Graph IRI</p>
-            <code>https://lectoringraphula.org/knowledge-graph</code>
+            <p class="small-label">Knowledge Graph document IRI</p>
+            <code>https://chiarag711.github.io/lector-in-graphula/knowledge-graph/knowledge-graph.ttl</code>
           </article>
 
           <article class="semantic-layer">
-            <p class="small-label">Handmaid namespace</p>
+            <p class="small-label">Handmaid entity namespace</p>
             <code>https://lectoringraphula.org/handmaid#</code>
           </article>
         </div>
@@ -1744,6 +1749,13 @@
             <small>Eight CQs and three NCQs</small>
           </a>
 
+          <a class="resource-card" href="theory.html">
+            <span>Theoretical framework</span>
+            <strong>Eco’s interpretive cooperation</strong>
+            <small>Extended explanation and ontology mapping</small>
+          </a>
+
+
           <a
             class="resource-card"
             href="https://github.com/Chiarag711/lector-in-graphula"
@@ -1917,6 +1929,7 @@
         >
           GitHub
         </a>
+        <a href="theory.html">Theory</a>
         <a href="#statements">Statements</a>
       </nav>
 

@@ -46,9 +46,7 @@ function setupMobileNavigation() {
   };
 
   toggle.addEventListener("click", () => {
-    const isOpen = menu.classList.contains("is-open");
-
-    if (isOpen) {
+    if (menu.classList.contains("is-open")) {
       closeMenu();
     } else {
       openMenu();
@@ -89,12 +87,11 @@ function setupActiveNavigation() {
   const sections = navigationLinks
     .map((link) => {
       const selector = link.getAttribute("href");
-
       return selector ? document.querySelector(selector) : null;
     })
     .filter(Boolean);
 
-  if (sections.length === 0) {
+  if (sections.length === 0 || !("IntersectionObserver" in window)) {
     return;
   }
 
@@ -104,8 +101,7 @@ function setupActiveNavigation() {
         .filter((entry) => entry.isIntersecting)
         .sort(
           (firstEntry, secondEntry) =>
-            secondEntry.intersectionRatio -
-            firstEntry.intersectionRatio
+            secondEntry.intersectionRatio - firstEntry.intersectionRatio
         );
 
       if (visibleEntries.length === 0) {
@@ -144,10 +140,7 @@ function setupActiveNavigation() {
 ========================================================= */
 
 function setupExpandableSections() {
-  const caseCards = document.querySelectorAll(".case-card");
-  const queryCards = document.querySelectorAll(".query-card");
-
-  caseCards.forEach((card) => {
+  document.querySelectorAll(".case-card").forEach((card) => {
     const label = card.querySelector(".case-open-label");
 
     if (!label) {
@@ -162,7 +155,7 @@ function setupExpandableSections() {
     card.addEventListener("toggle", updateLabel);
   });
 
-  queryCards.forEach((card) => {
+  document.querySelectorAll(".query-card").forEach((card) => {
     const label = card.querySelector(".query-open-label");
 
     if (!label) {
@@ -170,9 +163,7 @@ function setupExpandableSections() {
     }
 
     const updateLabel = () => {
-      label.textContent = card.open
-        ? "Close query"
-        : "Open query";
+      label.textContent = card.open ? "Close query" : "Open query";
     };
 
     updateLabel();
@@ -233,19 +224,15 @@ async function loadQuery(card) {
 
   try {
     const queryText = await fetchTextFile(queryPath);
-
     queryElement.textContent = queryText.trim();
     card.dataset.queryLoaded = "true";
-
     return queryText;
   } catch (error) {
     console.error(error);
-
     queryElement.textContent =
-      "The query could not be loaded. Check the file path and serve the website through a local server or GitHub Pages.";
-
+      "The query could not be loaded.\n" +
+      "Check the file path and serve the website through a local server or GitHub Pages.";
     card.dataset.queryLoaded = "false";
-
     return null;
   }
 }
@@ -261,12 +248,7 @@ async function simulateQuery(card) {
   const resultElement = card.querySelector("[data-query-result]");
   const resultPath = card.dataset.resultSrc;
 
-  if (
-    !runButton ||
-    !statusElement ||
-    !resultElement ||
-    !resultPath
-  ) {
+  if (!runButton || !statusElement || !resultElement || !resultPath) {
     return;
   }
 
@@ -275,23 +257,18 @@ async function simulateQuery(card) {
   if (!queryText) {
     statusElement.textContent =
       "The simulation could not start because the query file was not loaded.";
-
     return;
   }
 
   runButton.disabled = true;
   runButton.textContent = "Running…";
-
-  statusElement.textContent =
-    "Simulating query execution…";
-
+  statusElement.textContent = "Simulating query execution…";
   resultElement.replaceChildren();
 
   try {
     await wait(450);
 
-    statusElement.textContent =
-      "Loading the stored CSV result…";
+    statusElement.textContent = "Loading the stored CSV result…";
 
     const csvText = await fetchTextFile(resultPath);
     const parsedCSV = parseCSV(csvText);
@@ -306,10 +283,8 @@ async function simulateQuery(card) {
       "Query completed. The table below reproduces the stored evaluation result.";
   } catch (error) {
     console.error(error);
-
     statusElement.textContent =
       "The stored result could not be loaded.";
-
     renderQueryError(resultElement, resultPath);
   } finally {
     runButton.disabled = false;
@@ -345,12 +320,8 @@ async function copyQuery(card) {
   }
 }
 
-
 async function copyTextToClipboard(text) {
-  if (
-    navigator.clipboard &&
-    window.isSecureContext
-  ) {
+  if (navigator.clipboard && window.isSecureContext) {
     await navigator.clipboard.writeText(text);
     return;
   }
@@ -364,7 +335,6 @@ async function copyTextToClipboard(text) {
   temporaryTextArea.style.pointerEvents = "none";
 
   document.body.appendChild(temporaryTextArea);
-
   temporaryTextArea.select();
   temporaryTextArea.setSelectionRange(
     0,
@@ -372,7 +342,6 @@ async function copyTextToClipboard(text) {
   );
 
   const copied = document.execCommand("copy");
-
   temporaryTextArea.remove();
 
   if (!copied) {
@@ -409,24 +378,17 @@ function parseCSV(csvText) {
     .trim();
 
   if (!normalizedText) {
-    return {
-      headers: [],
-      rows: []
-    };
+    return { headers: [], rows: [] };
   }
 
   const delimiter = detectDelimiter(normalizedText);
-
   const rows = [];
+
   let currentRow = [];
   let currentField = "";
   let insideQuotes = false;
 
-  for (
-    let index = 0;
-    index < normalizedText.length;
-    index += 1
-  ) {
+  for (let index = 0; index < normalizedText.length; index += 1) {
     const character = normalizedText[index];
     const nextCharacter = normalizedText[index + 1];
 
@@ -441,10 +403,7 @@ function parseCSV(csvText) {
       continue;
     }
 
-    if (
-      character === delimiter &&
-      !insideQuotes
-    ) {
+    if (character === delimiter && !insideQuotes) {
       currentRow.push(currentField);
       currentField = "";
       continue;
@@ -454,10 +413,7 @@ function parseCSV(csvText) {
       (character === "\n" || character === "\r") &&
       !insideQuotes
     ) {
-      if (
-        character === "\r" &&
-        nextCharacter === "\n"
-      ) {
+      if (character === "\r" && nextCharacter === "\n") {
         index += 1;
       }
 
@@ -482,10 +438,7 @@ function parseCSV(csvText) {
   }
 
   if (rows.length === 0) {
-    return {
-      headers: [],
-      rows: []
-    };
+    return { headers: [], rows: [] };
   }
 
   const widestRowLength = Math.max(
@@ -500,7 +453,6 @@ function parseCSV(csvText) {
 
   const cleanedHeaders = headers.map((header, index) => {
     const cleanedHeader = header.trim();
-
     return cleanedHeader || `Column ${index + 1}`;
   });
 
@@ -515,7 +467,6 @@ function parseCSV(csvText) {
     rows: dataRows
   };
 }
-
 
 function detectDelimiter(csvText) {
   const firstLogicalLine = getFirstLogicalCSVLine(csvText);
@@ -538,7 +489,6 @@ function detectDelimiter(csvText) {
 
   return selectedDelimiter;
 }
-
 
 function getFirstLogicalCSVLine(csvText) {
   let insideQuotes = false;
@@ -571,7 +521,6 @@ function getFirstLogicalCSVLine(csvText) {
   return line;
 }
 
-
 function countDelimiterOutsideQuotes(text, delimiter) {
   let count = 0;
   let insideQuotes = false;
@@ -590,10 +539,7 @@ function countDelimiterOutsideQuotes(text, delimiter) {
       continue;
     }
 
-    if (
-      character === delimiter &&
-      !insideQuotes
-    ) {
+    if (character === delimiter && !insideQuotes) {
       count += 1;
     }
   }
@@ -601,11 +547,9 @@ function countDelimiterOutsideQuotes(text, delimiter) {
   return count;
 }
 
-
 function rowContainsData(row) {
   return row.some((cell) => cell.trim() !== "");
 }
-
 
 function normalizeRowLength(row, expectedLength) {
   const normalizedRow = [...row];
@@ -637,7 +581,6 @@ function renderCSVResult(
       isNegativeQuestion,
       "The stored CSV file is empty."
     );
-
     return;
   }
 
@@ -651,12 +594,10 @@ function renderCSVResult(
       isNegativeQuestion,
       message
     );
-
     return;
   }
 
   const table = document.createElement("table");
-
   table.setAttribute(
     "aria-label",
     "Stored SPARQL query result"
@@ -667,10 +608,8 @@ function renderCSVResult(
 
   headers.forEach((header) => {
     const headingCell = document.createElement("th");
-
     headingCell.scope = "col";
     headingCell.textContent = header;
-
     headerRow.appendChild(headingCell);
   });
 
@@ -685,7 +624,6 @@ function renderCSVResult(
     headers.forEach((header, index) => {
       const dataCell = document.createElement("td");
       const value = row[index] ?? "";
-
       dataCell.textContent = formatResultValue(value);
       tableRow.appendChild(dataCell);
     });
@@ -696,7 +634,6 @@ function renderCSVResult(
   table.appendChild(tableBody);
   resultElement.appendChild(table);
 }
-
 
 function formatResultValue(value) {
   const trimmedValue = value.trim();
@@ -715,14 +652,12 @@ function formatResultValue(value) {
   return trimmedValue;
 }
 
-
 function renderEmptyResult(
   resultElement,
   isNegativeQuestion,
   message
 ) {
   const emptyMessage = document.createElement("p");
-
   emptyMessage.className = "query-result-empty";
   emptyMessage.textContent = message;
 
@@ -736,15 +671,15 @@ function renderEmptyResult(
   resultElement.appendChild(emptyMessage);
 }
 
-
 function renderQueryError(resultElement, resultPath) {
   resultElement.replaceChildren();
 
   const errorMessage = document.createElement("p");
-
   errorMessage.className = "query-error";
   errorMessage.textContent =
-    `The file "${resultPath}" could not be loaded. Check that its name and location match the data-result-src attribute in index.html.`;
+    `The file "${resultPath}" could not be loaded. ` +
+    "Check that its name and location match the " +
+    "data-result-src attribute in index.html.";
 
   resultElement.appendChild(errorMessage);
 }
@@ -755,7 +690,6 @@ function renderQueryError(resultElement, resultPath) {
 ========================================================= */
 
 let toastTimer = null;
-
 
 function showToast(message) {
   const toast = document.querySelector("[data-toast]");
