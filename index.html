@@ -226,9 +226,9 @@
           <h2>The Model Reader and the “lazy machine”</h2>
           <p class="section-introduction">
             <strong>Lector in Graphula</strong> takes Umberto Eco’s <strong>theories on reading</strong> and transforms them into
-            <strong>logical rules</strong> to create a <strong>semantic ontology</strong> (a <strong>data model in OWL/RDF</strong>). 
-            Specifically, it uses <strong>Knowledge Engineering</strong> to map the <strong>invisible mental processes</strong> that take place when reading a story, 
-            calculating how the text guides the reader to fill in the <strong>‘gaps’ in the narrative</strong>.
+            <strong>logical rules</strong> to create a <strong>semantic ontology</strong> (a <strong>data model in OWL/RDF</strong>).
+            Specifically, it uses <strong>Knowledge Engineering</strong> to map the <strong>invisible mental processes</strong> that take place when reading a story,
+            representing how the text guides the reader to fill in the <strong>“gaps” in the narrative</strong>.
           </p>
           <p class="section-introduction">
             The homepage introduces the concepts needed to understand the
@@ -266,7 +266,7 @@
 
         <h3>A look at our main Classes</h3>
         <div class="concept-grid">
-          
+
           <article class="concept-card">
             <code>lig:ModelAuthor</code>
             <h3>Model Author</h3>
@@ -537,6 +537,7 @@
           </article>
         </div>
 
+        <!-- ECONTOLOGY CLASS HIERARCHY -->
         <article class="subsection ontology-hierarchy-figure">
           <p class="small-label">Ontology visualization</p>
           <h3>Econtology class hierarchy</h3>
@@ -558,11 +559,13 @@
             <figcaption>
               Upper level of the asserted TBox hierarchy, exported from Protégé
               through OntoGraf. Object-property relations are represented separately
-              in the core interpretive pattern.
+              in the core interpretive pattern below.
             </figcaption>
           </figure>
         </article>
 
+
+        <!-- CORE INTERPRETIVE PATTERN -->
         <article class="subsection graph-visualization">
           <p class="small-label">Visual overview</p>
           <h3>Core interpretive pattern</h3>
@@ -717,6 +720,37 @@
                 </a>
               </div>
 
+                            <section class="case-graph">
+                <div class="case-graph-heading">
+                  <p class="small-label">Knowledge Graph visualization</p>
+                  <h4>Offred’s name interpretive paths</h4>
+                  <p>
+                    The graph connects the hidden-name fragment and its textual cue
+                    with the knowledge, presuppositions and inferences that license
+                    two complementary interpretations.
+                  </p>
+                </div>
+
+                <figure>
+                  <div class="case-graph-scroll case-graph-scroll-large">
+                    <img
+                      src="assets/img/graphs/offred-name.png"
+                      alt="Knowledge Graph for Offred's name. OffredHiddenNameFragment contains OffredNameCue, which requires hidden-name and possession-naming knowledge, triggers presuppositions and supports two inferences licensing the interpretations that Gilead erases female identity and that Offred's original name remains unspecified."
+                      loading="lazy"
+                    >
+                  </div>
+
+                  <figcaption>
+                    Selected ABox relations exported from Protégé through OntoGraf:
+                    <code>containsCue</code>,
+                    <code>requiresIntrinsicKnowledge</code>,
+                    <code>triggersPresupposition</code>,
+                    <code>supportsInference</code> and
+                    <code>licensesInterpretation</code>.
+                  </figcaption>
+                </figure>
+              </section>
+
               <div class="passage-grid passage-grid-three">
 
                 <article class="passage-card">
@@ -854,6 +888,34 @@
                   Open the complete case notes
                 </a>
               </div>
+
+                            <section class="case-graph">
+                <div class="case-graph-heading">
+                  <p class="small-label">Knowledge Graph visualization</p>
+                  <h4>Converging cues in the Ceremony</h4>
+                  <p>
+                    Four textual cues support a synthesis inference that licenses
+                    two connected interpretations of the Ceremony.
+                  </p>
+                </div>
+
+                <figure>
+                  <div class="case-graph-scroll">
+                    <img
+                      src="assets/img/graphs/ceremony.png"
+                      alt="Knowledge Graph for the Ceremony. Biblical, prayer, passion-negation and category-failure cues support CeremonyRitualizationInference, which licenses interpretations concerning institutionalized reproductive ritual and the religious legitimation of reproductive coercion."
+                      loading="lazy"
+                    >
+                  </div>
+
+                  <figcaption>
+                    The graph highlights the convergence of the four cues through
+                    <code>supportsInference</code> and
+                    <code>licensesInterpretation</code>.
+                    Long individual names are abbreviated by OntoGraf in the image.
+                  </figcaption>
+                </figure>
+              </section>
 
               <div class="passage-grid">
 
@@ -1013,6 +1075,33 @@
                 </a>
               </div>
 
+                            <section class="case-graph">
+                <div class="case-graph-heading">
+                  <p class="small-label">Knowledge Graph visualization</p>
+                  <h4>Final-outcome probability disjunction</h4>
+                  <p>
+                    The graph preserves the ending as a structured uncertainty rather
+                    than collapsing it into one confirmed outcome.
+                  </p>
+                </div>
+
+                <figure>
+                  <div class="case-graph-scroll">
+                    <img
+                      src="assets/img/graphs/nick-eyes.png"
+                      alt="Knowledge Graph for Nick and the Eyes. FinalOutcomeUncertaintyPrediction opens FinalOutcomeProbabilityDisjunction, which has OffredArrestPrediction and OffredRescuePrediction as alternative predictions."
+                      loading="lazy"
+                    >
+                  </div>
+
+                  <figcaption>
+                    <code>FinalOutcomeUncertaintyPrediction</code> opens a
+                    <code>ProbabilityDisjunction</code> containing two equally explicit
+                    alternatives: arrest and rescue.
+                  </figcaption>
+                </figure>
+              </section>
+
               <div class="passage-grid">
 
                 <article class="passage-card">
@@ -1171,6 +1260,61 @@
                   Open the complete case notes
                 </a>
               </div>
+
+                            <section class="case-graph">
+                <div class="case-graph-heading">
+                  <p class="small-label">Knowledge Graph visualizations</p>
+                  <h4>Internal chromatic code and historical reframing</h4>
+                  <p>
+                    The two graphs keep the repeated internal evidence of Gilead’s
+                    color system separate from the later and conjectural explanation
+                    introduced in the Historical Notes.
+                  </p>
+                </div>
+
+                <div class="case-graph-pair">
+
+                  <figure>
+                    <p class="case-graph-level">Model Reader level 1</p>
+                    <h5>Internal chromatic code</h5>
+
+                    <div class="case-graph-scroll">
+                      <img
+                        src="assets/img/graphs/color-code-main.png"
+                        alt="Knowledge Graph for Gilead's internal chromatic code. Initial color assignment, street color enumeration and color inventory cues support ChromaticCodeSynthesisInference, which licenses the interpretation that Gilead's chromatic code controls social identity."
+                        loading="lazy"
+                      >
+                    </div>
+
+                    <figcaption>
+                      Repeated clothing cues support
+                      <code>ChromaticCodeSynthesisInference</code>, which licenses
+                      <code>GileadChromaticCodeControlsSocialIdentity</code>.
+                    </figcaption>
+                  </figure>
+
+
+                  <figure>
+                    <p class="case-graph-level">Model Reader level 2</p>
+                    <h5>Historical reframing</h5>
+
+                    <div class="case-graph-scroll">
+                      <img
+                        src="assets/img/graphs/color-code-historical.png"
+                        alt="Knowledge Graph for the Historical Notes. HistoricalNotesColorOriginCue supports HistoricalColorReframingInference, which licenses ColorCodeAsDesignedHistoricalSynthesis and POWUniformOriginConjecture."
+                        loading="lazy"
+                      >
+                    </div>
+
+                    <figcaption>
+                      The Historical Notes support a designed-code interpretation and
+                      the separate <code>POWUniformOriginConjecture</code>, which remains
+                      conjectural rather than a direct narrative fact.
+                    </figcaption>
+                  </figure>
+
+                </div>
+              </section>
 
               <div class="passage-grid">
 
