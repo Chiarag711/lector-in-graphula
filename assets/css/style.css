@@ -3,11 +3,6 @@
    Main stylesheet
 ========================================================= */
 
-
-/* =========================================================
-   01. VARIABLES
-========================================================= */
-
 :root {
   --paper: #f7f1e2;
   --paper-2: #f3e4d4;
@@ -42,9 +37,7 @@
 }
 
 
-/* =========================================================
-   02. RESET AND BASE
-========================================================= */
+/* RESET AND BASE */
 
 *,
 *::before,
@@ -116,7 +109,8 @@ ol {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   margin-top: 0;
   color: var(--ink);
   font-family: var(--display);
@@ -177,9 +171,7 @@ pre code {
 }
 
 
-/* =========================================================
-   03. ACCESSIBILITY
-========================================================= */
+/* ACCESSIBILITY */
 
 .skip-link {
   position: fixed;
@@ -214,9 +206,7 @@ pre code {
 }
 
 
-/* =========================================================
-   04. GENERAL LAYOUT
-========================================================= */
+/* GENERAL LAYOUT */
 
 main {
   counter-reset: site-section;
@@ -340,9 +330,7 @@ main {
 }
 
 
-/* =========================================================
-   05. NAVIGATION
-========================================================= */
+/* NAVIGATION */
 
 .site-header {
   position: fixed;
@@ -441,9 +429,7 @@ main {
 }
 
 
-/* =========================================================
-   06. HERO
-========================================================= */
+/* HERO */
 
 .hero {
   position: relative;
@@ -605,9 +591,7 @@ main {
 }
 
 
-/* =========================================================
-   07. PROJECT
-========================================================= */
+/* PROJECT */
 
 .project-layout {
   display: grid;
@@ -645,9 +629,7 @@ main {
 }
 
 
-/* =========================================================
-   08. SHARED CARDS
-========================================================= */
+/* SHARED CARDS */
 
 .concept-card,
 .architecture-card,
@@ -712,9 +694,7 @@ main {
 }
 
 
-/* =========================================================
-   09. THEORY
-========================================================= */
+/* THEORY */
 
 .concept-grid {
   margin-top: 36px;
@@ -750,9 +730,7 @@ main {
 }
 
 
-/* =========================================================
-   10. METHODOLOGY
-========================================================= */
+/* METHODOLOGY */
 
 .methodology-grid {
   display: grid;
@@ -806,7 +784,6 @@ main {
   margin: 0 0 14px;
   padding: 0;
   border: 0;
-  color: var(--ink);
 }
 
 .methodology-step p {
@@ -841,10 +818,23 @@ main {
   line-height: 1.55;
 }
 
+.methodology-semantics {
+  margin-top: 38px;
+  padding: 24px 26px;
+  border-left: 3px solid var(--gold);
+  background: rgba(176, 137, 72, 0.08);
+}
 
-/* =========================================================
-   11. ARCHITECTURE
-========================================================= */
+.methodology-semantics h3 {
+  margin-top: 0;
+}
+
+.methodology-semantics p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ARCHITECTURE */
 
 .architecture-grid {
   display: grid;
@@ -894,9 +884,7 @@ main {
 }
 
 
-/* =========================================================
-   12. ONTOLOGY FLOW
-========================================================= */
+/* ONTOLOGY FLOW */
 
 .graph-visualization {
   max-width: 1000px;
@@ -1027,9 +1015,7 @@ main {
 }
 
 
-/* =========================================================
-   13. ACCORDIONS
-========================================================= */
+/* ACCORDIONS */
 
 .case-list,
 .query-list,
@@ -1098,9 +1084,7 @@ main {
 }
 
 
-/* =========================================================
-   14. INTERPRETIVE CASES
-========================================================= */
+/* CASE HEADERS */
 
 .case-card > summary {
   padding: 25px 28px;
@@ -1144,45 +1128,162 @@ main {
 }
 
 .case-content {
-  padding: 27px 28px 30px;
+  padding: 30px 28px 34px;
   border-top: 1px dashed var(--line);
 }
 
-.micro-quote {
-  position: relative;
-  margin: 0 0 29px;
-  padding: 16px 20px 16px 24px;
-  border-left: 3px solid var(--bordeaux);
-  background: rgba(124, 34, 48, 0.055);
-  color: var(--ink-soft);
-  font-size: 1.08rem;
-  font-style: italic;
+.case-overview {
+  max-width: 900px;
+  margin-bottom: 27px;
 }
 
-.micro-quote::before {
-  content: "“";
+.case-overview p {
+  margin-bottom: 10px;
+  color: var(--ink-soft);
+}
+
+.case-notes-link {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.035em;
+}
+
+
+/* PASSAGE CARDS */
+
+.passage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.passage-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.passage-card {
+  position: relative;
+  min-width: 0;
+  padding: 23px 21px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.passage-card::before {
+  content: "";
   position: absolute;
-  top: -26px;
-  left: 10px;
-  color: rgba(124, 34, 48, 0.28);
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--bordeaux);
+}
+
+.passage-card-secondary-level::before {
+  background: var(--gold);
+}
+
+.passage-card:hover {
+  border-color: rgba(124, 34, 48, 0.38);
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.passage-source {
+  margin-bottom: 10px;
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.passage-card h4 {
+  margin: 0 0 12px;
+  font-size: 1.08rem;
+}
+
+.passage-card > p:not(.passage-source) {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.63;
+}
+
+.passage-quote {
+  position: relative;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-left: 2px solid var(--bordeaux);
+  background: rgba(124, 34, 48, 0.055);
+  color: var(--ink);
   font-family: var(--display);
-  font-size: 4.6rem;
-  line-height: 1;
-  pointer-events: none;
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.passage-function {
+  margin-top: 17px;
+  padding-top: 15px;
+  border-top: 1px dashed var(--line);
+}
+
+.passage-function strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--bordeaux);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.passage-function p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.58;
+}
+
+
+/* CASE SYNTHESIS */
+
+.case-synthesis {
+  margin-top: 32px;
+  padding: 26px;
+  border: 1px solid var(--line-strong);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124, 34, 48, 0.045),
+      transparent 55%
+    ),
+    var(--paper-2);
+}
+
+.case-synthesis h4 {
+  margin: 0 0 19px;
+  font-size: 1.22rem;
+}
+
+.case-synthesis > p:last-child {
+  margin-bottom: 0;
+  color: var(--ink-soft);
 }
 
 .interpretive-chain {
-  margin: 30px 0;
+  margin: 23px 0;
   display: grid;
   grid-template-columns: repeat(5, minmax(150px, 1fr));
-  gap: 0;
   overflow-x: auto;
 }
 
 .interpretive-chain article {
   position: relative;
   min-width: 160px;
-  padding: 20px 18px;
+  padding: 18px 16px;
   border: 1px solid var(--line);
   border-left: 0;
   background: var(--paper);
@@ -1190,24 +1291,6 @@ main {
 
 .interpretive-chain article:first-child {
   border-left: 1px solid var(--line);
-}
-
-.interpretive-chain article::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 3px;
-  background: var(--bordeaux);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.interpretive-chain article:hover {
-  background: var(--paper-2);
-}
-
-.interpretive-chain article:hover::before {
-  opacity: 1;
 }
 
 .interpretive-chain article:not(:last-child)::after {
@@ -1222,10 +1305,10 @@ main {
 
 .interpretive-chain span {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
   color: var(--red);
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -1233,15 +1316,141 @@ main {
 .interpretive-chain strong {
   display: block;
   font-family: var(--mono);
-  font-size: 0.72rem;
-  line-height: 1.55;
+  font-size: 0.69rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.case-caution {
+  margin-top: 22px;
+  padding: 17px 20px;
+  border-left: 3px solid var(--gold);
+  background: rgba(176, 137, 72, 0.09);
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+
+/* BRANCHING CASE */
+
+.branching-path {
+  max-width: 760px;
+  margin: 22px auto 25px;
+  text-align: center;
+}
+
+.branch-node,
+.branch-option {
+  padding: 17px 18px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+}
+
+.branch-node-primary {
+  border: 2px solid var(--bordeaux);
+  background: rgba(124, 34, 48, 0.06);
+}
+
+.branch-node span,
+.branch-option span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.branch-node strong,
+.branch-option strong {
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  overflow-wrap: anywhere;
+}
+
+.branch-arrow {
+  padding: 7px;
+  color: var(--bordeaux);
+  font-size: 1.25rem;
+}
+
+.branch-options {
+  position: relative;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.branch-options::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  right: 25%;
+  left: 25%;
+  height: 14px;
+  border-top: 1px solid var(--bordeaux);
+  border-right: 1px solid var(--bordeaux);
+  border-left: 1px solid var(--bordeaux);
+}
+
+
+/* DUAL MODEL-READER PATH */
+
+.dual-path {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.dual-path > article {
+  padding: 21px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.dual-path-label {
+  margin-bottom: 7px;
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dual-path h5 {
+  margin-bottom: 14px;
+  font-size: 1.08rem;
+}
+
+.dual-path article > p:last-child {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.mini-path {
+  margin-bottom: 15px;
+  padding: 13px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.2fr);
+  gap: 8px;
+  align-items: center;
+  border: 1px dashed var(--line-strong);
+  color: var(--bordeaux);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+.mini-path strong,
+.mini-path span {
   overflow-wrap: anywhere;
 }
 
 
-/* =========================================================
-   15. QUERY CARDS
-========================================================= */
+/* QUERY CARDS */
 
 .query-card > summary {
   padding: 17px 20px;
@@ -1382,9 +1591,7 @@ main {
 }
 
 
-/* =========================================================
-   16. TABLES
-========================================================= */
+/* TABLES */
 
 table {
   width: 100%;
@@ -1452,9 +1659,7 @@ tbody tr:nth-child(even) {
 }
 
 
-/* =========================================================
-   17. SWRL
-========================================================= */
+/* SWRL */
 
 .swrl-section {
   margin-top: 5rem;
@@ -1480,9 +1685,7 @@ tbody tr:nth-child(even) {
 }
 
 
-/* =========================================================
-   18. POLANYI++
-========================================================= */
+/* POLANYI++ */
 
 .comparison-card > summary {
   padding: 19px 20px;
@@ -1529,27 +1732,8 @@ tbody tr:nth-child(even) {
   letter-spacing: 0.03em;
 }
 
-.entity-list {
-  margin: 17px 0 0;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  list-style: none;
-}
 
-.entity-list li {
-  padding: 3px;
-}
-
-.entity-list code {
-  display: block;
-}
-
-
-/* =========================================================
-   19. RESOURCES
-========================================================= */
+/* RESOURCES */
 
 .resource-grid {
   margin-top: 30px;
@@ -1604,9 +1788,7 @@ tbody tr:nth-child(even) {
 }
 
 
-/* =========================================================
-   20. TEAM
-========================================================= */
+/* TEAM */
 
 .team-grid {
   margin-top: 38px;
@@ -1673,9 +1855,7 @@ tbody tr:nth-child(even) {
 }
 
 
-/* =========================================================
-   21. STATEMENTS
-========================================================= */
+/* STATEMENTS */
 
 .statements-section {
   background: var(--paper-2);
@@ -1684,19 +1864,6 @@ tbody tr:nth-child(even) {
 
 .statements-section::before {
   -webkit-text-stroke-color: rgba(124, 34, 48, 0.16);
-}
-
-.statements-section h2,
-.statements-section h3 {
-  color: var(--ink);
-}
-
-.statements-section .section-number {
-  color: var(--red);
-}
-
-.statements-section .section-label {
-  color: var(--bordeaux);
 }
 
 .statement-grid {
@@ -1749,16 +1916,14 @@ tbody tr:nth-child(even) {
 }
 
 
-/* =========================================================
-   22. COMPACT FOOTER
-========================================================= */
+/* COMPACT FOOTER */
 
 .site-footer {
-  padding: 22px 24px 16px;
+  padding: 18px 24px 13px;
   border-top: 4px solid var(--ink);
   background: var(--bordeaux);
   color: var(--paper);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .footer-content {
@@ -1766,17 +1931,17 @@ tbody tr:nth-child(even) {
   margin-inline: auto;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 14px 30px;
+  gap: 11px 28px;
   align-items: center;
 }
 
 .footer-logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   color: var(--paper);
   font-family: var(--display);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-style: italic;
   font-weight: 600;
   text-decoration: none;
@@ -1788,8 +1953,8 @@ tbody tr:nth-child(even) {
 }
 
 .footer-logo img {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   flex: 0 0 auto;
   padding: 3px;
   border-radius: 50%;
@@ -1805,7 +1970,7 @@ tbody tr:nth-child(even) {
 .footer-navigation {
   display: flex;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 13px;
   flex-wrap: wrap;
 }
 
@@ -1814,7 +1979,7 @@ tbody tr:nth-child(even) {
   border-bottom: 1px solid transparent;
   color: rgba(247, 241, 226, 0.86);
   font-family: var(--mono);
-  font-size: 0.67rem;
+  font-size: 0.65rem;
   letter-spacing: 0.05em;
   text-decoration: none;
   text-transform: uppercase;
@@ -1827,7 +1992,7 @@ tbody tr:nth-child(even) {
 
 .footer-meta {
   grid-column: 1 / -1;
-  padding-top: 11px;
+  padding-top: 8px;
   border-top: 1px solid rgba(247, 241, 226, 0.26);
   text-align: center;
 }
@@ -1835,14 +2000,12 @@ tbody tr:nth-child(even) {
 .footer-meta p {
   margin: 0;
   color: rgba(247, 241, 226, 0.72);
-  font-size: 0.76rem;
-  line-height: 1.5;
+  font-size: 0.72rem;
+  line-height: 1.4;
 }
 
 
-/* =========================================================
-   23. TOAST
-========================================================= */
+/* TOAST */
 
 .toast {
   position: fixed;
@@ -1864,9 +2027,7 @@ tbody tr:nth-child(even) {
 }
 
 
-/* =========================================================
-   24. ANIMATIONS
-========================================================= */
+/* ANIMATIONS */
 
 @keyframes rise {
   from {
@@ -1901,38 +2062,16 @@ tbody tr:nth-child(even) {
   animation: rise 0.85s cubic-bezier(0.2, 0.7, 0.25, 1) both;
 }
 
-.hero-content > *:nth-child(1) {
-  animation-delay: 0.08s;
-}
-
-.hero-content > *:nth-child(2) {
-  animation-delay: 0.17s;
-}
-
-.hero-content > *:nth-child(3) {
-  animation-delay: 0.27s;
-}
-
-.hero-content > *:nth-child(4) {
-  animation-delay: 0.38s;
-}
-
-.hero-content > *:nth-child(5) {
-  animation-delay: 0.48s;
-}
-
-.hero-content > *:nth-child(6) {
-  animation-delay: 0.58s;
-}
-
-.hero-content > *:nth-child(7) {
-  animation-delay: 0.68s;
-}
+.hero-content > *:nth-child(1) { animation-delay: 0.08s; }
+.hero-content > *:nth-child(2) { animation-delay: 0.17s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.27s; }
+.hero-content > *:nth-child(4) { animation-delay: 0.38s; }
+.hero-content > *:nth-child(5) { animation-delay: 0.48s; }
+.hero-content > *:nth-child(6) { animation-delay: 0.58s; }
+.hero-content > *:nth-child(7) { animation-delay: 0.68s; }
 
 
-/* =========================================================
-   25. RESPONSIVE — SMALL LAPTOP
-========================================================= */
+/* RESPONSIVE — SMALL LAPTOP */
 
 @media (max-width: 1080px) {
   .nav-toggle {
@@ -1988,6 +2127,10 @@ tbody tr:nth-child(even) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .passage-grid-three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .flow-branches {
     grid-template-columns: 1fr;
   }
@@ -2016,9 +2159,7 @@ tbody tr:nth-child(even) {
 }
 
 
-/* =========================================================
-   26. RESPONSIVE — TABLET
-========================================================= */
+/* RESPONSIVE — TABLET */
 
 @media (max-width: 840px) {
   body {
@@ -2037,7 +2178,10 @@ tbody tr:nth-child(even) {
   .methodology-grid,
   .architecture-grid,
   .semantic-layers,
-  .resource-grid {
+  .resource-grid,
+  .passage-grid,
+  .passage-grid-three,
+  .dual-path {
     grid-template-columns: 1fr;
   }
 
@@ -2115,9 +2259,7 @@ tbody tr:nth-child(even) {
 }
 
 
-/* =========================================================
-   27. RESPONSIVE — MOBILE
-========================================================= */
+/* RESPONSIVE — MOBILE */
 
 @media (max-width: 640px) {
   :root {
@@ -2240,7 +2382,8 @@ tbody tr:nth-child(even) {
     padding: 24px 20px;
   }
 
-  .methodology-principle {
+  .methodology-principle,
+  .methodology-semantics {
     padding: 21px 19px;
   }
 
@@ -2278,6 +2421,11 @@ tbody tr:nth-child(even) {
   .query-content,
   .comparison-content {
     padding: 21px 17px;
+  }
+
+  .passage-card,
+  .case-synthesis {
+    padding: 19px 17px;
   }
 
   .query-card > summary {
@@ -2348,32 +2496,42 @@ tbody tr:nth-child(even) {
     transform: translateX(50%);
   }
 
+  .branch-options {
+    grid-template-columns: 1fr;
+  }
+
+  .branch-options::before {
+    display: none;
+  }
+
+  .mini-path {
+    grid-template-columns: 1fr;
+  }
+
   .site-footer {
-    padding: 19px 18px 14px;
+    padding: 16px 18px 12px;
   }
 
   .footer-content {
-    gap: 12px;
+    gap: 10px;
   }
 
   .footer-logo img {
-    width: 42px;
-    height: 42px;
+    width: 39px;
+    height: 39px;
   }
 
   .footer-navigation {
-    gap: 8px 12px;
+    gap: 7px 11px;
   }
 
   .footer-meta {
-    padding-top: 9px;
+    padding-top: 7px;
   }
 }
 
 
-/* =========================================================
-   28. VERY SMALL MOBILE
-========================================================= */
+/* VERY SMALL MOBILE */
 
 @media (max-width: 420px) {
   .site-brand-text {
@@ -2404,28 +2562,21 @@ tbody tr:nth-child(even) {
     font-size: 0.94rem;
   }
 
-  .micro-quote {
-    padding-right: 14px;
-    padding-left: 18px;
-  }
-
   .footer-logo {
-    font-size: 0.96rem;
+    font-size: 0.94rem;
   }
 
   .footer-navigation a {
-    font-size: 0.62rem;
+    font-size: 0.6rem;
   }
 
   .footer-meta p {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 }
 
 
-/* =========================================================
-   29. REDUCED MOTION
-========================================================= */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   html {
