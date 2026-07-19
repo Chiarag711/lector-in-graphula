@@ -9,12 +9,12 @@
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
 @base <https://lectoringraphula.org/ontology#> .
 
-<https://lectoringraphula.org/ontology> rdf:type owl:Ontology ;
-                                         <http://purl.org/dc/elements/1.1/creator> "Chiara Genovese, Asia Marselli, Adriana Monte"@en ;
-                                         <http://purl.org/dc/elements/1.1/description> "An ontology formalizing Umberto Eco's theory of interpretive cooperation from \"Lector in Fabula\", instantiated with excerpts from \"The Handmaid's Tale\" as a case study."@en ;
-                                         rdfs:comment "This ontology provides the theoretical schema of the Lector in Graphula project. It formalizes key concepts from Umberto Eco's \"Lector in Fabula\", including Model Author, Model Reader, textual cues, gaps, encyclopedia, codes, frames, intrinsic knowledge, inferential walks, possible worlds, and the distinction between interpretation and use. The ontology is designed as a reusable TBox and is later instantiated through a separate knowledge graph based on selected excerpts from \"The Handmaid's Tale\"."@en ;
-                                         rdfs:label "Econtology"@en ;
-                                         owl:versionInfo "0.1.0" .
+<https://chiarag711.github.io/lector-in-graphula/ontology/econtology.ttl> rdf:type owl:Ontology ;
+                                                                           <http://purl.org/dc/elements/1.1/creator> "Chiara Genovese, Asia Marselli, Adriana Monte"@en ;
+                                                                           <http://purl.org/dc/elements/1.1/description> "An ontology formalizing Umberto Eco's theory of interpretive cooperation from \"Lector in Fabula\", instantiated with excerpts from \"The Handmaid's Tale\" as a case study."@en ;
+                                                                           rdfs:comment "This ontology provides the theoretical schema of the Lector in Graphula project. It formalizes key concepts from Umberto Eco's \"Lector in Fabula\", including Model Author, Model Reader, textual cues, gaps, encyclopedia, codes, frames, intrinsic knowledge, inferential walks, possible worlds, and the distinction between interpretation and use. The ontology is designed as a reusable TBox and is later instantiated through a separate knowledge graph based on selected excerpts from \"The Handmaid's Tale\"."@en ;
+                                                                           rdfs:label "Econtology"@en ;
+                                                                           owl:versionInfo "0.1.0" .
 
 #################################################################
 #    Annotation properties
@@ -1146,9 +1146,9 @@ lig:WorldState rdf:type owl:Class ;
   swrl:propertyPredicate lig:supportsInference
 ] .
 
-[ swrl:argument1 var:inference ;
-   swrl:argument2 var:interpretation ;
-   swrl:propertyPredicate lig:licensesInterpretation
+[ swrl:argument1 var:fragment ;
+   swrl:argument2 var:cue ;
+   swrl:propertyPredicate lig:containsCue
  ] .
 
 [ swrl:argument1 var:cue ;
@@ -1161,14 +1161,9 @@ lig:WorldState rdf:type owl:Class ;
    swrl:propertyPredicate lig:groundsInference
  ] .
 
-[ swrl:argument1 var:cue ;
+[ swrl:argument1 var:knowledge ;
    swrl:argument2 var:inference ;
-   swrl:propertyPredicate lig:supportsInference
- ] .
-
-[ swrl:argument1 var:fragment ;
-   swrl:argument2 var:cue ;
-   swrl:propertyPredicate lig:containsCue
+   swrl:propertyPredicate lig:knowledgeSupportsInference
  ] .
 
 [ swrl:argument1 var:cue ;
@@ -1181,9 +1176,14 @@ lig:WorldState rdf:type owl:Class ;
    swrl:propertyPredicate lig:supportsInference
  ] .
 
-[ swrl:argument1 var:knowledge ;
+[ swrl:argument1 var:cue ;
    swrl:argument2 var:inference ;
-   swrl:propertyPredicate lig:knowledgeSupportsInference
+   swrl:propertyPredicate lig:supportsInference
+ ] .
+
+[ swrl:argument1 var:inference ;
+   swrl:argument2 var:interpretation ;
+   swrl:propertyPredicate lig:licensesInterpretation
  ] .
 
 #################################################################
