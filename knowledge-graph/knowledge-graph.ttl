@@ -9,14 +9,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <https://lectoringraphula.org/handmaid#> .
 
-<https://lectoringraphula.org/knowledge-graph> rdf:type owl:Ontology ;
-                                                owl:imports <https://lectoringraphula.org/ontology> ;
-                                                dc:creator "Chiara Genovese, Asia Marselli, Adriana Monte" ;
-                                                dc:description "A knowledge graph instantiating the Lector in Graphula ontology on selected interpretive cases from The Handmaid's Tale."@en ;
-                                                rdfs:comment "This knowledge graph applies the Lector in Graphula ontology to selected excerpts from Margaret Atwood's The Handmaid's Tale. It models how specific textual cues activate intrinsic knowledge, presuppositions, inferences, and licensed interpretations according to Eco's theory of the Model Reader. The graph is intended as a case study and does not aim to represent the entire plot of the novel."@en ,
-                                                             "This knowledge graph imports the Lector in Graphula ontology, identified by the namespace https://lectoringraphula.org/ontology#, and uses the Handmaid namespace for case-study individuals."@en ;
-                                                rdfs:label "Lector in Graphula Knowledge Graph"@en ;
-                                                owl:versionInfo "0.1.0" .
+<https://chiarag711.github.io/lector-in-graphula/knowledge-graph/knowledge-graph.ttl> rdf:type owl:Ontology ;
+                                                                                       owl:imports <https://chiarag711.github.io/lector-in-graphula/ontology/econtology.ttl> ;
+                                                                                       dc:creator "Chiara Genovese, Asia Marselli, Adriana Monte" ;
+                                                                                       dc:description "A knowledge graph instantiating the Lector in Graphula ontology on selected interpretive cases from The Handmaid's Tale."@en ;
+                                                                                       rdfs:comment "This knowledge graph applies the Lector in Graphula ontology to selected excerpts from Margaret Atwood's The Handmaid's Tale. It models how specific textual cues activate intrinsic knowledge, presuppositions, inferences, and licensed interpretations according to Eco's theory of the Model Reader. The graph is intended as a case study and does not aim to represent the entire plot of the novel."@en ,
+                                                                                                    "This knowledge graph imports the Lector in Graphula ontology, identified by the namespace https://lectoringraphula.org/ontology#, and uses the Handmaid namespace for case-study individuals."@en ;
+                                                                                       rdfs:label "Lector in Graphula Knowledge Graph"@en ;
+                                                                                       owl:versionInfo "0.1.0" .
 
 #################################################################
 #    Object Properties
