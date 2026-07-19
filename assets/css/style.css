@@ -406,7 +406,7 @@ main {
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 19px;
+  gap: 16px;
   list-style: none;
 }
 
@@ -415,8 +415,8 @@ main {
   padding: 4px 0;
   border-bottom: 2px solid transparent;
   color: var(--ink-soft);
-  font-size: 0.84rem;
-  letter-spacing: 0.025em;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
   text-decoration: none;
   transition:
     color var(--transition),
@@ -646,7 +646,7 @@ main {
 
 
 /* =========================================================
-   08. CARDS
+   08. SHARED CARDS
 ========================================================= */
 
 .concept-card,
@@ -749,20 +749,101 @@ main {
   margin-bottom: 0;
 }
 
-.methodological-note {
-  margin-top: 38px;
-  padding: 22px 24px;
-  border-left: 3px solid var(--gold);
-  background: rgba(176, 137, 72, 0.08);
+
+/* =========================================================
+   10. METHODOLOGY
+========================================================= */
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.methodological-note h3 {
-  margin-top: 0;
+.methodology-step {
+  position: relative;
+  min-width: 0;
+  padding: 28px 26px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease,
+    border-color 280ms ease;
+}
+
+.methodology-step::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--bordeaux);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms ease;
+}
+
+.methodology-step:hover {
+  border-color: rgba(124, 34, 48, 0.4);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.methodology-step:hover::before {
+  transform: scaleX(1);
+}
+
+.methodology-number {
+  margin-bottom: 12px;
+  color: var(--red);
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.methodology-step h3 {
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  color: var(--ink);
+}
+
+.methodology-step p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.68;
+}
+
+.methodology-step ul {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.methodology-step li {
+  margin-bottom: 5px;
+}
+
+.methodology-principle {
+  margin-top: 30px;
+  padding: 24px 26px;
+  border: 1.5px solid var(--bordeaux);
+  background: rgba(124, 34, 48, 0.045);
+}
+
+.methodology-principle p:last-child {
+  max-width: 850px;
+  margin-bottom: 0;
+  font-family: var(--display);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.55;
 }
 
 
 /* =========================================================
-   10. ARCHITECTURE
+   11. ARCHITECTURE
 ========================================================= */
 
 .architecture-grid {
@@ -814,7 +895,7 @@ main {
 
 
 /* =========================================================
-   11. ONTOLOGY FLOW
+   12. ONTOLOGY FLOW
 ========================================================= */
 
 .graph-visualization {
@@ -840,7 +921,10 @@ main {
 
 .flow-source {
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) minmax(150px, 0.65fr) minmax(180px, 1fr);
+  grid-template-columns:
+    minmax(180px, 1fr)
+    minmax(150px, 0.65fr)
+    minmax(180px, 1fr);
   gap: 15px;
   align-items: center;
 }
@@ -944,7 +1028,7 @@ main {
 
 
 /* =========================================================
-   12. ACCORDIONS
+   13. ACCORDIONS
 ========================================================= */
 
 .case-list,
@@ -1015,7 +1099,7 @@ main {
 
 
 /* =========================================================
-   13. INTERPRETIVE CASES
+   14. INTERPRETIVE CASES
 ========================================================= */
 
 .case-card > summary {
@@ -1156,7 +1240,7 @@ main {
 
 
 /* =========================================================
-   14. QUERY CARDS
+   15. QUERY CARDS
 ========================================================= */
 
 .query-card > summary {
@@ -1299,7 +1383,7 @@ main {
 
 
 /* =========================================================
-   15. TABLES
+   16. TABLES
 ========================================================= */
 
 table {
@@ -1369,7 +1453,7 @@ tbody tr:nth-child(even) {
 
 
 /* =========================================================
-   16. SWRL
+   17. SWRL
 ========================================================= */
 
 .swrl-section {
@@ -1397,13 +1481,17 @@ tbody tr:nth-child(even) {
 
 
 /* =========================================================
-   17. POLANYI++
+   18. POLANYI++
 ========================================================= */
 
 .comparison-card > summary {
   padding: 19px 20px;
   display: grid;
-  grid-template-columns: 55px minmax(0, 1fr) minmax(190px, auto) 20px;
+  grid-template-columns:
+    55px
+    minmax(0, 1fr)
+    minmax(190px, auto)
+    20px;
   gap: 15px;
   align-items: center;
 }
@@ -1460,7 +1548,7 @@ tbody tr:nth-child(even) {
 
 
 /* =========================================================
-   18. RESOURCES
+   19. RESOURCES
 ========================================================= */
 
 .resource-grid {
@@ -1517,7 +1605,7 @@ tbody tr:nth-child(even) {
 
 
 /* =========================================================
-   19. TEAM
+   20. TEAM
 ========================================================= */
 
 .team-grid {
@@ -1586,7 +1674,7 @@ tbody tr:nth-child(even) {
 
 
 /* =========================================================
-   20. STATEMENTS
+   21. STATEMENTS
 ========================================================= */
 
 .statements-section {
@@ -1662,60 +1750,56 @@ tbody tr:nth-child(even) {
 
 
 /* =========================================================
-   21. FOOTER
+   22. COMPACT FOOTER
 ========================================================= */
 
 .site-footer {
-  padding: 44px 24px 36px;
-  border-top: 5px solid var(--bordeaux);
-  background: var(--paper-3);
-  color: var(--ink-soft);
-  font-size: 0.85rem;
+  padding: 22px 24px 16px;
+  border-top: 4px solid var(--ink);
+  background: var(--bordeaux);
+  color: var(--paper);
+  font-size: 0.82rem;
 }
 
 .footer-content {
   width: min(100%, var(--container));
   margin-inline: auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px 30px;
+  align-items: center;
 }
 
 .footer-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  color: var(--bordeaux);
+  gap: 10px;
+  color: var(--paper);
   font-family: var(--display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-style: italic;
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .footer-logo:hover {
-  color: var(--red);
+  color: #ffffff;
 }
 
 .footer-logo img {
-  width: 58px;
-  height: 58px;
+  width: 46px;
+  height: 46px;
   flex: 0 0 auto;
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--paper);
   object-fit: contain;
-  transform: scale(1.15);
-  transform-origin: center;
 }
 
 .footer-logo em {
-  color: var(--red);
+  color: var(--paper-3);
   font-weight: 500;
-}
-
-.footer-brand p {
-  max-width: 480px;
-  margin: 9px 0 0;
-  color: var(--ink-soft);
 }
 
 .footer-navigation {
@@ -1726,35 +1810,38 @@ tbody tr:nth-child(even) {
 }
 
 .footer-navigation a {
-  padding-bottom: 3px;
+  padding-bottom: 2px;
   border-bottom: 1px solid transparent;
-  color: var(--ink-soft);
+  color: rgba(247, 241, 226, 0.86);
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 0.67rem;
   letter-spacing: 0.05em;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .footer-navigation a:hover {
-  border-bottom-color: var(--bordeaux);
-  color: var(--bordeaux);
+  border-bottom-color: var(--paper);
+  color: #ffffff;
 }
 
 .footer-meta {
   grid-column: 1 / -1;
-  padding-top: 19px;
-  border-top: 1px solid var(--line);
+  padding-top: 11px;
+  border-top: 1px solid rgba(247, 241, 226, 0.26);
+  text-align: center;
 }
 
 .footer-meta p {
-  margin-bottom: 3px;
-  color: var(--ink-muted);
+  margin: 0;
+  color: rgba(247, 241, 226, 0.72);
+  font-size: 0.76rem;
+  line-height: 1.5;
 }
 
 
 /* =========================================================
-   22. TOAST
+   23. TOAST
 ========================================================= */
 
 .toast {
@@ -1778,7 +1865,7 @@ tbody tr:nth-child(even) {
 
 
 /* =========================================================
-   23. ANIMATIONS
+   24. ANIMATIONS
 ========================================================= */
 
 @keyframes rise {
@@ -1844,7 +1931,7 @@ tbody tr:nth-child(even) {
 
 
 /* =========================================================
-   24. RESPONSIVE — SMALL LAPTOP
+   25. RESPONSIVE — SMALL LAPTOP
 ========================================================= */
 
 @media (max-width: 1080px) {
@@ -1906,7 +1993,9 @@ tbody tr:nth-child(even) {
   }
 
   .flow-branch {
-    grid-template-columns: minmax(170px, 0.7fr) minmax(220px, 1fr);
+    grid-template-columns:
+      minmax(170px, 0.7fr)
+      minmax(220px, 1fr);
     align-items: center;
   }
 
@@ -1924,19 +2013,11 @@ tbody tr:nth-child(even) {
     bottom: auto;
     transform: none;
   }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-navigation {
-    justify-content: flex-start;
-  }
 }
 
 
 /* =========================================================
-   25. RESPONSIVE — TABLET
+   26. RESPONSIVE — TABLET
 ========================================================= */
 
 @media (max-width: 840px) {
@@ -1953,6 +2034,7 @@ tbody tr:nth-child(even) {
     -webkit-text-stroke-width: 1px;
   }
 
+  .methodology-grid,
   .architecture-grid,
   .semantic-layers,
   .resource-grid {
@@ -2021,11 +2103,20 @@ tbody tr:nth-child(even) {
   .interpretive-chain {
     grid-template-columns: repeat(5, 210px);
   }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .footer-navigation {
+    justify-content: center;
+  }
 }
 
 
 /* =========================================================
-   26. RESPONSIVE — MOBILE
+   27. RESPONSIVE — MOBILE
 ========================================================= */
 
 @media (max-width: 640px) {
@@ -2140,12 +2231,17 @@ tbody tr:nth-child(even) {
   .concept-card,
   .architecture-card,
   .rule-card,
-  .statement-card {
+  .statement-card,
+  .methodology-step {
     padding: 21px 19px;
   }
 
   .research-question {
     padding: 24px 20px;
+  }
+
+  .methodology-principle {
+    padding: 21px 19px;
   }
 
   .ontology-flow {
@@ -2252,21 +2348,31 @@ tbody tr:nth-child(even) {
     transform: translateX(50%);
   }
 
+  .site-footer {
+    padding: 19px 18px 14px;
+  }
+
+  .footer-content {
+    gap: 12px;
+  }
+
   .footer-logo img {
-    width: 50px;
-    height: 50px;
-    transform: scale(1.1);
+    width: 42px;
+    height: 42px;
   }
 
   .footer-navigation {
-    flex-direction: column;
-    gap: 7px;
+    gap: 8px 12px;
+  }
+
+  .footer-meta {
+    padding-top: 9px;
   }
 }
 
 
 /* =========================================================
-   27. VERY SMALL MOBILE
+   28. VERY SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 420px) {
@@ -2303,15 +2409,22 @@ tbody tr:nth-child(even) {
     padding-left: 18px;
   }
 
-  .footer-logo img {
-    width: 44px;
-    height: 44px;
+  .footer-logo {
+    font-size: 0.96rem;
+  }
+
+  .footer-navigation a {
+    font-size: 0.62rem;
+  }
+
+  .footer-meta p {
+    font-size: 0.7rem;
   }
 }
 
 
 /* =========================================================
-   28. REDUCED MOTION
+   29. REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
