@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   <uri name="https://lectoringraphula.org/ontology" uri="../ontology/econtology.ttl"/>
+  <uri name="https://chiarag711.github.io/lector-in-graphula/ontology/econtology.ttl" uri="../ontology/econtology.ttl"/>
 </catalog>

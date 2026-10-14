@@ -3,43 +3,43 @@ Query file: queries/05_licensed_interpretations.rq
 Tested in: Snap SPARQL / Protégé
 Returned rows: 39",,,,,,
 ,,,,,,
-?sequence ,?cueLabel ,?cueText ,?inferenceLabel,?interpretationLabel,,?status
-1,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Biblical justification inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string,
-1,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Initial color assignment inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string,
-1,Name Exchange Cue@en,we exchanged names^^xsd:string,Name Exchange Inference@en,Offred Name Remains Unspecified@en,licensed^^xsd:string,
-1,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Nick Eye suspicion inference@en,Nick may be Eye interpretation@en,alternative^^xsd:string,
-2,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ritual prayer inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string,
-2,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ritual prayer inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string,
-2,Nick Trust me cue@en,Trust me^^xsd:string,Nick trust ambiguity inference@en,Nick may be rescuer interpretation@en,alternative^^xsd:string,
-2,Offred name cue@en,My name isn't Offred^^xsd:string,Hidden Name Inference@en,Offred Name Remains Unspecified@en,licensed^^xsd:string,
-2,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Street color enumeration inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string,
-3,Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony category failure inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string,
-3,Color inventory cue@en,as if taking inventory^^xsd:string,Color inventory inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string,
-3,Patronymic Name Cue@en,Offred gives no clue^^xsd:string,Patronymic Name Inference@en,Gilead Replaces Personal Names With Patronymics@en,licensed^^xsd:string,
-3,Patronymic Name Cue@en,Offred gives no clue^^xsd:string,Patronymic Name Inference@en,Gilead erases female identity@en,licensed^^xsd:string,
-3,State secrets cue@en,Violation of state secrets^^xsd:string,State authority ambiguity inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string,
-4,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Passion negation inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string,
-4,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Darkness light open ending inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string,
-4,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Historical color reframing inference@en,Color code as designed historical synthesis@en,licensed^^xsd:string,
-4,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Historical color reframing inference@en,P.O.W. uniform origin conjecture@en,conjectural^^xsd:string,
-4,Offred name cue@en,My name isn't Offred^^xsd:string,Offred identity inference@en,Gilead erases female identity@en,licensed^^xsd:string,
-5,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Ceremony ritualization inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string,
-5,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Ceremony ritualization inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string,
-5,Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony ritualization inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string,
-5,Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony ritualization inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string,
-5,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Ceremony ritualization inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string,
-5,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Ceremony ritualization inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string,
-5,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ceremony ritualization inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string,
-5,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ceremony ritualization inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string,
-5,Color inventory cue@en,as if taking inventory^^xsd:string,Chromatic code synthesis inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string,
-5,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Nick ambiguous role synthesis inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string,
-5,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Nick ambiguous role synthesis inference@en,Trust as uncertain interpretive act@en,licensed^^xsd:string,
-5,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Chromatic code synthesis inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string,
-5,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Nick ambiguous role synthesis inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string,
-5,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Nick ambiguous role synthesis inference@en,Trust as uncertain interpretive act@en,licensed^^xsd:string,
-5,Nick Trust me cue@en,Trust me^^xsd:string,Nick ambiguous role synthesis inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string,
-5,Nick Trust me cue@en,Trust me^^xsd:string,Nick ambiguous role synthesis inference@en,Trust as uncertain interpretive act@en,licensed^^xsd:string,
-5,State secrets cue@en,Violation of state secrets^^xsd:string,Nick ambiguous role synthesis inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string,
-5,State secrets cue@en,Violation of state secrets^^xsd:string,Nick ambiguous role synthesis inference@en,Trust as uncertain interpretive act@en,licensed^^xsd:string,
-5,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Chromatic code synthesis inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string,
-6,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Red symbolic inference@en,Red as reproductive blood symbolism@en,alternative^^xsd:string,
+?sequence,?cueLabel,?cueText,?inferenceLabel,?interpretationLabel,?status
+1,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Biblical justification inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string
+1,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Initial color assignment inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string
+1,Name Exchange Cue@en,we exchanged names^^xsd:string,Name Exchange Inference@en,Offred Name Remains Unspecified@en,licensed^^xsd:string
+1,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Nick Eye suspicion inference@en,Nick may be Eye interpretation@en,alternative^^xsd:string
+2,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ritual prayer inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string
+2,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ritual prayer inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string
+2,Nick Trust me cue@en,Trust me^^xsd:string,Nick trust ambiguity inference@en,Nick may be rescuer interpretation@en,alternative^^xsd:string
+2,Offred name cue@en,My name isn't Offred^^xsd:string,Hidden Name Inference@en,Offred Name Remains Unspecified@en,licensed^^xsd:string
+2,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Street color enumeration inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string
+3,Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony category failure inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string
+3,Color inventory cue@en,as if taking inventory^^xsd:string,Color inventory inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string
+3,Patronymic Name Cue@en,Offred gives no clue^^xsd:string,Patronymic Name Inference@en,Gilead Replaces Personal Names With Patronymics@en,licensed^^xsd:string
+3,Patronymic Name Cue@en,Offred gives no clue^^xsd:string,Patronymic Name Inference@en,Gilead erases female identity@en,licensed^^xsd:string
+3,State secrets cue@en,Violation of state secrets^^xsd:string,State authority ambiguity inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string
+4,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Passion negation inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string
+4,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Darkness light open ending inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string
+4,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Historical color reframing inference@en,Color code as designed historical synthesis@en,licensed^^xsd:string
+4,Historical Notes color origin cue@en,the suggestion that the Handmaids wear red^^xsd:string,Historical color reframing inference@en,P.O.W. uniform origin conjecture@en,conjectural^^xsd:string
+4,Offred name cue@en,My name isn't Offred^^xsd:string,Offred identity inference@en,Gilead erases female identity@en,licensed^^xsd:string
+5,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Ceremony ritualization inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string
+5,Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Ceremony ritualization inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string
+5,Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony ritualization inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string
+5,Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony ritualization inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string
+5,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Ceremony ritualization inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string
+5,Ceremony passion negation cue@en,It has nothing to do with passion^^xsd:string,Ceremony ritualization inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string
+5,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ceremony ritualization inference@en,Ceremony as institutionalized reproductive ritual@en,licensed^^xsd:string
+5,Ceremony prayer cue@en,a moment of silent prayer^^xsd:string,Ceremony ritualization inference@en,Gilead uses religion to legitimize reproductive coercion@en,licensed^^xsd:string
+5,Color inventory cue@en,as if taking inventory^^xsd:string,Chromatic code synthesis inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string
+5,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Nick ambiguous role synthesis inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string
+5,Darkness or light cue@en,darkness within; or else the light^^xsd:string,Nick ambiguous role synthesis inference@en,Trust as uncertain interpretive act@en,licensed^^xsd:string
+5,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Chromatic code synthesis inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string
+5,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Nick ambiguous role synthesis inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string
+5,Nick Eye suspicion cue@en,Perhaps he is an Eye^^xsd:string,Nick ambiguous role synthesis inference@en,Trust as uncertain interpretive act@en,licensed^^xsd:string
+5,Nick Trust me cue@en,Trust me^^xsd:string,Nick ambiguous role synthesis inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string
+5,Nick Trust me cue@en,Trust me^^xsd:string,Nick ambiguous role synthesis inference@en,Trust as uncertain interpretive act@en,licensed^^xsd:string
+5,State secrets cue@en,Violation of state secrets^^xsd:string,Nick ambiguous role synthesis inference@en,Final departure as licensed ambiguity@en,licensed^^xsd:string
+5,State secrets cue@en,Violation of state secrets^^xsd:string,Nick ambiguous role synthesis inference@en,Trust as uncertain interpretive act@en,licensed^^xsd:string
+5,Street color enumeration cue@en,These women are not divided into functions^^xsd:string,Chromatic code synthesis inference@en,Gilead chromatic code controls social identity@en,licensed^^xsd:string
+6,Initial color assignment cue@en,"the colour of blood, which defines us^^xsd:string",Red symbolic inference@en,Red as reproductive blood symbolism@en,alternative^^xsd:string

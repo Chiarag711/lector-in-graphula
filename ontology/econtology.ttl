@@ -649,11 +649,12 @@ lig:hasInterpretiveStatus rdf:type owl:DatatypeProperty ;
 
 ###  https://lectoringraphula.org/ontology#hasProbabilityDegree
 lig:hasProbabilityDegree rdf:type owl:DatatypeProperty ;
-                         rdfs:domain lig:InterpretiveOperation ,
-                                     lig:Prediction ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( lig:InterpretiveOperation lig:Prediction )
+                                     ] ;
                          rdfs:range xsd:string ;
-                         <http://purl.org/dc/elements/1.1/description> "Associates a prediction with a qualitative probability degree."@en ;
-                         rdfs:comment "This data property connects a Prediction to a qualitative degree of probability, such as high, medium, low, or undetermined. It is used to model the different strengths of alternative predictions within a probability disjunction, without introducing formal probabilistic reasoning."@en ;
+                         <http://purl.org/dc/elements/1.1/description> "Associates an interpretive operation, including a prediction, with a qualitative probability degree."@en ;
+                         rdfs:comment "This data property records a qualitative degree of probability for an InterpretiveOperation, including a Prediction, without requiring every subject to be a Prediction. In the current knowledge graph it is used for predictions and retains qualitative string values without introducing formal probabilistic reasoning."@en ;
                          rdfs:label "has probability degree"@en .
 
 

@@ -441,6 +441,15 @@ function parseCSV(csvText) {
     return { headers: [], rows: [] };
   }
 
+  // Stored query results have a descriptive note before the variable headers.
+  if (/^N?CQ\d+:/.test(rows[0][0].trim())) {
+    const headerIndex = rows.findIndex((row) => row[0].trim().startsWith("?"));
+    if (headerIndex < 0) {
+      throw new Error("The stored result is missing its variable headers.");
+    }
+    rows.splice(0, headerIndex);
+  }
+
   const widestRowLength = Math.max(
     ...rows.map((row) => row.length)
   );

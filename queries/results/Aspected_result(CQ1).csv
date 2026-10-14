@@ -3,7 +3,7 @@ Query file: queries/01_grounding_inferences.rq
 Returned rows: 28
 Tested in: Snap SPARQL / Protégé",,,,
 ,,,,
-?fragmentLabel,?cueLabel,?cueText,?inferenceLabel,
+?fragmentLabel,?source,?cueLabel,?cueText,?inferenceLabel
 Ceremony biblical fragment@en,"The Handmaid's Tale, PDF p. 91^^xsd:string",Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Biblical justification inference@en
 Ceremony biblical fragment@en,"The Handmaid's Tale, PDF p. 91^^xsd:string",Ceremony biblical cue@en,"Give me children, or else I die^^xsd:string",Ceremony ritualization inference@en
 Ceremony category failure fragment@en,"The Handmaid's Tale, PDF pp. 96-97^^xsd:string",Ceremony category failure cue@en,only one is involved^^xsd:string,Ceremony category failure inference@en
